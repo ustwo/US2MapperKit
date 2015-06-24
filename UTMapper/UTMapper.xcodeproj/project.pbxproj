@@ -11,6 +11,17 @@
 		3A525F411B38755A007C00BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A525F401B38755A007C00BE /* Assets.xcassets */; };
 		3A525F4F1B38755A007C00BE /* UTMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F4E1B38755A007C00BE /* UTMapperTests.swift */; };
 		3A525F5A1B38755A007C00BE /* UTMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F591B38755A007C00BE /* UTMapperUITests.swift */; };
+		3A525F691B387B02007C00BE /* UTMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F681B387B02007C00BE /* UTMapper.swift */; };
+		3A525F6A1B387B02007C00BE /* UTMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F681B387B02007C00BE /* UTMapper.swift */; };
+		3A525F741B38A0F2007C00BE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A525F731B38A0F2007C00BE /* Default-568h@2x.png */; };
+		3A8E93AC1B3B01D8009C495D /* TestModelObjectDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E93AB1B3B01D8009C495D /* TestModelObjectDefinitions.swift */; };
+		3A8E93B51B3B0F55009C495D /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E93B21B3B0F55009C495D /* TestObjectThree.plist */; };
+		3A8E93B61B3B0F55009C495D /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E93B31B3B0F55009C495D /* TestObjectTwo.plist */; };
+		3A8E93B71B3B0FCE009C495D /* TestModelObjectDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E93AB1B3B01D8009C495D /* TestModelObjectDefinitions.swift */; };
+		3A8E93B91B3B0FE7009C495D /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E93B21B3B0F55009C495D /* TestObjectThree.plist */; };
+		3A8E93BA1B3B0FE7009C495D /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E93B31B3B0F55009C495D /* TestObjectTwo.plist */; };
+		3A8E93BC1B3B58BA009C495D /* TestObjectFour.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E93BB1B3B58BA009C495D /* TestObjectFour.plist */; };
+		3A8E93BD1B3B58BA009C495D /* TestObjectFour.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A8E93BB1B3B58BA009C495D /* TestObjectFour.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +52,12 @@
 		3A525F551B38755A007C00BE /* UTMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UTMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A525F591B38755A007C00BE /* UTMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTMapperUITests.swift; sourceTree = "<group>"; };
 		3A525F5B1B38755A007C00BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A525F681B387B02007C00BE /* UTMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTMapper.swift; path = Source/UTMapper.swift; sourceTree = "<group>"; };
+		3A525F731B38A0F2007C00BE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3A8E93AB1B3B01D8009C495D /* TestModelObjectDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModelObjectDefinitions.swift; sourceTree = "<group>"; };
+		3A8E93B21B3B0F55009C495D /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectThree.plist; sourceTree = "<group>"; };
+		3A8E93B31B3B0F55009C495D /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwo.plist; sourceTree = "<group>"; };
+		3A8E93BB1B3B58BA009C495D /* TestObjectFour.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectFour.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +88,8 @@
 		3A525F2D1B38755A007C00BE = {
 			isa = PBXGroup;
 			children = (
+				3A525F731B38A0F2007C00BE /* Default-568h@2x.png */,
+				3A525F671B387AED007C00BE /* Source */,
 				3A525F381B38755A007C00BE /* UTMapper */,
 				3A525F4D1B38755A007C00BE /* UTMapperTests */,
 				3A525F581B38755A007C00BE /* UTMapperUITests */,
@@ -101,6 +120,8 @@
 		3A525F4D1B38755A007C00BE /* UTMapperTests */ = {
 			isa = PBXGroup;
 			children = (
+				3A525F6E1B387DA1007C00BE /* Test Model */,
+				3A525F6D1B387BDE007C00BE /* Mappings */,
 				3A525F4E1B38755A007C00BE /* UTMapperTests.swift */,
 				3A525F501B38755A007C00BE /* Info.plist */,
 			);
@@ -114,6 +135,32 @@
 				3A525F5B1B38755A007C00BE /* Info.plist */,
 			);
 			path = UTMapperUITests;
+			sourceTree = "<group>";
+		};
+		3A525F671B387AED007C00BE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3A525F681B387B02007C00BE /* UTMapper.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		3A525F6D1B387BDE007C00BE /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E93B31B3B0F55009C495D /* TestObjectTwo.plist */,
+				3A8E93B21B3B0F55009C495D /* TestObjectThree.plist */,
+				3A8E93BB1B3B58BA009C495D /* TestObjectFour.plist */,
+			);
+			name = Mappings;
+			sourceTree = "<group>";
+		};
+		3A525F6E1B387DA1007C00BE /* Test Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E93AB1B3B01D8009C495D /* TestModelObjectDefinitions.swift */,
+			);
+			name = "Test Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +266,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8E93BC1B3B58BA009C495D /* TestObjectFour.plist in Resources */,
+				3A8E93B91B3B0FE7009C495D /* TestObjectThree.plist in Resources */,
+				3A8E93BA1B3B0FE7009C495D /* TestObjectTwo.plist in Resources */,
 				3A525F411B38755A007C00BE /* Assets.xcassets in Resources */,
+				3A525F741B38A0F2007C00BE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +278,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8E93B51B3B0F55009C495D /* TestObjectThree.plist in Resources */,
+				3A8E93B61B3B0F55009C495D /* TestObjectTwo.plist in Resources */,
+				3A8E93BD1B3B58BA009C495D /* TestObjectFour.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8E93B71B3B0FCE009C495D /* TestModelObjectDefinitions.swift in Sources */,
 				3A525F3A1B38755A007C00BE /* AppDelegate.swift in Sources */,
+				3A525F691B387B02007C00BE /* UTMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A525F4F1B38755A007C00BE /* UTMapperTests.swift in Sources */,
+				3A525F6A1B387B02007C00BE /* UTMapper.swift in Sources */,
+				3A8E93AC1B3B01D8009C495D /* TestModelObjectDefinitions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +508,7 @@
 				3A525F601B38755A007C00BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A525F611B38755A007C00BE /* Build configuration list for PBXNativeTarget "UTMapperTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +517,7 @@
 				3A525F631B38755A007C00BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A525F641B38755A007C00BE /* Build configuration list for PBXNativeTarget "UTMapperUITests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +526,7 @@
 				3A525F661B38755A007C00BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
