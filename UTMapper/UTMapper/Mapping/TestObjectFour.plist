@@ -2,28 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>optionalString</key>
-	<dict>
-		<key>default</key>
-		<string>Hello</string>
-		<key>key</key>
-		<string>optional_string</string>
-		<key>type</key>
-		<string>String</string>
-	</dict>
 	<key>optionalInt</key>
 	<dict>
-		<key>default</key>
-		<string>10</string>
 		<key>key</key>
 		<string>optional_int</string>
 		<key>type</key>
 		<string>Int</string>
 	</dict>
+	<key>optionalString</key>
+	<dict>
+		<key>key</key>
+		<string>optional_string</string>
+		<key>type</key>
+		<string>String</string>
+	</dict>
 	<key>optionalDouble</key>
 	<dict>
-		<key>default</key>
-		<string>20.0</string>
 		<key>key</key>
 		<string>optional_double</string>
 		<key>type</key>
@@ -31,8 +25,6 @@
 	</dict>
 	<key>optionalFloat</key>
 	<dict>
-		<key>default</key>
-		<string>30.0</string>
 		<key>key</key>
 		<string>optional_float</string>
 		<key>type</key>
@@ -40,17 +32,26 @@
 	</dict>
 	<key>optionalBool</key>
 	<dict>
-		<key>default</key>
-		<string>true</string>
 		<key>key</key>
 		<string>optional_bool</string>
 		<key>type</key>
 		<string>Bool</string>
 	</dict>
+	<key>non_optionalInt</key>
+	<dict>
+		<key>nonoptional</key>
+		<string>true</string>
+		<key>default</key>
+		<string>500</string>
+		<key>key</key>
+		<string>non_optional_int</string>
+		<key>type</key>
+		<string>Int</string>
+	</dict>
 	<key>non_optionalString</key>
 	<dict>
-		<key>optional</key>
-		<string>false</string>
+		<key>nonoptional</key>
+		<string>true</string>
 		<key>default</key>
 		<string>Non-Optional Hello</string>
 		<key>key</key>
@@ -58,21 +59,10 @@
 		<key>type</key>
 		<string>String</string>
 	</dict>
-	<key>non_optionalInt</key>
-	<dict>
-		<key>optional</key>
-		<string>false</string>
-		<key>default</key>
-		<string>40</string>
-		<key>key</key>
-		<string>non_optional_int</string>
-		<key>type</key>
-		<string>Int</string>
-	</dict>
 	<key>non_optionalDouble</key>
 	<dict>
-		<key>optional</key>
-		<string>false</string>
+		<key>nonoptional</key>
+		<string>true</string>
 		<key>default</key>
 		<string>50.0</string>
 		<key>key</key>
@@ -82,8 +72,8 @@
 	</dict>
 	<key>non_optionalFloat</key>
 	<dict>
-		<key>optional</key>
-		<string>false</string>
+		<key>nonoptional</key>
+		<string>true</string>
 		<key>default</key>
 		<string>60.0</string>
 		<key>key</key>
@@ -93,10 +83,10 @@
 	</dict>
 	<key>non_optionalBool</key>
 	<dict>
-		<key>optional</key>
-		<string>false</string>
+		<key>nonoptional</key>
+		<string>true</string>
 		<key>default</key>
-		<string>false</string>
+		<string>true</string>
 		<key>key</key>
 		<string>non_optional_bool</string>
 		<key>type</key>

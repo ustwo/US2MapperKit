@@ -52,51 +52,48 @@ class UTMapperTests: XCTestCase {
         let testObjectInstance = TestObjectFour(NSDictionary())
 
         XCTAssertNil(testObjectInstance!.optionalInt,              "Optional Int Value should be nil")
-
-        XCTAssertNil(testObjectInstance!.optionalString,            "Optional String Value should be nil")
-        XCTAssertNil(testObjectInstance!.optionalDouble,            "Optional String Value should be nil")
-        XCTAssertNil(testObjectInstance!.optionalFloat,             "Optional String Value should be nil")
-        XCTAssertNil(testObjectInstance!.optionalBool,              "Optional String Value should be nil")
+        XCTAssertNil(testObjectInstance!.optionalString,           "Optional String Value should be nil")
+        XCTAssertNil(testObjectInstance!.optionalDouble,           "Optional String Value should be nil")
+        XCTAssertNil(testObjectInstance!.optionalFloat,            "Optional String Value should be nil")
+        XCTAssertNil(testObjectInstance!.optionalBool,             "Optional String Value should be nil")
 
         XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(500), "Non-Optional Int does not equal the defined default value")
-
-        XCTAssertEqual(testObjectInstance!.non_optionalString, "Non-Optional Hello", "Non-Optional String Value should default to 'Non-Optional Hello'")
-        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(50.0), "Non-Optional Double value should default to 50.0")
-        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(60.0), "Non-Optional Float value should default to 60.0")
-        XCTAssertEqual(testObjectInstance!.non_optionalBool, true, "Non-Optional Bool value should default to true")
+        XCTAssertEqual(testObjectInstance!.non_optionalString, "Non-Optional Hello", "Non-Optional String value does not equal the defined default value")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(50.0), "Non-Optional Double value does not equal the defined default value")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(60.0), "Non-Optional Float value does not equal the defined default value")
+        XCTAssertEqual(testObjectInstance!.non_optionalBool, true, "Non-Optional Bool value does not equal the defined default value")
     }
 
     func testBasicMappingForDictionaryWithNonOptionalValues() {
         // TestObjectFive has defaults only for non-optional values the optional values should all be nil
         // All while the non optional values will be overriden to a value not set to a default
-        let dictionary = ["non_optional_string" : "TestString", "non_optional_double" : 70.0, "non_optional_float" : 80.0, "non_optional_bool" : false]
+        let dictionary = ["non_optional_int" : 50, "non_optional_string" : "TestString", "non_optional_double" : 70.0, "non_optional_float" : 80.0, "non_optional_bool" : false]
         let testObjectInstance = TestObjectFour(dictionary)
         
-        XCTAssertNil(testObjectInstance!.optionalInt,              "Optional Int Value should be nil")
+        XCTAssertNil(testObjectInstance!.optionalInt,               "Optional Int Value should be nil")
         XCTAssertNil(testObjectInstance!.optionalString,            "Optional String Value should be nil")
         XCTAssertNil(testObjectInstance!.optionalDouble,            "Optional String Value should be nil")
         XCTAssertNil(testObjectInstance!.optionalFloat,             "Optional String Value should be nil")
         XCTAssertNil(testObjectInstance!.optionalBool,              "Optional String Value should be nil")
         
-        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(500), "Non-Optional Int does not equal the defined default value")
-        XCTAssertEqual(testObjectInstance!.non_optionalString, "TestString", "Non-Optional String Value did not parse the value correctly")
-        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(70.0), "Non-Optional Double value should default to 50.0")
-        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value should default to 60.0")
-        XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value should be false (default is true)")
+        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(50), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalString, "TestString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(70.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
     }
     
-    func testBasicMappingNumericValueReturnedAsStrings() {
+    func testNumericValueReturnedAsStrings() {
         // TestObjectFour has defaults only for non-optional values the optional values should all be nil
-        let dictionary = ["non_optional_double" : "70.0", "non_optional_float" : "80.0"]
+        let dictionary = ["non_optional_int" : "50", "non_optional_double" : "70.0", "non_optional_float" : "80.0"]
         let testObjectInstance = TestObjectFour(dictionary)
         
-        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(500), "Non-Optional Int does not equal the defined default value")
-        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(70.0), "Non-Optional Double value should default to 50.0")
-        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value should default to 60.0")
+        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(50), "Non-Optional Int was parsed incorrectly from a String value")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(70.0), "Non-Optional Double was parsed incorrectly from a String value")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly from a String value")
     }
     
-    func testBasicFalseBoolMapping() {
-        
+    func testBoolFalseMapping() {
         // TestObjectFour has default set to true for the non_optionalBool property
         let dictionaryBoolValue = ["non_optional_bool" : false]
         let testBoolInstance = TestObjectFour(dictionaryBoolValue)
@@ -119,8 +116,9 @@ class UTMapperTests: XCTestCase {
         XCTAssertEqual(testStringFalseCapsInstance!.non_optionalBool, false, "Non-Optional Bool value should be false (default is true)")
     }
     
-    func testBasicTrueBoolMapping() {
+    func testBoolTrueMapping() {
         // TestObjectFour has default set to true for the non_optionalBool property
+      
         let dictionaryBoolValue = ["non_optional_bool" : true]
         let testBoolInstance = TestObjectThree(dictionaryBoolValue)
         
@@ -142,4 +140,12 @@ class UTMapperTests: XCTestCase {
         XCTAssertEqual(testStringTrueCapsInstance!.non_optionalBool, true, "Non-Optional Bool value should be true (default is false)")
     }
     
+    func testNumericStringMapping() {
+        // TestObjectFour has default set to true for the non_optionalBool property
+        
+        let dictionaryNumericStringValue = ["non_optional_string" : 70.0]
+        let numericStringInstance = TestObjectThree(dictionaryNumericStringValue)
+        
+        XCTAssertEqual(numericStringInstance!.non_optionalString, "70.0", "Non-Optional String value was not parsed correctly from a numeric value")
+    }
 }

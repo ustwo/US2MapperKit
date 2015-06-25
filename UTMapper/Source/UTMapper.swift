@@ -8,6 +8,8 @@
 
 import Foundation
 
+let verbose = false
+
 enum DataType: String {
     case String = "String"
     case Double = "Double"
@@ -16,11 +18,11 @@ enum DataType: String {
     case Int    = "Int"
 }
 
-let UTMapperJSONKey     = "key"
-let UTMapperTypeKey     = "type"
-let UTMapperOptionalKey = "optional"
-let UTMapperDefaultKey  = "default"
-let UTMapperMapperKey   = "mapper"
+let UTMapperJSONKey         = "key"
+let UTMapperTypeKey         = "type"
+let UTMapperNonOptionalKey  = "nonoptional"
+let UTMapperDefaultKey      = "default"
+let UTMapperMapperKey       = "mapper"
 
 var propertyMappings : Dictionary<String, Dictionary<String, Dictionary<String, String>>> = Dictionary()
 
@@ -81,7 +83,7 @@ final class UTMapper {
     }
     
     class func propertyNonOptional(mapping : Dictionary<String, String>) -> Bool {
-        if let optionalMappingValue = mapping[UTMapperOptionalKey] as? AnyObject {
+        if let optionalMappingValue = mapping[UTMapperNonOptionalKey] as? AnyObject {
             let isNonOptional = optionalMappingValue.boolValue as Bool
             return isNonOptional
         }
@@ -156,6 +158,11 @@ final class UTMapper {
     class func convertDefaultValue(value : AnyObject, type : DataType) -> AnyObject?  {
         switch type {
         case .String:
+            if let stringObject = value as? String {
+                return stringObject
+            }else if let stringObject = value as? NSNumber {
+                return String(stringObject.doubleValue)
+            }
             return value
         case .Double:
             return Double(value.doubleValue)
@@ -176,18 +183,18 @@ final class UTMapper {
     }
     
     class func logDefaultValue(propertyKey : AnyObject, value : AnyObject) {
-        print("Warning: UTMapper did not find a value for property \(propertyKey), default set to \(value)\n")
+        if verbose { print("Warning: UTMapper did not find a value for property \(propertyKey), default set to \(value)\n") }
     }
     
     class func logMissingDataType(propertyKey : AnyObject) {
-        print("Error: UTMapper missing 'type' definition for \(propertyKey), could not map default value for property\n")
+        if verbose { print("Error: UTMapper missing 'type' definition for \(propertyKey), could not map default value for property\n") }
     }
     
     class func logMissingMappingConfiguration(className : AnyObject) {
-        print("Error: UTMapper could not find mapping configuration for the following class \(className)\n")
+        if verbose { print("Error: UTMapper could not find mapping configuration for the following class \(className)\n") }
     }
     
     class func logMissingNonOptionalDefaultValue(propertyKey : AnyObject) {
-        print("Error: UTMapper did not find a default value for property \(propertyKey), initialization with dictioanry fail")
+        if verbose { print("Error: UTMapper did not find a default value for property \(propertyKey), initialization with dictioanry fail") }
     }
 }
