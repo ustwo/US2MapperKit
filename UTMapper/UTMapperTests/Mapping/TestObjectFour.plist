@@ -9,17 +9,6 @@
 		<key>type</key>
 		<string>Int</string>
 	</dict>
-	<key>non_optionalInt</key>
-	<dict>
-		<key>optional</key>
-		<string>false</string>
-		<key>default</key>
-		<string>500</string>
-		<key>key</key>
-		<string>non_optional_int</string>
-		<key>type</key>
-		<string>Int</string>
-	</dict>
 	<key>optionalString</key>
 	<dict>
 		<key>key</key>
@@ -47,6 +36,17 @@
 		<string>optional_bool</string>
 		<key>type</key>
 		<string>Bool</string>
+	</dict>
+	<key>non_optionalInt</key>
+	<dict>
+		<key>optional</key>
+		<string>false</string>
+		<key>default</key>
+		<string>500</string>
+		<key>key</key>
+		<string>non_optional_int</string>
+		<key>type</key>
+		<string>Int</string>
 	</dict>
 	<key>non_optionalString</key>
 	<dict>
