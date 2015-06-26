@@ -28,7 +28,7 @@ var propertyMappings : Dictionary<String, Dictionary<String, Dictionary<String, 
 
 final class UTMapper {
     
-    class func parseJSONResponse(className : String, data : NSDictionary) -> Dictionary<String, AnyObject>? {
+    class func parseJSONResponse(className : String, data : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
 
         // Dictionary of values to be returned
         var propertyValueDictionary = Dictionary<String, AnyObject>()
@@ -47,50 +47,81 @@ final class UTMapper {
                
                 if let jsonKey = propertyMapping[UTMapperJSONKey] {
                     
+                    var newValue : AnyObject = NSNull()
                     var keys = jsonKey.componentsSeparatedByString(".")
                     
                     if let jsonValue = UTMapper.recursiveValueForKeys(propertyKey, keys : &keys, data: data) {
-                        if let dataTypeConfigValue = propertyMapping[UTMapperTypeKey] {
-                            propertyValueDictionary[propertyKey] = UTMapper.convertDefaultValue(jsonValue, type: DataType(rawValue:dataTypeConfigValue)!)
-                            UTMapper.logDefaultValue(propertyKey, value : propertyValueDictionary[propertyKey]!)
-                        } else {
-                            UTMapper.logMissingDataType(propertyKey)
-                        }
-                    } else if let jsonValue = propertyMapping[UTMapperDefaultKey] {
-                        
-                        if let dataTypeConfigValue = propertyMapping[UTMapperTypeKey] {
-                            propertyValueDictionary[propertyKey] = UTMapper.convertDefaultValue(jsonValue, type: DataType(rawValue:dataTypeConfigValue)!)
-                            UTMapper.logDefaultValue(propertyKey, value : propertyValueDictionary[propertyKey]!)
-                        } else {
-                            UTMapper.logMissingDataType(propertyKey)
-                        }
-                        
-                    } else {
-                        if UTMapper.propertyNonOptional(propertyMapping) {
-                            UTMapper.logMissingNonOptionalDefaultValue(propertyKey)
-                        } else {
-                            propertyValueDictionary[propertyKey] = NSNull()
-                        }
+                        newValue = jsonValue
+                    } else if let defaultValue = propertyMapping[UTMapperDefaultKey] {
+                        newValue = defaultValue
                     }
+                    
+                    UTMapper.appendValueFor(propertyKey, mapping: propertyMapping, value: newValue, propertyValueDictionary: &propertyValueDictionary)
                 }
             }
         }
         
-        if UTMapper.verifyNonOptionalValues(className, propertyValueDictionary: propertyValueDictionary) {
+        if UTMapper.validateNonOptionalValues(className, propertyValueDictionary: propertyValueDictionary) {
             return propertyValueDictionary
         }
+        
         return nil
     }
     
-    class func propertyNonOptional(mapping : Dictionary<String, String>) -> Bool {
+    class func appendValueFor(propertyKey : String, mapping : Dictionary<String, String>, value : AnyObject, inout propertyValueDictionary : Dictionary<String, AnyObject>) {
+        
+        if let possibleNullValue = value as? NSNull {
+            propertyValueDictionary[propertyKey] = possibleNullValue
+            return
+        }
+    
+       // if let dataType = mapping[UTMapperTypeKey] {
+       //     propertyValueDictionary[propertyKey] = UTMapper.convertDefaultValue(value, type: DataType(rawValue:dataType)!)
+       // }
+        
+        if let dataType = mapping[UTMapperTypeKey] {
+            
+            let nativeTypes = ["String", "Double", "Int", "Bool", "Float"]
+            
+            if nativeTypes.contains(dataType) {
+                propertyValueDictionary[propertyKey] = UTMapper.convertDefaultValue(value, type: DataType(rawValue:dataType)!)
+            } else if let complexTypeValue = _UTMapperClassInstantiator.classFromString(dataType, data: value as! Dictionary<String, AnyObject>) {
+                propertyValueDictionary[propertyKey] = complexTypeValue
+            } else {
+                propertyValueDictionary[propertyKey] = _UTMapperClassInstantiator.classFromString(dataType, data: Dictionary<String, AnyObject>())
+            }
+        }
+    }
+
+    class func recursiveValueForKeys(propertyKey : String, inout keys : [String], data : Dictionary<String, AnyObject>) -> AnyObject? {
+        
+        var nestedDictionary = data
+        
+        for index in 0..<keys.count {
+            if index >= (keys.count - 1) {
+                if let finalValue = nestedDictionary[keys[index]] {
+                    return finalValue
+                }
+            } else {
+                if let nextLevelDictionary = nestedDictionary[keys[index]] as? Dictionary<String, AnyObject> {
+                    nestedDictionary = nextLevelDictionary
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+    class func isPropertyNonOptional(mapping : Dictionary<String, String>) -> Bool {
         if let optionalMappingValue = mapping[UTMapperNonOptionalKey] as? AnyObject {
             let isNonOptional = optionalMappingValue.boolValue as Bool
             return isNonOptional
         }
+        
         return false
     }
-    
-    class func verifyNonOptionalValues(className : String, propertyValueDictionary : Dictionary<String, AnyObject>) -> Bool {
+
+    class func validateNonOptionalValues(className : String, propertyValueDictionary : Dictionary<String, AnyObject>) -> Bool {
         
         let mappingConfiguration = UTMapper.mappingConfiguration(className)
         let propertyNameKeys = mappingConfiguration.keys.array
@@ -103,7 +134,7 @@ final class UTMapper {
         for propertyKey in propertyNameKeys {
             if let propertyMapping : Dictionary<String, String> = mappingConfiguration[propertyKey] {
                 // Check to see if user defined the property as non-optional
-                if UTMapper.propertyNonOptional(propertyMapping) {
+                if UTMapper.isPropertyNonOptional(propertyMapping) {
                     if let _ = propertyValueDictionary[propertyKey] {
                         // If value was mapped, continue with validation
                         continue
@@ -131,30 +162,11 @@ final class UTMapper {
                 return tempMapping!
             } else {
                 // Return Blank Mapping, and Warn the User
-                UTMapper.logMissingMappingConfiguration(className)
                 return Dictionary<String, Dictionary<String, String>>()
             }
         }
     }
-    
-    class func recursiveValueForKeys(propertyKey : String, inout keys : [String], data : NSDictionary) -> AnyObject? {
-        
-        var nestedDictionary = data
-        
-        for index in 0..<keys.count {
-            if index >= (keys.count - 1) {
-                if let finalValue = nestedDictionary[keys[index]] {
-                    return finalValue
-                }
-            } else {
-                if let nextLevelDictionary = nestedDictionary[keys[index]] as? NSDictionary {
-                    nestedDictionary = nextLevelDictionary
-                }
-            }
-        }
-        return nil
-    }
-    
+
     class func convertDefaultValue(value : AnyObject, type : DataType) -> AnyObject?  {
         switch type {
         case .String:
@@ -180,21 +192,5 @@ final class UTMapper {
             return typed
         }
         return nil
-    }
-    
-    class func logDefaultValue(propertyKey : AnyObject, value : AnyObject) {
-        if verbose { print("Warning: UTMapper did not find a value for property \(propertyKey), default set to \(value)\n") }
-    }
-    
-    class func logMissingDataType(propertyKey : AnyObject) {
-        if verbose { print("Error: UTMapper missing 'type' definition for \(propertyKey), could not map default value for property\n") }
-    }
-    
-    class func logMissingMappingConfiguration(className : AnyObject) {
-        if verbose { print("Error: UTMapper could not find mapping configuration for the following class \(className)\n") }
-    }
-    
-    class func logMissingNonOptionalDefaultValue(propertyKey : AnyObject) {
-        if verbose { print("Error: UTMapper did not find a default value for property \(propertyKey), initialization with dictioanry fail") }
     }
 }

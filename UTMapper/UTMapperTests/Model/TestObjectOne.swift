@@ -15,7 +15,7 @@ class _TestObjectOne {
         optionalString  = UTMapper.typeCast(_optionalString)
     }
     
-    convenience init?(_ dictionary: NSDictionary) {
+    convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
         let dynamicTypeString = String(self.dynamicType)
         let className = dynamicTypeString.componentsSeparatedByString(".").last
         

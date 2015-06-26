@@ -20,19 +20,19 @@ class UTMapperTests: XCTestCase {
 
     func testMissingConfiguration() {
         // TestObjectOne is completely missing a mapping file
-        let testObjectInstance = TestObjectOne(NSDictionary())
+        let testObjectInstance = TestObjectOne(Dictionary<String, AnyObject>())
         XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, missing mapping configuration file")
     }
     
     func testFailableInitializer() {
         // TestObjectTwo does not have default values defined for non-optional values
-        let testObjectInstance = TestObjectTwo(NSDictionary())
+        let testObjectInstance = TestObjectTwo(Dictionary<String, AnyObject>())
         XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, mapping configuration is blank")
     }
 
     func testDefaultMapping() {
         // TestObjectThree has all the default values defined
-        let testObjectInstance = TestObjectThree(NSDictionary())
+        let testObjectInstance = TestObjectThree(Dictionary<String, AnyObject>())
         
         XCTAssertEqual(testObjectInstance!.optionalString!, "Hello", "Optional String Value should default to 'Hello'")
         XCTAssertEqual(testObjectInstance!.optionalInt!, Int(10), "Optional Int value should default to 10")
@@ -49,7 +49,7 @@ class UTMapperTests: XCTestCase {
 
     func testBasicMappingForDictionaryWithoutOptionalValues() {
         // TestObjectFive has defaults only for non-optional values the optional values should all be nil
-        let testObjectInstance = TestObjectFour(NSDictionary())
+        let testObjectInstance = TestObjectFour(Dictionary<String, AnyObject>())
 
         XCTAssertNil(testObjectInstance!.optionalInt,              "Optional Int Value should be nil")
         XCTAssertNil(testObjectInstance!.optionalString,           "Optional String Value should be nil")
@@ -118,7 +118,6 @@ class UTMapperTests: XCTestCase {
     
     func testBoolTrueMapping() {
         // TestObjectFour has default set to true for the non_optionalBool property
-      
         let dictionaryBoolValue = ["non_optional_bool" : true]
         let testBoolInstance = TestObjectThree(dictionaryBoolValue)
         
@@ -148,4 +147,49 @@ class UTMapperTests: XCTestCase {
         
         XCTAssertEqual(numericStringInstance!.non_optionalString, "70.0", "Non-Optional String value was not parsed correctly from a numeric value")
     }
+    
+    func testNestedMapping() {
+        // TestObjectFour has default set to true for the non_optionalBool property
+        
+        let dictionaryNumericStringValue = ["non_optional_string" : 70.0]
+        let numericStringInstance = TestObjectThree(dictionaryNumericStringValue)
+        
+        XCTAssertEqual(numericStringInstance!.non_optionalString, "70.0", "Non-Optional String value was not parsed correctly from a numeric value")
+    }
+    
+    func testSubTypeMapping() {
+        let subtypeDictionary = ["non_optional_int" : 50, "non_optional_string" : "TestString", "non_optional_double" : 70.0, "non_optional_float" : 80.0, "non_optional_bool" : false]
+        let dictionaryBoolValue = ["optional_subtype" : subtypeDictionary, "non_optional_subtype" : subtypeDictionary]
+       
+        let testObjectInstance = TestObjectFive(dictionaryBoolValue)
+
+        XCTAssertEqual(testObjectInstance!.optionalSubType!.non_optionalInt, Int(50), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalSubType!.non_optionalString, "TestString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalSubType!.non_optionalDouble, Double(70.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalSubType!.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalSubType!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
+        
+        XCTAssertEqual(testObjectInstance!.non_optionalSubType.non_optionalInt, Int(50), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalSubType.non_optionalString, "TestString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalSubType.non_optionalDouble, Double(70.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalSubType.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalSubType.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
+    }
+    
+    func testFailableWithComplexTypesInitializer() {
+        // TestObjectTwo does not have default values defined for non-optional values
+        let subtypeDictionary = ["non_optional_int" : 50, "non_optional_string" : "TestString", "non_optional_double" : 70.0, "non_optional_float" : 80.0, "non_optional_bool" : false]
+        let dictionaryBoolValue = ["optional_subtype" : subtypeDictionary]
+        
+        let testObjectInstance = TestObjectFive(dictionaryBoolValue)
+        XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, mapping configuration is blank")
+    }
+    
 }
+
+
+
+
+
+
+

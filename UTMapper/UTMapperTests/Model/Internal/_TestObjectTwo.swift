@@ -46,7 +46,7 @@ class _TestObjectTwo {
             non_optionalBool    = UTMapper.typeCast(_non_optionalBool)!
     }
     
-    convenience init?(_ dictionary: NSDictionary) {
+    convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
         let dynamicTypeString = String(self.dynamicType)
         let className = dynamicTypeString.componentsSeparatedByString(".").last
         
