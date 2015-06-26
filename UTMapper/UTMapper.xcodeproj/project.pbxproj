@@ -11,6 +11,30 @@
 		3A525F411B38755A007C00BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A525F401B38755A007C00BE /* Assets.xcassets */; };
 		3A525F4F1B38755A007C00BE /* UTMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F4E1B38755A007C00BE /* UTMapperTests.swift */; };
 		3A525F5A1B38755A007C00BE /* UTMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F591B38755A007C00BE /* UTMapperUITests.swift */; };
+		3A525F691B387B02007C00BE /* UTMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F681B387B02007C00BE /* UTMapper.swift */; };
+		3A525F6A1B387B02007C00BE /* UTMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F681B387B02007C00BE /* UTMapper.swift */; };
+		3A7269A71B3C8635009C6CD5 /* TestObjectFour.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7269A41B3C8635009C6CD5 /* TestObjectFour.plist */; };
+		3A7269A81B3C8635009C6CD5 /* TestObjectFour.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7269A41B3C8635009C6CD5 /* TestObjectFour.plist */; };
+		3A7269A91B3C8635009C6CD5 /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7269A51B3C8635009C6CD5 /* TestObjectThree.plist */; };
+		3A7269AA1B3C8635009C6CD5 /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7269A51B3C8635009C6CD5 /* TestObjectThree.plist */; };
+		3A7269B41B3C875B009C6CD5 /* _TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269AE1B3C875B009C6CD5 /* _TestObjectFour.swift */; };
+		3A7269B51B3C875B009C6CD5 /* _TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269AE1B3C875B009C6CD5 /* _TestObjectFour.swift */; };
+		3A7269B61B3C875B009C6CD5 /* _TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269AF1B3C875B009C6CD5 /* _TestObjectThree.swift */; };
+		3A7269B71B3C875B009C6CD5 /* _TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269AF1B3C875B009C6CD5 /* _TestObjectThree.swift */; };
+		3A7269BA1B3C875B009C6CD5 /* TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269B11B3C875B009C6CD5 /* TestObjectFour.swift */; };
+		3A7269BB1B3C875B009C6CD5 /* TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269B11B3C875B009C6CD5 /* TestObjectFour.swift */; };
+		3A7269BC1B3C875B009C6CD5 /* TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269B21B3C875B009C6CD5 /* TestObjectThree.swift */; };
+		3A7269BD1B3C875B009C6CD5 /* TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269B21B3C875B009C6CD5 /* TestObjectThree.swift */; };
+		3A7269C41B3C89D3009C6CD5 /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269C31B3C89D3009C6CD5 /* TestObjectTwo.swift */; };
+		3A7269C51B3C89D3009C6CD5 /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269C31B3C89D3009C6CD5 /* TestObjectTwo.swift */; };
+		3A7269C81B3C8A1D009C6CD5 /* _TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269C71B3C8A1D009C6CD5 /* _TestObjectTwo.swift */; };
+		3A7269C91B3C8A1D009C6CD5 /* _TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269C71B3C8A1D009C6CD5 /* _TestObjectTwo.swift */; };
+		3A7269CB1B3C8A6A009C6CD5 /* _TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269CA1B3C8A6A009C6CD5 /* _TestObjectOne.swift */; };
+		3A7269CC1B3C8A6A009C6CD5 /* _TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269CA1B3C8A6A009C6CD5 /* _TestObjectOne.swift */; };
+		3A7269CE1B3C8AA5009C6CD5 /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269CD1B3C8AA5009C6CD5 /* TestObjectOne.swift */; };
+		3A7269CF1B3C8AA5009C6CD5 /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7269CD1B3C8AA5009C6CD5 /* TestObjectOne.swift */; };
+		3A7269D31B3C8B0C009C6CD5 /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A7269D11B3C8B0C009C6CD5 /* TestObjectTwo.plist */; };
+		3A7269D51B3C8B47009C6CD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7269D41B3C8B47009C6CD5 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +65,19 @@
 		3A525F551B38755A007C00BE /* UTMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UTMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A525F591B38755A007C00BE /* UTMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTMapperUITests.swift; sourceTree = "<group>"; };
 		3A525F5B1B38755A007C00BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A525F681B387B02007C00BE /* UTMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTMapper.swift; path = Source/UTMapper.swift; sourceTree = "<group>"; };
+		3A7269A41B3C8635009C6CD5 /* TestObjectFour.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectFour.plist; path = UTMapper/Mapping/TestObjectFour.plist; sourceTree = SOURCE_ROOT; };
+		3A7269A51B3C8635009C6CD5 /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectThree.plist; path = UTMapper/Mapping/TestObjectThree.plist; sourceTree = SOURCE_ROOT; };
+		3A7269AE1B3C875B009C6CD5 /* _TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectFour.swift; sourceTree = "<group>"; };
+		3A7269AF1B3C875B009C6CD5 /* _TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectThree.swift; sourceTree = "<group>"; };
+		3A7269B11B3C875B009C6CD5 /* TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectFour.swift; path = UTMapper/Classes/TestObjectFour.swift; sourceTree = SOURCE_ROOT; };
+		3A7269B21B3C875B009C6CD5 /* TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectThree.swift; path = UTMapper/Classes/TestObjectThree.swift; sourceTree = SOURCE_ROOT; };
+		3A7269C31B3C89D3009C6CD5 /* TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectTwo.swift; path = Model/TestObjectTwo.swift; sourceTree = "<group>"; };
+		3A7269C71B3C8A1D009C6CD5 /* _TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectTwo.swift; path = Model/Internal/_TestObjectTwo.swift; sourceTree = "<group>"; };
+		3A7269CA1B3C8A6A009C6CD5 /* _TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectOne.swift; path = Model/Internal/_TestObjectOne.swift; sourceTree = "<group>"; };
+		3A7269CD1B3C8AA5009C6CD5 /* TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectOne.swift; path = Model/TestObjectOne.swift; sourceTree = "<group>"; };
+		3A7269D11B3C8B0C009C6CD5 /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectTwo.plist; path = Model/Mapping/TestObjectTwo.plist; sourceTree = "<group>"; };
+		3A7269D41B3C8B47009C6CD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +105,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A3F39401B3C6870003D1FE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269AD1B3C875B009C6CD5 /* Internal */,
+				3A7269B11B3C875B009C6CD5 /* TestObjectFour.swift */,
+				3A7269B21B3C875B009C6CD5 /* TestObjectThree.swift */,
+				3A525F6D1B387BDE007C00BE /* Mappings */,
+			);
+			name = Model;
+			path = UTMapperTests/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
 		3A525F2D1B38755A007C00BE = {
 			isa = PBXGroup;
 			children = (
+				3A525F671B387AED007C00BE /* Source */,
 				3A525F381B38755A007C00BE /* UTMapper */,
 				3A525F4D1B38755A007C00BE /* UTMapperTests */,
 				3A525F581B38755A007C00BE /* UTMapperUITests */,
@@ -91,9 +141,9 @@
 		3A525F381B38755A007C00BE /* UTMapper */ = {
 			isa = PBXGroup;
 			children = (
-				3A525F391B38755A007C00BE /* AppDelegate.swift */,
-				3A525F401B38755A007C00BE /* Assets.xcassets */,
-				3A525F451B38755A007C00BE /* Info.plist */,
+				3A7269C01B3C8795009C6CD5 /* Application */,
+				3A3F39401B3C6870003D1FE3 /* Model */,
+				3A7269C11B3C87A3009C6CD5 /* Resources */,
 			);
 			path = UTMapper;
 			sourceTree = "<group>";
@@ -102,7 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				3A525F4E1B38755A007C00BE /* UTMapperTests.swift */,
-				3A525F501B38755A007C00BE /* Info.plist */,
+				3A7269C21B3C8984009C6CD5 /* Test Model */,
+				3A7269D61B3C8B60009C6CD5 /* Resources */,
 			);
 			path = UTMapperTests;
 			sourceTree = "<group>";
@@ -116,6 +167,88 @@
 			path = UTMapperUITests;
 			sourceTree = "<group>";
 		};
+		3A525F671B387AED007C00BE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3A525F681B387B02007C00BE /* UTMapper.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		3A525F6D1B387BDE007C00BE /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269A41B3C8635009C6CD5 /* TestObjectFour.plist */,
+				3A7269A51B3C8635009C6CD5 /* TestObjectThree.plist */,
+			);
+			name = Mappings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3A7269AD1B3C875B009C6CD5 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269AE1B3C875B009C6CD5 /* _TestObjectFour.swift */,
+				3A7269AF1B3C875B009C6CD5 /* _TestObjectThree.swift */,
+			);
+			name = Internal;
+			path = UTMapper/Classes/Internal;
+			sourceTree = SOURCE_ROOT;
+		};
+		3A7269C01B3C8795009C6CD5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3A525F391B38755A007C00BE /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		3A7269C11B3C87A3009C6CD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269D41B3C8B47009C6CD5 /* Default-568h@2x.png */,
+				3A525F401B38755A007C00BE /* Assets.xcassets */,
+				3A525F451B38755A007C00BE /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3A7269C21B3C8984009C6CD5 /* Test Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269D01B3C8AC6009C6CD5 /* Mapping */,
+				3A7269C61B3C89F4009C6CD5 /* Internal */,
+				3A7269CD1B3C8AA5009C6CD5 /* TestObjectOne.swift */,
+				3A7269C31B3C89D3009C6CD5 /* TestObjectTwo.swift */,
+			);
+			name = "Test Model";
+			sourceTree = "<group>";
+		};
+		3A7269C61B3C89F4009C6CD5 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269C71B3C8A1D009C6CD5 /* _TestObjectTwo.swift */,
+				3A7269CA1B3C8A6A009C6CD5 /* _TestObjectOne.swift */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		3A7269D01B3C8AC6009C6CD5 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269D11B3C8B0C009C6CD5 /* TestObjectTwo.plist */,
+			);
+			name = Mapping;
+			sourceTree = "<group>";
+		};
+		3A7269D61B3C8B60009C6CD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A525F501B38755A007C00BE /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A525F5E1B38755A007C00BE /* Build configuration list for PBXNativeTarget "UTMapper" */;
 			buildPhases = (
+				3A3F39561B3C7025003D1FE3 /* Rebuild Model */,
 				3A525F321B38755A007C00BE /* Sources */,
 				3A525F331B38755A007C00BE /* Frameworks */,
 				3A525F341B38755A007C00BE /* Resources */,
@@ -140,6 +274,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A525F611B38755A007C00BE /* Build configuration list for PBXNativeTarget "UTMapperTests" */;
 			buildPhases = (
+				3A3F39551B3C6A0F003D1FE3 /* Rebuild Model */,
 				3A525F461B38755A007C00BE /* Sources */,
 				3A525F471B38755A007C00BE /* Frameworks */,
 				3A525F481B38755A007C00BE /* Resources */,
@@ -219,7 +354,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7269A71B3C8635009C6CD5 /* TestObjectFour.plist in Resources */,
+				3A7269D51B3C8B47009C6CD5 /* Default-568h@2x.png in Resources */,
 				3A525F411B38755A007C00BE /* Assets.xcassets in Resources */,
+				3A7269A91B3C8635009C6CD5 /* TestObjectThree.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +365,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7269AA1B3C8635009C6CD5 /* TestObjectThree.plist in Resources */,
+				3A7269A81B3C8635009C6CD5 /* TestObjectFour.plist in Resources */,
+				3A7269D31B3C8B0C009C6CD5 /* TestObjectTwo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,12 +380,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A3F39551B3C6A0F003D1FE3 /* Rebuild Model */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Rebuild Model";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/UTMapper/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Classes/\n\nexit";
+		};
+		3A3F39561B3C7025003D1FE3 /* Rebuild Model */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Rebuild Model";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/UTMapper/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Classes/\n\nexit";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A525F321B38755A007C00BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7269BA1B3C875B009C6CD5 /* TestObjectFour.swift in Sources */,
+				3A7269CB1B3C8A6A009C6CD5 /* _TestObjectOne.swift in Sources */,
+				3A7269CE1B3C8AA5009C6CD5 /* TestObjectOne.swift in Sources */,
+				3A7269B61B3C875B009C6CD5 /* _TestObjectThree.swift in Sources */,
+				3A7269C81B3C8A1D009C6CD5 /* _TestObjectTwo.swift in Sources */,
 				3A525F3A1B38755A007C00BE /* AppDelegate.swift in Sources */,
+				3A7269B41B3C875B009C6CD5 /* _TestObjectFour.swift in Sources */,
+				3A525F691B387B02007C00BE /* UTMapper.swift in Sources */,
+				3A7269BC1B3C875B009C6CD5 /* TestObjectThree.swift in Sources */,
+				3A7269C41B3C89D3009C6CD5 /* TestObjectTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +433,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7269BB1B3C875B009C6CD5 /* TestObjectFour.swift in Sources */,
+				3A7269CC1B3C8A6A009C6CD5 /* _TestObjectOne.swift in Sources */,
+				3A7269CF1B3C8AA5009C6CD5 /* TestObjectOne.swift in Sources */,
+				3A7269B71B3C875B009C6CD5 /* _TestObjectThree.swift in Sources */,
+				3A7269C91B3C8A1D009C6CD5 /* _TestObjectTwo.swift in Sources */,
 				3A525F4F1B38755A007C00BE /* UTMapperTests.swift in Sources */,
+				3A7269B51B3C875B009C6CD5 /* _TestObjectFour.swift in Sources */,
+				3A525F6A1B387B02007C00BE /* UTMapper.swift in Sources */,
+				3A7269BD1B3C875B009C6CD5 /* TestObjectThree.swift in Sources */,
+				3A7269C51B3C89D3009C6CD5 /* TestObjectTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +576,6 @@
 		3A525F621B38755A007C00BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = UTMapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.utmapper.UTMapperTests;
@@ -398,7 +587,6 @@
 		3A525F631B38755A007C00BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = UTMapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.utmapper.UTMapperTests;
@@ -450,6 +638,7 @@
 				3A525F601B38755A007C00BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A525F611B38755A007C00BE /* Build configuration list for PBXNativeTarget "UTMapperTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +647,7 @@
 				3A525F631B38755A007C00BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A525F641B38755A007C00BE /* Build configuration list for PBXNativeTarget "UTMapperUITests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +656,7 @@
 				3A525F661B38755A007C00BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
