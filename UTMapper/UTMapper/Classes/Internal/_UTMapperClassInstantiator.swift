@@ -8,6 +8,8 @@ class _UTMapperClassInstantiator {
  			return _UTMapperClassInstantiator.createTestObjectFiveInstance(data)
 		case "TestObjectFour":
  			return _UTMapperClassInstantiator.createTestObjectFourInstance(data)
+		case "TestObjectSix":
+ 			return _UTMapperClassInstantiator.createTestObjectSixInstance(data)
 		case "TestObjectThree":
  			return _UTMapperClassInstantiator.createTestObjectThreeInstance(data)
 		default:
@@ -21,6 +23,10 @@ class _UTMapperClassInstantiator {
 
  	class func createTestObjectFourInstance(data : Dictionary<String, AnyObject>) -> AnyObject? {
  			return TestObjectFour(data) 
+ 	}
+
+ 	class func createTestObjectSixInstance(data : Dictionary<String, AnyObject>) -> AnyObject? {
+ 			return TestObjectSix(data) 
  	}
 
  	class func createTestObjectThreeInstance(data : Dictionary<String, AnyObject>) -> AnyObject? {

@@ -9,18 +9,22 @@ import glob
 FOLDER_INTERNAL_PREFIX = "Classes/Internal/_"
 FOLDER_EXTERNAL_PREFIX = "Classes/"
 
-PROPERTY_TYPE_STRING 	= "String"
-PROPERTY_TYPE_DOUBLE 	= "Double"
-PROPERTY_TYPE_FLOAT 	= "Float"
-PROPERTY_TYPE_INT 		= "Int"
-PROPERTY_TYPE_BOOL		= "Bool"
+PROPERTY_TYPE_STRING 		= "String"
+PROPERTY_TYPE_DOUBLE 		= "Double"
+PROPERTY_TYPE_FLOAT 		= "Float"
+PROPERTY_TYPE_INT 			= "Int"
+PROPERTY_TYPE_BOOL			= "Bool"
+PROPERTY_TYPE_ARRAY			= "Array"
+PROPERTY_TYPE_DICTIONARY	= "Dictionary"
 
 NATIVE_PROPERTY_TYPES = [PROPERTY_TYPE_STRING, PROPERTY_TYPE_DOUBLE, PROPERTY_TYPE_FLOAT, PROPERTY_TYPE_INT, PROPERTY_TYPE_BOOL]
 
-MAPPING_KEY_TYPE 		= "type"
-MAPPING_KEY_DEFAULT 	= "default"
-MAPPING_KEY_KEY 		= "key"
-MAPPING_KEY_NONOPTIONAL = "nonoptional"
+MAPPING_KEY_TYPE 				= "type"
+MAPPING_KEY_DEFAULT 			= "default"
+MAPPING_KEY_KEY 				= "key"
+MAPPING_KEY_NONOPTIONAL 		= "nonoptional"
+MAPPING_KEY_MAPPER				= "mapper"
+MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 
 # Default Strings
 STRING_IMPORT_FOUNDATION 	= "import Foundation\n"
@@ -73,11 +77,36 @@ def generate_external_file_if_needed(classname, class_directory):
 	
 	outputfile = open(filename, "wba")
 	outputfile.write(STRING_IMPORT_FOUNDATION)
-	outputfile.write('\nclass ' + classname + ' : _' + classname + ' {\n}')
+	outputfile.write('\nclass ' + classname + ' : _' + classname + ' {\n\n}')
 	outputfile.close();
 
+
+def append_mapper_method_definitions(classfile, mappinglist):
+	
+	distinctMapperClassDefinitions = []
+
+	for mappingPath in mappinglist:
+	
+		mappingPlist = plistlib.readPlist(mappingPath)
+		mappingKeys = mappingPlist.keys()
+	
+		for propertyName in mappingKeys:
+			#print propertyName
+			if MAPPING_KEY_MAPPER in mappingPlist[propertyName].keys():
+				mapperClass = mappingPlist[propertyName][MAPPING_KEY_MAPPER]
+				if mapperClass not in distinctMapperClassDefinitions:
+					distinctMapperClassDefinitions.append(mapperClass)
+
+	for mapperClass in distinctMapperClassDefinitions:
+		classfile.write('	class func transformValues(transformer : String, values : [AnyObject]) -> AnyObject? {\n		switch transformer {\n')
+		classfile.write('			case \"' + mapperClass + '\":\n 				return ' + mapperClass +'.transformValues(values)')
+		classfile.write('\n 			default:\n 			 	return nil\n')
+		classfile.write('		}\n 	}\n')
+
+	print distinctMapperClassDefinitions
+
 def generate_internal_instantiator_file(mappingPlist, output_directory):
-	filename = output_directory + 'Internal/_UTMapperClassInstantiator.swift'
+	filename = output_directory + 'Internal/_UTMapperHelper.swift'
 	
 	if not os.path.exists(os.path.dirname(filename)):
 		os.makedirs(os.path.dirname(filename))
@@ -85,24 +114,25 @@ def generate_internal_instantiator_file(mappingPlist, output_directory):
 	outputfile = open(filename, "wba")
 	outputfile.write(STRING_IMPORT_FOUNDATION)
 	
-	outputfile.write('\nclass _UTMapperClassInstantiator {\n\n')
+	outputfile.write('\nclass _UTMapperHelper {\n\n')
 
 	outputfile.write(STRING_CLASS_FROM_STRING_METHOD)
 	classnames = []
 
 	for mapping in mappingPlist:
-
 		filename = mapping[mapping.rindex('/',0,-1)+1:-1] if mapping.endswith('/') else mapping[mapping.rindex('/')+1:]
 		classname = filename.split('.', 1 )[0]
 		classnames.append(classname)
 	
 	for classname in classnames:
-		outputfile.write('		case \"' + classname + '\":\n 			return _UTMapperClassInstantiator.create' + classname + 'Instance(data)\n' )
+		outputfile.write('		case \"' + classname + '\":\n 			return _UTMapperHelper.create' + classname + 'Instance(data)\n' )
 
 	outputfile.write('		default:\n 			return nil\n 		}\n 	}\n\n' )
 
 	for classname in classnames:
 		outputfile.write('	class func create' + classname + 'Instance(data : Dictionary<String, AnyObject>) -> AnyObject? {\n 			return ' + classname + '(data) \n 	}\n\n ')
+
+	append_mapper_method_definitions (outputfile, mappingPlist)
 
 	close_file(outputfile)
 
@@ -115,11 +145,30 @@ def append_property_definitions(classfile, mappingPlist):
 		
 		propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
 
-		if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
-			append_instance_property(classfile, propertyName, propertyType, 1)
+		if propertyType == PROPERTY_TYPE_ARRAY:
+			
+			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+
+			if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
+				append_array_instance_property(classfile, propertyName, propertyType, collectionSubtype, 1)
+			else:
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
+					append_array_instance_property(classfile, propertyName, propertyType, collectionSubtype, 1)
+		elif propertyType == PROPERTY_TYPE_DICTIONARY:
+			
+			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+
+			if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
+				append_dictionary_instance_property(classfile, propertyName, propertyType, collectionSubtype, 1)
+			else:
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
+					append_dictionary_instance_property(classfile, propertyName, propertyType, collectionSubtype, 1)
 		else:
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
+			if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
 				append_instance_property(classfile, propertyName, propertyType, 1)
+			else:
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
+					append_instance_property(classfile, propertyName, propertyType, 1)
 	
 	classfile.write('\n')
 
@@ -128,14 +177,44 @@ def append_property_definitions(classfile, mappingPlist):
 		
 		propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
 		
-		if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-				append_instance_property(classfile, propertyName, propertyType, 0)
+		if propertyType == PROPERTY_TYPE_ARRAY:
+			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+					append_array_instance_property(classfile, propertyName, propertyType, collectionSubtype, 0)
+		
+		elif propertyType == PROPERTY_TYPE_DICTIONARY:
+			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+					append_dictionary_instance_property(classfile, propertyName, propertyType, collectionSubtype, 0)
+		else:
+			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+					append_instance_property(classfile, propertyName, propertyType, 0)
 
 
 def append_instance_property(classfile, propertyname, datatype, optional):
 	
 	classfile.write(STRING_PROPERTY_VAR + ' ' + propertyname + ' : ' + datatype)
+	
+	if optional == 1:
+		classfile.write('?')
+	
+	classfile.write('\n')
+
+def append_array_instance_property(classfile, propertyname, datatype, collectionSubtype, optional):
+	
+	classfile.write(STRING_PROPERTY_VAR + ' ' + propertyname + ' : [' + collectionSubtype + ']')
+	
+	if optional == 1:
+		classfile.write('?')
+	
+	classfile.write('\n')
+
+def append_dictionary_instance_property(classfile, propertyname, datatype, collectionSubtype, optional):
+	
+	classfile.write(STRING_PROPERTY_VAR + ' ' + propertyname + ' : Dictionary<String,' + collectionSubtype + '>')
 	
 	if optional == 1:
 		classfile.write('?')
@@ -245,10 +324,11 @@ def validate_class_mapping_configuration(classname, mappingPlist):
 		if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
 			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
 				if MAPPING_KEY_TYPE in mappingPlist[propertyName].keys():
-					mappingtype = mappingPlist[propertyName][MAPPING_KEY_TYPE]
-					if mappingtype in NATIVE_PROPERTY_TYPES:
-						if MAPPING_KEY_DEFAULT not in mappingPlist[propertyName].keys():
-							throw_missing_default_error(classname, MAPPING_KEY_DEFAULT, mappingPlist[propertyName])
+					if MAPPING_KEY_MAPPER not in mappingPlist[propertyName].keys():
+						mappingtype = mappingPlist[propertyName][MAPPING_KEY_TYPE]
+						if mappingtype in NATIVE_PROPERTY_TYPES:
+							if MAPPING_KEY_DEFAULT not in mappingPlist[propertyName].keys():
+								throw_missing_default_error(classname, MAPPING_KEY_DEFAULT, mappingPlist[propertyName])
 
 		if MAPPING_KEY_TYPE not in mappingPlist[propertyName].keys():
 			throw_missing_type_error(classname, MAPPING_KEY_TYPE, mappingPlist[propertyName])
@@ -260,7 +340,6 @@ def print_default_error_header(classname, mapping):
 	print "\n\nUS2Mapper Error: Invalid Configuration (" + classname + ".plist)\n\n"
 	print mapping
 	print "\n"
-
 
 def throw_missing_default_error(classname, propertykey, mapping):
 	print_default_error_header(classname, mapping)
