@@ -26,7 +26,7 @@ Unlike the past, where an Object Model is first created, followed by a mapping f
 
 #Basic Concept
 
-![alt tag](http://url/to/img.png)
+![alt tag](/readme_assets/basic_concept_image.png?raw=true)
 
 The basic concept behind UTMapper is to build against and API up front, and then used
 
