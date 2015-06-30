@@ -28,7 +28,16 @@ Unlike the past, where an Object Model is first created, followed by a mapping f
 
 ![alt tag](/readme_assets/basic_concept_image.png?raw=true)
 
-The basic concept behind UTMapper is to build against and API up front, and then used
+The idead behind UTMapper is to build against the response data upfront, and relinquish responsibility for containment within the model object that is generated for you.
+
+
+In the simple example above, let's pretend we are attempting to map a Person object that is coming back form the API. The first step is to manually generage a plist representing the data that is being returned. The plist defines properties, the data types per property, and the mapping key associated with the data in the response dictionary. Once defined, a build time script will generate two model object files to represent the plist mapping. 
+
+The first class generated in the examples is the `_Person.swift` class. It contains scripted logic, and a failable initializer which takes in a `Dictionary<String, AnyObject>` value. The underscore represents an internal object that should not be modifided by the developer as the script will regenerate it everytime the project is built, and it's only intension is to support the framework in mapping the response data.
+
+The second class generated in the example is the `Person.swift` which inherits form the  `_Person.swift` class. It is mean for developer to append their logic, appends properties, or implements protocols accordingly. This class is only generated once, and will never be overwritten during the build task. thus updating the mapping, will not affect your logic at all.
+
+
 
 #Setup
 
