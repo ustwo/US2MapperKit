@@ -21,8 +21,6 @@
 		<string>Dictionary</string>
 		<key>collection_subtype</key>
 		<string>TestObjectFour</string>
-		<key>dictionary_key</key>
-		<string>non_optional_sub_object_dictionary.uuid</string>
 	</dict>
 </dict>
 </plist>

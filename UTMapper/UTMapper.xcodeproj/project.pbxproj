@@ -56,12 +56,38 @@
 		3A726A171B41D58A009C6CD5 /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A726A141B41D58A009C6CD5 /* TestObjectOne.swift */; };
 		3A726A181B41D58A009C6CD5 /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A726A151B41D58A009C6CD5 /* TestObjectTwo.swift */; };
 		3A726A191B41D58A009C6CD5 /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A726A151B41D58A009C6CD5 /* TestObjectTwo.swift */; };
+		3AA1CB361B43062800B9E9C4 /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1CB351B43062800B9E9C4 /* TestObjectTwo.plist */; };
+		3AA1CB371B43062800B9E9C4 /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1CB351B43062800B9E9C4 /* TestObjectTwo.plist */; };
+		3AA1CB3C1B43073200B9E9C4 /* TestObjectEleven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1CB3B1B43073200B9E9C4 /* TestObjectEleven.plist */; };
+		3AA1CB3D1B43073200B9E9C4 /* TestObjectEleven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1CB3B1B43073200B9E9C4 /* TestObjectEleven.plist */; };
+		3AA1CB3F1B43075300B9E9C4 /* _TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB3E1B43075300B9E9C4 /* _TestObjectEleven.swift */; };
+		3AA1CB401B43075300B9E9C4 /* _TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB3E1B43075300B9E9C4 /* _TestObjectEleven.swift */; };
+		3AA1CB421B43076200B9E9C4 /* TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB411B43076200B9E9C4 /* TestObjectEleven.swift */; };
+		3AA1CB431B43076200B9E9C4 /* TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB411B43076200B9E9C4 /* TestObjectEleven.swift */; };
+		3AA1CB451B43087400B9E9C4 /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1CB441B43087400B9E9C4 /* TestObjectTwelve.plist */; };
+		3AA1CB461B43087400B9E9C4 /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1CB441B43087400B9E9C4 /* TestObjectTwelve.plist */; };
+		3AA1CB481B43088100B9E9C4 /* _TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB471B43088100B9E9C4 /* _TestObjectTwelve.swift */; };
+		3AA1CB491B43088100B9E9C4 /* _TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB471B43088100B9E9C4 /* _TestObjectTwelve.swift */; };
+		3AA1CB4B1B43088800B9E9C4 /* TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB4A1B43088800B9E9C4 /* TestObjectTwelve.swift */; };
+		3AA1CB4C1B43088800B9E9C4 /* TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1CB4A1B43088800B9E9C4 /* TestObjectTwelve.swift */; };
 		3ACEE6F51B41DF3600F8E4B5 /* TestObjectEight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEE6F41B41DF3600F8E4B5 /* TestObjectEight.plist */; };
 		3ACEE6F61B41DF3600F8E4B5 /* TestObjectEight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEE6F41B41DF3600F8E4B5 /* TestObjectEight.plist */; };
 		3ACEE6F81B41DF5D00F8E4B5 /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE6F71B41DF5D00F8E4B5 /* _TestObjectEight.swift */; };
 		3ACEE6F91B41DF5D00F8E4B5 /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE6F71B41DF5D00F8E4B5 /* _TestObjectEight.swift */; };
 		3ACEE6FB1B41DF6800F8E4B5 /* TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE6FA1B41DF6800F8E4B5 /* TestObjectEight.swift */; };
 		3ACEE6FC1B41DF6800F8E4B5 /* TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE6FA1B41DF6800F8E4B5 /* TestObjectEight.swift */; };
+		3ACEE6FE1B42D40200F8E4B5 /* TestObjectNine.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEE6FD1B42D40200F8E4B5 /* TestObjectNine.plist */; };
+		3ACEE6FF1B42D40200F8E4B5 /* TestObjectNine.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEE6FD1B42D40200F8E4B5 /* TestObjectNine.plist */; };
+		3ACEE7011B42D4AF00F8E4B5 /* _TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE7001B42D4AF00F8E4B5 /* _TestObjectNine.swift */; };
+		3ACEE7021B42D4AF00F8E4B5 /* _TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE7001B42D4AF00F8E4B5 /* _TestObjectNine.swift */; };
+		3ACEE7041B42D4BB00F8E4B5 /* TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE7031B42D4BB00F8E4B5 /* TestObjectNine.swift */; };
+		3ACEE7051B42D4BB00F8E4B5 /* TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE7031B42D4BB00F8E4B5 /* TestObjectNine.swift */; };
+		3ACEE7071B42E87A00F8E4B5 /* TestObjectTen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEE7061B42E87A00F8E4B5 /* TestObjectTen.plist */; };
+		3ACEE7081B42E87A00F8E4B5 /* TestObjectTen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ACEE7061B42E87A00F8E4B5 /* TestObjectTen.plist */; };
+		3ACEE70A1B42E8FB00F8E4B5 /* _TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE7091B42E8FB00F8E4B5 /* _TestObjectTen.swift */; };
+		3ACEE70B1B42E8FB00F8E4B5 /* _TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE7091B42E8FB00F8E4B5 /* _TestObjectTen.swift */; };
+		3ACEE70D1B42E90800F8E4B5 /* TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE70C1B42E90800F8E4B5 /* TestObjectTen.swift */; };
+		3ACEE70E1B42E90800F8E4B5 /* TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACEE70C1B42E90800F8E4B5 /* TestObjectTen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,9 +141,22 @@
 		3A726A0F1B41D582009C6CD5 /* _TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTwo.swift; sourceTree = "<group>"; };
 		3A726A141B41D58A009C6CD5 /* TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectOne.swift; path = UTMapper/Classes/TestObjectOne.swift; sourceTree = SOURCE_ROOT; };
 		3A726A151B41D58A009C6CD5 /* TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectTwo.swift; path = UTMapper/Classes/TestObjectTwo.swift; sourceTree = SOURCE_ROOT; };
+		3AA1CB351B43062800B9E9C4 /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectTwo.plist; path = UTMapper/Mapping/TestObjectTwo.plist; sourceTree = SOURCE_ROOT; };
+		3AA1CB3B1B43073200B9E9C4 /* TestObjectEleven.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectEleven.plist; path = UTMapper/Mapping/TestObjectEleven.plist; sourceTree = SOURCE_ROOT; };
+		3AA1CB3E1B43075300B9E9C4 /* _TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEleven.swift; sourceTree = "<group>"; };
+		3AA1CB411B43076200B9E9C4 /* TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectEleven.swift; path = UTMapper/Classes/TestObjectEleven.swift; sourceTree = SOURCE_ROOT; };
+		3AA1CB441B43087400B9E9C4 /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectTwelve.plist; path = UTMapper/Mapping/TestObjectTwelve.plist; sourceTree = SOURCE_ROOT; };
+		3AA1CB471B43088100B9E9C4 /* _TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTwelve.swift; sourceTree = "<group>"; };
+		3AA1CB4A1B43088800B9E9C4 /* TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectTwelve.swift; path = UTMapper/Classes/TestObjectTwelve.swift; sourceTree = SOURCE_ROOT; };
 		3ACEE6F41B41DF3600F8E4B5 /* TestObjectEight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectEight.plist; path = UTMapper/Mapping/TestObjectEight.plist; sourceTree = SOURCE_ROOT; };
 		3ACEE6F71B41DF5D00F8E4B5 /* _TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEight.swift; sourceTree = "<group>"; };
 		3ACEE6FA1B41DF6800F8E4B5 /* TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectEight.swift; path = UTMapper/Classes/TestObjectEight.swift; sourceTree = SOURCE_ROOT; };
+		3ACEE6FD1B42D40200F8E4B5 /* TestObjectNine.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectNine.plist; path = UTMapper/Mapping/TestObjectNine.plist; sourceTree = SOURCE_ROOT; };
+		3ACEE7001B42D4AF00F8E4B5 /* _TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectNine.swift; path = UTMapper/Classes/Internal/_TestObjectNine.swift; sourceTree = SOURCE_ROOT; };
+		3ACEE7031B42D4BB00F8E4B5 /* TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectNine.swift; path = UTMapper/Classes/TestObjectNine.swift; sourceTree = SOURCE_ROOT; };
+		3ACEE7061B42E87A00F8E4B5 /* TestObjectTen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectTen.plist; path = UTMapper/Mapping/TestObjectTen.plist; sourceTree = SOURCE_ROOT; };
+		3ACEE7091B42E8FB00F8E4B5 /* _TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTen.swift; sourceTree = "<group>"; };
+		3ACEE70C1B42E90800F8E4B5 /* TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectTen.swift; path = UTMapper/Classes/TestObjectTen.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +198,10 @@
 				3A7269F61B418BBF009C6CD5 /* TestObjectSix.swift */,
 				3A726A0B1B41BE23009C6CD5 /* TestObjectSeven.swift */,
 				3ACEE6FA1B41DF6800F8E4B5 /* TestObjectEight.swift */,
+				3ACEE7031B42D4BB00F8E4B5 /* TestObjectNine.swift */,
+				3ACEE70C1B42E90800F8E4B5 /* TestObjectTen.swift */,
+				3AA1CB411B43076200B9E9C4 /* TestObjectEleven.swift */,
+				3AA1CB4A1B43088800B9E9C4 /* TestObjectTwelve.swift */,
 			);
 			name = Model;
 			path = UTMapperTests/Classes;
@@ -224,12 +267,17 @@
 		3A525F6D1B387BDE007C00BE /* Mappings */ = {
 			isa = PBXGroup;
 			children = (
+				3AA1CB351B43062800B9E9C4 /* TestObjectTwo.plist */,
 				3A7269A51B3C8635009C6CD5 /* TestObjectThree.plist */,
 				3A7269A41B3C8635009C6CD5 /* TestObjectFour.plist */,
 				3A7269DD1B3DE04F009C6CD5 /* TestObjectFive.plist */,
 				3A7269F01B418B06009C6CD5 /* TestObjectSix.plist */,
 				3A7269FF1B41B912009C6CD5 /* TestObjectSeven.plist */,
 				3ACEE6F41B41DF3600F8E4B5 /* TestObjectEight.plist */,
+				3ACEE6FD1B42D40200F8E4B5 /* TestObjectNine.plist */,
+				3ACEE7061B42E87A00F8E4B5 /* TestObjectTen.plist */,
+				3AA1CB3B1B43073200B9E9C4 /* TestObjectEleven.plist */,
+				3AA1CB441B43087400B9E9C4 /* TestObjectTwelve.plist */,
 			);
 			name = Mappings;
 			path = ..;
@@ -247,6 +295,10 @@
 				3A7269F31B418BAA009C6CD5 /* _TestObjectSix.swift */,
 				3A726A081B41BE16009C6CD5 /* _TestObjectSeven.swift */,
 				3ACEE6F71B41DF5D00F8E4B5 /* _TestObjectEight.swift */,
+				3ACEE7001B42D4AF00F8E4B5 /* _TestObjectNine.swift */,
+				3ACEE7091B42E8FB00F8E4B5 /* _TestObjectTen.swift */,
+				3AA1CB3E1B43075300B9E9C4 /* _TestObjectEleven.swift */,
+				3AA1CB471B43088100B9E9C4 /* _TestObjectTwelve.swift */,
 			);
 			name = Internal;
 			path = UTMapper/Classes/Internal;
@@ -393,10 +445,15 @@
 			files = (
 				3A7269F11B418B06009C6CD5 /* TestObjectSix.plist in Resources */,
 				3A7269DE1B3DE04F009C6CD5 /* TestObjectFive.plist in Resources */,
+				3AA1CB361B43062800B9E9C4 /* TestObjectTwo.plist in Resources */,
 				3A7269A71B3C8635009C6CD5 /* TestObjectFour.plist in Resources */,
+				3ACEE7071B42E87A00F8E4B5 /* TestObjectTen.plist in Resources */,
 				3A726A001B41B912009C6CD5 /* TestObjectSeven.plist in Resources */,
+				3AA1CB451B43087400B9E9C4 /* TestObjectTwelve.plist in Resources */,
+				3AA1CB3C1B43073200B9E9C4 /* TestObjectEleven.plist in Resources */,
 				3A7269D51B3C8B47009C6CD5 /* Default-568h@2x.png in Resources */,
 				3A525F411B38755A007C00BE /* Assets.xcassets in Resources */,
+				3ACEE6FE1B42D40200F8E4B5 /* TestObjectNine.plist in Resources */,
 				3A7269A91B3C8635009C6CD5 /* TestObjectThree.plist in Resources */,
 				3ACEE6F51B41DF3600F8E4B5 /* TestObjectEight.plist in Resources */,
 			);
@@ -407,10 +464,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A726A011B41B912009C6CD5 /* TestObjectSeven.plist in Resources */,
+				3ACEE6FF1B42D40200F8E4B5 /* TestObjectNine.plist in Resources */,
+				3AA1CB371B43062800B9E9C4 /* TestObjectTwo.plist in Resources */,
 				3A7269F21B418B06009C6CD5 /* TestObjectSix.plist in Resources */,
+				3ACEE7081B42E87A00F8E4B5 /* TestObjectTen.plist in Resources */,
 				3A7269AA1B3C8635009C6CD5 /* TestObjectThree.plist in Resources */,
 				3A7269A81B3C8635009C6CD5 /* TestObjectFour.plist in Resources */,
 				3A7269DF1B3DE04F009C6CD5 /* TestObjectFive.plist in Resources */,
+				3AA1CB3D1B43073200B9E9C4 /* TestObjectEleven.plist in Resources */,
+				3AA1CB461B43087400B9E9C4 /* TestObjectTwelve.plist in Resources */,
 				3ACEE6F61B41DF3600F8E4B5 /* TestObjectEight.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,15 +529,23 @@
 				3A7269F71B418BBF009C6CD5 /* TestObjectSix.swift in Sources */,
 				3A7269E41B3DE09C009C6CD5 /* _TestObjectFive.swift in Sources */,
 				3A726A101B41D582009C6CD5 /* _TestObjectOne.swift in Sources */,
+				3AA1CB421B43076200B9E9C4 /* TestObjectEleven.swift in Sources */,
 				3A525F3A1B38755A007C00BE /* AppDelegate.swift in Sources */,
+				3ACEE7041B42D4BB00F8E4B5 /* TestObjectNine.swift in Sources */,
 				3A7269B41B3C875B009C6CD5 /* _TestObjectFour.swift in Sources */,
 				3A7269F41B418BAA009C6CD5 /* _TestObjectSix.swift in Sources */,
 				3A7269EB1B41886B009C6CD5 /* UTCompoundValueMapper.swift in Sources */,
+				3AA1CB3F1B43075300B9E9C4 /* _TestObjectEleven.swift in Sources */,
+				3ACEE70D1B42E90800F8E4B5 /* TestObjectTen.swift in Sources */,
 				3A726A091B41BE16009C6CD5 /* _TestObjectSeven.swift in Sources */,
 				3ACEE6FB1B41DF6800F8E4B5 /* TestObjectEight.swift in Sources */,
+				3ACEE70A1B42E8FB00F8E4B5 /* _TestObjectTen.swift in Sources */,
 				3A7269E11B3DE08E009C6CD5 /* TestObjectFive.swift in Sources */,
+				3AA1CB4B1B43088800B9E9C4 /* TestObjectTwelve.swift in Sources */,
+				3AA1CB481B43088100B9E9C4 /* _TestObjectTwelve.swift in Sources */,
 				3A525F691B387B02007C00BE /* UTMapper.swift in Sources */,
 				3A726A161B41D58A009C6CD5 /* TestObjectOne.swift in Sources */,
+				3ACEE7011B42D4AF00F8E4B5 /* _TestObjectNine.swift in Sources */,
 				3A7269BC1B3C875B009C6CD5 /* TestObjectThree.swift in Sources */,
 				3A726A121B41D582009C6CD5 /* _TestObjectTwo.swift in Sources */,
 				3A726A181B41D58A009C6CD5 /* TestObjectTwo.swift in Sources */,
@@ -494,15 +564,23 @@
 				3A7269F81B418BBF009C6CD5 /* TestObjectSix.swift in Sources */,
 				3A7269E51B3DE09C009C6CD5 /* _TestObjectFive.swift in Sources */,
 				3A726A111B41D582009C6CD5 /* _TestObjectOne.swift in Sources */,
+				3AA1CB431B43076200B9E9C4 /* TestObjectEleven.swift in Sources */,
 				3A525F4F1B38755A007C00BE /* UTMapperTests.swift in Sources */,
+				3ACEE7051B42D4BB00F8E4B5 /* TestObjectNine.swift in Sources */,
 				3A7269B51B3C875B009C6CD5 /* _TestObjectFour.swift in Sources */,
 				3A7269F51B418BAA009C6CD5 /* _TestObjectSix.swift in Sources */,
 				3A7269EC1B41886B009C6CD5 /* UTCompoundValueMapper.swift in Sources */,
+				3AA1CB401B43075300B9E9C4 /* _TestObjectEleven.swift in Sources */,
+				3ACEE70E1B42E90800F8E4B5 /* TestObjectTen.swift in Sources */,
 				3A726A0A1B41BE16009C6CD5 /* _TestObjectSeven.swift in Sources */,
 				3ACEE6FC1B41DF6800F8E4B5 /* TestObjectEight.swift in Sources */,
+				3ACEE70B1B42E8FB00F8E4B5 /* _TestObjectTen.swift in Sources */,
 				3A7269E21B3DE08E009C6CD5 /* TestObjectFive.swift in Sources */,
+				3AA1CB4C1B43088800B9E9C4 /* TestObjectTwelve.swift in Sources */,
+				3AA1CB491B43088100B9E9C4 /* _TestObjectTwelve.swift in Sources */,
 				3A525F6A1B387B02007C00BE /* UTMapper.swift in Sources */,
 				3A726A171B41D58A009C6CD5 /* TestObjectOne.swift in Sources */,
+				3ACEE7021B42D4AF00F8E4B5 /* _TestObjectNine.swift in Sources */,
 				3A7269BD1B3C875B009C6CD5 /* TestObjectThree.swift in Sources */,
 				3A726A131B41D582009C6CD5 /* _TestObjectTwo.swift in Sources */,
 				3A726A191B41D58A009C6CD5 /* TestObjectTwo.swift in Sources */,
