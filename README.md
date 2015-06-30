@@ -1,24 +1,37 @@
 # UTMapper
 
-In the world of mapping data to our data model, the data may change at any time, and UTMapper is the simplest solution to solve this problem. As an extremely lightweight mapping framework, UTMapper will provide the flexibility for an ever changing development environment by mapping dictionaries to Swift compliant objects via simple plist or JSON configuration files.
+In the world of mapping data to our data model, the data may change at any time, and UTMapper is the simplest solution to solve this problem. Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), UTMapper is an an extremely lightweight mapping framework designed specifically to take advantage of Swift 2.0.
+
+Unlike the past, where an Object Model is first created, followed by a mapping framework being retrofitted against the model, UTMapper takes a mapping first approach, where it generates your model, and allows extensibility inspiration by the [Protocol-Oriented Programming](https://developer.apple.com/videos/wwdc/2015/?id=408) talk at WWDC.
 
 #Features
 
-* Flexible and lightweight
-* Maps objects to `Dictionary` objects, via plist
-* Supports Complex SubType mapping
-* Supports Simple and Complex Type Collections
-* Supports Optional and Non-Optional Properties
-* Supports default values for non optional properties
-* Flexible multi-value transformations
-* Compound property mappings
+* Extremely Flexible and Lightweight
+* Generates Model Objects Mapped using plists
+* Supports Native Datatypes including:
+	* String
+	* Int
+	* Double
+	* Float
+	* Bool
+	* Arrays
+	* Dictionaries
+	* Complex Datatypes (i.e Any Generated Model Objects)
+* Native and Complex DataTypes mapping supported for Arrays and Dictionaries
+* Optional and Non-Optional Property Types
+	* Supports User Defined Default Values for either
+* Flexible Multi-Value Transformations
+* Compound Property Mappings
 
 
-#Basic Use
+#Basic Concept
+
+
+#Setup
 
 The basic concept behind UTMapper is a three steps :
 
-1. Clone the [UTMapper](git@github.com:ustwo/UTMapper.git) repository (TBD)
+1. Clone the [UTMapper](git@github.com:ustwo/UTMapper.git) repository (We need to work this out)
 2. Create a plist file for the model class (described in the followi sectios)
 3. Configure build time script, and ensure it follows "Target Dependencies" task in your build ph
 
@@ -40,10 +53,10 @@ let testObjectInstance = TestInstanceType(dataDictionary)
 
 ```
 
-##Model Generation
+#Examples
 
 
-### Standard Example
+###Basic Example
 
 Let's look at a basic example below with a plist definition for a Person object class.
 
