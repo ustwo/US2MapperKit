@@ -26,6 +26,9 @@ Unlike the past, where an Object Model is first created, followed by a mapping f
 
 #Basic Concept
 
+![alt tag](http://url/to/img.png)
+
+The basic concept behind UTMapper is to build against and API up front, and then used
 
 #Setup
 
@@ -43,7 +46,7 @@ python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/UTMapper/Mapping/ 
 
 ```
 
-At Build time, the script will generate model objects based on the mappings plist, you will then need to :
+At Build time, the script will generate model objects based on the mappings plist, you will then need to:
 
 1. Navigate to your output directory and drag and drop the model directory into your project 
 2. Then to map dictionary values to your model all your need to do is the following
