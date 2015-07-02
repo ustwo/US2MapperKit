@@ -35,23 +35,24 @@ class _TestObjectThree {
  			non_optionalFloat = UTMapper.typeCast(_non_optionalFloat)!
  			non_optionalBool = UTMapper.typeCast(_non_optionalBool)!
  			non_optionalString = UTMapper.typeCast(_non_optionalString)!
+ 			
  	}
 
- 	convenience init?(_ dictionary: NSDictionary) {
+ 	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
  		let dynamicTypeString = String(self.dynamicType)
  		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
  		if let valuesDict = UTMapper.parseJSONResponse(className!, data : dictionary) {
- 			self.init(          _optionalInt : valuesDict["optionalInt"]!,
- 			          _optionalBool : valuesDict["optionalBool"]!,
- 			          _optionalString : valuesDict["optionalString"]!,
- 			          _optionalDouble : valuesDict["optionalDouble"]!,
- 			          _optionalFloat : valuesDict["optionalFloat"]!,
- 			          _non_optionalDouble : valuesDict["non_optionalDouble"]!,
- 			          _non_optionalInt : valuesDict["non_optionalInt"]!,
- 			          _non_optionalFloat : valuesDict["non_optionalFloat"]!,
- 			          _non_optionalBool : valuesDict["non_optionalBool"]!,
- 			          _non_optionalString : valuesDict["non_optionalString"]!) 
+ 			self.init(_optionalInt : valuesDict["optionalInt"]!,
+ 				      _optionalBool : valuesDict["optionalBool"]!,
+ 				      _optionalString : valuesDict["optionalString"]!,
+ 				      _optionalDouble : valuesDict["optionalDouble"]!,
+ 				      _optionalFloat : valuesDict["optionalFloat"]!,
+ 				      _non_optionalDouble : valuesDict["non_optionalDouble"]!,
+ 				      _non_optionalInt : valuesDict["non_optionalInt"]!,
+ 				      _non_optionalFloat : valuesDict["non_optionalFloat"]!,
+ 				      _non_optionalBool : valuesDict["non_optionalBool"]!,
+ 				      _non_optionalString : valuesDict["non_optionalString"]!) 
  		} else {
  			return nil
  		}

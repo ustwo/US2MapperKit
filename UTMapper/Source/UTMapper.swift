@@ -8,170 +8,254 @@
 
 import Foundation
 
-let verbose = false
-
-enum DataType: String {
-    case String = "String"
-    case Double = "Double"
-    case Float  = "Float"
-    case Bool   = "Bool"
-    case Int    = "Int"
+protocol UTMapperProtocol {
+    static func transformValues(inputValues : [AnyObject]?) -> AnyObject?
 }
 
-let UTMapperJSONKey         = "key"
-let UTMapperTypeKey         = "type"
-let UTMapperNonOptionalKey  = "nonoptional"
-let UTMapperDefaultKey      = "default"
-let UTMapperMapperKey       = "mapper"
+var propertyMappings : Dictionary<String, Dictionary<String, Dictionary<String, AnyObject>>> = Dictionary()
 
-var propertyMappings : Dictionary<String, Dictionary<String, Dictionary<String, String>>> = Dictionary()
+let UTMapperJSONKey                 = "key"
+let UTMapperTypeKey                 = "type"
+let UTMapperNonOptionalKey          = "nonoptional"
+let UTMapperDefaultKey              = "default"
+let UTMapperMapperKey               = "mapper"
+let UTMapperCollectionSubTypeKey    = "collection_subtype"
+
+let UTDataTypeString        = "String"
+let UTDataTypeInt           = "Int"
+let UTDataTypeDouble        = "Double"
+let UTDataTypeFloat         = "Float"
+let UTDataTypeBool          = "Bool"
+let UTDataTypeArray         = "Array"
+let UTDataTypeDictionary    = "Dictionary"
+
+let nativeDataTypes      = [UTDataTypeString, UTDataTypeInt, UTDataTypeDouble, UTDataTypeFloat, UTDataTypeBool]
+let collectionTypes      = [UTDataTypeArray, UTDataTypeDictionary]
 
 final class UTMapper {
     
-    class func parseJSONResponse(className : String, data : NSDictionary) -> Dictionary<String, AnyObject>? {
-
-        // Dictionary of values to be returned
-        var propertyValueDictionary = Dictionary<String, AnyObject>()
-       
+    // Load Mapping Configuration plist, and cache it accordingly
+    class func mappingConfiguration(className : String) -> Dictionary<String, Dictionary<String, AnyObject>> {
+        if let mappingconfiguration = propertyMappings[className] {
+            print("\nRETURNED Cached Mapping for \(className)\n")
+            return mappingconfiguration
+        } else {
+            if let mappingPath = NSBundle.mainBundle().pathForResource(className, ofType: "plist") {
+                let tempMapping = NSDictionary(contentsOfFile: mappingPath) as? Dictionary<String, Dictionary<String, AnyObject>>
+                propertyMappings[className] = tempMapping
+                print("\nOPENED and Cached Mapping for \(className)\n")
+                return tempMapping!
+            } else {
+                return Dictionary<String, Dictionary<String, AnyObject>>()
+            }
+        }
+    }
+    
+    // Parse Dictionary Data for the specific class
+    class func parseJSONResponse(className : String, data : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
+        
         // The Mapping configuration for the Class
         let mappingConfiguration = UTMapper.mappingConfiguration(className)
         
-        // The Array of property keys defined in the Class
-        let propertyNameKeys = mappingConfiguration.keys.array
+        // Return nil if the mapping configuration is missing
+        if mappingConfiguration.keys.count == 0 { return nil }
+        
+        // Dictionary of values to be returned
+        var propertyValueDictionary = Dictionary<String, AnyObject>()
         
         // Iterate over the properties accordingly
-        for propertyKey in propertyNameKeys {
+        for (propertyKey, propertyMapping) in mappingConfiguration {
             
-            // Fetch the definition for the specific property
-            if let propertyMapping : Dictionary<String, String> = mappingConfiguration[propertyKey] {
-               
-                if let jsonKey = propertyMapping[UTMapperJSONKey] {
-                    
-                    var keys = jsonKey.componentsSeparatedByString(".")
-                    
-                    if let jsonValue = UTMapper.recursiveValueForKeys(propertyKey, keys : &keys, data: data) {
-                        if let dataTypeConfigValue = propertyMapping[UTMapperTypeKey] {
-                            propertyValueDictionary[propertyKey] = UTMapper.convertDefaultValue(jsonValue, type: DataType(rawValue:dataTypeConfigValue)!)
-                            UTMapper.logDefaultValue(propertyKey, value : propertyValueDictionary[propertyKey]!)
-                        } else {
-                            UTMapper.logMissingDataType(propertyKey)
+            // Check if mapper class exists
+            if let mapperClass = propertyMapping[UTMapperMapperKey] {
+                
+                // value array holding all the keys needed for the transform class
+                var valueArray : [AnyObject] = []
+                
+                // Get all json mapping keys required by the mapper
+                if let jsonKeys = propertyMapping[UTMapperJSONKey] as? [String] {
+                    for jsonKey in jsonKeys {
+                        if let jsonValue = UTMapper.dictionaryValueForKey(jsonKey, data: data) {
+                            valueArray.append(jsonValue)
                         }
-                    } else if let jsonValue = propertyMapping[UTMapperDefaultKey] {
-                        
-                        if let dataTypeConfigValue = propertyMapping[UTMapperTypeKey] {
-                            propertyValueDictionary[propertyKey] = UTMapper.convertDefaultValue(jsonValue, type: DataType(rawValue:dataTypeConfigValue)!)
-                            UTMapper.logDefaultValue(propertyKey, value : propertyValueDictionary[propertyKey]!)
-                        } else {
-                            UTMapper.logMissingDataType(propertyKey)
-                        }
-                        
-                    } else {
-                        if UTMapper.propertyNonOptional(propertyMapping) {
-                            UTMapper.logMissingNonOptionalDefaultValue(propertyKey)
-                        } else {
+                    }
+                }
+                
+                // Once the values have been gathered, attempt to transform the values using a class conforming to the UTMapperProtocol protocol
+                if let transformedValue = _UTMapperHelper.transformValues(mapperClass as! String, values : valueArray) {
+                    propertyValueDictionary[propertyKey] = transformedValue
+                }
+                
+            } else if let jsonKey = propertyMapping[UTMapperJSONKey] as? String {
+                
+                // Attempt to fetch values from the json
+                if let jsonValue = UTMapper.dictionaryValueForKey(jsonKey, data: data) {
+                    // Dictionary value found
+                    UTMapper.appendValueFor(propertyKey, mapping: propertyMapping, value: jsonValue, propertyValueDictionary: &propertyValueDictionary)
+                } else if let defaultValue = propertyMapping[UTMapperDefaultKey] {
+                    // Fallback to default value if specified
+                    UTMapper.appendValueFor(propertyKey, mapping: propertyMapping, value: defaultValue, propertyValueDictionary: &propertyValueDictionary)
+                } else {
+                    // No Value found, ensure to set to NSNull for Optional Values
+                    if let isPropertyNonOptional = propertyMapping[UTMapperNonOptionalKey] {
+                        if isPropertyNonOptional.boolValue == false {
                             propertyValueDictionary[propertyKey] = NSNull()
                         }
+                    } else {
+                        propertyValueDictionary[propertyKey] = NSNull()
                     }
                 }
             }
         }
         
-        if UTMapper.verifyNonOptionalValues(className, propertyValueDictionary: propertyValueDictionary) {
-            return propertyValueDictionary
-        }
-        return nil
-    }
-    
-    class func propertyNonOptional(mapping : Dictionary<String, String>) -> Bool {
-        if let optionalMappingValue = mapping[UTMapperNonOptionalKey] as? AnyObject {
-            let isNonOptional = optionalMappingValue.boolValue as Bool
-            return isNonOptional
-        }
-        return false
-    }
-    
-    class func verifyNonOptionalValues(className : String, propertyValueDictionary : Dictionary<String, AnyObject>) -> Bool {
-        
-        let mappingConfiguration = UTMapper.mappingConfiguration(className)
-        let propertyNameKeys = mappingConfiguration.keys.array
-        
-        // If there were no properties mapped, validation failed
-        if propertyNameKeys.count == 0 {
-            return false
-        }
-        
-        for propertyKey in propertyNameKeys {
-            if let propertyMapping : Dictionary<String, String> = mappingConfiguration[propertyKey] {
-                // Check to see if user defined the property as non-optional
-                if UTMapper.propertyNonOptional(propertyMapping) {
+        // Validate that all non-optional properties have a value assigned
+        for (propertyKey, propertyMapping) in mappingConfiguration {
+            // Check to see if user defined the property as non-optional
+            if let isPropertyOptional = propertyMapping[UTMapperNonOptionalKey] {
+                guard isPropertyOptional.boolValue == false else {
                     if let _ = propertyValueDictionary[propertyKey] {
                         // If value was mapped, continue with validation
                         continue
                     } else {
-                        // No mapped, or default value found, validation failed
-                        return false
+                        return nil
                     }
                 }
             }
         }
-        return true
+        
+        return propertyValueDictionary
     }
     
-    class func mappingConfiguration(className : String) -> Dictionary<String, Dictionary<String, String>> {
-        if let mappingconfiguration = propertyMappings[className] {
-            // Return cached mapping configuration
-            return mappingconfiguration
-        } else {
-            // Ensure mapping configuration exists
-            if let mappingPath = NSBundle.mainBundle().pathForResource(className, ofType: "plist") {
-                let tempMapping = NSDictionary(contentsOfFile: mappingPath) as? Dictionary<String, Dictionary<String, String>>
+    class func appendValueFor(propertyKey : String, mapping : Dictionary<String, AnyObject>, value : AnyObject, inout propertyValueDictionary : Dictionary<String, AnyObject>) {
+        
+        if let dataType = mapping[UTMapperTypeKey]  as? String {
+            if nativeDataTypes.contains(dataType) {
+                // Convert the value explicitely and append it to the property value dictionary
+                propertyValueDictionary[propertyKey] = UTMapper.convertDefaultValue(value, dataType: dataType)
+            } else if collectionTypes.contains(dataType) {
                 
-                // Cache the mapping configuration for reuse
-                propertyMappings[className] = tempMapping
-                return tempMapping!
-            } else {
-                // Return Blank Mapping, and Warn the User
-                UTMapper.logMissingMappingConfiguration(className)
-                return Dictionary<String, Dictionary<String, String>>()
+                // Check if the collection subtype has been defined
+                if let subCollectionType = mapping[UTMapperCollectionSubTypeKey] as? String {
+                    
+                    var valueArray : [AnyObject] = [] // If the collection is of type Array, all complex and simple objects will be appended to the valueArray
+                    var valueDictionary = Dictionary<String, AnyObject>() // If the collection is of type Dictionary, all complex and simple objects will be appended to the valueDictionary
+                    var intKey = 0
+                    
+                    // Block called once the data has been gathered
+                    let appendData = { (complexValue : AnyObject, collectionDataType : String, key : String?) -> Void in
+                        switch collectionDataType {
+                        case UTDataTypeArray:
+                            valueArray.append(complexValue)
+                        case UTDataTypeDictionary:
+                            if key == nil {
+                                valueDictionary[String(intKey)] = complexValue
+                                intKey++
+                            } else {
+                                valueDictionary[key!] = complexValue
+                            }
+                        default:
+                            break
+                        }
+                    }
+                    
+                    let mapDataToDefinedType = { (subCollectionType : String, data : AnyObject) -> Void in
+                        // If the collectiong subtype is a Simple Type
+                        if nativeDataTypes.contains(subCollectionType) {
+                            if let dictionaryArray = data as? Dictionary<String, AnyObject> {
+                                // Unwrapped as a dictionary, run through all the values and append them accordingly
+                                for (key, subDictValue) in dictionaryArray {
+                                    appendData(subDictValue, dataType, key)
+                                }
+                            } else if let valueArray = data as? [AnyObject] {
+                                // Unwrapped as an array, run through all the values and append them accordingly
+                                for value in valueArray {
+                                    appendData(value, dataType, nil)
+                                }
+                            } else {
+                                // Unwrapped as an a simple value, append it accordingly
+                                appendData(value, dataType, nil)
+                            }
+                        } else if let subObjectDictionary = data as? Dictionary<String, Dictionary <String, AnyObject>> {
+                            //Unwrapped as a dictionary of dictionaries of complex types, run through all the sub-ditionaries and map the complex subtype accordingly
+                            for (_, subDictValue) in subObjectDictionary {
+                                if let complexTypeValue = _UTMapperHelper.classFromString(subCollectionType, data: subDictValue) {
+                                    appendData(complexTypeValue, dataType, nil)
+                                }
+                            }
+                        } else if let subObjectArray = data as? Array<Dictionary <String, AnyObject>> {
+                            // Unwrapped as an array of dictionaries of complex types, run through all the subditionaries and map the complex subtype accordingly
+                            for subDictValue in subObjectArray {
+                                if let complexTypeValue = _UTMapperHelper.classFromString(subCollectionType, data: subDictValue) {
+                                    appendData(complexTypeValue, dataType, nil)
+                                }
+                            }
+                        } else if let complexTypeValue = _UTMapperHelper.classFromString(subCollectionType, data: data as! Dictionary<String, AnyObject>) {
+                            // Unwrapped as a dictionary for a complex type and mapped accordingly
+                            appendData(complexTypeValue, dataType, nil)
+                        }
+                    }
+                    
+                    if let subDictionary = value as? Dictionary <String, AnyObject> {
+                        // Unwrapped as a dictionary
+                        mapDataToDefinedType(subCollectionType, subDictionary)
+                    } else if let subValueArray = value as? Array<AnyObject> {
+                        // Attempt unwrapping it as an array
+                        mapDataToDefinedType(subCollectionType, subValueArray)
+                    }
+                    
+                    // Check which of the two has content, and set the value accordingly in the properties dictionary
+                    if valueArray.count > 0 {
+                        propertyValueDictionary[propertyKey] = valueArray
+                    } else if valueDictionary.keys.count > 0 {
+                        propertyValueDictionary[propertyKey] = valueDictionary
+                    }
+                }
+            } else if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: value as! Dictionary<String, AnyObject>) {
+                // Unwrapped as a dictionary for a complex type and mapped accordingly, since it is not a simple type or a collection type
+                propertyValueDictionary[propertyKey] = complexTypeValue
             }
         }
     }
     
-    class func recursiveValueForKeys(propertyKey : String, inout keys : [String], data : NSDictionary) -> AnyObject? {
-        
+    class func dictionaryValueForKey(key : String, data : Dictionary<String, AnyObject>) -> AnyObject? {
+        var keys = key.componentsSeparatedByString(".")
         var nestedDictionary = data
         
-        for index in 0..<keys.count {
-            if index >= (keys.count - 1) {
-                if let finalValue = nestedDictionary[keys[index]] {
+        for var x = 0; x < keys.count; x++ {
+            if x >= (keys.count - 1) {
+                if let finalValue = nestedDictionary[keys[x]] {
                     return finalValue
+                } else {
+                    break
                 }
+            } else if let nextLevelDictionary = nestedDictionary[keys[x]] as? Dictionary<String, AnyObject> {
+                nestedDictionary = nextLevelDictionary
             } else {
-                if let nextLevelDictionary = nestedDictionary[keys[index]] as? NSDictionary {
-                    nestedDictionary = nextLevelDictionary
-                }
+                break
             }
         }
         return nil
     }
     
-    class func convertDefaultValue(value : AnyObject, type : DataType) -> AnyObject?  {
-        switch type {
-        case .String:
+    class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
+        switch dataType {
+        case UTDataTypeString:
             if let stringObject = value as? String {
                 return stringObject
             }else if let stringObject = value as? NSNumber {
                 return String(stringObject.doubleValue)
             }
             return value
-        case .Double:
+        case UTDataTypeDouble:
             return Double(value.doubleValue)
-        case .Float:
+        case UTDataTypeFloat:
             return Float(value.floatValue)
-        case .Int:
+        case UTDataTypeInt:
             return Int(value.integerValue)
-        case .Bool:
+        case UTDataTypeBool:
             return value.boolValue
+        default:
+            return value
         }
     }
     
@@ -180,21 +264,5 @@ final class UTMapper {
             return typed
         }
         return nil
-    }
-    
-    class func logDefaultValue(propertyKey : AnyObject, value : AnyObject) {
-        if verbose { print("Warning: UTMapper did not find a value for property \(propertyKey), default set to \(value)\n") }
-    }
-    
-    class func logMissingDataType(propertyKey : AnyObject) {
-        if verbose { print("Error: UTMapper missing 'type' definition for \(propertyKey), could not map default value for property\n") }
-    }
-    
-    class func logMissingMappingConfiguration(className : AnyObject) {
-        if verbose { print("Error: UTMapper could not find mapping configuration for the following class \(className)\n") }
-    }
-    
-    class func logMissingNonOptionalDefaultValue(propertyKey : AnyObject) {
-        if verbose { print("Error: UTMapper did not find a default value for property \(propertyKey), initialization with dictioanry fail") }
     }
 }

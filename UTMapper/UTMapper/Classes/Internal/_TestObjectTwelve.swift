@@ -1,6 +1,6 @@
 import Foundation
 
-class _TestObjectFour {
+class _TestObjectTwelve {
 
 	var optionalInt : Int?
 	var optionalBool : Bool?
