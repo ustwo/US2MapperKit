@@ -265,7 +265,7 @@ class UTMapperTests: XCTestCase {
         let testObjectInstance = TestObjectSeven(dataDictionary)
         XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, non-optinal values are missing")
     }
-    
+
     func testDictionaryComplexSubtypeSingleMapping() {
         // TestObjectEight has an array of TestObjectEight(s)
         let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
@@ -286,7 +286,6 @@ class UTMapperTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryType["0"]!.non_optionalString, "TestString3", "Non-Optional String value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryType["0"]!.non_optionalBool, true, "Non-Optional Bool value was parsed incorrectly")
     }
-
 
     func testDictionaryComplexSubtypeToArraysOfDictionaries() {
         // TestObjectSEven has an array of TestObjectFour(s)

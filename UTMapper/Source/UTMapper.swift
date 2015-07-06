@@ -34,26 +34,11 @@ let collectionTypes      = [UTDataTypeArray, UTDataTypeDictionary]
 
 final class UTMapper {
     
-    // Load Mapping Configuration plist, and cache it accordingly
-    class func mappingConfiguration(className : String) -> Dictionary<String, Dictionary<String, AnyObject>> {
-        if let mappingconfiguration = propertyMappings[className] {
-            return mappingconfiguration
-        } else {
-            if let mappingPath = NSBundle.mainBundle().pathForResource(className, ofType: "plist") {
-                let tempMapping = NSDictionary(contentsOfFile: mappingPath) as? Dictionary<String, Dictionary<String, AnyObject>>
-                propertyMappings[className] = tempMapping
-                return tempMapping!
-            } else {
-                return Dictionary<String, Dictionary<String, AnyObject>>()
-            }
-        }
-    }
-    
     // Parse Dictionary Data for the specific class
     class func parseJSONResponse(className : String, data : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
         
         // The Mapping configuration for the Class
-        let mappingConfiguration = UTMapper.mappingConfiguration(className)
+        let mappingConfiguration = retrieveMappingConfiguration(className)
         
         // Return nil if the mapping configuration is missing
         if mappingConfiguration.keys.count == 0 { return nil }
@@ -67,22 +52,22 @@ final class UTMapper {
             // Check if complex transform mapper class exists
             if let transformClass = propertyMapping[UTMapperMapperKey] as? String {
                 if let jsonKeys = propertyMapping[UTMapperJSONKey] as? [String] {
-                    if let transformedValue = UTMapper.complexTransformValue(transformClass, jsonKeys : jsonKeys, data: data) {
+                    if let transformedValue = complexTransformValue(transformClass, jsonKeys : jsonKeys, data: data) {
                         propertyValueDictionary[propertyKey] = transformedValue;
                     }
                 }
             }
             
             if let jsonKey = propertyMapping[UTMapperJSONKey] as? String {
-                if let jsonValue = UTMapper.dictionaryValueForKey(jsonKey, data: data) {
+                if let jsonValue = dictionaryValueForKey(jsonKey, data: data) {
                     // Ditionary value was found
-                    propertyValueDictionary[propertyKey] = UTMapper.parsedValue(propertyKey, mapping: propertyMapping, data: jsonValue)
+                    propertyValueDictionary[propertyKey] = parsedValue(propertyKey, mapping: propertyMapping, data: jsonValue)
                 } else if let defaultValue = propertyMapping[UTMapperDefaultKey] {
                     // Fallback to default value, if specified
-                    propertyValueDictionary[propertyKey] = UTMapper.parsedValue(propertyKey, mapping: propertyMapping, data: defaultValue)
+                    propertyValueDictionary[propertyKey] = parsedValue(propertyKey, mapping: propertyMapping, data: defaultValue)
                 } else {
                     // Fallbackthrough to Null Instance if the property is optional
-                    propertyValueDictionary[propertyKey] = UTMapper.nullValueFor(propertyKey, mapping: propertyMapping)
+                    propertyValueDictionary[propertyKey] = nullValueFor(propertyKey, mapping: propertyMapping)
                 }
             }
         }
@@ -104,13 +89,54 @@ final class UTMapper {
         return propertyValueDictionary
     }
     
+    // MARK Load Mapping Configuration
+    
+    class func retrieveMappingConfiguration(className : String) -> Dictionary<String, Dictionary<String, AnyObject>> {
+        if let mappingconfiguration = propertyMappings[className] {
+            return mappingconfiguration
+        } else {
+            if let mappingPath = NSBundle.mainBundle().pathForResource(className, ofType: "plist") {
+                let tempMapping = NSDictionary(contentsOfFile: mappingPath) as? Dictionary<String, Dictionary<String, AnyObject>>
+                propertyMappings[className] = tempMapping
+                return tempMapping!
+            } else {
+                return Dictionary<String, Dictionary<String, AnyObject>>()
+            }
+        }
+    }
+    
+    
+    // MARK Retrieve Dictionary Value For Assignment Methods
+    
+    class func dictionaryValueForKey(key : String, data : Dictionary<String, AnyObject>) -> AnyObject? {
+        var keys = key.componentsSeparatedByString(".")
+        var nestedDictionary = data
+        
+        for var x = 0; x < keys.count; x++ {
+            if x >= (keys.count - 1) {
+                if let finalValue = nestedDictionary[keys[x]] {
+                    return finalValue
+                } else {
+                    break
+                }
+            } else if let nextLevelDictionary = nestedDictionary[keys[x]] as? Dictionary<String, AnyObject> {
+                nestedDictionary = nextLevelDictionary
+            } else {
+                break
+            }
+        }
+        return nil
+    }
+    
+    
+    // MARK Parse Value Types Methods
+    
     class func parsedValue(propertyKey : String, mapping : Dictionary<String, AnyObject>, data : AnyObject) -> AnyObject? {
-       
+        
         if let dataType = mapping[UTMapperTypeKey]  as? String {
             if nativeDataTypes.contains(dataType) {
-                return UTMapper.convertDefaultValue(data, dataType: dataType)
+                return convertDefaultValue(data, dataType: dataType)
             } else if collectionTypes.contains(dataType) {
-                
                 // Check if the collection subtype has been defined
                 if let subCollectionType = mapping[UTMapperCollectionSubTypeKey] as? String {
                     if let subDictionary = data as? Dictionary <String, AnyObject> {
@@ -133,11 +159,10 @@ final class UTMapper {
                         }
                     }
                 }
-            } else {
-                if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: data as! Dictionary<String, AnyObject>) {
-                    // Unwrapped as a dictionary for a complex type and map accordingly, since it is not a simple type or a collection type
-                    return complexTypeValue
-                }
+            } else if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: data as! Dictionary<String, AnyObject>) {
+                // Unwrapped as a dictionary for a complex type and map accordingly, since it is not a simple type or a collection type
+                return complexTypeValue
+                
             }
         }
         
@@ -145,22 +170,13 @@ final class UTMapper {
     }
     
     class func parsedDictionaryOfDictionariesToDictionary(subCollectionType : String, data : Dictionary<String, AnyObject>)  -> Dictionary<String, AnyObject> {
-        var valueDictionary = Dictionary<String, AnyObject>()
-        var intKey = 0
-        
         if nativeDataTypes.contains(subCollectionType) {
             return nativeValueDictionary(data)
         } else if let subObjectDictionary = data as? Dictionary<String, Dictionary <String, AnyObject>> {
-            //Unwrapped as a dictionary of dictionaries of complex types, run through all the sub-ditionaries and map the complex subtype accordingly
             return complexValueDictionary(subCollectionType, dataDictionary: subObjectDictionary)
+        } else {
+            return complexValueDictionary(subCollectionType, singleDictionary: data)
         }
-        else if let complexTypeValue = _UTMapperHelper.classFromString(subCollectionType, data: data) {
-            // Unwrapped as a dictionary for a complex type and mapped accordingly
-            valueDictionary[String(intKey)] = complexTypeValue
-            intKey++
-        }
-        
-        return valueDictionary
     }
     
     class func parsedArrayOfDictionariesToDictionary(subCollectionType : String, data : Array<AnyObject>) -> Dictionary<String, AnyObject>  {
@@ -193,13 +209,13 @@ final class UTMapper {
         return []
     }
     
-     // MARK Perform Complex Transform Methods
+    // MARK Perform Complex Transform Methods
     
     class func complexTransformValue(mapperClass : String, jsonKeys : [String], data : Dictionary<String, AnyObject>) -> AnyObject? {
         var valueArray : [AnyObject] = []
         
         for jsonKey in jsonKeys {
-            if let jsonValue = UTMapper.dictionaryValueForKey(jsonKey, data: data) {
+            if let jsonValue = dictionaryValueForKey(jsonKey, data: data) {
                 valueArray.append(jsonValue)
             }
         }
@@ -210,6 +226,7 @@ final class UTMapper {
         
         return nil
     }
+    
     
     // MARK Parse to Dictionary Methods
     
@@ -241,6 +258,16 @@ final class UTMapper {
         return valueDictionary
     }
     
+    class func complexValueDictionary(dataType : String, singleDictionary : Dictionary<String, AnyObject>) ->  Dictionary<String, AnyObject> {
+        var valueDictionary = Dictionary<String, AnyObject>()
+        
+        if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: singleDictionary) {
+            valueDictionary[String(0)] = complexTypeValue
+        }
+        
+        return valueDictionary
+    }
+    
     class func nativeValueDictionary(dataDictionary : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject> {
         var valueDictionary = Dictionary<String, AnyObject>()
         
@@ -262,6 +289,7 @@ final class UTMapper {
         
         return valueDictionary
     }
+    
     
     // MARK Parse to Array Methods
     
@@ -316,25 +344,6 @@ final class UTMapper {
         return nil
     }
     
-    class func dictionaryValueForKey(key : String, data : Dictionary<String, AnyObject>) -> AnyObject? {
-        var keys = key.componentsSeparatedByString(".")
-        var nestedDictionary = data
-        
-        for var x = 0; x < keys.count; x++ {
-            if x >= (keys.count - 1) {
-                if let finalValue = nestedDictionary[keys[x]] {
-                    return finalValue
-                } else {
-                    break
-                }
-            } else if let nextLevelDictionary = nestedDictionary[keys[x]] as? Dictionary<String, AnyObject> {
-                nestedDictionary = nextLevelDictionary
-            } else {
-                break
-            }
-        }
-        return nil
-    }
     
     class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
         switch dataType {
