@@ -287,6 +287,7 @@ class UTMapperTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryType["0"]!.non_optionalBool, true, "Non-Optional Bool value was parsed incorrectly")
     }
 
+
     func testDictionaryComplexSubtypeToArraysOfDictionaries() {
         // TestObjectSEven has an array of TestObjectFour(s)
         let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
@@ -475,7 +476,7 @@ class UTMapperTests: XCTestCase {
             XCTAssertEqual(testObjectInstance!.non_optionalDictionaryDoubleType[key]!, doubleValue, "Non-Optional Double value was parsed incorrectly from dictionary")
         }
     }
-    
+
     func testDictionarySimpleSubtypeFromArrayMapping() {
         let stringArray = ["String1", "String2", "String3"]
         let intArray = [1, 2, 3]
