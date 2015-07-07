@@ -12,39 +12,66 @@ class _TestObjectTen {
 	var non_optionalDictionaryFloatType : Dictionary<String,Float>
 	var non_optionalDictionaryStringType : Dictionary<String,String>
 
- 	required init(_optionalDictionaryFloatType : AnyObject?,
- 				  _optionalDictionaryStringType : AnyObject?,
- 				  _optionalDictionaryIntType : AnyObject?,
- 				  _optionalDictionaryDoubleType : AnyObject?,
- 				  _non_optionalDictionaryDoubleType : AnyObject,
- 				  _non_optionalDictionaryIntType : AnyObject,
- 				  _non_optionalDictionaryFloatType : AnyObject,
- 				  _non_optionalDictionaryStringType : AnyObject) {
-
- 			optionalDictionaryFloatType = UTMapper.typeCast(_optionalDictionaryFloatType)
- 			optionalDictionaryStringType = UTMapper.typeCast(_optionalDictionaryStringType)
- 			optionalDictionaryIntType = UTMapper.typeCast(_optionalDictionaryIntType)
- 			optionalDictionaryDoubleType = UTMapper.typeCast(_optionalDictionaryDoubleType)
- 			non_optionalDictionaryDoubleType = UTMapper.typeCast(_non_optionalDictionaryDoubleType)!
- 			non_optionalDictionaryIntType = UTMapper.typeCast(_non_optionalDictionaryIntType)!
- 			non_optionalDictionaryFloatType = UTMapper.typeCast(_non_optionalDictionaryFloatType)!
- 			non_optionalDictionaryStringType = UTMapper.typeCast(_non_optionalDictionaryStringType)!
+ 	required init(_optionalDictionaryFloatType : Dictionary<String, Float>?,
+ 				  _optionalDictionaryStringType : Dictionary<String, String>?,
+ 				  _optionalDictionaryIntType : Dictionary<String, Int>?,
+ 				  _optionalDictionaryDoubleType : Dictionary<String, Double>?,
+ 				  _non_optionalDictionaryDoubleType : Dictionary<String, Double>,
+ 				  _non_optionalDictionaryIntType : Dictionary<String, Int>,
+ 				  _non_optionalDictionaryFloatType : Dictionary<String, Float>,
+ 				  _non_optionalDictionaryStringType : Dictionary<String, String>) {
  			
+ 			optionalDictionaryFloatType = _optionalDictionaryFloatType
+ 			optionalDictionaryStringType = _optionalDictionaryStringType
+ 			optionalDictionaryIntType = _optionalDictionaryIntType
+ 			optionalDictionaryDoubleType = _optionalDictionaryDoubleType
+ 			non_optionalDictionaryDoubleType = _non_optionalDictionaryDoubleType
+ 			non_optionalDictionaryIntType = _non_optionalDictionaryIntType
+ 			non_optionalDictionaryFloatType = _non_optionalDictionaryFloatType
+ 			non_optionalDictionaryStringType = _non_optionalDictionaryStringType
  	}
 
  	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
+
  		let dynamicTypeString = String(self.dynamicType)
  		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
  		if let valuesDict = UTMapper.parseJSONResponse(className!, data : dictionary) {
- 			self.init(_optionalDictionaryFloatType : valuesDict["optionalDictionaryFloatType"]!,
- 				      _optionalDictionaryStringType : valuesDict["optionalDictionaryStringType"]!,
- 				      _optionalDictionaryIntType : valuesDict["optionalDictionaryIntType"]!,
- 				      _optionalDictionaryDoubleType : valuesDict["optionalDictionaryDoubleType"]!,
- 				      _non_optionalDictionaryDoubleType : valuesDict["non_optionalDictionaryDoubleType"]!,
- 				      _non_optionalDictionaryIntType : valuesDict["non_optionalDictionaryIntType"]!,
- 				      _non_optionalDictionaryFloatType : valuesDict["non_optionalDictionaryFloatType"]!,
- 				      _non_optionalDictionaryStringType : valuesDict["non_optionalDictionaryStringType"]!) 
+
+			var temp_optionalDictionaryFloatType : Dictionary<String, Float>?
+			var temp_optionalDictionaryStringType : Dictionary<String, String>?
+			var temp_optionalDictionaryIntType : Dictionary<String, Int>?
+			var temp_optionalDictionaryDoubleType : Dictionary<String, Double>?
+
+			let temp_non_optionalDictionaryDoubleType : Dictionary<String, Double> = UTMapper.typeCast(valuesDict["non_optionalDictionaryDoubleType"])!
+			let temp_non_optionalDictionaryIntType : Dictionary<String, Int> = UTMapper.typeCast(valuesDict["non_optionalDictionaryIntType"])!
+			let temp_non_optionalDictionaryFloatType : Dictionary<String, Float> = UTMapper.typeCast(valuesDict["non_optionalDictionaryFloatType"])!
+			let temp_non_optionalDictionaryStringType : Dictionary<String, String> = UTMapper.typeCast(valuesDict["non_optionalDictionaryStringType"])!
+
+			if let unwrapped_optionalDictionaryFloatType = valuesDict["optionalDictionaryFloatType"] {
+ 				temp_optionalDictionaryFloatType = UTMapper.typeCast(unwrapped_optionalDictionaryFloatType)
+ 			}
+
+			if let unwrapped_optionalDictionaryStringType = valuesDict["optionalDictionaryStringType"] {
+ 				temp_optionalDictionaryStringType = UTMapper.typeCast(unwrapped_optionalDictionaryStringType)
+ 			}
+
+			if let unwrapped_optionalDictionaryIntType = valuesDict["optionalDictionaryIntType"] {
+ 				temp_optionalDictionaryIntType = UTMapper.typeCast(unwrapped_optionalDictionaryIntType)
+ 			}
+
+			if let unwrapped_optionalDictionaryDoubleType = valuesDict["optionalDictionaryDoubleType"] {
+ 				temp_optionalDictionaryDoubleType = UTMapper.typeCast(unwrapped_optionalDictionaryDoubleType)
+ 			}
+	
+ 			self.init(_optionalDictionaryFloatType : temp_optionalDictionaryFloatType,
+ 				      _optionalDictionaryStringType : temp_optionalDictionaryStringType,
+ 				      _optionalDictionaryIntType : temp_optionalDictionaryIntType,
+ 				      _optionalDictionaryDoubleType : temp_optionalDictionaryDoubleType,
+ 				      _non_optionalDictionaryDoubleType : temp_non_optionalDictionaryDoubleType,
+ 				      _non_optionalDictionaryIntType : temp_non_optionalDictionaryIntType,
+ 				      _non_optionalDictionaryFloatType : temp_non_optionalDictionaryFloatType,
+ 				      _non_optionalDictionaryStringType : temp_non_optionalDictionaryStringType) 
  		} else {
  			return nil
  		}

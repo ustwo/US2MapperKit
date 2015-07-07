@@ -6,21 +6,30 @@ class _TestObjectFive {
 
 	var non_optionalSubType : TestObjectThree
 
- 	required init(_optionalSubType : AnyObject?,
- 				  _non_optionalSubType : AnyObject) {
-
- 			optionalSubType = UTMapper.typeCast(_optionalSubType)
- 			non_optionalSubType = UTMapper.typeCast(_non_optionalSubType)!
+ 	required init(_optionalSubType : TestObjectThree?,
+ 				  _non_optionalSubType : TestObjectThree) {
  			
+ 			optionalSubType = _optionalSubType
+ 			non_optionalSubType = _non_optionalSubType
  	}
 
  	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
+
  		let dynamicTypeString = String(self.dynamicType)
  		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
  		if let valuesDict = UTMapper.parseJSONResponse(className!, data : dictionary) {
- 			self.init(_optionalSubType : valuesDict["optionalSubType"]!,
- 				      _non_optionalSubType : valuesDict["non_optionalSubType"]!) 
+
+			var temp_optionalSubType : TestObjectThree?
+
+			let temp_non_optionalSubType : TestObjectThree = UTMapper.typeCast(valuesDict["non_optionalSubType"])!
+
+			if let unwrapped_optionalSubType = valuesDict["optionalSubType"] {
+ 				temp_optionalSubType = UTMapper.typeCast(unwrapped_optionalSubType)
+ 			}
+	
+ 			self.init(_optionalSubType : temp_optionalSubType,
+ 				      _non_optionalSubType : temp_non_optionalSubType) 
  		} else {
  			return nil
  		}

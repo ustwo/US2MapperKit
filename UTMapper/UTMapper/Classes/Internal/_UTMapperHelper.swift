@@ -1,3 +1,6 @@
+// UTMapper Generated Model
+// UPDATE LISCENSE HERE
+
 import Foundation
 
 class _UTMapperHelper {

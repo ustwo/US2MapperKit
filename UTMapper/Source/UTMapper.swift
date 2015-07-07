@@ -169,6 +169,9 @@ final class UTMapper {
         return nil
     }
     
+    
+    // MARK Collection Parsing Methods
+    
     class func parsedDictionaryOfDictionariesToDictionary(subCollectionType : String, data : Dictionary<String, AnyObject>)  -> Dictionary<String, AnyObject> {
         if nativeDataTypes.contains(subCollectionType) {
             return nativeValueDictionary(data)
@@ -230,6 +233,82 @@ final class UTMapper {
     
     // MARK Parse to Dictionary Methods
     
+    
+    class func nativeValueDictionary(dataDictionary : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject> {
+        var valueDictionary = Dictionary<String, AnyObject>()
+        
+        for (subkey, subDictValue) in dataDictionary {
+            valueDictionary[String(subkey)] = subDictValue
+        }
+        
+        return valueDictionary
+    }
+    
+    class func nativeValueDictionary(dataArray :Array<AnyObject>) -> Dictionary<String, AnyObject> {
+        var valueDictionary = Dictionary<String, AnyObject>()
+        var intKey = 0
+        
+        for value in dataArray {
+            valueDictionary[String(intKey)] = value
+            intKey++
+        }
+        
+        return valueDictionary
+    }
+    
+    class func nativeValueArray(dataArray : Array<AnyObject>) -> [AnyObject] {
+        var valueArray : [AnyObject] = []
+        
+        for value in dataArray {
+            valueArray.append(value)
+        }
+        return valueArray
+    }
+    
+    class func nativeValueArray(dataDictionary : Dictionary<String, AnyObject>) -> [AnyObject] {
+        var valueArray : [AnyObject] = []
+        
+        for (_, subDictValue) in dataDictionary {
+            valueArray.append(subDictValue)
+        }
+        return valueArray
+    }
+    
+    
+    // MARK Parse Complex Values (User Defined Class Properties)
+    
+    class func complexValueDictionary(dataType : String, singleDictionary : Dictionary<String, AnyObject>) ->  Dictionary<String, AnyObject> {
+        var valueDictionary = Dictionary<String, AnyObject>()
+        
+        if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: singleDictionary) {
+            valueDictionary[String(0)] = complexTypeValue
+        }
+        
+        return valueDictionary
+    }
+    
+    class func complexValueArray(dataType : String, dataArray : Array<Dictionary <String, AnyObject>> ) -> [AnyObject] {
+        var valueArray : [AnyObject] = []
+        
+        for subDictValue in dataArray {
+            if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: subDictValue) {
+                valueArray.append(complexTypeValue)
+            }
+        }
+        return valueArray
+    }
+    
+    class func complexValueArray(dataType : String, dataDictionary : Dictionary<String, Dictionary <String, AnyObject>> ) -> [AnyObject] {
+        var valueArray : [AnyObject] = []
+        
+        for (_, subDictValue) in dataDictionary {
+            if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: subDictValue) {
+                valueArray.append(complexTypeValue)
+            }
+        }
+        return valueArray
+    }
+    
     class func complexValueDictionary(dataType : String, dataArray : Array<Dictionary <String, AnyObject>> ) ->  Dictionary<String, AnyObject> {
         var valueDictionary = Dictionary<String, AnyObject>()
         var intKey = 0
@@ -258,82 +337,10 @@ final class UTMapper {
         return valueDictionary
     }
     
-    class func complexValueDictionary(dataType : String, singleDictionary : Dictionary<String, AnyObject>) ->  Dictionary<String, AnyObject> {
-        var valueDictionary = Dictionary<String, AnyObject>()
-        
-        if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: singleDictionary) {
-            valueDictionary[String(0)] = complexTypeValue
-        }
-        
-        return valueDictionary
-    }
-    
-    class func nativeValueDictionary(dataDictionary : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject> {
-        var valueDictionary = Dictionary<String, AnyObject>()
-        
-        for (subkey, subDictValue) in dataDictionary {
-            valueDictionary[String(subkey)] = subDictValue
-        }
-        
-        return valueDictionary
-    }
-    
-    class func nativeValueDictionary(dataArray :Array<AnyObject>) -> Dictionary<String, AnyObject> {
-        var valueDictionary = Dictionary<String, AnyObject>()
-        var intKey = 0
-        
-        for value in dataArray {
-            valueDictionary[String(intKey)] = value
-            intKey++
-        }
-        
-        return valueDictionary
-    }
-    
-    
-    // MARK Parse to Array Methods
-    
-    class func complexValueArray(dataType : String, dataArray : Array<Dictionary <String, AnyObject>> ) -> [AnyObject] {
-        var valueArray : [AnyObject] = []
-        
-        for subDictValue in dataArray {
-            if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: subDictValue) {
-                valueArray.append(complexTypeValue)
-            }
-        }
-        return valueArray
-    }
-    
-    class func complexValueArray(dataType : String, dataDictionary : Dictionary<String, Dictionary <String, AnyObject>> ) -> [AnyObject] {
-        var valueArray : [AnyObject] = []
-        
-        for (_, subDictValue) in dataDictionary {
-            if let complexTypeValue = _UTMapperHelper.classFromString(dataType, data: subDictValue) {
-                valueArray.append(complexTypeValue)
-            }
-        }
-        return valueArray
-    }
-    
-    class func nativeValueArray(dataArray : Array<AnyObject>) -> [AnyObject] {
-        var valueArray : [AnyObject] = []
-        
-        for value in dataArray {
-            valueArray.append(value)
-        }
-        return valueArray
-    }
-    
-    class func nativeValueArray(dataDictionary : Dictionary<String, AnyObject>) -> [AnyObject] {
-        var valueArray : [AnyObject] = []
-        
-        for (_, subDictValue) in dataDictionary {
-            valueArray.append(subDictValue)
-        }
-        return valueArray
-    }
+    // MARK Conversion / Nullable PlaceHolder Methods
     
     class func nullValueFor(propertyKey : String, mapping : Dictionary<String, AnyObject>) -> AnyObject? {
+       /*
         if let isPropertyNonOptional = mapping[UTMapperNonOptionalKey] {
             if isPropertyNonOptional.boolValue == false {
                 return NSNull()
@@ -341,6 +348,7 @@ final class UTMapper {
         } else {
             return NSNull()
         }
+*/
         return nil
     }
     

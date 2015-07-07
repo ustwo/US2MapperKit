@@ -17,12 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window!.rootViewController = UIViewController()
         window!.makeKeyAndVisible()
-        let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
-        let object2Dictionary = ["non_optional_int" : 110, "non_optional_string" : "TestString3", "non_optional_double" : 120.0, "non_optional_float" : 130.0, "non_optional_bool" : true]
-        let dataDictionary : Dictionary<String, AnyObject> = ["optional_sub_object_dictionary" : object1Dictionary, "non_optional_sub_object_dictionary" : object2Dictionary]
-        
-        let testObjectInstance = TestObjectEight(dataDictionary)
-
+   
         return true
     }
 }
