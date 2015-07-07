@@ -335,6 +335,9 @@ final class UTMapper {
         return valueDictionary
     }
 
+    
+    // MARK TypeCasting / Conversion Methods
+    
     class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
         switch dataType {
         case UTDataTypeString:
