@@ -65,9 +65,6 @@ final class UTMapper {
                 } else if let defaultValue = propertyMapping[UTMapperDefaultKey] {
                     // Fallback to default value, if specified
                     propertyValueDictionary[propertyKey] = parsedValue(propertyKey, mapping: propertyMapping, data: defaultValue)
-                } else {
-                    // Fallbackthrough to Null Instance if the property is optional
-                    propertyValueDictionary[propertyKey] = nullValueFor(propertyKey, mapping: propertyMapping)
                 }
             }
         }
@@ -88,6 +85,7 @@ final class UTMapper {
         
         return propertyValueDictionary
     }
+    
     
     // MARK Load Mapping Configuration
     
@@ -212,6 +210,7 @@ final class UTMapper {
         return []
     }
     
+    
     // MARK Perform Complex Transform Methods
     
     class func complexTransformValue(mapperClass : String, jsonKeys : [String], data : Dictionary<String, AnyObject>) -> AnyObject? {
@@ -232,7 +231,6 @@ final class UTMapper {
     
     
     // MARK Parse to Dictionary Methods
-    
     
     class func nativeValueDictionary(dataDictionary : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject> {
         var valueDictionary = Dictionary<String, AnyObject>()
@@ -336,23 +334,7 @@ final class UTMapper {
         
         return valueDictionary
     }
-    
-    // MARK Conversion / Nullable PlaceHolder Methods
-    
-    class func nullValueFor(propertyKey : String, mapping : Dictionary<String, AnyObject>) -> AnyObject? {
-       /*
-        if let isPropertyNonOptional = mapping[UTMapperNonOptionalKey] {
-            if isPropertyNonOptional.boolValue == false {
-                return NSNull()
-            }
-        } else {
-            return NSNull()
-        }
-*/
-        return nil
-    }
-    
-    
+
     class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
         switch dataType {
         case UTDataTypeString:
