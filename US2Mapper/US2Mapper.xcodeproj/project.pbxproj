@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A525F691B387B02007C00BE /* US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F681B387B02007C00BE /* US2Mapper.swift */; };
+		3ABA35E91B4C16B800EBAF50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA35E81B4C16B800EBAF50 /* AppDelegate.swift */; };
+		3ABA35F51B4C16CA00EBAF50 /* TestObjectEight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35EA1B4C16CA00EBAF50 /* TestObjectEight.plist */; };
+		3ABA35F71B4C16CA00EBAF50 /* TestObjectEleven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35EB1B4C16CA00EBAF50 /* TestObjectEleven.plist */; };
+		3ABA35F91B4C16CA00EBAF50 /* TestObjectFive.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35EC1B4C16CA00EBAF50 /* TestObjectFive.plist */; };
+		3ABA35FB1B4C16CA00EBAF50 /* TestObjectFour.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35ED1B4C16CA00EBAF50 /* TestObjectFour.plist */; };
+		3ABA35FD1B4C16CA00EBAF50 /* TestObjectNine.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35EE1B4C16CA00EBAF50 /* TestObjectNine.plist */; };
+		3ABA35FF1B4C16CA00EBAF50 /* TestObjectSeven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35EF1B4C16CA00EBAF50 /* TestObjectSeven.plist */; };
+		3ABA36011B4C16CA00EBAF50 /* TestObjectSix.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35F01B4C16CA00EBAF50 /* TestObjectSix.plist */; };
+		3ABA36031B4C16CA00EBAF50 /* TestObjectTen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35F11B4C16CA00EBAF50 /* TestObjectTen.plist */; };
+		3ABA36051B4C16CA00EBAF50 /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35F21B4C16CA00EBAF50 /* TestObjectThree.plist */; };
+		3ABA36071B4C16CA00EBAF50 /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35F31B4C16CA00EBAF50 /* TestObjectTwelve.plist */; };
+		3ABA36091B4C16CA00EBAF50 /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA35F41B4C16CA00EBAF50 /* TestObjectTwo.plist */; };
+		3ABA360C1B4C16DF00EBAF50 /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA360B1B4C16DF00EBAF50 /* UTCompoundValueMapper.swift */; };
+		3ABA361B1B4C16FB00EBAF50 /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA360E1B4C16FB00EBAF50 /* _TestObjectEight.swift */; };
+		3ABA361D1B4C16FB00EBAF50 /* _TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA360F1B4C16FB00EBAF50 /* _TestObjectEleven.swift */; };
+		3ABA361F1B4C16FB00EBAF50 /* _TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36101B4C16FB00EBAF50 /* _TestObjectFive.swift */; };
+		3ABA36211B4C16FB00EBAF50 /* _TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36111B4C16FB00EBAF50 /* _TestObjectFour.swift */; };
+		3ABA36231B4C16FB00EBAF50 /* _TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36121B4C16FB00EBAF50 /* _TestObjectNine.swift */; };
+		3ABA36251B4C16FB00EBAF50 /* _TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36131B4C16FB00EBAF50 /* _TestObjectOne.swift */; };
+		3ABA36271B4C16FB00EBAF50 /* _TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36141B4C16FB00EBAF50 /* _TestObjectSeven.swift */; };
+		3ABA36291B4C16FB00EBAF50 /* _TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36151B4C16FB00EBAF50 /* _TestObjectSix.swift */; };
+		3ABA362B1B4C16FB00EBAF50 /* _TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36161B4C16FB00EBAF50 /* _TestObjectTen.swift */; };
+		3ABA362D1B4C16FB00EBAF50 /* _TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36171B4C16FB00EBAF50 /* _TestObjectThree.swift */; };
+		3ABA362F1B4C16FB00EBAF50 /* _TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36181B4C16FB00EBAF50 /* _TestObjectTwelve.swift */; };
+		3ABA36311B4C16FB00EBAF50 /* _TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36191B4C16FB00EBAF50 /* _TestObjectTwo.swift */; };
+		3ABA36411B4C170900EBAF50 /* TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36351B4C170900EBAF50 /* TestObjectEight.swift */; };
+		3ABA36431B4C170900EBAF50 /* TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36361B4C170900EBAF50 /* TestObjectEleven.swift */; };
+		3ABA36451B4C170900EBAF50 /* TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36371B4C170900EBAF50 /* TestObjectFive.swift */; };
+		3ABA36471B4C170900EBAF50 /* TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36381B4C170900EBAF50 /* TestObjectFour.swift */; };
+		3ABA36491B4C170900EBAF50 /* TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36391B4C170900EBAF50 /* TestObjectNine.swift */; };
+		3ABA364B1B4C170900EBAF50 /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363A1B4C170900EBAF50 /* TestObjectOne.swift */; };
+		3ABA364D1B4C170900EBAF50 /* TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363B1B4C170900EBAF50 /* TestObjectSeven.swift */; };
+		3ABA364F1B4C170900EBAF50 /* TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363C1B4C170900EBAF50 /* TestObjectSix.swift */; };
+		3ABA36511B4C170900EBAF50 /* TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363D1B4C170900EBAF50 /* TestObjectTen.swift */; };
+		3ABA36531B4C170900EBAF50 /* TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363E1B4C170900EBAF50 /* TestObjectThree.swift */; };
+		3ABA36551B4C170900EBAF50 /* TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363F1B4C170900EBAF50 /* TestObjectTwelve.swift */; };
+		3ABA36571B4C170900EBAF50 /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36401B4C170900EBAF50 /* TestObjectTwo.swift */; };
+		3ABA365A1B4C173E00EBAF50 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA36591B4C173E00EBAF50 /* Default-568h@2x.png */; };
+		3ABA365D1B4C174B00EBAF50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ABA365C1B4C174B00EBAF50 /* Assets.xcassets */; };
+		3ABA36791B4C193100EBAF50 /* US2MapperScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36631B4C176700EBAF50 /* US2MapperScenarioTests.swift */; };
+		3ABA367A1B4C193800EBAF50 /* US2MapperCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36621B4C176700EBAF50 /* US2MapperCoreTests.swift */; };
+		3ABA367D1B4C1ADD00EBAF50 /* _US2MapperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA367C1B4C1ADD00EBAF50 /* _US2MapperHelper.swift */; };
+		3ABA367E1B4C1ADD00EBAF50 /* _US2MapperHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA367C1B4C1ADD00EBAF50 /* _US2MapperHelper.swift */; };
+		3ABA367F1B4C1B0500EBAF50 /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA360E1B4C16FB00EBAF50 /* _TestObjectEight.swift */; };
+		3ABA36801B4C1B0500EBAF50 /* _TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA360F1B4C16FB00EBAF50 /* _TestObjectEleven.swift */; };
+		3ABA36811B4C1B0500EBAF50 /* _TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36101B4C16FB00EBAF50 /* _TestObjectFive.swift */; };
+		3ABA36821B4C1B0500EBAF50 /* _TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36111B4C16FB00EBAF50 /* _TestObjectFour.swift */; };
+		3ABA36831B4C1B0500EBAF50 /* _TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36121B4C16FB00EBAF50 /* _TestObjectNine.swift */; };
+		3ABA36841B4C1B0500EBAF50 /* _TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36131B4C16FB00EBAF50 /* _TestObjectOne.swift */; };
+		3ABA36851B4C1B0500EBAF50 /* _TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36141B4C16FB00EBAF50 /* _TestObjectSeven.swift */; };
+		3ABA36861B4C1B0500EBAF50 /* _TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36151B4C16FB00EBAF50 /* _TestObjectSix.swift */; };
+		3ABA36871B4C1B0500EBAF50 /* _TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36161B4C16FB00EBAF50 /* _TestObjectTen.swift */; };
+		3ABA36881B4C1B0500EBAF50 /* _TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36171B4C16FB00EBAF50 /* _TestObjectThree.swift */; };
+		3ABA36891B4C1B0500EBAF50 /* _TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36181B4C16FB00EBAF50 /* _TestObjectTwelve.swift */; };
+		3ABA368A1B4C1B0500EBAF50 /* _TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36191B4C16FB00EBAF50 /* _TestObjectTwo.swift */; };
+		3ABA368B1B4C1B0500EBAF50 /* TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36351B4C170900EBAF50 /* TestObjectEight.swift */; };
+		3ABA368C1B4C1B0500EBAF50 /* TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36361B4C170900EBAF50 /* TestObjectEleven.swift */; };
+		3ABA368D1B4C1B0500EBAF50 /* TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36371B4C170900EBAF50 /* TestObjectFive.swift */; };
+		3ABA368E1B4C1B0500EBAF50 /* TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36381B4C170900EBAF50 /* TestObjectFour.swift */; };
+		3ABA368F1B4C1B0500EBAF50 /* TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36391B4C170900EBAF50 /* TestObjectNine.swift */; };
+		3ABA36901B4C1B0500EBAF50 /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363A1B4C170900EBAF50 /* TestObjectOne.swift */; };
+		3ABA36911B4C1B0500EBAF50 /* TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363B1B4C170900EBAF50 /* TestObjectSeven.swift */; };
+		3ABA36921B4C1B0500EBAF50 /* TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363C1B4C170900EBAF50 /* TestObjectSix.swift */; };
+		3ABA36931B4C1B0500EBAF50 /* TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363D1B4C170900EBAF50 /* TestObjectTen.swift */; };
+		3ABA36941B4C1B0500EBAF50 /* TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363E1B4C170900EBAF50 /* TestObjectThree.swift */; };
+		3ABA36951B4C1B0500EBAF50 /* TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA363F1B4C170900EBAF50 /* TestObjectTwelve.swift */; };
+		3ABA36961B4C1B0500EBAF50 /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA36401B4C170900EBAF50 /* TestObjectTwo.swift */; };
+		3ABA36971B4C1B1200EBAF50 /* US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A525F681B387B02007C00BE /* US2Mapper.swift */; };
+		3ABA36981B4C1B1500EBAF50 /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABA360B1B4C16DF00EBAF50 /* UTCompoundValueMapper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3ABA36741B4C18E800EBAF50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A525F2E1B38755A007C00BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A525F351B38755A007C00BE;
+			remoteInfo = US2Mapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A525F361B38755A007C00BE /* US2Mapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = US2Mapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A525F681B387B02007C00BE /* US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2Mapper.swift; path = Source/US2Mapper.swift; sourceTree = "<group>"; };
+		3ABA35E81B4C16B800EBAF50 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = US2Mapper/Application/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		3ABA35EA1B4C16CA00EBAF50 /* TestObjectEight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectEight.plist; path = US2Mapper/Mapping/TestObjectEight.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35EB1B4C16CA00EBAF50 /* TestObjectEleven.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectEleven.plist; path = US2Mapper/Mapping/TestObjectEleven.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35EC1B4C16CA00EBAF50 /* TestObjectFive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectFive.plist; path = US2Mapper/Mapping/TestObjectFive.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35ED1B4C16CA00EBAF50 /* TestObjectFour.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectFour.plist; path = US2Mapper/Mapping/TestObjectFour.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35EE1B4C16CA00EBAF50 /* TestObjectNine.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectNine.plist; path = US2Mapper/Mapping/TestObjectNine.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35EF1B4C16CA00EBAF50 /* TestObjectSeven.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectSeven.plist; path = US2Mapper/Mapping/TestObjectSeven.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35F01B4C16CA00EBAF50 /* TestObjectSix.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectSix.plist; path = US2Mapper/Mapping/TestObjectSix.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35F11B4C16CA00EBAF50 /* TestObjectTen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectTen.plist; path = US2Mapper/Mapping/TestObjectTen.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35F21B4C16CA00EBAF50 /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectThree.plist; path = US2Mapper/Mapping/TestObjectThree.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35F31B4C16CA00EBAF50 /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectTwelve.plist; path = US2Mapper/Mapping/TestObjectTwelve.plist; sourceTree = SOURCE_ROOT; };
+		3ABA35F41B4C16CA00EBAF50 /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestObjectTwo.plist; path = US2Mapper/Mapping/TestObjectTwo.plist; sourceTree = SOURCE_ROOT; };
+		3ABA360B1B4C16DF00EBAF50 /* UTCompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTCompoundValueMapper.swift; path = US2Mapper/Mappers/UTCompoundValueMapper.swift; sourceTree = SOURCE_ROOT; };
+		3ABA360E1B4C16FB00EBAF50 /* _TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectEight.swift; path = US2Mapper/Classes/Internal/_TestObjectEight.swift; sourceTree = SOURCE_ROOT; };
+		3ABA360F1B4C16FB00EBAF50 /* _TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectEleven.swift; path = US2Mapper/Classes/Internal/_TestObjectEleven.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36101B4C16FB00EBAF50 /* _TestObjectFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectFive.swift; path = US2Mapper/Classes/Internal/_TestObjectFive.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36111B4C16FB00EBAF50 /* _TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectFour.swift; path = US2Mapper/Classes/Internal/_TestObjectFour.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36121B4C16FB00EBAF50 /* _TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectNine.swift; path = US2Mapper/Classes/Internal/_TestObjectNine.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36131B4C16FB00EBAF50 /* _TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectOne.swift; path = US2Mapper/Classes/Internal/_TestObjectOne.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36141B4C16FB00EBAF50 /* _TestObjectSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectSeven.swift; path = US2Mapper/Classes/Internal/_TestObjectSeven.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36151B4C16FB00EBAF50 /* _TestObjectSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectSix.swift; path = US2Mapper/Classes/Internal/_TestObjectSix.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36161B4C16FB00EBAF50 /* _TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectTen.swift; path = US2Mapper/Classes/Internal/_TestObjectTen.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36171B4C16FB00EBAF50 /* _TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectThree.swift; path = US2Mapper/Classes/Internal/_TestObjectThree.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36181B4C16FB00EBAF50 /* _TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectTwelve.swift; path = US2Mapper/Classes/Internal/_TestObjectTwelve.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36191B4C16FB00EBAF50 /* _TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestObjectTwo.swift; path = US2Mapper/Classes/Internal/_TestObjectTwo.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36351B4C170900EBAF50 /* TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectEight.swift; path = US2Mapper/Classes/TestObjectEight.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36361B4C170900EBAF50 /* TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectEleven.swift; path = US2Mapper/Classes/TestObjectEleven.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36371B4C170900EBAF50 /* TestObjectFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectFive.swift; path = US2Mapper/Classes/TestObjectFive.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36381B4C170900EBAF50 /* TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectFour.swift; path = US2Mapper/Classes/TestObjectFour.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36391B4C170900EBAF50 /* TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectNine.swift; path = US2Mapper/Classes/TestObjectNine.swift; sourceTree = SOURCE_ROOT; };
+		3ABA363A1B4C170900EBAF50 /* TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectOne.swift; path = US2Mapper/Classes/TestObjectOne.swift; sourceTree = SOURCE_ROOT; };
+		3ABA363B1B4C170900EBAF50 /* TestObjectSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectSeven.swift; path = US2Mapper/Classes/TestObjectSeven.swift; sourceTree = SOURCE_ROOT; };
+		3ABA363C1B4C170900EBAF50 /* TestObjectSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectSix.swift; path = US2Mapper/Classes/TestObjectSix.swift; sourceTree = SOURCE_ROOT; };
+		3ABA363D1B4C170900EBAF50 /* TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectTen.swift; path = US2Mapper/Classes/TestObjectTen.swift; sourceTree = SOURCE_ROOT; };
+		3ABA363E1B4C170900EBAF50 /* TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectThree.swift; path = US2Mapper/Classes/TestObjectThree.swift; sourceTree = SOURCE_ROOT; };
+		3ABA363F1B4C170900EBAF50 /* TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectTwelve.swift; path = US2Mapper/Classes/TestObjectTwelve.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36401B4C170900EBAF50 /* TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectTwo.swift; path = US2Mapper/Classes/TestObjectTwo.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36591B4C173E00EBAF50 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		3ABA365C1B4C174B00EBAF50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = US2Mapper/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		3ABA365F1B4C175400EBAF50 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = US2Mapper/Info.plist; sourceTree = SOURCE_ROOT; };
+		3ABA36621B4C176700EBAF50 /* US2MapperCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperCoreTests.swift; path = US2MapperTests/US2MapperCoreTests.swift; sourceTree = SOURCE_ROOT; };
+		3ABA36631B4C176700EBAF50 /* US2MapperScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperScenarioTests.swift; path = US2MapperTests/US2MapperScenarioTests.swift; sourceTree = SOURCE_ROOT; };
+		3ABA366F1B4C18E800EBAF50 /* US2MapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2MapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ABA36731B4C18E800EBAF50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ABA367C1B4C1ADD00EBAF50 /* _US2MapperHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _US2MapperHelper.swift; path = US2Mapper/Classes/Internal/_US2MapperHelper.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A525F331B38755A007C00BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABA366C1B4C18E800EBAF50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A3F39401B3C6870003D1FE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA363A1B4C170900EBAF50 /* TestObjectOne.swift */,
+				3A7269AD1B3C875B009C6CD5 /* Internal */,
+				3ABA36351B4C170900EBAF50 /* TestObjectEight.swift */,
+				3ABA36361B4C170900EBAF50 /* TestObjectEleven.swift */,
+				3ABA36371B4C170900EBAF50 /* TestObjectFive.swift */,
+				3ABA36381B4C170900EBAF50 /* TestObjectFour.swift */,
+				3ABA36391B4C170900EBAF50 /* TestObjectNine.swift */,
+				3ABA363B1B4C170900EBAF50 /* TestObjectSeven.swift */,
+				3ABA363C1B4C170900EBAF50 /* TestObjectSix.swift */,
+				3ABA363D1B4C170900EBAF50 /* TestObjectTen.swift */,
+				3ABA363E1B4C170900EBAF50 /* TestObjectThree.swift */,
+				3ABA363F1B4C170900EBAF50 /* TestObjectTwelve.swift */,
+				3ABA36401B4C170900EBAF50 /* TestObjectTwo.swift */,
+			);
+			name = Model;
+			path = UTMapperTests/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		3A525F2D1B38755A007C00BE = {
+			isa = PBXGroup;
+			children = (
+				3A525F671B387AED007C00BE /* Source */,
+				3A525F381B38755A007C00BE /* US2Mapper */,
+				3ABA36701B4C18E800EBAF50 /* US2MapperTests */,
+				3A525F371B38755A007C00BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A525F371B38755A007C00BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A525F361B38755A007C00BE /* US2Mapper.app */,
+				3ABA366F1B4C18E800EBAF50 /* US2MapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A525F381B38755A007C00BE /* US2Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				3A7269E91B418845009C6CD5 /* Mappers */,
+				3A525F6D1B387BDE007C00BE /* Mappings */,
+				3A7269C01B3C8795009C6CD5 /* Application */,
+				3A3F39401B3C6870003D1FE3 /* Model */,
+				3A7269C11B3C87A3009C6CD5 /* Resources */,
+			);
+			name = US2Mapper;
+			path = UTMapper;
+			sourceTree = "<group>";
+		};
+		3A525F671B387AED007C00BE /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3A525F681B387B02007C00BE /* US2Mapper.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		3A525F6D1B387BDE007C00BE /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA35EA1B4C16CA00EBAF50 /* TestObjectEight.plist */,
+				3ABA35EB1B4C16CA00EBAF50 /* TestObjectEleven.plist */,
+				3ABA35EC1B4C16CA00EBAF50 /* TestObjectFive.plist */,
+				3ABA35ED1B4C16CA00EBAF50 /* TestObjectFour.plist */,
+				3ABA35EE1B4C16CA00EBAF50 /* TestObjectNine.plist */,
+				3ABA35EF1B4C16CA00EBAF50 /* TestObjectSeven.plist */,
+				3ABA35F01B4C16CA00EBAF50 /* TestObjectSix.plist */,
+				3ABA35F11B4C16CA00EBAF50 /* TestObjectTen.plist */,
+				3ABA35F21B4C16CA00EBAF50 /* TestObjectThree.plist */,
+				3ABA35F31B4C16CA00EBAF50 /* TestObjectTwelve.plist */,
+				3ABA35F41B4C16CA00EBAF50 /* TestObjectTwo.plist */,
+			);
+			name = Mappings;
+			path = UTMapperTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		3A7269AD1B3C875B009C6CD5 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA367C1B4C1ADD00EBAF50 /* _US2MapperHelper.swift */,
+				3ABA360E1B4C16FB00EBAF50 /* _TestObjectEight.swift */,
+				3ABA360F1B4C16FB00EBAF50 /* _TestObjectEleven.swift */,
+				3ABA36101B4C16FB00EBAF50 /* _TestObjectFive.swift */,
+				3ABA36111B4C16FB00EBAF50 /* _TestObjectFour.swift */,
+				3ABA36121B4C16FB00EBAF50 /* _TestObjectNine.swift */,
+				3ABA36131B4C16FB00EBAF50 /* _TestObjectOne.swift */,
+				3ABA36141B4C16FB00EBAF50 /* _TestObjectSeven.swift */,
+				3ABA36151B4C16FB00EBAF50 /* _TestObjectSix.swift */,
+				3ABA36161B4C16FB00EBAF50 /* _TestObjectTen.swift */,
+				3ABA36171B4C16FB00EBAF50 /* _TestObjectThree.swift */,
+				3ABA36181B4C16FB00EBAF50 /* _TestObjectTwelve.swift */,
+				3ABA36191B4C16FB00EBAF50 /* _TestObjectTwo.swift */,
+			);
+			name = Internal;
+			path = UTMapper/Classes/Internal;
+			sourceTree = SOURCE_ROOT;
+		};
+		3A7269C01B3C8795009C6CD5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA35E81B4C16B800EBAF50 /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		3A7269C11B3C87A3009C6CD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA36591B4C173E00EBAF50 /* Default-568h@2x.png */,
+				3ABA365C1B4C174B00EBAF50 /* Assets.xcassets */,
+				3ABA365F1B4C175400EBAF50 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3A7269E91B418845009C6CD5 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA360B1B4C16DF00EBAF50 /* UTCompoundValueMapper.swift */,
+			);
+			name = Mappers;
+			path = UTMapperTests/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		3ABA36701B4C18E800EBAF50 /* US2MapperTests */ = {
+			isa = PBXGroup;
+			children = (
+				3ABA36631B4C176700EBAF50 /* US2MapperScenarioTests.swift */,
+				3ABA36621B4C176700EBAF50 /* US2MapperCoreTests.swift */,
+				3ABA36731B4C18E800EBAF50 /* Info.plist */,
+			);
+			path = US2MapperTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A525F351B38755A007C00BE /* US2Mapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A525F5E1B38755A007C00BE /* Build configuration list for PBXNativeTarget "US2Mapper" */;
+			buildPhases = (
+				3A7269D71B3CA0F7009C6CD5 /* Rebuild Model */,
+				3A525F321B38755A007C00BE /* Sources */,
+				3A525F331B38755A007C00BE /* Frameworks */,
+				3A525F341B38755A007C00BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = US2Mapper;
+			productName = UTMapper;
+			productReference = 3A525F361B38755A007C00BE /* US2Mapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3ABA366E1B4C18E800EBAF50 /* US2MapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ABA36761B4C18E800EBAF50 /* Build configuration list for PBXNativeTarget "US2MapperTests" */;
+			buildPhases = (
+				3ABA367B1B4C19D300EBAF50 /* ShellScript */,
+				3ABA366B1B4C18E800EBAF50 /* Sources */,
+				3ABA366C1B4C18E800EBAF50 /* Frameworks */,
+				3ABA366D1B4C18E800EBAF50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ABA36751B4C18E800EBAF50 /* PBXTargetDependency */,
+			);
+			name = US2MapperTests;
+			productName = US2MapperTests;
+			productReference = 3ABA366F1B4C18E800EBAF50 /* US2MapperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A525F2E1B38755A007C00BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = UTMapper;
+				TargetAttributes = {
+					3A525F351B38755A007C00BE = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					3ABA366E1B4C18E800EBAF50 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 3A525F351B38755A007C00BE;
+					};
+				};
+			};
+			buildConfigurationList = 3A525F311B38755A007C00BE /* Build configuration list for PBXProject "US2Mapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A525F2D1B38755A007C00BE;
+			productRefGroup = 3A525F371B38755A007C00BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A525F351B38755A007C00BE /* US2Mapper */,
+				3ABA366E1B4C18E800EBAF50 /* US2MapperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A525F341B38755A007C00BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ABA35F91B4C16CA00EBAF50 /* TestObjectFive.plist in Resources */,
+				3ABA35FD1B4C16CA00EBAF50 /* TestObjectNine.plist in Resources */,
+				3ABA36071B4C16CA00EBAF50 /* TestObjectTwelve.plist in Resources */,
+				3ABA36031B4C16CA00EBAF50 /* TestObjectTen.plist in Resources */,
+				3ABA36051B4C16CA00EBAF50 /* TestObjectThree.plist in Resources */,
+				3ABA36011B4C16CA00EBAF50 /* TestObjectSix.plist in Resources */,
+				3ABA365D1B4C174B00EBAF50 /* Assets.xcassets in Resources */,
+				3ABA35FB1B4C16CA00EBAF50 /* TestObjectFour.plist in Resources */,
+				3ABA35F71B4C16CA00EBAF50 /* TestObjectEleven.plist in Resources */,
+				3ABA365A1B4C173E00EBAF50 /* Default-568h@2x.png in Resources */,
+				3ABA36091B4C16CA00EBAF50 /* TestObjectTwo.plist in Resources */,
+				3ABA35F51B4C16CA00EBAF50 /* TestObjectEight.plist in Resources */,
+				3ABA35FF1B4C16CA00EBAF50 /* TestObjectSeven.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABA366D1B4C18E800EBAF50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A7269D71B3CA0F7009C6CD5 /* Rebuild Model */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Rebuild Model";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/US2Mapper/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Classes/";
+		};
+		3ABA367B1B4C19D300EBAF50 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/US2Mapper/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Classes/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A525F321B38755A007C00BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ABA35E91B4C16B800EBAF50 /* AppDelegate.swift in Sources */,
+				3ABA36431B4C170900EBAF50 /* TestObjectEleven.swift in Sources */,
+				3ABA36471B4C170900EBAF50 /* TestObjectFour.swift in Sources */,
+				3ABA36251B4C16FB00EBAF50 /* _TestObjectOne.swift in Sources */,
+				3ABA36491B4C170900EBAF50 /* TestObjectNine.swift in Sources */,
+				3ABA362F1B4C16FB00EBAF50 /* _TestObjectTwelve.swift in Sources */,
+				3ABA361F1B4C16FB00EBAF50 /* _TestObjectFive.swift in Sources */,
+				3ABA367D1B4C1ADD00EBAF50 /* _US2MapperHelper.swift in Sources */,
+				3ABA36291B4C16FB00EBAF50 /* _TestObjectSix.swift in Sources */,
+				3ABA36311B4C16FB00EBAF50 /* _TestObjectTwo.swift in Sources */,
+				3ABA364F1B4C170900EBAF50 /* TestObjectSix.swift in Sources */,
+				3ABA361B1B4C16FB00EBAF50 /* _TestObjectEight.swift in Sources */,
+				3ABA36571B4C170900EBAF50 /* TestObjectTwo.swift in Sources */,
+				3ABA36231B4C16FB00EBAF50 /* _TestObjectNine.swift in Sources */,
+				3ABA361D1B4C16FB00EBAF50 /* _TestObjectEleven.swift in Sources */,
+				3ABA36451B4C170900EBAF50 /* TestObjectFive.swift in Sources */,
+				3ABA364B1B4C170900EBAF50 /* TestObjectOne.swift in Sources */,
+				3ABA36211B4C16FB00EBAF50 /* _TestObjectFour.swift in Sources */,
+				3A525F691B387B02007C00BE /* US2Mapper.swift in Sources */,
+				3ABA36531B4C170900EBAF50 /* TestObjectThree.swift in Sources */,
+				3ABA36551B4C170900EBAF50 /* TestObjectTwelve.swift in Sources */,
+				3ABA36411B4C170900EBAF50 /* TestObjectEight.swift in Sources */,
+				3ABA36511B4C170900EBAF50 /* TestObjectTen.swift in Sources */,
+				3ABA364D1B4C170900EBAF50 /* TestObjectSeven.swift in Sources */,
+				3ABA360C1B4C16DF00EBAF50 /* UTCompoundValueMapper.swift in Sources */,
+				3ABA362B1B4C16FB00EBAF50 /* _TestObjectTen.swift in Sources */,
+				3ABA362D1B4C16FB00EBAF50 /* _TestObjectThree.swift in Sources */,
+				3ABA36271B4C16FB00EBAF50 /* _TestObjectSeven.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ABA366B1B4C18E800EBAF50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ABA36981B4C1B1500EBAF50 /* UTCompoundValueMapper.swift in Sources */,
+				3ABA36971B4C1B1200EBAF50 /* US2Mapper.swift in Sources */,
+				3ABA367F1B4C1B0500EBAF50 /* _TestObjectEight.swift in Sources */,
+				3ABA36801B4C1B0500EBAF50 /* _TestObjectEleven.swift in Sources */,
+				3ABA36811B4C1B0500EBAF50 /* _TestObjectFive.swift in Sources */,
+				3ABA36821B4C1B0500EBAF50 /* _TestObjectFour.swift in Sources */,
+				3ABA36831B4C1B0500EBAF50 /* _TestObjectNine.swift in Sources */,
+				3ABA36841B4C1B0500EBAF50 /* _TestObjectOne.swift in Sources */,
+				3ABA36851B4C1B0500EBAF50 /* _TestObjectSeven.swift in Sources */,
+				3ABA36861B4C1B0500EBAF50 /* _TestObjectSix.swift in Sources */,
+				3ABA36871B4C1B0500EBAF50 /* _TestObjectTen.swift in Sources */,
+				3ABA36881B4C1B0500EBAF50 /* _TestObjectThree.swift in Sources */,
+				3ABA36891B4C1B0500EBAF50 /* _TestObjectTwelve.swift in Sources */,
+				3ABA368A1B4C1B0500EBAF50 /* _TestObjectTwo.swift in Sources */,
+				3ABA368B1B4C1B0500EBAF50 /* TestObjectEight.swift in Sources */,
+				3ABA368C1B4C1B0500EBAF50 /* TestObjectEleven.swift in Sources */,
+				3ABA368D1B4C1B0500EBAF50 /* TestObjectFive.swift in Sources */,
+				3ABA368E1B4C1B0500EBAF50 /* TestObjectFour.swift in Sources */,
+				3ABA368F1B4C1B0500EBAF50 /* TestObjectNine.swift in Sources */,
+				3ABA36901B4C1B0500EBAF50 /* TestObjectOne.swift in Sources */,
+				3ABA36911B4C1B0500EBAF50 /* TestObjectSeven.swift in Sources */,
+				3ABA36921B4C1B0500EBAF50 /* TestObjectSix.swift in Sources */,
+				3ABA36931B4C1B0500EBAF50 /* TestObjectTen.swift in Sources */,
+				3ABA36941B4C1B0500EBAF50 /* TestObjectThree.swift in Sources */,
+				3ABA36951B4C1B0500EBAF50 /* TestObjectTwelve.swift in Sources */,
+				3ABA36961B4C1B0500EBAF50 /* TestObjectTwo.swift in Sources */,
+				3ABA36791B4C193100EBAF50 /* US2MapperScenarioTests.swift in Sources */,
+				3ABA367A1B4C193800EBAF50 /* US2MapperCoreTests.swift in Sources */,
+				3ABA367E1B4C1ADD00EBAF50 /* _US2MapperHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3ABA36751B4C18E800EBAF50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A525F351B38755A007C00BE /* US2Mapper */;
+			targetProxy = 3ABA36741B4C18E800EBAF50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3A525F5C1B38755A007C00BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A525F5D1B38755A007C00BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A525F5F1B38755A007C00BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = US2Mapper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.utmapper.US2Mapper;
+				PRODUCT_NAME = US2Mapper;
+			};
+			name = Debug;
+		};
+		3A525F601B38755A007C00BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = US2Mapper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.utmapper.US2Mapper;
+				PRODUCT_NAME = US2Mapper;
+			};
+			name = Release;
+		};
+		3ABA36771B4C18E800EBAF50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = US2MapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.mapperplugin.US2MapperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/US2Mapper.app/US2Mapper";
+			};
+			name = Debug;
+		};
+		3ABA36781B4C18E800EBAF50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = US2MapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.mapperplugin.US2MapperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/US2Mapper.app/US2Mapper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A525F311B38755A007C00BE /* Build configuration list for PBXProject "US2Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A525F5C1B38755A007C00BE /* Debug */,
+				3A525F5D1B38755A007C00BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A525F5E1B38755A007C00BE /* Build configuration list for PBXNativeTarget "US2Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A525F5F1B38755A007C00BE /* Debug */,
+				3A525F601B38755A007C00BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ABA36761B4C18E800EBAF50 /* Build configuration list for PBXNativeTarget "US2MapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ABA36771B4C18E800EBAF50 /* Debug */,
+				3ABA36781B4C18E800EBAF50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A525F2E1B38755A007C00BE /* Project object */;
+}
