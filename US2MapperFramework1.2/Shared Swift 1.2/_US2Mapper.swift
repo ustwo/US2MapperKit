@@ -348,25 +348,14 @@ class _US2Mapper {
     
     // MARK TypeCasting / Conversion Methods
     
-    class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
+    final class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
         switch dataType {
         case UTDataTypeString:
-            if let numericObject = value as? NSNumber {
-                return numericObject.stringValue
+            if value is NSNumber {
+                return numericString(value as! NSNumber)
             }
+            return "\(value)"
         case UTDataTypeDouble:
-            if let numericObject = value as? NSNumber {
-                switch CFNumberGetType(numericObject){
-                case .SInt64Type:
-                    return value
-                case .Float32Type:
-                    return value
-                case .Float64Type:
-                    return value
-                default:
-                    return Double(value.doubleValue)
-                }
-            }
             return Double(value.doubleValue)
         case UTDataTypeFloat:
             return Float(value.floatValue)
@@ -377,8 +366,39 @@ class _US2Mapper {
         default:
             return value
         }
-        
-        return value
+    }
+    
+    final class func numericString(value: NSNumber) -> String {
+        switch CFNumberGetType(value){
+        case .SInt8Type:
+            return String(value.charValue)
+        case .SInt16Type:
+            return String(value.shortValue)
+        case .SInt32Type:
+            return String(value.intValue)
+        case .SInt64Type:
+            return String(value.longLongValue)
+        case .Float32Type:
+            return String(stringInterpolationSegment: value.floatValue)
+        case .Float64Type:
+            return String(stringInterpolationSegment: value.doubleValue)
+        case .CharType:
+            return String(value.charValue)
+        case .ShortType:
+            return String(value.shortValue)
+        case .IntType:
+            return String(value.integerValue)
+        case .LongType:
+            return String(value.longValue)
+        case .LongLongType:
+            return String(value.longLongValue)
+        case .FloatType:
+            return String(stringInterpolationSegment: value.floatValue)
+        case .DoubleType:
+            return String(stringInterpolationSegment: value.doubleValue)
+        default:
+            return String(stringInterpolationSegment: value.doubleValue)
+        }
     }
     
     class func typeCast<U>(object: AnyObject?) -> U? {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A62F2361B4DA04D00AB26CD /* US2Mapper1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A62F2351B4DA04D00AB26CD /* US2Mapper1.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A62F23C1B4DA04D00AB26CD /* US2Mapper12.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A62F2301B4DA04D00AB26CD /* US2Mapper12.framework */; };
-		3A62F2431B4DA04D00AB26CD /* US2Mapper12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F2421B4DA04D00AB26CD /* US2Mapper12Tests.swift */; };
 		3A62F2B81B4DA3FC00AB26CD /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F2B61B4DA3FC00AB26CD /* _US2Mapper.swift */; };
 		3A62F2B91B4DA3FC00AB26CD /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F2B61B4DA3FC00AB26CD /* _US2Mapper.swift */; };
 		3A62F2BA1B4DA3FC00AB26CD /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F2B71B4DA3FC00AB26CD /* UTCompoundValueMapper.swift */; };
@@ -48,9 +47,10 @@
 		3A62F3001B4DB35000AB26CD /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F2F51B4DB35000AB26CD /* TestObjectThree.plist */; };
 		3A62F3011B4DB35000AB26CD /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F2F61B4DB35000AB26CD /* TestObjectTwelve.plist */; };
 		3A62F3021B4DB35000AB26CD /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F2F71B4DB35000AB26CD /* TestObjectTwo.plist */; };
-		3A62F3041B4DB63500AB26CD /* US2Mapper12iOSScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3031B4DB63500AB26CD /* US2Mapper12iOSScenarioTests.swift */; };
 		3A62F3061B4DB6D700AB26CD /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3051B4DB6D700AB26CD /* TestObjectOne.swift */; };
 		3A62F3081B4DB6E000AB26CD /* _TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3071B4DB6E000AB26CD /* _TestObjectOne.swift */; };
+		3A62F3611B4DD0DE00AB26CD /* US2Mapper12ScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F35F1B4DD0DE00AB26CD /* US2Mapper12ScenarioTests.swift */; };
+		3A62F3621B4DD0DE00AB26CD /* US2Mapper12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3601B4DD0DE00AB26CD /* US2Mapper12Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 		3A62F2351B4DA04D00AB26CD /* US2Mapper1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = US2Mapper1.h; sourceTree = "<group>"; };
 		3A62F23B1B4DA04D00AB26CD /* US2Mapper12iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2Mapper12iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A62F2411B4DA04D00AB26CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A62F2421B4DA04D00AB26CD /* US2Mapper12Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = US2Mapper12Tests.swift; sourceTree = "<group>"; };
 		3A62F2B61B4DA3FC00AB26CD /* _US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _US2Mapper.swift; sourceTree = "<group>"; };
 		3A62F2B71B4DA3FC00AB26CD /* UTCompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTCompoundValueMapper.swift; sourceTree = "<group>"; };
 		3A62F2BE1B4DA6A200AB26CD /* _TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEight.swift; sourceTree = "<group>"; };
@@ -106,9 +105,10 @@
 		3A62F2F51B4DB35000AB26CD /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectThree.plist; sourceTree = "<group>"; };
 		3A62F2F61B4DB35000AB26CD /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwelve.plist; sourceTree = "<group>"; };
 		3A62F2F71B4DB35000AB26CD /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwo.plist; sourceTree = "<group>"; };
-		3A62F3031B4DB63500AB26CD /* US2Mapper12iOSScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper12iOSScenarioTests.swift; sourceTree = "<group>"; };
 		3A62F3051B4DB6D700AB26CD /* TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestObjectOne.swift; path = US2Mapper1Tests/Classes/TestObjectOne.swift; sourceTree = SOURCE_ROOT; };
 		3A62F3071B4DB6E000AB26CD /* _TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectOne.swift; sourceTree = "<group>"; };
+		3A62F35F1B4DD0DE00AB26CD /* US2Mapper12ScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2Mapper12ScenarioTests.swift; path = "../../../Shared TestCases/US2Mapper12ScenarioTests.swift"; sourceTree = "<group>"; };
+		3A62F3601B4DD0DE00AB26CD /* US2Mapper12Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2Mapper12Tests.swift; path = "../../../Shared TestCases/US2Mapper12Tests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +170,8 @@
 		3A62F23F1B4DA04D00AB26CD /* US2Mapper1.2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3A62F2421B4DA04D00AB26CD /* US2Mapper12Tests.swift */,
-				3A62F3031B4DB63500AB26CD /* US2Mapper12iOSScenarioTests.swift */,
+				3A62F35F1B4DD0DE00AB26CD /* US2Mapper12ScenarioTests.swift */,
+				3A62F3601B4DD0DE00AB26CD /* US2Mapper12Tests.swift */,
 				3A62F2EC1B4DB35000AB26CD /* Mapping */,
 				3A62F2BC1B4DA6A200AB26CD /* Classes */,
 				3A62F2401B4DA04D00AB26CD /* Supporting Files */,
@@ -415,11 +415,9 @@
 				3A62F2E11B4DA6A200AB26CD /* TestObjectEight.swift in Sources */,
 				3A62F3081B4DB6E000AB26CD /* _TestObjectOne.swift in Sources */,
 				3A62F2D61B4DA6A200AB26CD /* _TestObjectEleven.swift in Sources */,
-				3A62F3041B4DB63500AB26CD /* US2Mapper12iOSScenarioTests.swift in Sources */,
 				3A62F2E71B4DA6A200AB26CD /* TestObjectSix.swift in Sources */,
 				3A62F3061B4DB6D700AB26CD /* TestObjectOne.swift in Sources */,
 				3A62F2E41B4DA6A200AB26CD /* TestObjectFour.swift in Sources */,
-				3A62F2431B4DA04D00AB26CD /* US2Mapper12Tests.swift in Sources */,
 				3A62F2E01B4DA6A200AB26CD /* US2Mapper.swift in Sources */,
 				3A62F2DA1B4DA6A200AB26CD /* _TestObjectSeven.swift in Sources */,
 				3A62F2DF1B4DA6A200AB26CD /* _TestObjectTwo.swift in Sources */,
@@ -429,7 +427,9 @@
 				3A62F2E61B4DA6A200AB26CD /* TestObjectSeven.swift in Sources */,
 				3A62F2E21B4DA6A200AB26CD /* TestObjectEleven.swift in Sources */,
 				3A62F2E91B4DA6A200AB26CD /* TestObjectThree.swift in Sources */,
+				3A62F3611B4DD0DE00AB26CD /* US2Mapper12ScenarioTests.swift in Sources */,
 				3A62F2EB1B4DA6A200AB26CD /* TestObjectTwo.swift in Sources */,
+				3A62F3621B4DD0DE00AB26CD /* US2Mapper12Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +612,7 @@
 				3A62F2481B4DA04D00AB26CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A62F2491B4DA04D00AB26CD /* Build configuration list for PBXNativeTarget "US2Mapper12iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -620,6 +621,7 @@
 				3A62F24B1B4DA04D00AB26CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

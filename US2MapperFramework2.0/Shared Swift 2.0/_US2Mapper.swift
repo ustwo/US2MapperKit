@@ -346,12 +346,16 @@ class _US2Mapper {
         return valueArray
     }
     
+    
     // MARK TypeCasting / Conversion Methods
     
     final class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
         switch dataType {
         case UTDataTypeString:
-                return "\(value)"
+            if value is NSNumber {
+                return numericString(value as! NSNumber)
+            }
+            return String(value)
         case UTDataTypeDouble:
             return Double(value.doubleValue)
         case UTDataTypeFloat:
@@ -363,8 +367,39 @@ class _US2Mapper {
         default:
             return value
         }
-        
-        return value
+    }
+    
+    final class func numericString(value: NSNumber) -> String {
+        switch CFNumberGetType(value){
+        case .SInt8Type:
+            return String(value.charValue)
+        case .SInt16Type:
+            return String(value.shortValue)
+        case .SInt32Type:
+            return String(value.intValue)
+        case .SInt64Type:
+            return String(value.longLongValue)
+        case .Float32Type:
+            return String(value.floatValue)
+        case .Float64Type:
+            return String(value.doubleValue)
+        case .CharType:
+            return String(value.charValue)
+        case .ShortType:
+            return String(value.shortValue)
+        case .IntType:
+            return String(value.integerValue)
+        case .LongType:
+            return String(value.longValue)
+        case .LongLongType:
+            return String(value.longLongValue)
+        case .FloatType:
+            return String(value.floatValue)
+        case .DoubleType:
+            return String(value.doubleValue)
+        default:
+            return String(value.doubleValue)
+        }
     }
     
     final class func typeCast<U>(object: AnyObject?) -> U? {

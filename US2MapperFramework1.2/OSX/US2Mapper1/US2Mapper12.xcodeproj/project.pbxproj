@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A62F2101B4DA02300AB26CD /* US2Mapper1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A62F20F1B4DA02300AB26CD /* US2Mapper1.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A62F2161B4DA02400AB26CD /* US2Mapper12.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A62F20A1B4DA02300AB26CD /* US2Mapper12.framework */; };
-		3A62F30B1B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3091B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift */; };
-		3A62F30C1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F30A1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift */; };
 		3A62F3261B4DB9D300AB26CD /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F30F1B4DB9D300AB26CD /* _TestObjectEight.swift */; };
 		3A62F3271B4DB9D300AB26CD /* _TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3101B4DB9D300AB26CD /* _TestObjectEleven.swift */; };
 		3A62F3281B4DB9D300AB26CD /* _TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3111B4DB9D300AB26CD /* _TestObjectFive.swift */; };
@@ -51,6 +49,8 @@
 		3A62F35C1B4DBA9900AB26CD /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3511B4DBA9900AB26CD /* TestObjectThree.plist */; };
 		3A62F35D1B4DBA9900AB26CD /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3521B4DBA9900AB26CD /* TestObjectTwelve.plist */; };
 		3A62F35E1B4DBA9900AB26CD /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3531B4DBA9900AB26CD /* TestObjectTwo.plist */; };
+		3A62F3651B4DD0E900AB26CD /* US2Mapper12ScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3631B4DD0E900AB26CD /* US2Mapper12ScenarioTests.swift */; };
+		3A62F3661B4DD0E900AB26CD /* US2Mapper12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3641B4DD0E900AB26CD /* US2Mapper12Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +69,6 @@
 		3A62F20F1B4DA02300AB26CD /* US2Mapper1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = US2Mapper1.h; sourceTree = "<group>"; };
 		3A62F2151B4DA02400AB26CD /* US2Mapper12OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2Mapper12OSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A62F21B1B4DA02400AB26CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A62F3091B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper12OSXScenarioTests.swift; sourceTree = "<group>"; };
-		3A62F30A1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper12OSXTests.swift; sourceTree = "<group>"; };
 		3A62F30F1B4DB9D300AB26CD /* _TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEight.swift; sourceTree = "<group>"; };
 		3A62F3101B4DB9D300AB26CD /* _TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEleven.swift; sourceTree = "<group>"; };
 		3A62F3111B4DB9D300AB26CD /* _TestObjectFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectFive.swift; sourceTree = "<group>"; };
@@ -109,6 +107,8 @@
 		3A62F3511B4DBA9900AB26CD /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectThree.plist; sourceTree = "<group>"; };
 		3A62F3521B4DBA9900AB26CD /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwelve.plist; sourceTree = "<group>"; };
 		3A62F3531B4DBA9900AB26CD /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwo.plist; sourceTree = "<group>"; };
+		3A62F3631B4DD0E900AB26CD /* US2Mapper12ScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2Mapper12ScenarioTests.swift; path = "../../../Shared TestCases/US2Mapper12ScenarioTests.swift"; sourceTree = "<group>"; };
+		3A62F3641B4DD0E900AB26CD /* US2Mapper12Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2Mapper12Tests.swift; path = "../../../Shared TestCases/US2Mapper12Tests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,10 +169,10 @@
 		3A62F2191B4DA02400AB26CD /* US2Mapper1Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3A62F3631B4DD0E900AB26CD /* US2Mapper12ScenarioTests.swift */,
+				3A62F3641B4DD0E900AB26CD /* US2Mapper12Tests.swift */,
 				3A62F3481B4DBA9900AB26CD /* Mapping */,
 				3A62F30D1B4DB9D300AB26CD /* Classes */,
-				3A62F3091B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift */,
-				3A62F30A1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift */,
 				3A62F21A1B4DA02400AB26CD /* Supporting Files */,
 			);
 			path = US2Mapper1Tests;
@@ -400,9 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A62F32B1B4DB9D300AB26CD /* _TestObjectSeven.swift in Sources */,
-				3A62F30B1B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift in Sources */,
 				3A62F3321B4DB9D300AB26CD /* TestObjectEight.swift in Sources */,
-				3A62F30C1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift in Sources */,
 				3A62F3311B4DB9D300AB26CD /* US2Mapper.swift in Sources */,
 				3A62F32A1B4DB9D300AB26CD /* _TestObjectNine.swift in Sources */,
 				3A62F32D1B4DB9D300AB26CD /* _TestObjectTen.swift in Sources */,
@@ -427,7 +425,9 @@
 				3A62F33A1B4DB9D300AB26CD /* TestObjectThree.swift in Sources */,
 				3A62F3391B4DB9D300AB26CD /* TestObjectTen.swift in Sources */,
 				3A62F3271B4DB9D300AB26CD /* _TestObjectEleven.swift in Sources */,
+				3A62F3651B4DD0E900AB26CD /* US2Mapper12ScenarioTests.swift in Sources */,
 				3A62F3451B4DBA3900AB26CD /* _TestObjectOne.swift in Sources */,
+				3A62F3661B4DD0E900AB26CD /* US2Mapper12Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +614,7 @@
 				3A62F2221B4DA02400AB26CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A62F2231B4DA02400AB26CD /* Build configuration list for PBXNativeTarget "US2Mapper12OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -622,6 +623,7 @@
 				3A62F2251B4DA02400AB26CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

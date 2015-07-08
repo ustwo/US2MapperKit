@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A62F22F1B4DA04D00AB26CD"
-               BuildableName = "US2Mapper1.2.framework"
+               BuildableName = "US2Mapper12.framework"
                BlueprintName = "US2Mapper12"
                ReferencedContainer = "container:US2Mapper12.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A62F23A1B4DA04D00AB26CD"
-               BuildableName = "US2Mapper1.2iOSTests.xctest"
+               BuildableName = "US2Mapper12iOSTests.xctest"
                BlueprintName = "US2Mapper12iOSTests"
                ReferencedContainer = "container:US2Mapper12.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A62F23A1B4DA04D00AB26CD"
-               BuildableName = "US2Mapper1.2iOSTests.xctest"
+               BuildableName = "US2Mapper12iOSTests.xctest"
                BlueprintName = "US2Mapper12iOSTests"
                ReferencedContainer = "container:US2Mapper12.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A62F22F1B4DA04D00AB26CD"
-            BuildableName = "US2Mapper1.2.framework"
+            BuildableName = "US2Mapper12.framework"
             BlueprintName = "US2Mapper12"
             ReferencedContainer = "container:US2Mapper12.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A62F22F1B4DA04D00AB26CD"
-            BuildableName = "US2Mapper1.2.framework"
+            BuildableName = "US2Mapper12.framework"
             BlueprintName = "US2Mapper12"
             ReferencedContainer = "container:US2Mapper12.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A62F22F1B4DA04D00AB26CD"
-            BuildableName = "US2Mapper1.2.framework"
+            BuildableName = "US2Mapper12.framework"
             BlueprintName = "US2Mapper12"
             ReferencedContainer = "container:US2Mapper12.xcodeproj">
          </BuildableReference>
