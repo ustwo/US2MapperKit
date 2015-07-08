@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A62F2101B4DA02300AB26CD /* US2Mapper1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A62F20F1B4DA02300AB26CD /* US2Mapper1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A62F2161B4DA02400AB26CD /* US2Mapper12.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A62F20A1B4DA02300AB26CD /* US2Mapper12.framework */; };
+		3A62F30B1B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3091B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift */; };
+		3A62F30C1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F30A1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift */; };
+		3A62F3261B4DB9D300AB26CD /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F30F1B4DB9D300AB26CD /* _TestObjectEight.swift */; };
+		3A62F3271B4DB9D300AB26CD /* _TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3101B4DB9D300AB26CD /* _TestObjectEleven.swift */; };
+		3A62F3281B4DB9D300AB26CD /* _TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3111B4DB9D300AB26CD /* _TestObjectFive.swift */; };
+		3A62F3291B4DB9D300AB26CD /* _TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3121B4DB9D300AB26CD /* _TestObjectFour.swift */; };
+		3A62F32A1B4DB9D300AB26CD /* _TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3131B4DB9D300AB26CD /* _TestObjectNine.swift */; };
+		3A62F32B1B4DB9D300AB26CD /* _TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3141B4DB9D300AB26CD /* _TestObjectSeven.swift */; };
+		3A62F32C1B4DB9D300AB26CD /* _TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3151B4DB9D300AB26CD /* _TestObjectSix.swift */; };
+		3A62F32D1B4DB9D300AB26CD /* _TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3161B4DB9D300AB26CD /* _TestObjectTen.swift */; };
+		3A62F32E1B4DB9D300AB26CD /* _TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3171B4DB9D300AB26CD /* _TestObjectThree.swift */; };
+		3A62F32F1B4DB9D300AB26CD /* _TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3181B4DB9D300AB26CD /* _TestObjectTwelve.swift */; };
+		3A62F3301B4DB9D300AB26CD /* _TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3191B4DB9D300AB26CD /* _TestObjectTwo.swift */; };
+		3A62F3311B4DB9D300AB26CD /* US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F31A1B4DB9D300AB26CD /* US2Mapper.swift */; };
+		3A62F3321B4DB9D300AB26CD /* TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F31B1B4DB9D300AB26CD /* TestObjectEight.swift */; };
+		3A62F3331B4DB9D300AB26CD /* TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F31C1B4DB9D300AB26CD /* TestObjectEleven.swift */; };
+		3A62F3341B4DB9D300AB26CD /* TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F31D1B4DB9D300AB26CD /* TestObjectFive.swift */; };
+		3A62F3351B4DB9D300AB26CD /* TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F31E1B4DB9D300AB26CD /* TestObjectFour.swift */; };
+		3A62F3361B4DB9D300AB26CD /* TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F31F1B4DB9D300AB26CD /* TestObjectNine.swift */; };
+		3A62F3371B4DB9D300AB26CD /* TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3201B4DB9D300AB26CD /* TestObjectSeven.swift */; };
+		3A62F3381B4DB9D300AB26CD /* TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3211B4DB9D300AB26CD /* TestObjectSix.swift */; };
+		3A62F3391B4DB9D300AB26CD /* TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3221B4DB9D300AB26CD /* TestObjectTen.swift */; };
+		3A62F33A1B4DB9D300AB26CD /* TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3231B4DB9D300AB26CD /* TestObjectThree.swift */; };
+		3A62F33B1B4DB9D300AB26CD /* TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3241B4DB9D300AB26CD /* TestObjectTwelve.swift */; };
+		3A62F33C1B4DB9D300AB26CD /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3251B4DB9D300AB26CD /* TestObjectTwo.swift */; };
+		3A62F3401B4DB9EA00AB26CD /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F33E1B4DB9EA00AB26CD /* _US2Mapper.swift */; };
+		3A62F3411B4DB9EA00AB26CD /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F33E1B4DB9EA00AB26CD /* _US2Mapper.swift */; };
+		3A62F3421B4DB9EA00AB26CD /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F33F1B4DB9EA00AB26CD /* UTCompoundValueMapper.swift */; };
+		3A62F3431B4DB9EA00AB26CD /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F33F1B4DB9EA00AB26CD /* UTCompoundValueMapper.swift */; };
+		3A62F3451B4DBA3900AB26CD /* _TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3441B4DBA3900AB26CD /* _TestObjectOne.swift */; };
+		3A62F3471B4DBA4D00AB26CD /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A62F3461B4DBA4D00AB26CD /* TestObjectOne.swift */; };
+		3A62F3541B4DBA9900AB26CD /* TestObjectEight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3491B4DBA9900AB26CD /* TestObjectEight.plist */; };
+		3A62F3551B4DBA9900AB26CD /* TestObjectEleven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F34A1B4DBA9900AB26CD /* TestObjectEleven.plist */; };
+		3A62F3561B4DBA9900AB26CD /* TestObjectFive.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F34B1B4DBA9900AB26CD /* TestObjectFive.plist */; };
+		3A62F3571B4DBA9900AB26CD /* TestObjectFour.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F34C1B4DBA9900AB26CD /* TestObjectFour.plist */; };
+		3A62F3581B4DBA9900AB26CD /* TestObjectNine.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F34D1B4DBA9900AB26CD /* TestObjectNine.plist */; };
+		3A62F3591B4DBA9900AB26CD /* TestObjectSeven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F34E1B4DBA9900AB26CD /* TestObjectSeven.plist */; };
+		3A62F35A1B4DBA9900AB26CD /* TestObjectSix.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F34F1B4DBA9900AB26CD /* TestObjectSix.plist */; };
+		3A62F35B1B4DBA9900AB26CD /* TestObjectTen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3501B4DBA9900AB26CD /* TestObjectTen.plist */; };
+		3A62F35C1B4DBA9900AB26CD /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3511B4DBA9900AB26CD /* TestObjectThree.plist */; };
+		3A62F35D1B4DBA9900AB26CD /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3521B4DBA9900AB26CD /* TestObjectTwelve.plist */; };
+		3A62F35E1B4DBA9900AB26CD /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A62F3531B4DBA9900AB26CD /* TestObjectTwo.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A62F2171B4DA02400AB26CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A62F2011B4DA02300AB26CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A62F2091B4DA02300AB26CD;
+			remoteInfo = US2Mapper1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A62F20A1B4DA02300AB26CD /* US2Mapper12.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = US2Mapper12.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A62F20E1B4DA02300AB26CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A62F20F1B4DA02300AB26CD /* US2Mapper1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = US2Mapper1.h; sourceTree = "<group>"; };
+		3A62F2151B4DA02400AB26CD /* US2Mapper12OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2Mapper12OSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A62F21B1B4DA02400AB26CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A62F3091B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper12OSXScenarioTests.swift; sourceTree = "<group>"; };
+		3A62F30A1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper12OSXTests.swift; sourceTree = "<group>"; };
+		3A62F30F1B4DB9D300AB26CD /* _TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEight.swift; sourceTree = "<group>"; };
+		3A62F3101B4DB9D300AB26CD /* _TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEleven.swift; sourceTree = "<group>"; };
+		3A62F3111B4DB9D300AB26CD /* _TestObjectFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectFive.swift; sourceTree = "<group>"; };
+		3A62F3121B4DB9D300AB26CD /* _TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectFour.swift; sourceTree = "<group>"; };
+		3A62F3131B4DB9D300AB26CD /* _TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectNine.swift; sourceTree = "<group>"; };
+		3A62F3141B4DB9D300AB26CD /* _TestObjectSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectSeven.swift; sourceTree = "<group>"; };
+		3A62F3151B4DB9D300AB26CD /* _TestObjectSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectSix.swift; sourceTree = "<group>"; };
+		3A62F3161B4DB9D300AB26CD /* _TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTen.swift; sourceTree = "<group>"; };
+		3A62F3171B4DB9D300AB26CD /* _TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectThree.swift; sourceTree = "<group>"; };
+		3A62F3181B4DB9D300AB26CD /* _TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTwelve.swift; sourceTree = "<group>"; };
+		3A62F3191B4DB9D300AB26CD /* _TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTwo.swift; sourceTree = "<group>"; };
+		3A62F31A1B4DB9D300AB26CD /* US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper.swift; sourceTree = "<group>"; };
+		3A62F31B1B4DB9D300AB26CD /* TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectEight.swift; sourceTree = "<group>"; };
+		3A62F31C1B4DB9D300AB26CD /* TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectEleven.swift; sourceTree = "<group>"; };
+		3A62F31D1B4DB9D300AB26CD /* TestObjectFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectFive.swift; sourceTree = "<group>"; };
+		3A62F31E1B4DB9D300AB26CD /* TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectFour.swift; sourceTree = "<group>"; };
+		3A62F31F1B4DB9D300AB26CD /* TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectNine.swift; sourceTree = "<group>"; };
+		3A62F3201B4DB9D300AB26CD /* TestObjectSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectSeven.swift; sourceTree = "<group>"; };
+		3A62F3211B4DB9D300AB26CD /* TestObjectSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectSix.swift; sourceTree = "<group>"; };
+		3A62F3221B4DB9D300AB26CD /* TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectTen.swift; sourceTree = "<group>"; };
+		3A62F3231B4DB9D300AB26CD /* TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectThree.swift; sourceTree = "<group>"; };
+		3A62F3241B4DB9D300AB26CD /* TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectTwelve.swift; sourceTree = "<group>"; };
+		3A62F3251B4DB9D300AB26CD /* TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectTwo.swift; sourceTree = "<group>"; };
+		3A62F33E1B4DB9EA00AB26CD /* _US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _US2Mapper.swift; sourceTree = "<group>"; };
+		3A62F33F1B4DB9EA00AB26CD /* UTCompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTCompoundValueMapper.swift; sourceTree = "<group>"; };
+		3A62F3441B4DBA3900AB26CD /* _TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectOne.swift; sourceTree = "<group>"; };
+		3A62F3461B4DBA4D00AB26CD /* TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectOne.swift; sourceTree = "<group>"; };
+		3A62F3491B4DBA9900AB26CD /* TestObjectEight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectEight.plist; sourceTree = "<group>"; };
+		3A62F34A1B4DBA9900AB26CD /* TestObjectEleven.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectEleven.plist; sourceTree = "<group>"; };
+		3A62F34B1B4DBA9900AB26CD /* TestObjectFive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectFive.plist; sourceTree = "<group>"; };
+		3A62F34C1B4DBA9900AB26CD /* TestObjectFour.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectFour.plist; sourceTree = "<group>"; };
+		3A62F34D1B4DBA9900AB26CD /* TestObjectNine.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectNine.plist; sourceTree = "<group>"; };
+		3A62F34E1B4DBA9900AB26CD /* TestObjectSeven.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectSeven.plist; sourceTree = "<group>"; };
+		3A62F34F1B4DBA9900AB26CD /* TestObjectSix.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectSix.plist; sourceTree = "<group>"; };
+		3A62F3501B4DBA9900AB26CD /* TestObjectTen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTen.plist; sourceTree = "<group>"; };
+		3A62F3511B4DBA9900AB26CD /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectThree.plist; sourceTree = "<group>"; };
+		3A62F3521B4DBA9900AB26CD /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwelve.plist; sourceTree = "<group>"; };
+		3A62F3531B4DBA9900AB26CD /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwo.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A62F2061B4DA02300AB26CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A62F2121B4DA02400AB26CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A62F2161B4DA02400AB26CD /* US2Mapper12.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A62F2001B4DA02300AB26CD = {
+			isa = PBXGroup;
+			children = (
+				3A62F33D1B4DB9EA00AB26CD /* Shared Swift 1.2 */,
+				3A62F20C1B4DA02300AB26CD /* US2Mapper1 */,
+				3A62F2191B4DA02400AB26CD /* US2Mapper1Tests */,
+				3A62F20B1B4DA02300AB26CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A62F20B1B4DA02300AB26CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F20A1B4DA02300AB26CD /* US2Mapper12.framework */,
+				3A62F2151B4DA02400AB26CD /* US2Mapper12OSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A62F20C1B4DA02300AB26CD /* US2Mapper1 */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F20F1B4DA02300AB26CD /* US2Mapper1.h */,
+				3A62F20D1B4DA02300AB26CD /* Supporting Files */,
+			);
+			path = US2Mapper1;
+			sourceTree = "<group>";
+		};
+		3A62F20D1B4DA02300AB26CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F20E1B4DA02300AB26CD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A62F2191B4DA02400AB26CD /* US2Mapper1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F3481B4DBA9900AB26CD /* Mapping */,
+				3A62F30D1B4DB9D300AB26CD /* Classes */,
+				3A62F3091B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift */,
+				3A62F30A1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift */,
+				3A62F21A1B4DA02400AB26CD /* Supporting Files */,
+			);
+			path = US2Mapper1Tests;
+			sourceTree = "<group>";
+		};
+		3A62F21A1B4DA02400AB26CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F21B1B4DA02400AB26CD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A62F30D1B4DB9D300AB26CD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F30E1B4DB9D300AB26CD /* Internal */,
+				3A62F31B1B4DB9D300AB26CD /* TestObjectEight.swift */,
+				3A62F3461B4DBA4D00AB26CD /* TestObjectOne.swift */,
+				3A62F31C1B4DB9D300AB26CD /* TestObjectEleven.swift */,
+				3A62F31D1B4DB9D300AB26CD /* TestObjectFive.swift */,
+				3A62F31E1B4DB9D300AB26CD /* TestObjectFour.swift */,
+				3A62F31F1B4DB9D300AB26CD /* TestObjectNine.swift */,
+				3A62F3201B4DB9D300AB26CD /* TestObjectSeven.swift */,
+				3A62F3211B4DB9D300AB26CD /* TestObjectSix.swift */,
+				3A62F3221B4DB9D300AB26CD /* TestObjectTen.swift */,
+				3A62F3231B4DB9D300AB26CD /* TestObjectThree.swift */,
+				3A62F3241B4DB9D300AB26CD /* TestObjectTwelve.swift */,
+				3A62F3251B4DB9D300AB26CD /* TestObjectTwo.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3A62F30E1B4DB9D300AB26CD /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F3441B4DBA3900AB26CD /* _TestObjectOne.swift */,
+				3A62F30F1B4DB9D300AB26CD /* _TestObjectEight.swift */,
+				3A62F3101B4DB9D300AB26CD /* _TestObjectEleven.swift */,
+				3A62F3111B4DB9D300AB26CD /* _TestObjectFive.swift */,
+				3A62F3121B4DB9D300AB26CD /* _TestObjectFour.swift */,
+				3A62F3131B4DB9D300AB26CD /* _TestObjectNine.swift */,
+				3A62F3141B4DB9D300AB26CD /* _TestObjectSeven.swift */,
+				3A62F3151B4DB9D300AB26CD /* _TestObjectSix.swift */,
+				3A62F3161B4DB9D300AB26CD /* _TestObjectTen.swift */,
+				3A62F3171B4DB9D300AB26CD /* _TestObjectThree.swift */,
+				3A62F3181B4DB9D300AB26CD /* _TestObjectTwelve.swift */,
+				3A62F3191B4DB9D300AB26CD /* _TestObjectTwo.swift */,
+				3A62F31A1B4DB9D300AB26CD /* US2Mapper.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		3A62F33D1B4DB9EA00AB26CD /* Shared Swift 1.2 */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F33E1B4DB9EA00AB26CD /* _US2Mapper.swift */,
+				3A62F33F1B4DB9EA00AB26CD /* UTCompoundValueMapper.swift */,
+			);
+			name = "Shared Swift 1.2";
+			path = "../../Shared Swift 1.2";
+			sourceTree = "<group>";
+		};
+		3A62F3481B4DBA9900AB26CD /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				3A62F3491B4DBA9900AB26CD /* TestObjectEight.plist */,
+				3A62F34A1B4DBA9900AB26CD /* TestObjectEleven.plist */,
+				3A62F34B1B4DBA9900AB26CD /* TestObjectFive.plist */,
+				3A62F34C1B4DBA9900AB26CD /* TestObjectFour.plist */,
+				3A62F34D1B4DBA9900AB26CD /* TestObjectNine.plist */,
+				3A62F34E1B4DBA9900AB26CD /* TestObjectSeven.plist */,
+				3A62F34F1B4DBA9900AB26CD /* TestObjectSix.plist */,
+				3A62F3501B4DBA9900AB26CD /* TestObjectTen.plist */,
+				3A62F3511B4DBA9900AB26CD /* TestObjectThree.plist */,
+				3A62F3521B4DBA9900AB26CD /* TestObjectTwelve.plist */,
+				3A62F3531B4DBA9900AB26CD /* TestObjectTwo.plist */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3A62F2071B4DA02300AB26CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A62F2101B4DA02300AB26CD /* US2Mapper1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3A62F2091B4DA02300AB26CD /* US2Mapper12 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A62F2201B4DA02400AB26CD /* Build configuration list for PBXNativeTarget "US2Mapper12" */;
+			buildPhases = (
+				3A62F2051B4DA02300AB26CD /* Sources */,
+				3A62F2061B4DA02300AB26CD /* Frameworks */,
+				3A62F2071B4DA02300AB26CD /* Headers */,
+				3A62F2081B4DA02300AB26CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = US2Mapper12;
+			productName = US2Mapper1;
+			productReference = 3A62F20A1B4DA02300AB26CD /* US2Mapper12.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3A62F2141B4DA02400AB26CD /* US2Mapper12OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A62F2231B4DA02400AB26CD /* Build configuration list for PBXNativeTarget "US2Mapper12OSXTests" */;
+			buildPhases = (
+				3A62F24D1B4DA0A800AB26CD /* Rebuild Model */,
+				3A62F2111B4DA02400AB26CD /* Sources */,
+				3A62F2121B4DA02400AB26CD /* Frameworks */,
+				3A62F2131B4DA02400AB26CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A62F2181B4DA02400AB26CD /* PBXTargetDependency */,
+			);
+			name = US2Mapper12OSXTests;
+			productName = US2Mapper1Tests;
+			productReference = 3A62F2151B4DA02400AB26CD /* US2Mapper12OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A62F2011B4DA02300AB26CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = ustwo;
+				TargetAttributes = {
+					3A62F2091B4DA02300AB26CD = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3A62F2141B4DA02400AB26CD = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 3A62F2041B4DA02300AB26CD /* Build configuration list for PBXProject "US2Mapper12" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A62F2001B4DA02300AB26CD;
+			productRefGroup = 3A62F20B1B4DA02300AB26CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A62F2091B4DA02300AB26CD /* US2Mapper12 */,
+				3A62F2141B4DA02400AB26CD /* US2Mapper12OSXTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A62F2081B4DA02300AB26CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A62F2131B4DA02400AB26CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A62F3551B4DBA9900AB26CD /* TestObjectEleven.plist in Resources */,
+				3A62F3591B4DBA9900AB26CD /* TestObjectSeven.plist in Resources */,
+				3A62F35E1B4DBA9900AB26CD /* TestObjectTwo.plist in Resources */,
+				3A62F3571B4DBA9900AB26CD /* TestObjectFour.plist in Resources */,
+				3A62F35B1B4DBA9900AB26CD /* TestObjectTen.plist in Resources */,
+				3A62F3581B4DBA9900AB26CD /* TestObjectNine.plist in Resources */,
+				3A62F35C1B4DBA9900AB26CD /* TestObjectThree.plist in Resources */,
+				3A62F3561B4DBA9900AB26CD /* TestObjectFive.plist in Resources */,
+				3A62F35A1B4DBA9900AB26CD /* TestObjectSix.plist in Resources */,
+				3A62F35D1B4DBA9900AB26CD /* TestObjectTwelve.plist in Resources */,
+				3A62F3541B4DBA9900AB26CD /* TestObjectEight.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A62F24D1B4DA0A800AB26CD /* Rebuild Model */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Rebuild Model";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#python $PROJECT_DIR/../../modelgen-swift12.py -i $PROJECT_DIR/US2Mapper1Tests/Mapping/ -o $PROJECT_DIR/US2Mapper1Tests/Classes/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A62F2051B4DA02300AB26CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A62F3421B4DB9EA00AB26CD /* UTCompoundValueMapper.swift in Sources */,
+				3A62F3401B4DB9EA00AB26CD /* _US2Mapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A62F2111B4DA02400AB26CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A62F32B1B4DB9D300AB26CD /* _TestObjectSeven.swift in Sources */,
+				3A62F30B1B4DB9AB00AB26CD /* US2Mapper12OSXScenarioTests.swift in Sources */,
+				3A62F3321B4DB9D300AB26CD /* TestObjectEight.swift in Sources */,
+				3A62F30C1B4DB9AB00AB26CD /* US2Mapper12OSXTests.swift in Sources */,
+				3A62F3311B4DB9D300AB26CD /* US2Mapper.swift in Sources */,
+				3A62F32A1B4DB9D300AB26CD /* _TestObjectNine.swift in Sources */,
+				3A62F32D1B4DB9D300AB26CD /* _TestObjectTen.swift in Sources */,
+				3A62F3411B4DB9EA00AB26CD /* _US2Mapper.swift in Sources */,
+				3A62F3331B4DB9D300AB26CD /* TestObjectEleven.swift in Sources */,
+				3A62F3371B4DB9D300AB26CD /* TestObjectSeven.swift in Sources */,
+				3A62F3361B4DB9D300AB26CD /* TestObjectNine.swift in Sources */,
+				3A62F3291B4DB9D300AB26CD /* _TestObjectFour.swift in Sources */,
+				3A62F3281B4DB9D300AB26CD /* _TestObjectFive.swift in Sources */,
+				3A62F3381B4DB9D300AB26CD /* TestObjectSix.swift in Sources */,
+				3A62F3471B4DBA4D00AB26CD /* TestObjectOne.swift in Sources */,
+				3A62F32F1B4DB9D300AB26CD /* _TestObjectTwelve.swift in Sources */,
+				3A62F33C1B4DB9D300AB26CD /* TestObjectTwo.swift in Sources */,
+				3A62F3341B4DB9D300AB26CD /* TestObjectFive.swift in Sources */,
+				3A62F33B1B4DB9D300AB26CD /* TestObjectTwelve.swift in Sources */,
+				3A62F3261B4DB9D300AB26CD /* _TestObjectEight.swift in Sources */,
+				3A62F32C1B4DB9D300AB26CD /* _TestObjectSix.swift in Sources */,
+				3A62F3301B4DB9D300AB26CD /* _TestObjectTwo.swift in Sources */,
+				3A62F3431B4DB9EA00AB26CD /* UTCompoundValueMapper.swift in Sources */,
+				3A62F32E1B4DB9D300AB26CD /* _TestObjectThree.swift in Sources */,
+				3A62F3351B4DB9D300AB26CD /* TestObjectFour.swift in Sources */,
+				3A62F33A1B4DB9D300AB26CD /* TestObjectThree.swift in Sources */,
+				3A62F3391B4DB9D300AB26CD /* TestObjectTen.swift in Sources */,
+				3A62F3271B4DB9D300AB26CD /* _TestObjectEleven.swift in Sources */,
+				3A62F3451B4DBA3900AB26CD /* _TestObjectOne.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A62F2181B4DA02400AB26CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A62F2091B4DA02300AB26CD /* US2Mapper12 */;
+			targetProxy = 3A62F2171B4DA02400AB26CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3A62F21E1B4DA02400AB26CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3A62F21F1B4DA02400AB26CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3A62F2211B4DA02400AB26CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = US2Mapper1/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = US2Mapper12;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3A62F2221B4DA02400AB26CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = US2Mapper1/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = US2Mapper12;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3A62F2241B4DA02400AB26CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = US2Mapper1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = US2Mapper12OSXTests;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A62F2251B4DA02400AB26CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = US2Mapper1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = US2Mapper12OSXTests;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A62F2041B4DA02300AB26CD /* Build configuration list for PBXProject "US2Mapper12" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A62F21E1B4DA02400AB26CD /* Debug */,
+				3A62F21F1B4DA02400AB26CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A62F2201B4DA02400AB26CD /* Build configuration list for PBXNativeTarget "US2Mapper12" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A62F2211B4DA02400AB26CD /* Debug */,
+				3A62F2221B4DA02400AB26CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A62F2231B4DA02400AB26CD /* Build configuration list for PBXNativeTarget "US2Mapper12OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A62F2241B4DA02400AB26CD /* Debug */,
+				3A62F2251B4DA02400AB26CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A62F2011B4DA02300AB26CD /* Project object */;
+}
