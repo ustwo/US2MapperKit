@@ -47,8 +47,8 @@
 		3AE5E87F1B4ECA790081DBEC /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E85A1B4ECA790081DBEC /* TestObjectTwo.plist */; };
 		3AE5E8821B4ECA940081DBEC /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */; };
 		3AE5E8831B4ECA940081DBEC /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */; };
-		3AE5E8841B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */; };
-		3AE5E8851B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */; };
+		3AE5E8841B4ECA940081DBEC /* US2CompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8811B4ECA940081DBEC /* US2CompoundValueMapper.swift */; };
+		3AE5E8851B4ECA940081DBEC /* US2CompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8811B4ECA940081DBEC /* US2CompoundValueMapper.swift */; };
 		3AE5E8E11B4ECB300081DBEC /* US2MapperCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8DF1B4ECB300081DBEC /* US2MapperCoreTests.swift */; };
 		3AE5E8E21B4ECB300081DBEC /* US2MapperScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8E01B4ECB300081DBEC /* US2MapperScenarioTests.swift */; };
 /* End PBXBuildFile section */
@@ -106,7 +106,7 @@
 		3AE5E8591B4ECA790081DBEC /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwelve.plist; sourceTree = "<group>"; };
 		3AE5E85A1B4ECA790081DBEC /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwo.plist; sourceTree = "<group>"; };
 		3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _US2Mapper.swift; path = "../../../Shared Source/_US2Mapper.swift"; sourceTree = "<group>"; };
-		3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTCompoundValueMapper.swift; path = "../../../Shared Source/UTCompoundValueMapper.swift"; sourceTree = "<group>"; };
+		3AE5E8811B4ECA940081DBEC /* US2CompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2CompoundValueMapper.swift; path = "../../../Shared Source/US2CompoundValueMapper.swift"; sourceTree = "<group>"; };
 		3AE5E8DF1B4ECB300081DBEC /* US2MapperCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperCoreTests.swift; path = "../../../Shared Unit Tests/US2MapperCoreTests.swift"; sourceTree = "<group>"; };
 		3AE5E8E01B4ECB300081DBEC /* US2MapperScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperScenarioTests.swift; path = "../../../Shared Unit Tests/US2MapperScenarioTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,7 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */,
-				3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */,
+				3AE5E8811B4ECA940081DBEC /* US2CompoundValueMapper.swift */,
 			);
 			name = "Shared Source";
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE5E8841B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */,
+				3AE5E8841B4ECA940081DBEC /* US2CompoundValueMapper.swift in Sources */,
 				3AE5E8821B4ECA940081DBEC /* _US2Mapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +419,7 @@
 				3AE5E86A1B4ECA790081DBEC /* TestObjectFive.swift in Sources */,
 				3AE5E85E1B4ECA790081DBEC /* _TestObjectFour.swift in Sources */,
 				3AE5E8621B4ECA790081DBEC /* _TestObjectSix.swift in Sources */,
-				3AE5E8851B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */,
+				3AE5E8851B4ECA940081DBEC /* US2CompoundValueMapper.swift in Sources */,
 				3AE5E8661B4ECA790081DBEC /* _TestObjectTwo.swift in Sources */,
 				3AE5E8641B4ECA790081DBEC /* _TestObjectThree.swift in Sources */,
 				3AE5E8831B4ECA940081DBEC /* _US2Mapper.swift in Sources */,

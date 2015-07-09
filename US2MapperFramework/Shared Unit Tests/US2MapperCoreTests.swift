@@ -323,7 +323,7 @@ class US2MapperCoreTests: XCTestCase {
     func test_complexTransformValue(){
         let dataDictionary = ["left_hand_string" : "Left-String-", "right_hand_string" : "Right-String"]
         let jsonKeys = ["left_hand_string", "right_hand_string"]
-        let compoundString = US2Mapper.complexTransformValue("UTCompoundValueMapper", jsonKeys: jsonKeys, data: dataDictionary) as? String
+        let compoundString = US2Mapper.complexTransformValue("US2CompoundValueMapper", jsonKeys: jsonKeys, data: dataDictionary) as? String
         XCTAssertEqual(compoundString!, "Left-String-Right-String", "Compount Value Mapper returned incorrect Value - Failing Method complexTransformValue()")
     }
     

@@ -156,6 +156,7 @@
 		3A9A3D8A1B4EDAC700B1789D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = ustwo;
 				TargetAttributes = {
@@ -409,6 +410,7 @@
 				3A9A3DB31B4EDAC700B1789D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A9A3DB41B4EDAC700B1789D /* Build configuration list for PBXNativeTarget "PluginTestProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +419,7 @@
 				3A9A3DB61B4EDAC700B1789D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

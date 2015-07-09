@@ -80,8 +80,8 @@ class US2Mapper : _US2Mapper {
 
  	override class func transformValues(transformer : String, values : [AnyObject]) -> AnyObject? {
 		switch transformer {
-			case "UTCompoundValueMapper":
- 				return UTCompoundValueMapper.transformValues(values)
+			case "US2CompoundValueMapper":
+ 				return US2CompoundValueMapper.transformValues(values)
  			default:
  			 	return nil
 		}

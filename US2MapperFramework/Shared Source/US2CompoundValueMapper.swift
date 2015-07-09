@@ -8,9 +8,9 @@
 
 import Foundation
 
-class UTCompoundValueMapper : US2MapperProtocol {
+public class US2CompoundValueMapper : US2MapperProtocol {
    
-    static func transformValues(inputValues : [AnyObject]?) -> AnyObject? {
+    public static func transformValues(inputValues : [AnyObject]?) -> AnyObject? {
         var outputString : String = ""
         
         let inputArray = inputValues as! [String]

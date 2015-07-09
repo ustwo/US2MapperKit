@@ -10,7 +10,7 @@
 			<string>right_hand_string</string>
 		</array>
 		<key>mapper</key>
-		<string>UTCompoundValueMapper</string>
+		<string>US2CompoundValueMapper</string>
 		<key>type</key>
 		<string>String</string>
 	</dict>
@@ -24,7 +24,7 @@
 			<string>non_optional_right_hand_string</string>
 		</array>
 		<key>mapper</key>
-		<string>UTCompoundValueMapper</string>
+		<string>US2CompoundValueMapper</string>
 		<key>type</key>
 		<string>String</string>
 	</dict>

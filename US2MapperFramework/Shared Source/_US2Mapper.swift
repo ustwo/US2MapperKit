@@ -38,7 +38,7 @@ let UTDataTypeDictionary    = "Dictionary"
 let nativeDataTypes      = [UTDataTypeString, UTDataTypeInt, UTDataTypeDouble, UTDataTypeFloat, UTDataTypeBool]
 let collectionTypes      = [UTDataTypeArray, UTDataTypeDictionary]
 
-class _US2Mapper {
+public class _US2Mapper {
 
     // MARK Load Mapping Configuration
     
@@ -58,7 +58,7 @@ class _US2Mapper {
 
     
     // Parse Dictionary Data for the specific class
-    final class func parseJSONResponse(className : String, data : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
+    public final class func parseJSONResponse(className : String, data : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {
         
         // The Mapping configuration for the Class
         let mappingConfiguration = retrieveMappingConfiguration(className)
@@ -397,14 +397,14 @@ class _US2Mapper {
     
     // MARK These Methods are overriden by the script accordingly in UTMapper.swift
     
-    class func classFromString(classname : String, data : Dictionary<String, AnyObject>) -> AnyObject? {
+    public class func classFromString(classname : String, data : Dictionary<String, AnyObject>) -> AnyObject? {
         switch classname {
         default:
             return nil
         }
     }
     
-    class func transformValues(transformer : String, values : [AnyObject]) -> AnyObject? {
+    public class func transformValues(transformer : String, values : [AnyObject]) -> AnyObject? {
         return nil
     }
 }

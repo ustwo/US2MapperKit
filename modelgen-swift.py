@@ -40,6 +40,13 @@ STRING_CLASS_FROM_STRING_METHOD 	= "	override class func classFromString(classna
 
 def generate_model(mappinglist, output_directory, projectdir):
 	
+
+	#project = XcodeProject.Load(projectdir)
+	#project_group = project.get_or_create_group("UTMapper")
+	#model_group = project.get_or_create_group("Model", parent=project_group)
+	#internal_group = project.get_or_create_group("Internal",  parent=model_group)
+
+
 	if projectdir == "":
 		print 'EMPTY DIR'
 	else:

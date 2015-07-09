@@ -36,13 +36,13 @@
 {
     //removeObserver
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSApplicationDidFinishLaunchingNotification object:nil];
-    
+    ///Users/anton/Developer/ExampleProject/ExampleProject
     // Create menu items, initialize UI, etc.
     // Sample Menu Item:
     NSMenuItem *rebuildModelItem = [[NSApp mainMenu] itemWithTitle:@"Edit"];
     if (rebuildModelItem) {
         [[rebuildModelItem submenu] addItem:[NSMenuItem separatorItem]];
-        NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Rebuild Model" action:@selector(rebuildModoel) keyEquivalent:@""];
+        NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Rebuild Model" action:@selector(doExample) keyEquivalent:@""];
         //[actionMenuItem setKeyEquivalentModifierMask:NSAlphaShiftKeyMask | NSControlKeyMask];
         [actionMenuItem setTarget:self];
         [[rebuildModelItem submenu] addItem:actionMenuItem];
@@ -112,6 +112,38 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+// Sample Action, for menu item:
+- (void)doExample
+{
+   // NSAlert *alert = [[NSAlert alloc] init];
+    
+    /// NSString* bundle = [[NSBundle mainBundle] bundlePath];
+    
+    NSArray *workspaceWindowControllers = [NSClassFromString(@"IDEWorkspaceWindowController") valueForKey:@"workspaceWindowControllers"];
+    
+    id workSpace;
+    
+    for (id controller in workspaceWindowControllers) {
+        if ([[controller valueForKey:@"window"] isEqual:[NSApp keyWindow]]) {
+            workSpace = [controller valueForKey:@"_workspace"];
+        }
+    }
+    //WorkSpace Path : /Users/anton/Developer/ustwo/UTMapper/UTMapper/UTMapper.xcodeproj,   Path: /Users/anton/Developer/ustwo/UTMapper/UTMapper/
+    NSString *workspacePath = [[workSpace valueForKey:@"representingFilePath"] valueForKey:@"_pathString"];
+    // workspacePath.lastPathComponent
+    NSString *path = [workspacePath stringByReplacingOccurrencesOfString:@".xcodeproj" withString:@"/"];
+    
+    //  python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/UTMapper/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Classes/
+ 
+    NSString *scriptCommand = [NSString stringWithFormat:@"python /Users/anton/Developer/ExampleProject/modelgen-swift.py -i /Users/anton/Developer/ExampleProject/ExampleProject/ExampleProject/Mapping/ -o /Users/anton/Developer/ExampleProject/ExampleProject/ExampleProject/Classes/ -p /Users/anton/Developer/ExampleProject/ExampleProject.xcodeproj/project.pbxproj"];
+    
+    //[alert setMessageText:scriptCommand];
+    //[alert runModal];
+    
+    [self runCommand:scriptCommand];
+}
+
 
 - (NSString *)runCommand:(NSString *)commandToRun {
     NSTask *task = [[NSTask alloc] init];

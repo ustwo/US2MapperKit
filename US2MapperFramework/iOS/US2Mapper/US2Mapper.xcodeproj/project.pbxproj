@@ -11,8 +11,8 @@
 		3AE5E7FD1B4EC9C70081DBEC /* US2Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE5E7F11B4EC9C70081DBEC /* US2Mapper.framework */; };
 		3AE5E88A1B4ECAB50081DBEC /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8881B4ECAB50081DBEC /* _US2Mapper.swift */; };
 		3AE5E88B1B4ECAB50081DBEC /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8881B4ECAB50081DBEC /* _US2Mapper.swift */; };
-		3AE5E88C1B4ECAB50081DBEC /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8891B4ECAB50081DBEC /* UTCompoundValueMapper.swift */; };
-		3AE5E88D1B4ECAB50081DBEC /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8891B4ECAB50081DBEC /* UTCompoundValueMapper.swift */; };
+		3AE5E88C1B4ECAB50081DBEC /* US2CompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8891B4ECAB50081DBEC /* US2CompoundValueMapper.swift */; };
+		3AE5E88D1B4ECAB50081DBEC /* US2CompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8891B4ECAB50081DBEC /* US2CompoundValueMapper.swift */; };
 		3AE5E8901B4ECAF10081DBEC /* US2MapperScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E88E1B4ECAF10081DBEC /* US2MapperScenarioTests.swift */; };
 		3AE5E8911B4ECAF10081DBEC /* US2MapperCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E88F1B4ECAF10081DBEC /* US2MapperCoreTests.swift */; };
 		3AE5E8BA1B4ECB190081DBEC /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8941B4ECB190081DBEC /* _TestObjectEight.swift */; };
@@ -70,7 +70,7 @@
 		3AE5E7FC1B4EC9C70081DBEC /* US2MapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2MapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE5E8021B4EC9C70081DBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AE5E8881B4ECAB50081DBEC /* _US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _US2Mapper.swift; path = "../../../Shared Source/_US2Mapper.swift"; sourceTree = "<group>"; };
-		3AE5E8891B4ECAB50081DBEC /* UTCompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTCompoundValueMapper.swift; path = "../../../Shared Source/UTCompoundValueMapper.swift"; sourceTree = "<group>"; };
+		3AE5E8891B4ECAB50081DBEC /* US2CompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2CompoundValueMapper.swift; path = "../../../Shared Source/US2CompoundValueMapper.swift"; sourceTree = "<group>"; };
 		3AE5E88E1B4ECAF10081DBEC /* US2MapperScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperScenarioTests.swift; path = "../../../Shared Unit Tests/US2MapperScenarioTests.swift"; sourceTree = "<group>"; };
 		3AE5E88F1B4ECAF10081DBEC /* US2MapperCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperCoreTests.swift; path = "../../../Shared Unit Tests/US2MapperCoreTests.swift"; sourceTree = "<group>"; };
 		3AE5E8941B4ECB190081DBEC /* _TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEight.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE5E8881B4ECAB50081DBEC /* _US2Mapper.swift */,
-				3AE5E8891B4ECAB50081DBEC /* UTCompoundValueMapper.swift */,
+				3AE5E8891B4ECAB50081DBEC /* US2CompoundValueMapper.swift */,
 			);
 			name = "Shared Source";
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE5E88C1B4ECAB50081DBEC /* UTCompoundValueMapper.swift in Sources */,
+				3AE5E88C1B4ECAB50081DBEC /* US2CompoundValueMapper.swift in Sources */,
 				3AE5E88A1B4ECAB50081DBEC /* _US2Mapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE5E8BC1B4ECB190081DBEC /* _TestObjectFive.swift in Sources */,
-				3AE5E88D1B4ECAB50081DBEC /* UTCompoundValueMapper.swift in Sources */,
+				3AE5E88D1B4ECAB50081DBEC /* US2CompoundValueMapper.swift in Sources */,
 				3AE5E8C11B4ECB190081DBEC /* _TestObjectSix.swift in Sources */,
 				3AE5E8C81B4ECB190081DBEC /* TestObjectEleven.swift in Sources */,
 				3AE5E8BE1B4ECB190081DBEC /* _TestObjectNine.swift in Sources */,
