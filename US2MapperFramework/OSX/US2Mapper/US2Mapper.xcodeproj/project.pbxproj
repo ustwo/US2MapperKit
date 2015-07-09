@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AE5E81D1B4ECA050081DBEC /* US2Mapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AE5E81C1B4ECA050081DBEC /* US2Mapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE5E8231B4ECA060081DBEC /* US2Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE5E8171B4ECA050081DBEC /* US2Mapper.framework */; };
+		3AE5E85B1B4ECA790081DBEC /* _TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8351B4ECA780081DBEC /* _TestObjectEight.swift */; };
+		3AE5E85C1B4ECA790081DBEC /* _TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8361B4ECA780081DBEC /* _TestObjectEleven.swift */; };
+		3AE5E85D1B4ECA790081DBEC /* _TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8371B4ECA780081DBEC /* _TestObjectFive.swift */; };
+		3AE5E85E1B4ECA790081DBEC /* _TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8381B4ECA780081DBEC /* _TestObjectFour.swift */; };
+		3AE5E85F1B4ECA790081DBEC /* _TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8391B4ECA780081DBEC /* _TestObjectNine.swift */; };
+		3AE5E8601B4ECA790081DBEC /* _TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E83A1B4ECA780081DBEC /* _TestObjectOne.swift */; };
+		3AE5E8611B4ECA790081DBEC /* _TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E83B1B4ECA780081DBEC /* _TestObjectSeven.swift */; };
+		3AE5E8621B4ECA790081DBEC /* _TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E83C1B4ECA780081DBEC /* _TestObjectSix.swift */; };
+		3AE5E8631B4ECA790081DBEC /* _TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E83D1B4ECA790081DBEC /* _TestObjectTen.swift */; };
+		3AE5E8641B4ECA790081DBEC /* _TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E83E1B4ECA790081DBEC /* _TestObjectThree.swift */; };
+		3AE5E8651B4ECA790081DBEC /* _TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E83F1B4ECA790081DBEC /* _TestObjectTwelve.swift */; };
+		3AE5E8661B4ECA790081DBEC /* _TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8401B4ECA790081DBEC /* _TestObjectTwo.swift */; };
+		3AE5E8671B4ECA790081DBEC /* US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8411B4ECA790081DBEC /* US2Mapper.swift */; };
+		3AE5E8681B4ECA790081DBEC /* TestObjectEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8421B4ECA790081DBEC /* TestObjectEight.swift */; };
+		3AE5E8691B4ECA790081DBEC /* TestObjectEleven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8431B4ECA790081DBEC /* TestObjectEleven.swift */; };
+		3AE5E86A1B4ECA790081DBEC /* TestObjectFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8441B4ECA790081DBEC /* TestObjectFive.swift */; };
+		3AE5E86B1B4ECA790081DBEC /* TestObjectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8451B4ECA790081DBEC /* TestObjectFour.swift */; };
+		3AE5E86C1B4ECA790081DBEC /* TestObjectNine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8461B4ECA790081DBEC /* TestObjectNine.swift */; };
+		3AE5E86D1B4ECA790081DBEC /* TestObjectOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8471B4ECA790081DBEC /* TestObjectOne.swift */; };
+		3AE5E86E1B4ECA790081DBEC /* TestObjectSeven.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8481B4ECA790081DBEC /* TestObjectSeven.swift */; };
+		3AE5E86F1B4ECA790081DBEC /* TestObjectSix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8491B4ECA790081DBEC /* TestObjectSix.swift */; };
+		3AE5E8701B4ECA790081DBEC /* TestObjectTen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E84A1B4ECA790081DBEC /* TestObjectTen.swift */; };
+		3AE5E8711B4ECA790081DBEC /* TestObjectThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E84B1B4ECA790081DBEC /* TestObjectThree.swift */; };
+		3AE5E8721B4ECA790081DBEC /* TestObjectTwelve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E84C1B4ECA790081DBEC /* TestObjectTwelve.swift */; };
+		3AE5E8731B4ECA790081DBEC /* TestObjectTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E84D1B4ECA790081DBEC /* TestObjectTwo.swift */; };
+		3AE5E8751B4ECA790081DBEC /* TestObjectEight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8501B4ECA790081DBEC /* TestObjectEight.plist */; };
+		3AE5E8761B4ECA790081DBEC /* TestObjectEleven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8511B4ECA790081DBEC /* TestObjectEleven.plist */; };
+		3AE5E8771B4ECA790081DBEC /* TestObjectFive.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8521B4ECA790081DBEC /* TestObjectFive.plist */; };
+		3AE5E8781B4ECA790081DBEC /* TestObjectFour.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8531B4ECA790081DBEC /* TestObjectFour.plist */; };
+		3AE5E8791B4ECA790081DBEC /* TestObjectNine.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8541B4ECA790081DBEC /* TestObjectNine.plist */; };
+		3AE5E87A1B4ECA790081DBEC /* TestObjectSeven.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8551B4ECA790081DBEC /* TestObjectSeven.plist */; };
+		3AE5E87B1B4ECA790081DBEC /* TestObjectSix.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8561B4ECA790081DBEC /* TestObjectSix.plist */; };
+		3AE5E87C1B4ECA790081DBEC /* TestObjectTen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8571B4ECA790081DBEC /* TestObjectTen.plist */; };
+		3AE5E87D1B4ECA790081DBEC /* TestObjectThree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8581B4ECA790081DBEC /* TestObjectThree.plist */; };
+		3AE5E87E1B4ECA790081DBEC /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E8591B4ECA790081DBEC /* TestObjectTwelve.plist */; };
+		3AE5E87F1B4ECA790081DBEC /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5E85A1B4ECA790081DBEC /* TestObjectTwo.plist */; };
+		3AE5E8821B4ECA940081DBEC /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */; };
+		3AE5E8831B4ECA940081DBEC /* _US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */; };
+		3AE5E8841B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */; };
+		3AE5E8851B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */; };
+		3AE5E8E11B4ECB300081DBEC /* US2MapperCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8DF1B4ECB300081DBEC /* US2MapperCoreTests.swift */; };
+		3AE5E8E21B4ECB300081DBEC /* US2MapperScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5E8E01B4ECB300081DBEC /* US2MapperScenarioTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AE5E8241B4ECA060081DBEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE5E80E1B4ECA050081DBEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AE5E8161B4ECA050081DBEC;
+			remoteInfo = US2Mapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3AE5E8171B4ECA050081DBEC /* US2Mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = US2Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE5E81B1B4ECA050081DBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE5E81C1B4ECA050081DBEC /* US2Mapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = US2Mapper.h; sourceTree = "<group>"; };
+		3AE5E8221B4ECA060081DBEC /* US2MapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2MapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE5E8281B4ECA060081DBEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE5E8351B4ECA780081DBEC /* _TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEight.swift; sourceTree = "<group>"; };
+		3AE5E8361B4ECA780081DBEC /* _TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectEleven.swift; sourceTree = "<group>"; };
+		3AE5E8371B4ECA780081DBEC /* _TestObjectFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectFive.swift; sourceTree = "<group>"; };
+		3AE5E8381B4ECA780081DBEC /* _TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectFour.swift; sourceTree = "<group>"; };
+		3AE5E8391B4ECA780081DBEC /* _TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectNine.swift; sourceTree = "<group>"; };
+		3AE5E83A1B4ECA780081DBEC /* _TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectOne.swift; sourceTree = "<group>"; };
+		3AE5E83B1B4ECA780081DBEC /* _TestObjectSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectSeven.swift; sourceTree = "<group>"; };
+		3AE5E83C1B4ECA780081DBEC /* _TestObjectSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectSix.swift; sourceTree = "<group>"; };
+		3AE5E83D1B4ECA790081DBEC /* _TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTen.swift; sourceTree = "<group>"; };
+		3AE5E83E1B4ECA790081DBEC /* _TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectThree.swift; sourceTree = "<group>"; };
+		3AE5E83F1B4ECA790081DBEC /* _TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTwelve.swift; sourceTree = "<group>"; };
+		3AE5E8401B4ECA790081DBEC /* _TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectTwo.swift; sourceTree = "<group>"; };
+		3AE5E8411B4ECA790081DBEC /* US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper.swift; sourceTree = "<group>"; };
+		3AE5E8421B4ECA790081DBEC /* TestObjectEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectEight.swift; sourceTree = "<group>"; };
+		3AE5E8431B4ECA790081DBEC /* TestObjectEleven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectEleven.swift; sourceTree = "<group>"; };
+		3AE5E8441B4ECA790081DBEC /* TestObjectFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectFive.swift; sourceTree = "<group>"; };
+		3AE5E8451B4ECA790081DBEC /* TestObjectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectFour.swift; sourceTree = "<group>"; };
+		3AE5E8461B4ECA790081DBEC /* TestObjectNine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectNine.swift; sourceTree = "<group>"; };
+		3AE5E8471B4ECA790081DBEC /* TestObjectOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectOne.swift; sourceTree = "<group>"; };
+		3AE5E8481B4ECA790081DBEC /* TestObjectSeven.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectSeven.swift; sourceTree = "<group>"; };
+		3AE5E8491B4ECA790081DBEC /* TestObjectSix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectSix.swift; sourceTree = "<group>"; };
+		3AE5E84A1B4ECA790081DBEC /* TestObjectTen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectTen.swift; sourceTree = "<group>"; };
+		3AE5E84B1B4ECA790081DBEC /* TestObjectThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectThree.swift; sourceTree = "<group>"; };
+		3AE5E84C1B4ECA790081DBEC /* TestObjectTwelve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectTwelve.swift; sourceTree = "<group>"; };
+		3AE5E84D1B4ECA790081DBEC /* TestObjectTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectTwo.swift; sourceTree = "<group>"; };
+		3AE5E8501B4ECA790081DBEC /* TestObjectEight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectEight.plist; sourceTree = "<group>"; };
+		3AE5E8511B4ECA790081DBEC /* TestObjectEleven.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectEleven.plist; sourceTree = "<group>"; };
+		3AE5E8521B4ECA790081DBEC /* TestObjectFive.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectFive.plist; sourceTree = "<group>"; };
+		3AE5E8531B4ECA790081DBEC /* TestObjectFour.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectFour.plist; sourceTree = "<group>"; };
+		3AE5E8541B4ECA790081DBEC /* TestObjectNine.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectNine.plist; sourceTree = "<group>"; };
+		3AE5E8551B4ECA790081DBEC /* TestObjectSeven.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectSeven.plist; sourceTree = "<group>"; };
+		3AE5E8561B4ECA790081DBEC /* TestObjectSix.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectSix.plist; sourceTree = "<group>"; };
+		3AE5E8571B4ECA790081DBEC /* TestObjectTen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTen.plist; sourceTree = "<group>"; };
+		3AE5E8581B4ECA790081DBEC /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectThree.plist; sourceTree = "<group>"; };
+		3AE5E8591B4ECA790081DBEC /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwelve.plist; sourceTree = "<group>"; };
+		3AE5E85A1B4ECA790081DBEC /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwo.plist; sourceTree = "<group>"; };
+		3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _US2Mapper.swift; path = "../../../Shared Source/_US2Mapper.swift"; sourceTree = "<group>"; };
+		3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UTCompoundValueMapper.swift; path = "../../../Shared Source/UTCompoundValueMapper.swift"; sourceTree = "<group>"; };
+		3AE5E8DF1B4ECB300081DBEC /* US2MapperCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperCoreTests.swift; path = "../../../Shared Unit Tests/US2MapperCoreTests.swift"; sourceTree = "<group>"; };
+		3AE5E8E01B4ECB300081DBEC /* US2MapperScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2MapperScenarioTests.swift; path = "../../../Shared Unit Tests/US2MapperScenarioTests.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AE5E8131B4ECA050081DBEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5E81F1B4ECA060081DBEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5E8231B4ECA060081DBEC /* US2Mapper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AE5E80D1B4ECA050081DBEC = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8191B4ECA050081DBEC /* US2Mapper */,
+				3AE5E8261B4ECA060081DBEC /* US2MapperTests */,
+				3AE5E8181B4ECA050081DBEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AE5E8181B4ECA050081DBEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8171B4ECA050081DBEC /* US2Mapper.framework */,
+				3AE5E8221B4ECA060081DBEC /* US2MapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AE5E8191B4ECA050081DBEC /* US2Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8861B4ECA9D0081DBEC /* Shared Source */,
+				3AE5E81C1B4ECA050081DBEC /* US2Mapper.h */,
+				3AE5E81A1B4ECA050081DBEC /* Supporting Files */,
+			);
+			path = US2Mapper;
+			sourceTree = "<group>";
+		};
+		3AE5E81A1B4ECA050081DBEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E81B1B4ECA050081DBEC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AE5E8261B4ECA060081DBEC /* US2MapperTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8DF1B4ECB300081DBEC /* US2MapperCoreTests.swift */,
+				3AE5E8E01B4ECB300081DBEC /* US2MapperScenarioTests.swift */,
+				3AE5E8331B4ECA780081DBEC /* Classes */,
+				3AE5E84F1B4ECA790081DBEC /* Mapping */,
+				3AE5E8271B4ECA060081DBEC /* Supporting Files */,
+			);
+			path = US2MapperTests;
+			sourceTree = "<group>";
+		};
+		3AE5E8271B4ECA060081DBEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8281B4ECA060081DBEC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AE5E8331B4ECA780081DBEC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8341B4ECA780081DBEC /* Internal */,
+				3AE5E8421B4ECA790081DBEC /* TestObjectEight.swift */,
+				3AE5E8431B4ECA790081DBEC /* TestObjectEleven.swift */,
+				3AE5E8441B4ECA790081DBEC /* TestObjectFive.swift */,
+				3AE5E8451B4ECA790081DBEC /* TestObjectFour.swift */,
+				3AE5E8461B4ECA790081DBEC /* TestObjectNine.swift */,
+				3AE5E8471B4ECA790081DBEC /* TestObjectOne.swift */,
+				3AE5E8481B4ECA790081DBEC /* TestObjectSeven.swift */,
+				3AE5E8491B4ECA790081DBEC /* TestObjectSix.swift */,
+				3AE5E84A1B4ECA790081DBEC /* TestObjectTen.swift */,
+				3AE5E84B1B4ECA790081DBEC /* TestObjectThree.swift */,
+				3AE5E84C1B4ECA790081DBEC /* TestObjectTwelve.swift */,
+				3AE5E84D1B4ECA790081DBEC /* TestObjectTwo.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3AE5E8341B4ECA780081DBEC /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8351B4ECA780081DBEC /* _TestObjectEight.swift */,
+				3AE5E8361B4ECA780081DBEC /* _TestObjectEleven.swift */,
+				3AE5E8371B4ECA780081DBEC /* _TestObjectFive.swift */,
+				3AE5E8381B4ECA780081DBEC /* _TestObjectFour.swift */,
+				3AE5E8391B4ECA780081DBEC /* _TestObjectNine.swift */,
+				3AE5E83A1B4ECA780081DBEC /* _TestObjectOne.swift */,
+				3AE5E83B1B4ECA780081DBEC /* _TestObjectSeven.swift */,
+				3AE5E83C1B4ECA780081DBEC /* _TestObjectSix.swift */,
+				3AE5E83D1B4ECA790081DBEC /* _TestObjectTen.swift */,
+				3AE5E83E1B4ECA790081DBEC /* _TestObjectThree.swift */,
+				3AE5E83F1B4ECA790081DBEC /* _TestObjectTwelve.swift */,
+				3AE5E8401B4ECA790081DBEC /* _TestObjectTwo.swift */,
+				3AE5E8411B4ECA790081DBEC /* US2Mapper.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		3AE5E84F1B4ECA790081DBEC /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8501B4ECA790081DBEC /* TestObjectEight.plist */,
+				3AE5E8511B4ECA790081DBEC /* TestObjectEleven.plist */,
+				3AE5E8521B4ECA790081DBEC /* TestObjectFive.plist */,
+				3AE5E8531B4ECA790081DBEC /* TestObjectFour.plist */,
+				3AE5E8541B4ECA790081DBEC /* TestObjectNine.plist */,
+				3AE5E8551B4ECA790081DBEC /* TestObjectSeven.plist */,
+				3AE5E8561B4ECA790081DBEC /* TestObjectSix.plist */,
+				3AE5E8571B4ECA790081DBEC /* TestObjectTen.plist */,
+				3AE5E8581B4ECA790081DBEC /* TestObjectThree.plist */,
+				3AE5E8591B4ECA790081DBEC /* TestObjectTwelve.plist */,
+				3AE5E85A1B4ECA790081DBEC /* TestObjectTwo.plist */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		3AE5E8861B4ECA9D0081DBEC /* Shared Source */ = {
+			isa = PBXGroup;
+			children = (
+				3AE5E8801B4ECA940081DBEC /* _US2Mapper.swift */,
+				3AE5E8811B4ECA940081DBEC /* UTCompoundValueMapper.swift */,
+			);
+			name = "Shared Source";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3AE5E8141B4ECA050081DBEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5E81D1B4ECA050081DBEC /* US2Mapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3AE5E8161B4ECA050081DBEC /* US2Mapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE5E82D1B4ECA060081DBEC /* Build configuration list for PBXNativeTarget "US2Mapper" */;
+			buildPhases = (
+				3AE5E8121B4ECA050081DBEC /* Sources */,
+				3AE5E8131B4ECA050081DBEC /* Frameworks */,
+				3AE5E8141B4ECA050081DBEC /* Headers */,
+				3AE5E8151B4ECA050081DBEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = US2Mapper;
+			productName = US2Mapper;
+			productReference = 3AE5E8171B4ECA050081DBEC /* US2Mapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3AE5E8211B4ECA060081DBEC /* US2MapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AE5E8301B4ECA060081DBEC /* Build configuration list for PBXNativeTarget "US2MapperTests" */;
+			buildPhases = (
+				3AE5E8E41B4ECB8F0081DBEC /* Rebuild Mdoel */,
+				3AE5E81E1B4ECA060081DBEC /* Sources */,
+				3AE5E81F1B4ECA060081DBEC /* Frameworks */,
+				3AE5E8201B4ECA060081DBEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AE5E8251B4ECA060081DBEC /* PBXTargetDependency */,
+			);
+			name = US2MapperTests;
+			productName = US2MapperTests;
+			productReference = 3AE5E8221B4ECA060081DBEC /* US2MapperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AE5E80E1B4ECA050081DBEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = ustwo;
+				TargetAttributes = {
+					3AE5E8161B4ECA050081DBEC = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					3AE5E8211B4ECA060081DBEC = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 3AE5E8111B4ECA050081DBEC /* Build configuration list for PBXProject "US2Mapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3AE5E80D1B4ECA050081DBEC;
+			productRefGroup = 3AE5E8181B4ECA050081DBEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AE5E8161B4ECA050081DBEC /* US2Mapper */,
+				3AE5E8211B4ECA060081DBEC /* US2MapperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AE5E8151B4ECA050081DBEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5E8201B4ECA060081DBEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5E8761B4ECA790081DBEC /* TestObjectEleven.plist in Resources */,
+				3AE5E87A1B4ECA790081DBEC /* TestObjectSeven.plist in Resources */,
+				3AE5E87F1B4ECA790081DBEC /* TestObjectTwo.plist in Resources */,
+				3AE5E8781B4ECA790081DBEC /* TestObjectFour.plist in Resources */,
+				3AE5E87C1B4ECA790081DBEC /* TestObjectTen.plist in Resources */,
+				3AE5E8791B4ECA790081DBEC /* TestObjectNine.plist in Resources */,
+				3AE5E87D1B4ECA790081DBEC /* TestObjectThree.plist in Resources */,
+				3AE5E8771B4ECA790081DBEC /* TestObjectFive.plist in Resources */,
+				3AE5E87B1B4ECA790081DBEC /* TestObjectSix.plist in Resources */,
+				3AE5E87E1B4ECA790081DBEC /* TestObjectTwelve.plist in Resources */,
+				3AE5E8751B4ECA790081DBEC /* TestObjectEight.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AE5E8E41B4ECB8F0081DBEC /* Rebuild Mdoel */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Rebuild Mdoel";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python $PROJECT_DIR/../../../modelgen-swift.py -i $PROJECT_DIR/US2MapperTests/Mapping/ -o $PROJECT_DIR/US2MapperTests/Classes/";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AE5E8121B4ECA050081DBEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5E8841B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */,
+				3AE5E8821B4ECA940081DBEC /* _US2Mapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AE5E81E1B4ECA060081DBEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE5E8611B4ECA790081DBEC /* _TestObjectSeven.swift in Sources */,
+				3AE5E85D1B4ECA790081DBEC /* _TestObjectFive.swift in Sources */,
+				3AE5E8681B4ECA790081DBEC /* TestObjectEight.swift in Sources */,
+				3AE5E8721B4ECA790081DBEC /* TestObjectTwelve.swift in Sources */,
+				3AE5E8E11B4ECB300081DBEC /* US2MapperCoreTests.swift in Sources */,
+				3AE5E86D1B4ECA790081DBEC /* TestObjectOne.swift in Sources */,
+				3AE5E8701B4ECA790081DBEC /* TestObjectTen.swift in Sources */,
+				3AE5E85C1B4ECA790081DBEC /* _TestObjectEleven.swift in Sources */,
+				3AE5E8671B4ECA790081DBEC /* US2Mapper.swift in Sources */,
+				3AE5E8E21B4ECB300081DBEC /* US2MapperScenarioTests.swift in Sources */,
+				3AE5E85B1B4ECA790081DBEC /* _TestObjectEight.swift in Sources */,
+				3AE5E8631B4ECA790081DBEC /* _TestObjectTen.swift in Sources */,
+				3AE5E8691B4ECA790081DBEC /* TestObjectEleven.swift in Sources */,
+				3AE5E86C1B4ECA790081DBEC /* TestObjectNine.swift in Sources */,
+				3AE5E86F1B4ECA790081DBEC /* TestObjectSix.swift in Sources */,
+				3AE5E85F1B4ECA790081DBEC /* _TestObjectNine.swift in Sources */,
+				3AE5E8651B4ECA790081DBEC /* _TestObjectTwelve.swift in Sources */,
+				3AE5E86A1B4ECA790081DBEC /* TestObjectFive.swift in Sources */,
+				3AE5E85E1B4ECA790081DBEC /* _TestObjectFour.swift in Sources */,
+				3AE5E8621B4ECA790081DBEC /* _TestObjectSix.swift in Sources */,
+				3AE5E8851B4ECA940081DBEC /* UTCompoundValueMapper.swift in Sources */,
+				3AE5E8661B4ECA790081DBEC /* _TestObjectTwo.swift in Sources */,
+				3AE5E8641B4ECA790081DBEC /* _TestObjectThree.swift in Sources */,
+				3AE5E8831B4ECA940081DBEC /* _US2Mapper.swift in Sources */,
+				3AE5E86B1B4ECA790081DBEC /* TestObjectFour.swift in Sources */,
+				3AE5E86E1B4ECA790081DBEC /* TestObjectSeven.swift in Sources */,
+				3AE5E8601B4ECA790081DBEC /* _TestObjectOne.swift in Sources */,
+				3AE5E8711B4ECA790081DBEC /* TestObjectThree.swift in Sources */,
+				3AE5E8731B4ECA790081DBEC /* TestObjectTwo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AE5E8251B4ECA060081DBEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AE5E8161B4ECA050081DBEC /* US2Mapper */;
+			targetProxy = 3AE5E8241B4ECA060081DBEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3AE5E82B1B4ECA060081DBEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3AE5E82C1B4ECA060081DBEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3AE5E82E1B4ECA060081DBEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = US2Mapper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3AE5E82F1B4ECA060081DBEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = US2Mapper/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3AE5E8311B4ECA060081DBEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = US2MapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3AE5E8321B4ECA060081DBEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = US2MapperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AE5E8111B4ECA050081DBEC /* Build configuration list for PBXProject "US2Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5E82B1B4ECA060081DBEC /* Debug */,
+				3AE5E82C1B4ECA060081DBEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE5E82D1B4ECA060081DBEC /* Build configuration list for PBXNativeTarget "US2Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5E82E1B4ECA060081DBEC /* Debug */,
+				3AE5E82F1B4ECA060081DBEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AE5E8301B4ECA060081DBEC /* Build configuration list for PBXNativeTarget "US2MapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AE5E8311B4ECA060081DBEC /* Debug */,
+				3AE5E8321B4ECA060081DBEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AE5E80E1B4ECA050081DBEC /* Project object */;
+}

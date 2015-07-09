@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A9A3D761B4ED16F00B1789D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9A3D751B4ED16F00B1789D /* AppKit.framework */; };
+		3A9A3D781B4ED16F00B1789D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9A3D771B4ED16F00B1789D /* Foundation.framework */; };
+		3A9A3D7D1B4ED16F00B1789D /* US2MapperPlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = 3A9A3D7C1B4ED16F00B1789D /* US2MapperPlugin.xcscheme */; };
+		3A9A3D801B4ED16F00B1789D /* US2MapperPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A3D7F1B4ED16F00B1789D /* US2MapperPlugin.m */; };
+		3A9A3D831B4ED16F00B1789D /* NSObject_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A3D821B4ED16F00B1789D /* NSObject_Extension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A9A3D721B4ED16F00B1789D /* US2MapperPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2MapperPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9A3D751B4ED16F00B1789D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		3A9A3D771B4ED16F00B1789D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3A9A3D7B1B4ED16F00B1789D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9A3D7C1B4ED16F00B1789D /* US2MapperPlugin.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = US2MapperPlugin.xcscheme; path = US2MapperPlugin.xcodeproj/xcshareddata/xcschemes/US2MapperPlugin.xcscheme; sourceTree = SOURCE_ROOT; };
+		3A9A3D7E1B4ED16F00B1789D /* US2MapperPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = US2MapperPlugin.h; sourceTree = "<group>"; };
+		3A9A3D7F1B4ED16F00B1789D /* US2MapperPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = US2MapperPlugin.m; sourceTree = "<group>"; };
+		3A9A3D811B4ED16F00B1789D /* NSObject_Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSObject_Extension.h; sourceTree = "<group>"; };
+		3A9A3D821B4ED16F00B1789D /* NSObject_Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSObject_Extension.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A9A3D701B4ED16F00B1789D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9A3D761B4ED16F00B1789D /* AppKit.framework in Frameworks */,
+				3A9A3D781B4ED16F00B1789D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A9A3D691B4ED16F00B1789D = {
+			isa = PBXGroup;
+			children = (
+				3A9A3D791B4ED16F00B1789D /* US2MapperPlugin */,
+				3A9A3D741B4ED16F00B1789D /* Frameworks */,
+				3A9A3D731B4ED16F00B1789D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A9A3D731B4ED16F00B1789D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A9A3D721B4ED16F00B1789D /* US2MapperPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A9A3D741B4ED16F00B1789D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A9A3D751B4ED16F00B1789D /* AppKit.framework */,
+				3A9A3D771B4ED16F00B1789D /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A9A3D791B4ED16F00B1789D /* US2MapperPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				3A9A3D7E1B4ED16F00B1789D /* US2MapperPlugin.h */,
+				3A9A3D7F1B4ED16F00B1789D /* US2MapperPlugin.m */,
+				3A9A3D811B4ED16F00B1789D /* NSObject_Extension.h */,
+				3A9A3D821B4ED16F00B1789D /* NSObject_Extension.m */,
+				3A9A3D7A1B4ED16F00B1789D /* Supporting Files */,
+			);
+			path = US2MapperPlugin;
+			sourceTree = "<group>";
+		};
+		3A9A3D7A1B4ED16F00B1789D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A9A3D7B1B4ED16F00B1789D /* Info.plist */,
+				3A9A3D7C1B4ED16F00B1789D /* US2MapperPlugin.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A9A3D711B4ED16F00B1789D /* US2MapperPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9A3D861B4ED16F00B1789D /* Build configuration list for PBXNativeTarget "US2MapperPlugin" */;
+			buildPhases = (
+				3A9A3D6E1B4ED16F00B1789D /* Sources */,
+				3A9A3D6F1B4ED16F00B1789D /* Resources */,
+				3A9A3D701B4ED16F00B1789D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = US2MapperPlugin;
+			productName = US2MapperPlugin;
+			productReference = 3A9A3D721B4ED16F00B1789D /* US2MapperPlugin.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A9A3D6A1B4ED16F00B1789D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = ustwo;
+				TargetAttributes = {
+					3A9A3D711B4ED16F00B1789D = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 3A9A3D6D1B4ED16F00B1789D /* Build configuration list for PBXProject "US2MapperPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A9A3D691B4ED16F00B1789D;
+			productRefGroup = 3A9A3D731B4ED16F00B1789D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A9A3D711B4ED16F00B1789D /* US2MapperPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A9A3D6F1B4ED16F00B1789D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9A3D7D1B4ED16F00B1789D /* US2MapperPlugin.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A9A3D6E1B4ED16F00B1789D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9A3D801B4ED16F00B1789D /* US2MapperPlugin.m in Sources */,
+				3A9A3D831B4ED16F00B1789D /* NSObject_Extension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3A9A3D841B4ED16F00B1789D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		3A9A3D851B4ED16F00B1789D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		3A9A3D871B4ED16F00B1789D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = US2MapperPlugin/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		3A9A3D881B4ED16F00B1789D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = US2MapperPlugin/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A9A3D6D1B4ED16F00B1789D /* Build configuration list for PBXProject "US2MapperPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9A3D841B4ED16F00B1789D /* Debug */,
+				3A9A3D851B4ED16F00B1789D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9A3D861B4ED16F00B1789D /* Build configuration list for PBXNativeTarget "US2MapperPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9A3D871B4ED16F00B1789D /* Debug */,
+				3A9A3D881B4ED16F00B1789D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A9A3D6A1B4ED16F00B1789D /* Project object */;
+}

@@ -5,6 +5,7 @@ import sys
 import getopt
 import dircache
 import glob
+import commands
 
 FOLDER_INTERNAL_PREFIX = "Classes/Internal/_"
 FOLDER_EXTERNAL_PREFIX = "Classes/"
@@ -37,28 +38,42 @@ STRING_PROPERTY_VAR = "	var"
 
 STRING_CLASS_FROM_STRING_METHOD 	= "	override class func classFromString(classname : String, data : Dictionary<String, AnyObject>) -> AnyObject? {\n 		switch classname {\n"
 
-def generate_model(mappinglist, output_directory):
+def generate_model(mappinglist, output_directory, projectdir):
+	
+	if projectdir == "":
+		print 'EMPTY DIR'
+	else:
+		print projectdir
+	
+	#project = XcodeProject.Load('/Users/anton/Developer/ustwo-ne/UTMapper/UTMapper/UTMapper.xcodeproj/project.pbxproj')
+	#project_group = project.get_or_create_group("UTMapper")
+	#model_group = project.get_or_create_group("Model", parent=project_group)
+	#internal_group = project.get_or_create_group("Internal",  parent=model_group)
+
 	for mapping in mappinglist:
-		
+
 		filename = mapping[mapping.rindex('/',0,-1)+1:-1] if mapping.endswith('/') else mapping[mapping.rindex('/')+1:]
 		classname = filename.split('.', 1 )[0]
 		mappingPlist = plistlib.readPlist(mapping)
 		validate_class_mapping_configuration(classname, mappingPlist)
 		
 		generate_external_file_if_needed(classname, output_directory)
-
 		internalClassFile = generate_internal_file(classname, output_directory)
 		
 		append_property_definitions(internalClassFile, mappingPlist)
 		append_required_initializer(internalClassFile, mappingPlist)
-		
 
-		#append_short_concenience_initializer(internalClassFile, mappingPlist)
 		append_failable_initializer(internalClassFile, mappingPlist)
-
 		close_file(internalClassFile)
 
 	generate_internal_instantiator_file(mappinglist, output_directory)
+
+def xcode_version():
+	status, xcodeVersionString = commands.getstatusoutput("xcodebuild -version")
+	if xcodeVersionString.find("Xcode 7.")  != -1:
+		return 7.0
+	else:
+		return 6.0
 
 def generate_internal_file(classname, class_directory):
 	filename = class_directory + 'Internal/_'+ classname + '.swift'
@@ -106,8 +121,6 @@ def append_mapper_method_definitions(classfile, mappinglist):
 		classfile.write('			case \"' + mapperClass + '\":\n 				return ' + mapperClass +'.transformValues(values)')
 		classfile.write('\n 			default:\n 			 	return nil\n')
 		classfile.write('		}\n 	}\n')
-
-	print distinctMapperClassDefinitions
 
 def generate_internal_instantiator_file(mappingPlist, output_directory):
 	filename = output_directory + 'Internal/US2Mapper.swift'
@@ -354,38 +367,43 @@ def append_failable_initializer(classFile, mappingPlist):
 	classFile.write(') \n 		')
 	append_failable_initializer_typecasting(classFile, mappingPlist)
 
-	classFile.write(' \n 		} else {\n 			self.init(')
+	if xcode_version() == 6.0:
 
-	firstPropertyWritten = False
+		classFile.write(' \n 		} else {\n 			self.init(')
 
-	# Append Non-Optional Properties 
-	for propertyName in mappingKeys:
-		
-		propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
-		
-		if propertyType == PROPERTY_TYPE_ARRAY:
-			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
-				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-					append_failable_initializer_line_break(classFile, firstPropertyWritten)
-					append_array_failed_initialiser_property(classFile, propertyName, propertyType, collectionSubtype, 0)
-					firstPropertyWritten = True
-		
-		elif propertyType == PROPERTY_TYPE_DICTIONARY:
-			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
-				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-					append_failable_initializer_line_break(classFile, firstPropertyWritten)
-					append_dictionary_failed_initialiser_property(classFile, propertyName, propertyType, collectionSubtype, 0)
-					firstPropertyWritten = True
-		else:
-			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
-				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-					append_failable_initializer_line_break(classFile, firstPropertyWritten)
-					append_failed_initialiser_property(classFile, propertyName, propertyType, 0)
-					firstPropertyWritten = True
+		firstPropertyWritten = False
 
-	classFile.write(')\n 			return nil\n 		}\n 	}')
+		# Append Non-Optional Properties 
+		for propertyName in mappingKeys:
+			
+			propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
+			
+			if propertyType == PROPERTY_TYPE_ARRAY:
+				collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+				if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+					if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+						append_failable_initializer_line_break(classFile, firstPropertyWritten)
+						append_array_failed_initialiser_property(classFile, propertyName, propertyType, collectionSubtype, 0)
+						firstPropertyWritten = True
+			
+			elif propertyType == PROPERTY_TYPE_DICTIONARY:
+				collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+				if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+					if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+						append_failable_initializer_line_break(classFile, firstPropertyWritten)
+						append_dictionary_failed_initialiser_property(classFile, propertyName, propertyType, collectionSubtype, 0)
+						firstPropertyWritten = True
+			else:
+				if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+					if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+						append_failable_initializer_line_break(classFile, firstPropertyWritten)
+						append_failed_initialiser_property(classFile, propertyName, propertyType, 0)
+						firstPropertyWritten = True
+
+		classFile.write(')\n 			return nil\n 		}\n 	}')
+	else:
+		classFile.write(' \n 		} else {\n 			return nil\n 		}\n 	}')
+
 	
 
 def append_failed_initialiser_property(classfile, propertyname, datatype, optional):
@@ -467,23 +485,25 @@ def throw_missing_json_key_error(classname, propertykey, mapping):
 def main(argv):
    inputfile = ''
    outputfile = ''
-
+   projdir = ''
    try:
-      opts, args = getopt.getopt(argv,"hi:o:",["mapdir=","classdir="])
+      opts, args = getopt.getopt(argv,"hi:o:p:",["mapdir=", "classdir=", "projdir="])
    except getopt.GetoptError:
-      print 'test.py -i <mapdir> -o <classdir>'
-      sys.exit(2)
+      print 'test.py -i <mapdir> -o <classdir> -p <projdir>'
+      #sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'test.py -i <mapdir> -o <classdir>'
+         print 'test.py -i <mapdir> -o <classdir> -p <projdir>'
          sys.exit()
       elif opt in ("-i", "--mapdir"):
          mapdir = arg
       elif opt in ("-o", "--classdir"):
          classdir = arg
+      elif opt in ("-p", "--projdir"):
+         projdir = arg
 
    mappinglist = glob.glob(mapdir + "*.plist") 
-   generate_model(mappinglist, classdir)
+   generate_model(mappinglist, classdir, projdir)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
