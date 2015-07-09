@@ -367,7 +367,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python $PROJECT_DIR/../../modelgen-swift20.py -i $PROJECT_DIR/US2Mapper2.0Tests/Mapping/ -o $PROJECT_DIR/US2Mapper2.0Tests/Classes/";
+			shellScript = "python $PROJECT_DIR/../../../modelgen-swift.py -i $PROJECT_DIR/US2Mapper2.0Tests/Mapping/ -o $PROJECT_DIR/US2Mapper2.0Tests/Classes/";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -29,7 +29,7 @@ MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 # Default Strings
 STRING_IMPORT_FOUNDATION 	= "import Foundation\n"
 STRING_REQUIRED_INIT_START 	= "\n 	required init("
-STRING_CONVENIENCE_INIT_START 	= "\n 	convenience init("
+STRING_CONVENIENCE_INIT_START 	= "\n 	required init("
 STRING_FAILABLE_INIT_START = ' 	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {\n\n 		let dynamicTypeString = "\(self.dynamicType)"\n 		let className = dynamicTypeString.componentsSeparatedByString(".").last\n\n 		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {'
 STRING_FAILABLE_INIT_SUPER_START = '	\n 			self.init('
 STRING_FILE_INTRO = '// US2Mapper Generated Model\n// UPDATE LISCENSE HERE\n\n'
@@ -53,8 +53,8 @@ def generate_model(mappinglist, output_directory):
 		append_required_initializer(internalClassFile, mappingPlist)
 		
 
-		append_short_concenience_initializer(internalClassFile, mappingPlist)
-		append_convenience_initializer(internalClassFile, mappingPlist)
+		#append_short_concenience_initializer(internalClassFile, mappingPlist)
+		append_failable_initializer(internalClassFile, mappingPlist)
 
 		close_file(internalClassFile)
 
@@ -267,111 +267,9 @@ def append_required_initializer_line_break(classFile, firstPropertyWritten):
 	if firstPropertyWritten == True:
 			classFile.write(',\n 				  ')
 
-
-def append_short_concenience_initializer(classFile, mappingPlist):
-	classFile.write(STRING_CONVENIENCE_INIT_START)
-	
+def append_failable_initializer_tempValues(classFile, mappingPlist):
 	mappingKeys = mappingPlist.keys()
-	firstPropertyWritten = False
-
-	#Append Optional Properties 
-	for propertyName in mappingKeys:
-		
-		propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
-
-		if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
-			append_short_convenience_initializer_line_break(classFile, firstPropertyWritten)
-			append_short_convenience_initializer_optional_property(classFile, mappingPlist, propertyName, propertyType)
-			firstPropertyWritten = True
-		else:
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
-				append_short_convenience_initializer_line_break(classFile, firstPropertyWritten)
-				append_short_convenience_initializer_optional_property(classFile, mappingPlist, propertyName, propertyType)
-				firstPropertyWritten = True
-	
-	#Append Non-Optional Properties
-	for propertyName in mappingKeys:
-		if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-				append_short_convenience_initializer_line_break(classFile, firstPropertyWritten)
-				propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
-				append_short_convenience_initializer_non_optional_property(classFile, mappingPlist, propertyName, propertyType)
-				firstPropertyWritten = True
-	
-	classFile.write(') {\n 			')	
-	append_short_convenience_initializer_value_assignments(classFile, mappingPlist)
-
-def append_short_convenience_initializer_optional_property(classFile, mappingPlist, propertyName, propertyType):
-	if propertyType == PROPERTY_TYPE_ARRAY:
-		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('_' + propertyName  +  ' : [ ' + collectionSubtype + ']?')
-	elif propertyType == PROPERTY_TYPE_DICTIONARY:
-		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('_' + propertyName  +  ' : Dictionary<String, ' + collectionSubtype + '>?')
-	else:
-		classFile.write('_' + propertyName  + ' : ' + propertyType + '?')
-
-def append_short_convenience_initializer_non_optional_property(classFile, mappingPlist, propertyName, propertyType):
-	if propertyType == PROPERTY_TYPE_ARRAY:
-		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('_' + propertyName  +  ' : [ ' + collectionSubtype + ']')
-	elif propertyType == PROPERTY_TYPE_DICTIONARY:
-		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('_' + propertyName  +  ' : Dictionary<String, ' + collectionSubtype + '>')
-	else:
-		classFile.write('_' + propertyName  + ' : ' + propertyType + '')
-
-
-def append_short_convenience_initializer_line_break(classFile, firstPropertyWritten):
-	if firstPropertyWritten == True:
-			classFile.write(',\n 				  ')
-
-
-def append_short_convenience_initializer_value_assignments(classFile, mappingPlist):
-	mappingKeys = mappingPlist.keys()
-	firstPropertyWritten = False
-	classFile.write('\n 			self.init(')
-	#Append Non-Optional Properties
-	for propertyName in mappingKeys:
-		if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-				append_short_convenience_initializer_line_break(classFile, firstPropertyWritten)
-				firstPropertyWritten = True
-				classFile.write('_' + propertyName + ' : _' + propertyName )
-
-	classFile.write(')\n')
-
-	#Append Optional Properties 
-	for propertyName in mappingKeys:
-		if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
-			classFile.write('\n 			')
-			classFile.write(propertyName + ' = _' + propertyName)
-		else:
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
-				classFile.write('\n 			')
-				classFile.write(propertyName + ' = _' + propertyName )
-	
-	
-	classFile.write('\n 	}\n\n')	
-
-def append_convenience_initializer_tempValues(classFile, mappingPlist):
-	mappingKeys = mappingPlist.keys()
-	firstPropertyWritten = False
-	classFile.write('\n')
-	#Append Optional Properties 
-	for propertyName in mappingKeys:
-		propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
-
-		if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
-			classFile.write('\n')
-			append_convenience_initializer_optional_temp_properties(classFile, mappingPlist, propertyName, propertyType)
-			firstPropertyWritten = True
-		else:
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
-				classFile.write('\n')
-				append_convenience_initializer_optional_temp_properties(classFile, mappingPlist, propertyName, propertyType)
-				firstPropertyWritten = True
-	
+	firstPropertyWritten = False	
 	classFile.write('\n')
 
 	#Append Non-Optional Properties
@@ -380,12 +278,12 @@ def append_convenience_initializer_tempValues(classFile, mappingPlist):
 			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
 				classFile.write('\n')
 				propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
-				append_convenience_initializer_non_optional_property_typecast(classFile, mappingPlist, propertyName, propertyType)
+				append_failable_initializer_non_optional_property_typecast(classFile, mappingPlist, propertyName, propertyType)
 				firstPropertyWritten = True
 	
 	classFile.write('\n')
 
-def append_convenience_initializer_optional_temp_properties(classFile, mappingPlist, propertyName, propertyType):
+def append_failable_initializer_optional_temp_properties(classFile, mappingPlist, propertyName, propertyType):
 	if propertyType == PROPERTY_TYPE_ARRAY:
 		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
 		classFile.write('			var temp_' + propertyName  + ' : [' + collectionSubtype + ']?')
@@ -395,7 +293,7 @@ def append_convenience_initializer_optional_temp_properties(classFile, mappingPl
 	else:
 		classFile.write('			var temp_' + propertyName  + ' : ' + propertyType + '?' )
 
-def append_convenience_initializer_non_optional_property_typecast(classFile, mappingPlist, propertyName, propertyType):
+def append_failable_initializer_non_optional_property_typecast(classFile, mappingPlist, propertyName, propertyType):
 	if propertyType == PROPERTY_TYPE_ARRAY:
 		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
 		classFile.write('			let temp_' + propertyName  + ' : [' + collectionSubtype + ']' + '  = US2Mapper.typeCast(valuesDict["' + propertyName + '"])!')
@@ -405,7 +303,7 @@ def append_convenience_initializer_non_optional_property_typecast(classFile, map
 	else:
 		classFile.write('			let temp_' + propertyName  + ' : ' + propertyType  + ' = US2Mapper.typeCast(valuesDict["' + propertyName + '"])!')
 
-def append_convenience_initializer_typecasting(classFile, mappingPlist):
+def append_failable_initializer_typecasting(classFile, mappingPlist):
 	
 	mappingKeys = mappingPlist.keys()
 	firstPropertyWritten = False
@@ -415,59 +313,105 @@ def append_convenience_initializer_typecasting(classFile, mappingPlist):
 		
 		if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
 			classFile.write('\n')
-			append_convenience_typecast_unwrap_statement(classFile, mappingPlist, propertyName, propertyType)
+			append_failable_typecast_unwrap_statement(classFile, mappingPlist, propertyName, propertyType)
 			firstPropertyWritten = True
 		else:
 			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
 				classFile.write('\n')
-				append_convenience_typecast_unwrap_statement(classFile, mappingPlist, propertyName, propertyType)
+				append_failable_typecast_unwrap_statement(classFile, mappingPlist, propertyName, propertyType)
 				firstPropertyWritten = True
 
 
-def append_convenience_typecast_unwrap_statement(classFile, mappingPlist, propertyName, propertyType):
+def append_failable_typecast_unwrap_statement(classFile, mappingPlist, propertyName, propertyType):
 	if propertyType == PROPERTY_TYPE_ARRAY:
 		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('			if let unwrapped_' + propertyName  + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n 				temp_' + propertyName + ' = US2Mapper.typeCast(unwrapped_' + propertyName + ')\n 			}\n')
+		classFile.write('			if let unwrapped_' + propertyName  + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n 				' + propertyName + ' = US2Mapper.typeCast(unwrapped_' + propertyName + ')\n 			}\n')
 	elif propertyType == PROPERTY_TYPE_DICTIONARY:
 		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('			if let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"]  as AnyObject? {\n 					temp_' + propertyName + ' = US2Mapper.typeCast(unwrapped_' + propertyName + ')\n 			}\n')
+		classFile.write('			if let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"]  as AnyObject? {\n 					' + propertyName + ' = US2Mapper.typeCast(unwrapped_' + propertyName + ')\n 			}\n')
 	else:
-		classFile.write('			if let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n 					temp_' + propertyName + ' = US2Mapper.typeCast(unwrapped_' + propertyName + ')\n 			}\n')
+		classFile.write('			if let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n 					' + propertyName + ' = US2Mapper.typeCast(unwrapped_' + propertyName + ')\n 			}\n')
 	
 
-def append_convenience_initializer(classFile, mappingPlist):
+def append_failable_initializer(classFile, mappingPlist):
 	
 	classFile.write(STRING_FAILABLE_INIT_START)
-	append_convenience_initializer_tempValues(classFile, mappingPlist)
-	append_convenience_initializer_typecasting(classFile, mappingPlist)
+	append_failable_initializer_tempValues(classFile, mappingPlist)
 	
 	classFile.write(STRING_FAILABLE_INIT_SUPER_START)
+	
 	mappingKeys = mappingPlist.keys()
 	firstPropertyWritten = False
-
-	#Append Optional Properties 
-	for propertyName in mappingKeys:
-		if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
-			append_convenience_initializer_line_break(classFile, firstPropertyWritten)
-			classFile.write('_' + propertyName  + ' : temp_' + propertyName + '')
-			firstPropertyWritten = True
-		else:
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
-				append_convenience_initializer_line_break(classFile, firstPropertyWritten)
-				classFile.write('_' + propertyName  + ' : temp_' + propertyName + '')
-				firstPropertyWritten = True
-	
+	classFile.write('')
 	#Append Non-Optional Properties
 	for propertyName in mappingKeys:
 		if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
 			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-				append_convenience_initializer_line_break(classFile, firstPropertyWritten)
+				append_failable_initializer_line_break(classFile, firstPropertyWritten)
 				classFile.write('_' + propertyName  + ' : temp_' + propertyName + '')
 				firstPropertyWritten = True
 	
-	classFile.write(') \n 		} else {\n 			return nil\n 		}\n 	}')
+	classFile.write(') \n 		')
+	append_failable_initializer_typecasting(classFile, mappingPlist)
+
+	classFile.write(' \n 		} else {\n 			self.init(')
+
+	firstPropertyWritten = False
+
+	# Append Non-Optional Properties 
+	for propertyName in mappingKeys:
+		
+		propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
+		
+		if propertyType == PROPERTY_TYPE_ARRAY:
+			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+					append_failable_initializer_line_break(classFile, firstPropertyWritten)
+					append_array_failed_initialiser_property(classFile, propertyName, propertyType, collectionSubtype, 0)
+					firstPropertyWritten = True
+		
+		elif propertyType == PROPERTY_TYPE_DICTIONARY:
+			collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
+			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+					append_failable_initializer_line_break(classFile, firstPropertyWritten)
+					append_dictionary_failed_initialiser_property(classFile, propertyName, propertyType, collectionSubtype, 0)
+					firstPropertyWritten = True
+		else:
+			if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+				if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+					append_failable_initializer_line_break(classFile, firstPropertyWritten)
+					append_failed_initialiser_property(classFile, propertyName, propertyType, 0)
+					firstPropertyWritten = True
+
+	classFile.write(')\n 			return nil\n 		}\n 	}')
 	
-def append_convenience_initializer_line_break(classFile, firstPropertyWritten):
+
+def append_failed_initialiser_property(classfile, propertyname, datatype, optional):
+	
+	if datatype not in NATIVE_PROPERTY_TYPES:
+		classfile.write('_' + propertyname + ' : ' + datatype + '(Dictionary<String, AnyObject>())!')
+	else:
+		classfile.write('_' + propertyname + ' : ' + datatype + '()')
+
+	if optional == 1:
+		classfile.write('?')
+
+def append_array_failed_initialiser_property(classfile, propertyname, datatype, collectionSubtype, optional):
+	classfile.write('_' + propertyname + ' : [' + collectionSubtype + ']()')
+	
+	if optional == 1:
+		classfile.write('?')
+
+
+def append_dictionary_failed_initialiser_property(classfile, propertyname, datatype, collectionSubtype, optional):
+	classfile.write( '_' + propertyname + ' : Dictionary<String,' + collectionSubtype + '>()')
+	
+	if optional == 1:
+		classfile.write('?')
+
+def append_failable_initializer_line_break(classFile, firstPropertyWritten):
 	if firstPropertyWritten == True:
 			classFile.write(',\n 				      ')
 

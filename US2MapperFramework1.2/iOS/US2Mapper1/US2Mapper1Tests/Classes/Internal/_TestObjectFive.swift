@@ -11,15 +11,6 @@ class _TestObjectFive {
  			non_optionalSubType = _non_optionalSubType
  	}
 
-
- 	convenience init(_optionalSubType : TestObjectThree?,
- 				  _non_optionalSubType : TestObjectThree) {
- 			
- 			self.init(_non_optionalSubType : _non_optionalSubType)
-
- 			optionalSubType = _optionalSubType
- 	}
-
  	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
 
  		let dynamicTypeString = "\(self.dynamicType)"
@@ -27,19 +18,16 @@ class _TestObjectFive {
 
  		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {
 
-			var temp_optionalSubType : TestObjectThree?
-
 			let temp_non_optionalSubType : TestObjectThree = US2Mapper.typeCast(valuesDict["non_optionalSubType"])!
-
-			if let unwrapped_optionalSubType : AnyObject = valuesDict["optionalSubType"] as AnyObject? {
- 					temp_optionalSubType = US2Mapper.typeCast(unwrapped_optionalSubType)
- 			}
 	
- 			self.init(_optionalSubType : temp_optionalSubType,
- 				      _non_optionalSubType : temp_non_optionalSubType) 
+ 			self.init(_non_optionalSubType : temp_non_optionalSubType) 
+ 		
+			if let unwrapped_optionalSubType : AnyObject = valuesDict["optionalSubType"] as AnyObject? {
+ 					optionalSubType = US2Mapper.typeCast(unwrapped_optionalSubType)
+ 			}
+ 
  		} else {
-            let testObject = TestObjectThree(Dictionary<String, AnyObject>())
-            self.init(_non_optionalSubType : testObject!)
+ 			self.init(_non_optionalSubType : TestObjectThree(Dictionary<String, AnyObject>())!)
  			return nil
  		}
  	}

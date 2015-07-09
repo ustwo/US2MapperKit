@@ -8,7 +8,6 @@ class _TestObjectTwo {
  			
  	}
 
-
  	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
 
  		let dynamicTypeString = "\(self.dynamicType)"
@@ -16,11 +15,11 @@ class _TestObjectTwo {
 
  		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {
 
-
 	
  			self.init() 
+ 		 
  		} else {
-            self.init() 
+ 			self.init()
  			return nil
  		}
  	}
