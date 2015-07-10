@@ -2,6 +2,7 @@
 // UPDATE LISCENSE HERE
 
 import Foundation
+import US2MapperKit
 
 class US2Mapper : _US2Mapper {
 

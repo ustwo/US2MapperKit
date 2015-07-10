@@ -1,4 +1,5 @@
 import Foundation
+import US2MapperKit
 
 class _TestObjectTwo {
 
