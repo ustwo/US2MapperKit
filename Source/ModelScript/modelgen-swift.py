@@ -43,7 +43,6 @@ STRING_CLASS_FROM_STRING_METHOD 	= "	override class func classFromString(classna
 def generate_model(mappinglist, output_directory):
 	
 	for mapping in mappinglist:
-
 		filename = mapping[mapping.rindex('/',0,-1)+1:-1] if mapping.endswith('/') else mapping[mapping.rindex('/')+1:]
 		classname = filename.split('.', 1 )[0]
 		mappingPlist = plistlib.readPlist(mapping)

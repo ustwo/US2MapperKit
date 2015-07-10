@@ -6,8 +6,8 @@ Pod::Spec.new do |s|
 
   s.license      = 'MIT'
   s.author       = { "Anton Doudarev" => "anton@ustwo.com" }
-  s.source       = { :git => "https://github.com/ustwo/US2MapperKit.git" }
+  s.source       = { :git => 'https://github.com/ustwo/US2MapperKit.git' }
   s.platform     = :ios
-  s.source_files = "Source"
+  s.source_files = "Source/US2MapperKit/*.*", "Source/ModelScript/*.*", "Source/ModelScript/mod_pbxproj/*.*"
   s.requires_arc = true
 end
