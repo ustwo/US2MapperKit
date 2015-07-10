@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "US2MapperKit"
   s.version      = "0.0.1"
   s.summary      = "JSON Mapping Framework"
-  s.homepage     = "https://github.com/ustwo/US2MapperKit.git"
+  s.homepage     = "https://github.com/ustwo/US2MapperKit/tree/03-Code-Review-Refactor"
 
   s.license      = 'MIT'
   s.author       = { "Anton Doudarev" => "anton@ustwo.com"}
