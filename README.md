@@ -50,6 +50,11 @@ python $SCRIPT_LOCATION -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$
 ```
 ##CocoaPods
 
+```
+SCRIPT_LOCATION=$(find ${PODS_ROOT} -name modelgen-swift.py | head -n 1)
+python $SCRIPT_LOCATION -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+
+```
 
 ##Plugin
 
@@ -64,7 +69,7 @@ The basic concept behind UTMapper is a three steps :
 3. Configure build time script, and ensure it follows "Target Dependencies" task in your build ph
 
 ```
-python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/UTMapper/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Classes/
+python $SCRIPT_LOCATION -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
 
 -i defines the location if you plist mappings
 -o defines the output directory for the model objects
