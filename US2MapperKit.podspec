@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "Anton Doudarev" => "anton@ustwo.com"}
   s.source       = { :git => 'https://github.com/ustwo/US2MapperKit.git', :branch => '03-Code-Review-Refactor'}
-  s.source_files = "Source"
+  s.source_files = ‘Source/*.*’
   s.requires_arc = true
 end
