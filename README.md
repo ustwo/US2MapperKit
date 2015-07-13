@@ -1,6 +1,6 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-# US2MapperKit
+#US2MapperKit
 
 In the world of mapping data to our data model, the data may change at any time, and UTMapper is the simplest solution to solve this problem. Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), UTMapper is an an extremely lightweight mapping framework designed specifically to take advantage of Swift 2.0.
 
@@ -38,6 +38,22 @@ The first class generated in the examples is the `_Person.swift` class. It conta
 The second class generated in the example is the `Person.swift` which inherits from the  `_Person.swift` class. This allows the mean for developer to append custom logic logic, custom properties, or implementations of protocols accordingly. This class is only generated once, and will never be overwritten during the build task. Thus updating the mapping, will not affect your logic within the externally generated file.
 
 
+##Basic Use
+
+Once configured per [Installation]() instructions:
+
+1. Create a plist file for the model class, and add it to your mapping folder defined during installation.
+2. Build your target, and using Finder navigate to the output directory defined during the installation process. Note (You only have to do this once for any newly created plist)
+3. To map dictionary values to your model object, all your need to do is the following
+
+	```
+let testObjectInstance = TestInstanceType(dataDictionary)
+
+	```
+
+##Mapping Examples
+
+TODO
 
 #Installation
 
@@ -155,60 +171,13 @@ python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJEC
 6. Move the newly created Run Script phase to the second listing right below the "Target Dependencies" task
 
 
-##Manual
-
-
-The basic concept behind UTMapper is a three steps :
-
-1. Clone the [US2MapperKit](git@github.com:ustwo/US2MapperKit.git) repository 
-2. Create a plist file for the model class (described in the followi sectios)
-3. Configure build time script, and ensure it follows "Target Dependencies" task in your build ph
-
-```
-python $SCRIPT_LOCATION -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
-
--i defines the location if you plist mappings
--o defines the output directory for the model objects
-
-```
-
-At Build time, the script will generate model objects based on the mappings plist, you will then need to:
-
-1. Navigate to your output directory and drag and drop the model directory into your project 
-2. Then to map dictionary values to your model all your need to do is the following
-
-```
-let testObjectInstance = TestInstanceType(dataDictionary)
-
-```
-
-
-
-##Plugin
-
-
-
-#Examples
-
-
-###Basic Example
-
-Let's look at a basic example below with a plist definition for a Person object class.
-
-// TODO
-
-__Result__
-
-Once the response is received it's as easy as the following line of code to map all the values accordingly to the `Person` model class. 
-
-```
-var newPerson = Person(dataDictionary)
-
-```
-
 ##Future Features
 
-* Supports mapping inheritance
+
+* Support Mapping Inheritance
+* Support Sets
+* Suport Structs
+* Xcode Plug-in
 
 ## License
 
