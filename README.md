@@ -48,7 +48,6 @@ Once configured per [Installation]() instructions:
 
 	```
 let testObjectInstance = TestInstanceType(dataDictionary)
-
 	```
 
 ##Mapping Examples
