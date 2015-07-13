@@ -40,8 +40,8 @@ STRING_PROPERTY_VAR = "	var"
 
 STRING_CLASS_FROM_STRING_METHOD 	= "	override class func classFromString(classname : String, data : Dictionary<String, AnyObject>) -> AnyObject? {\n 		switch classname {\n"
 
-def generate_model(mappinglist, output_directory):
-	
+def generate_model(mappinglist, output_directory, version):
+	print version
 	for mapping in mappinglist:
 		filename = mapping[mapping.rindex('/',0,-1)+1:-1] if mapping.endswith('/') else mapping[mapping.rindex('/')+1:]
 		classname = filename.split('.', 1 )[0]
@@ -479,25 +479,25 @@ def throw_missing_json_key_error(classname, propertykey, mapping):
 
 
 def main(argv):
-   inputfile = ''
-   outputfile = ''
 
    try:
-      opts, args = getopt.getopt(argv,"hi:o:",["mapdir=","classdir="])
+      opts, args = getopt.getopt(argv,"hv:i:o:",["version=", "mapdir=", "classdir="])
    except getopt.GetoptError:
-      print 'test.py -i <mapdir> -o <classdir>'
+      print 'test.py -v <version> -i <mapdir> -o <classdir>'
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'test.py -i <mapdir> -o <classdir>'
+         print 'test.py -v <version> -i <mapdir> -o <classdir>'
          sys.exit()
+      elif opt in ("-v", "--version"):
+         version = arg
       elif opt in ("-i", "--mapdir"):
          mapdir = arg
       elif opt in ("-o", "--classdir"):
          classdir = arg
 
    mappinglist = glob.glob(mapdir + "*.plist") 
-   generate_model(mappinglist, classdir)
+   generate_model(mappinglist, classdir, version)
 
 if __name__ == "__main__":
    main(sys.argv[1:])

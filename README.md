@@ -1,4 +1,6 @@
-# UTMapper
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+# US2MapperKit
 
 In the world of mapping data to our data model, the data may change at any time, and UTMapper is the simplest solution to solve this problem. Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), UTMapper is an an extremely lightweight mapping framework designed specifically to take advantage of Swift 2.0.
 
@@ -17,12 +19,11 @@ Unlike the past, where an Object Model is first created, followed by a mapping f
 	* Arrays
 	* Dictionaries
 	* Complex Datatypes (i.e Any Generated Model Objects)
-* Native and Complex DataTypes mapping supported for Arrays and Dictionaries
+* Arrays and Dictionaries support for Native and Complex DataTypes
 * Optional and Non-Optional Property Types
 	* Supports User Defined Default Values for either
-* Flexible Multi-Value Transformations
-* Compound Property Mappings
-
+* Multi-Value Transformations
+* Compound Property Mapping
 
 #Basic Concept
 
