@@ -52,7 +52,9 @@ let testObjectInstance = TestInstanceType(dataDictionary)
 
 #Examples
 
-TODO
+##Basic DataTypes
+
+
 
 #Installation
 
@@ -105,7 +107,24 @@ python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mappings/ -o $PROJE
 5. Move the newly created Run Script phaase to the second listing right below the "Target Dependencies" task
 
 
-##Carthage OSX
+##Carthage
+
+
+This framework was designed to run with Swift 1.2 and 2.0 accordingly. When installing using Carthage, the environment needs to be pointing to the correct instance of Xcode for the module to build corrently. 
+
+If you are using the **Current SDK 6.0+** (Swift 1.2) run the following command in your terminal:
+
+```
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+```
+
+If you are using the **Beta SDK 7.0+** (Swift 2.0) run the following command in your terminal:
+	
+```
+sudo xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
+```
+
+###OSX Install
 
 1. Create/Update your a Cartfile that lists the frameworks with the following
 	
@@ -132,7 +151,7 @@ python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJEC
 5. Move the newly created Run Script phaase to the second listing right below the "Target Dependencies" task
 
 
-##Carthage iOS
+###iOS Install
 
 1. Create/Update your a Cartfile that lists the frameworks with the following
 	
@@ -180,6 +199,20 @@ Add the following flag into the Other Swift Flags in your build settings for the
 
 -DUS2MAPPER_DEBUG
 
+
+##TroubleShooting
+
+####Module file was created by an older version of the compiler
+
+Error: module file was created by an older version of the compiler: ~/Carthage/Build/iOS/US2MapperKit.framework/Modules/US2MapperKit.swiftmodule/x86_64.swiftmodule
+
+If build with Xcode-beta
+
+sudo xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
+
+If building with Current Xcode release
+
+sudo xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
 
 
 ##Future Features

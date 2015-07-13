@@ -7,12 +7,6 @@
 //
 
 import XCTest
-#if TARGET_OS_IPHONE
-import UIKit
-    #else
-    // OSX code
-#endif
-
 
 class US2MapperCoreTests: XCTestCase {
     
