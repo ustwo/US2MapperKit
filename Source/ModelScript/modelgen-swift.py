@@ -436,15 +436,7 @@ def validate_class_mapping_configuration(classname, mappingPlist):
 	mapping_property_key = ""
 
 	for propertyName in mappingPlist.keys():
-		if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
-			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
-				if MAPPING_KEY_TYPE in mappingPlist[propertyName].keys():
-					if MAPPING_KEY_MAPPER not in mappingPlist[propertyName].keys():
-						mappingtype = mappingPlist[propertyName][MAPPING_KEY_TYPE]
-						if mappingtype in NATIVE_PROPERTY_TYPES:
-							if MAPPING_KEY_DEFAULT not in mappingPlist[propertyName].keys():
-								throw_missing_default_error(classname, MAPPING_KEY_DEFAULT, mappingPlist[propertyName])
-
+		
 		if MAPPING_KEY_TYPE not in mappingPlist[propertyName].keys():
 			throw_missing_type_error(classname, MAPPING_KEY_TYPE, mappingPlist[propertyName])
 
@@ -455,12 +447,6 @@ def print_default_error_header(classname, mapping):
 	print "\n\nUS2Mapper Error: Invalid Configuration (" + classname + ".plist)\n\n"
 	print mapping
 	print "\n"
-
-def throw_missing_default_error(classname, propertykey, mapping):
-	print_default_error_header(classname, mapping)
-	print "The mapping configuration for " + propertykey + " property is defined as non-optional. \nAll non optional properties must specify a 'default' value configuration.\n\n"
-	raise Exception('Invalid Configuration')
-
 
 def throw_missing_type_error(classname, propertykey, mapping):
 	print_default_error_header(classname, mapping)

@@ -50,7 +50,7 @@ Once configured per [Installation]() instructions:
 let testObjectInstance = TestInstanceType(dataDictionary)
 	```
 
-##Mapping Examples
+#Examples
 
 TODO
 
@@ -100,7 +100,7 @@ python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mappings/ -o $PROJE
 	-v defines the version (currently 0.1)
 	-i defines the location where your plist mappings are stored (`$PROJECT_DIR/$PROJECT_NAME/Mappings`)
 	-o defines the output directory for the model objects (`$PROJECT_DIR/$PROJECT_NAME/Model`)
-
+ 	
 	```
 5. Move the newly created Run Script phaase to the second listing right below the "Target Dependencies" task
 
@@ -112,7 +112,6 @@ python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mappings/ -o $PROJE
 	```
 #US2MapperKit
 git "https://github.com/ustwo/US2MapperKit.git"
-	
 	```
 2. Run `carthage update`. This will fetch dependencies into a [Carthage/Checkouts][] folder, then build each one.
 3. In your application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop each framework you want to use from the Carthage/Build folder on disk.
@@ -161,17 +160,29 @@ git "https://github.com/ustwo/US2MapperKit.git"
 5. Navigate to your targets’ “Build Phases” settings tab, add another task by clicking the “+” icon, and choose “New Run Script Phase”. Create a Run Script with the following contents:
 
 	NOTE: The script below differs for installation via Cocoapods
-
+		
 	```
 SCRIPT_LOCATION=$(find $SRCROOT -name modelgen-swift.py | head -n 1)
 python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+
+	Parameter Description:
+	-v defines the version (currently 0.1)
+	-i defines the location where your plist mappings are stored (`$PROJECT_DIR/$PROJECT_NAME/Mappings`)
+	-o defines the output directory for the model objects (`$PROJECT_DIR/$PROJECT_NAME/Model`)
 
 	```
 6. Move the newly created Run Script phase to the second listing right below the "Target Dependencies" task
 
 
-##Future Features
+##Debugging
 
+Add the following flag into the Other Swift Flags in your build settings for the correct configuration: TODO Update this Section
+
+-DUS2MAPPER_DEBUG
+
+
+
+##Future Features
 
 * Support Mapping Inheritance
 * Support Sets

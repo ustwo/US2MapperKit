@@ -95,6 +95,10 @@ public class _US2Mapper {
             }
         }
         
+        #if US2MAPPER_DEBUG
+            var missingPropertyKeyArray = Array<String>()
+        #endif
+
         // Validate that all non-optional properties have a value assigned
         for (propertyKey, propertyMapping) in mappingConfiguration {
             if let isPropertyNonOptional : AnyObject = propertyMapping[US2MapperNonOptionalKey] {
@@ -103,15 +107,35 @@ public class _US2Mapper {
                         // If value was mapped, continue with validation
                         continue
                     } else {
-                        return nil
+                        #if US2MAPPER_DEBUG
+                            missingPropertyKeyArray.append(propertyKey)
+                        #else
+                            return nil
+                        #endif
                     }
                 }
             }
         }
         
+        #if US2MAPPER_DEBUG
+            if (missingPropertyKeyArray.count > 0) {
+                printDebugStatement(className, missingPropertyKeyArray: missingPropertyKeyArray, data: data)
+                return nil
+            }
+        #endif
+        
         return propertyValueDictionary
     }
     
+    final class func printDebugStatement(className : String, missingPropertyKeyArray : Array<String>, data : Dictionary<String, AnyObject>){
+        if (missingPropertyKeyArray.count > 0) {
+            print("\n\n\(className) instance could not be parsed, missing values the following non-optional properties:")
+            for propertyKey in missingPropertyKeyArray {
+                print("\n- \(propertyKey)")
+            }
+            print("\n\nData Dictionary:\n\n\(data)\n\n")
+        }
+    }
     
     // MARK Retrieve Dictionary Value For Assignment Methods
     
