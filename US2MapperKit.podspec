@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.author       = { "Anton Doudarev" => "anton@ustwo.com" }
   s.source       = { :git => 'https://github.com/ustwo/US2MapperKit.git' }
   s.platform     = :ios
-  s.source_files = "Source/US2MapperKit/*.*", "Source/ModelScript/*.*", "Source/ModelScript/mod_pbxproj/*.*"
+  s.source_files = "Source/US2MapperKit/*.*", "Source/ModelScript/*.*"
   s.requires_arc = true
 end

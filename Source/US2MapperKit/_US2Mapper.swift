@@ -55,7 +55,6 @@ public class _US2Mapper {
             }
         }
     }
-
     
     // Parse Dictionary Data for the specific class
     public final class func parseJSONResponse(className : String, data : Dictionary<String, AnyObject>) -> Dictionary<String, AnyObject>? {

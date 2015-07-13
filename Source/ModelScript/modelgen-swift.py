@@ -6,7 +6,6 @@ import getopt
 import dircache
 import glob
 import commands
-from mod_pbxproj import XcodeProject
 
 FOLDER_INTERNAL_PREFIX = "Classes/Internal/_"
 FOLDER_EXTERNAL_PREFIX = "Classes/"
@@ -41,7 +40,7 @@ STRING_PROPERTY_VAR = "	var"
 STRING_CLASS_FROM_STRING_METHOD 	= "	override class func classFromString(classname : String, data : Dictionary<String, AnyObject>) -> AnyObject? {\n 		switch classname {\n"
 
 def generate_model(mappinglist, output_directory, version):
-	print version
+	
 	for mapping in mappinglist:
 		filename = mapping[mapping.rindex('/',0,-1)+1:-1] if mapping.endswith('/') else mapping[mapping.rindex('/')+1:]
 		classname = filename.split('.', 1 )[0]
@@ -58,8 +57,6 @@ def generate_model(mappinglist, output_directory, version):
 		close_file(internalClassFile)
 
 	generate_internal_instantiator_file(mappinglist, output_directory)
-
-	
 	
 def xcode_version():
 	status, xcodeVersionString = commands.getstatusoutput("xcodebuild -version")
