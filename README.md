@@ -46,14 +46,14 @@ The second class generated in the example is the `Person.swift` which inherits f
 
 ```
 SCRIPT_LOCATION=$(find $SRCROOT -name modelgen-swift.py | head -n 1)
-python $SCRIPT_LOCATION -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+python $SCRIPT_LOCATION -x 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
 
 ```
 ##CocoaPods
 
 ```
 SCRIPT_LOCATION=$(find ${PODS_ROOT} -name modelgen-swift.py | head -n 1)
-python $SCRIPT_LOCATION -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
 
 ```
 
