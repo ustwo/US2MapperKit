@@ -27,16 +27,16 @@ let US2MapperDefaultKey              = "default"
 let US2MapperMapperKey               = "mapper"
 let US2MapperCollectionSubTypeKey    = "collection_subtype"
 
-let UTDataTypeString        = "String"
-let UTDataTypeInt           = "Int"
-let UTDataTypeDouble        = "Double"
-let UTDataTypeFloat         = "Float"
-let UTDataTypeBool          = "Bool"
-let UTDataTypeArray         = "Array"
-let UTDataTypeDictionary    = "Dictionary"
+let US2DataTypeString        = "String"
+let US2DataTypeInt           = "Int"
+let US2DataTypeDouble        = "Double"
+let US2DataTypeFloat         = "Float"
+let US2DataTypeBool          = "Bool"
+let US2DataTypeArray         = "Array"
+let US2DataTypeDictionary    = "Dictionary"
 
-let nativeDataTypes      = [UTDataTypeString, UTDataTypeInt, UTDataTypeDouble, UTDataTypeFloat, UTDataTypeBool]
-let collectionTypes      = [UTDataTypeArray, UTDataTypeDictionary]
+let nativeDataTypes      = [US2DataTypeString, US2DataTypeInt, US2DataTypeDouble, US2DataTypeFloat, US2DataTypeBool]
+let collectionTypes      = [US2DataTypeArray, US2DataTypeDictionary]
 
 public class _US2Mapper {
 
@@ -176,18 +176,18 @@ public class _US2Mapper {
     final class func parseCollection(collectionType: String, _ subCollectionType : String, _ data : AnyObject) -> AnyObject? {
         if let subDictionary = data as? Dictionary<String, AnyObject> {
             switch collectionType {
-            case UTDataTypeArray:
+            case US2DataTypeArray:
                 return parseCollectionToArray(subCollectionType, data: subDictionary)
-            case UTDataTypeDictionary:
+            case US2DataTypeDictionary:
                 return parseCollectionToDictionary(subCollectionType, data: subDictionary)
             default:
                 return nil
             }
         } else if let subValueArray = data as? Array<AnyObject> {
             switch collectionType {
-            case UTDataTypeArray:
+            case US2DataTypeArray:
                 return parseCollectionToArray(subCollectionType, data: subValueArray)
-            case UTDataTypeDictionary:
+            case US2DataTypeDictionary:
                 return parseCollectionToDictionary(subCollectionType, data: subValueArray)
             default:
                 return nil
@@ -360,18 +360,18 @@ public class _US2Mapper {
     
     final class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
         switch dataType {
-        case UTDataTypeString:
+        case US2DataTypeString:
             if value is NSNumber {
                 return numericString(value as! NSNumber)
             }
             return "\(value)"
-        case UTDataTypeDouble:
+        case US2DataTypeDouble:
             return Double(value.doubleValue)
-        case UTDataTypeFloat:
+        case US2DataTypeFloat:
             return Float(value.floatValue)
-        case UTDataTypeInt:
+        case US2DataTypeInt:
             return Int(value.integerValue)
-        case UTDataTypeBool:
+        case US2DataTypeBool:
             return value.boolValue
         default:
             return value
