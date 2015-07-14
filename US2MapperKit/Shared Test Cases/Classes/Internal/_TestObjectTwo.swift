@@ -5,23 +5,22 @@ class _TestObjectTwo {
 
 
 
- 	required init() {
+	required init() {
  			
- 	}
+	}
 
- 	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
+	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {
 
- 		let dynamicTypeString = "\(self.dynamicType)"
- 		let className = dynamicTypeString.componentsSeparatedByString(".").last
+		let dynamicTypeString = "\(self.dynamicType)"
+		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
- 		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {
+		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {
 
 	
- 			self.init() 
- 		 
- 		} else {
- 			self.init()
- 			return nil
- 		}
- 	}
+			self.init() 
+		 
+		} else {
+			return nil
+		}
+	}
 } 
