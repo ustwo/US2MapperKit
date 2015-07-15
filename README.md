@@ -1,92 +1,438 @@
-# UTMapper
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-In the world of mapping data to our data model, the data may change at any time, and UTMapper is the simplest solution to solve this problem. Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), UTMapper is an an extremely lightweight mapping framework designed specifically to take advantage of Swift 2.0.
+#US2MapperKit
 
-Unlike the past, where an Object Model is first created, followed by a mapping framework being retrofitted against the model, UTMapper takes a mapping first approach, where it generates your model, and allows extensibility inspiration by the [Protocol-Oriented Programming](https://developer.apple.com/videos/wwdc/2015/?id=408) talk at WWDC.
+Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), US2MapperKit is an an extremely lightweight mapping framework designed specifically to take advantage of Swift for mapping response data to a model.
 
-#Features
+Unlike the past, where an object model is created manually by the developer and retrofitting it against the model at a later point, US2MapperKit takes a mapping first approach, generates your model files, and allows for the extensibility inspired by the [Protocol-Oriented Programming](https://developer.apple.com/videos/wwdc/2015/?id=408) talk at WWDC.
 
-* Extremely Flexible and Lightweight
-* Generates Model Objects Mapped using plists
-* Supports Native Datatypes including:
+##Features
+
+* Extremely flexible and lightweight
+* Generates model objects mapped using .plists files
+* Optional and Non-Optional properties
+* Supports native datatypes including:
 	* String
 	* Int
 	* Double
 	* Float
 	* Bool
+* Supports collections including:
 	* Arrays
 	* Dictionaries
-	* Complex Datatypes (i.e Any Generated Model Objects)
-* Native and Complex DataTypes mapping supported for Arrays and Dictionaries
-* Optional and Non-Optional Property Types
-	* Supports User Defined Default Values for either
-* Flexible Multi-Value Transformations
-* Compound Property Mappings
+* Support for complex datatypes (any generated model objects)
+	* Both as single properties and collections
+* Allows for defined default values
+* Single and multi-value transformations
 
-
-#Basic Concept
-
+##Core Concept
 ![alt tag](/readme_assets/basic_concept_image.png?raw=true)
 
-The idead behind UTMapper is to build against the response data upfront, and relinquish responsibility for containment within the model object that is generated for you.
+The core idea behind US2MapperKit is to build against the response data right from the start, and relinquish responsibility for containment of your data within the model object pregenerated you.
+
+In the simple example above, attempting to map a Person object returned from the API. The first step is to manually generage a plist representing the data that is being returned. The plist defines properties, the data types, and the mapping keys associated to the data in the response dictionary. Once defined, a build time script will generate two model object files to represent the plist mapping. 
+
+The first class generated in the examples is the `_Person.swift` class. It contains scripted logic, and a failable initializer which takes in a `Dictionary<String, AnyObject>` value. The underscore represents an internal object that should not be modifided by the developer since the script will regenerate it everytime the project is built, and all changes will disappear. The internal files only intent is to support the framework in mapping the response data.
+
+The second class generated in the example is the `Person.swift` which inherits from the  `_Person.swift` class. This allows the mean for developer to append custom logic logic, custom properties, or implementations of protocols accordingly. This class is only generated once, and will never be overwritten during the build task. Thus updating the mapping, will not affect your logic within the externally generated file.
 
 
-In the simple example above, let's pretend we are attempting to map a Person object that is coming back form the API. The first step is to manually generage a plist representing the data that is being returned. The plist defines properties, the data types per property, and the mapping key associated with the data in the response dictionary. Once defined, a build time script will generate two model object files to represent the plist mapping. 
+#Basic Use
 
-The first class generated in the examples is the `_Person.swift` class. It contains scripted logic, and a failable initializer which takes in a `Dictionary<String, AnyObject>` value. The underscore represents an internal object that should not be modifided by the developer as the script will regenerate it everytime the project is built, and it's only intension is to support the framework in mapping the response data.
+Once configured per [Installation]() instructions:
 
-The second class generated in the example is the `Person.swift` which inherits form the  `_Person.swift` class. It is mean for developer to append their logic, appends properties, or implements protocols accordingly. This class is only generated once, and will never be overwritten during the build task. thus updating the mapping, will not affect your logic at all.
+1. Create a plist file for the model class in the mapping folder defined during installation.
+2. Build your target, then navigate to the output directory defined during the installation process, and add the files to your projects.
+3. To map data to an instance, call the failable initializer generated by US2MapperKit with the `Dictionary<String, AnyObject>` data to parse.
+
+	```
+let newInstance = TestModelObject(dataDictionary)
+	```
+
+##Mapping Examples
 
 
+####Optional Value Types
 
-#Setup
+US2Mapper supports mapping basic datypes including `String`, `Int`, `Double`, `Float` and `Bool`. Let's look at a simple example for mapping basic datatypes for a `Dictionary<String, AnyObject>` response for a basic business below
 
-The basic concept behind UTMapper is a three steps :
-
-1. Clone the [UTMapper](git@github.com:ustwo/UTMapper.git) repository (We need to work this out)
-2. Create a plist file for the model class (described in the followi sectios)
-3. Configure build time script, and ensure it follows "Target Dependencies" task in your build ph
-
-```
-python $PROJECT_DIR/$PROJECT_NAME/modelgen.py -i $PROJECT_DIR/UTMapper/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Classes/
-
--i defines the location if you plist mappings
--o defines the output directory for the model objects
-
-```
-
-At Build time, the script will generate model objects based on the mappings plist, you will then need to:
-
-1. Navigate to your output directory and drag and drop the model directory into your project 
-2. Then to map dictionary values to your model all your need to do is the following
+**Response Dictionary**
 
 ```
-let testObjectInstance = TestInstanceType(dataDictionary)
+{
+	'business_uuid'  	 	:  9223123456754775807,
+	'business_name'  		: 'UsTwo Restaurant',
+	'business_rating' 	 	:  5,
+	'business_longitude'  	: 40.7053319,
+	'business_latitude'   	: -74.0129945,
+	'business_open'    		: 1
+}
+```
+
+After receiving the data dictionary, the next stage is to model the response into a class, and map it accordingly. Unlike other mapping frameworks, where the developer needs to model the object first prior to mapping the response, US2MapperKit takes care of generating the model by creating a plist mapping for a model object. Let's go ahead and create a mapping for out `Business` model object, and add it to the mapping folder configured during installation. 
+
+
+**Business.plist**
+<br/>
+
+![alt tag](/readme_assets/basic data_types_business.png?raw=true  =423x347)
+<br/>
+For each property that US2MapperKit will generate in the final model object, first define a dictionary within the plist to represent the property. For each property at minimum we must define a **key** and a **type** entry. The **key** maps to the value of the response dictionary, and **type** defines the Swift datatype for the property.
+
+Now that the Model Mapping is defined, and within our configured mapping folder. Perform a build **(⌘-B)**, and navigate to the configured model output folder, and add the generate files to your project. NOTE: This only has to be done once, unless the name of the Model object changes, as a developer you should not have to add the created files again, and they should change accordingly by the build script. 
+
+From this example we'll find there is an internal `_Business.swift` file, an external `Business.swift` class that extends from the latter, and a `US2Mapper.swift`. Lets take a take a high level look at the output below.
+
+
+**_Business.swift**
+<br/>
+
+```
+import Foundation
+import US2MapperKit
+
+class _Business {
+
+	var rating : Int?
+	var uuid : Double?
+	var longitude : Float?
+	var latitude : Float?
+	var open : Bool?
+	var name : String?
+
+ 	required init() {...}
+
+ 	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {...}
+} 
+```
+
+The internal file is where all the magic happens. At a high level, it provides a required initializer, and a [Failable Initializer](https://developer.apple.com/swift/blog/?id=17) that takes in a `Dictionary<String, AnyObject>` to be parsed. In the case the parsing fails, the failable initializer will return nil. When all the properties are optional, and there are missing values in the response, the failable initializer will return an instance with the missing values accordingly.
+
+**Business.swift**
+<br/>
+
+```
+import Foundation
+
+class Business : _Business {
+	// Add Custom Logic Here
+}
+```
+
+The external file is for custom logic, and is only generated once, and will go unchanged if there is an update to the mapping. As a developer you can add properties, methods, and implement any protocol as you wish, while the internal class is only there to hold reference to the values from the response dictionary is is being passed.
+
+####Non-Optional Value Types
+
+If a property is non-optional, such as the **uuid** property for the Business model object, a **nonoptional** can be added to the property definition in the model mapping accordingly. Let's take a quick peak at the `Business.plist` below
+
+**Business.plist**
+<br/>
+
+![alt tag](/readme_assets/non_optional_business.png?raw=true  =427x190)
+<br/>
+
+Once the model mapping has been updated, perform a build **(⌘-B)**, and the changes should be reflect accordingly in the internal `_Business.swift` class.
+
+**Business.swift**
+<br/>
+
+```
+import Foundation
+import US2MapperKit
+
+class _Business {
+
+	var rating : Int?
+	var longitude : Float?
+	var latitude : Float?
+	var open : Bool?
+	var name : String?
+
+	var uuid : Double
+
+ 	required init(_uuid : Double) {...}
+
+ 	convenience init?(_ dictionary: Dictionary<String, AnyObject>) {...}
+} 
+```
+
+Once the script updated the internal file, the uuid property is now a non-optional property, and has been added to the required initializer as an input parameter. In the case the response dictionary does not contain a value for the uuid, the failable initializer will return nil.
+
+####Default Values
+
+When there is need to fallback to a default value for optional or non-optional properties, define a default value by appending **default** to the property definition in the model mapping accordingly. In the example below, if there response dictionary does not have a value for the **open** property, while mapping it will default to false.
+
+**Business.plist**
+<br/>
+
+![alt tag](/readme_assets/location_plist.png?raw=true  =427x140)
+<br/>
+
+
+
+####Complex Value Types
+
+US2MapperKit's support for mapping complete types allows creating objects types as other objects generated. Let's assume in the example below that the business listing result returns a subdictionary for a location, and we would like to store as a Location type.
+
+**Response Dictionary**
+
+```
+{
+	'business_uuid'  	 :  9223123456754775807,
+	'business_name'  	 : 'UsTwo Restaurant',
+	'business_rating' 	 :  5,
+	'business_location   :
+		{
+			'longitude' : 40.7053319,
+			'latitude'  : -74.0129945
+		},					
+	'business_open'    	 : 1
+}
 
 ```
 
-#Examples
+First create a model mapping for the Location object
+
+**Location.plist**
+<br/>
+
+![alt tag](/readme_assets/location_plist.png?raw=true  =377x124)
+<br/>
+
+Once the model mapping for a location generated a `Location` object, and it has been added to the project, update the Business object mapping by defining a location property typed as **Location**
+
+**Business.plist**
+<br/>
+
+![alt tag](/readme_assets/business_location_example.png?raw=true  =416x152)
+<br/>
 
 
-###Basic Example
+When parsing the data for a `Business` object, US2MapperKit will create a `Location` instance, and will assign the resulting value to the location property of the `Business` instacen before returning it :)
 
-Let's look at a basic example below with a plist definition for a Person object class.
+####Collection Types
 
-// TODO
+US2MapperKit's support for mapping Dictionaries and Array when parsing a responses' collection values with ease. Let's assume in the example below that the business listing result returns an array of ratings, and we would like to store them as an Array<Int> type
 
-__Result__
-
-Once the response is received it's as easy as the following line of code to map all the values accordingly to the `Person` model class. 
+**Response Dictionary**
 
 ```
-var newPerson = Person(dataDictionary)
+{
+    "business_uuid"		: 9223123456754776000,
+    "business_name"		: "UsTwoRestaurant",
+    "business_ratings"	: [ 5, 4, 5, 4 ],
+    "business_location" : {
+        "longitude" : 40.7053319,
+        "latitude"  : -74.0129945
+    },
+    "business_open"		: 1
+}
+```
+First update a model mapping for the Business object, by defining setting the **type** key definition to `Array`, and adding a new **collection_subtype** key to define the subtype as `Int`
+
+**Business.plist**
+<br/>
+
+![alt tag](/readme_assets/ratings_array_example.png?raw=true  =426x172)
+<br/>
+
+
+When parsing the data for a `Business` object, US2MapperKit will create a parsed ratings `Array<Int>`, and will assign the resulting value to the ratings property of the `Business` instance before returning it.
+
+This also works for Dictionaries, just by setting the **type** key to Dictionary. When parsing a dictionary, US2MapperKit will use the assigned keys in the response when setting the values in the parsed `Dictionary`. If the response is an array, and the property to be mapped is a dictionary, US2MappkerKit will use an incremental index as the key starting with zero.
+
+Note: When parsing collections, **collection_subtype** can be any of the native value types `String`, `Int`, `Double`, `Float`, `Bool`, and or any object generated by a US2MapperKit.
+
+
+####Complex Value Transforms
+
+
+#Installation
+
+###Manual Install
+
+1. Clone the [US2MapperKit](git@github.com:ustwo/US2MapperKit.git) repository 
+2. Add the contents of the Source Directory to your project
+3. In your Project's Root Folder create a new folder that will contain all your mapping plist files
+4. In your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase”. Create a Run Script with the following contents:
+	
+	``` 
+SCRIPT_LOCATION=$(find ${PODS_ROOT} -name modelgen-swift.py | head -n 1)
+python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mappings/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+
+	Parameter Description:
+	-v defines the version (currently 0.1)
+	-i defines the location where your plist mappings are stored (`$PROJECT_DIR/$PROJECT_NAME/Mappings`)
+	-o defines the output directory for the model objects (`$PROJECT_DIR/$PROJECT_NAME/Model`)
+
+	```
+	
+4. Move the newly created Run Script phaase to the second listing right below the "Target Dependencies" task
+
+
+###CocoaPods
+1. Edit your podfile
+
+	```
+    pod 'US2MapperKit', :git => 'https://github.com/ustwo/US2MapperKit.git' 
+	```
+2. Now you can install US2MapperKit
+    ```
+    pod install
+    ```
+3. In your Project's Root Folder create a new folder that will contain all your mapping plist files
+4. Navigate to your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase”. Create a Run Script with the following contents:
+
+	NOTE: The script below differs for installation via Carthage
+
+	```
+SCRIPT_LOCATION=$(find ${PODS_ROOT} -name modelgen-swift.py | head -n 1)
+python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mappings/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+
+	Parameter Description:
+	-v defines the version (currently 0.1)
+	-i defines the location where your plist mappings are stored (`$PROJECT_DIR/$PROJECT_NAME/Mappings`)
+	-o defines the output directory for the model objects (`$PROJECT_DIR/$PROJECT_NAME/Model`)
+ 	
+	```
+5. Move the newly created Run Script phaase to the second listing right below the "Target Dependencies" task
+
+
+###Carthage
+
+
+This framework was designed to run with Swift 1.2 and 2.0 accordingly. When installing using Carthage, the environment needs to be pointing to the correct instance of Xcode for the module to build corrently. 
+
+If you are using the **Current SDK 6.0+** (Swift 1.2) run the following command in your terminal:
 
 ```
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+```
+
+If you are using the **Beta SDK 7.0+** (Swift 2.0) run the following command in your terminal:
+	
+```
+sudo xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
+```
+
+####OSX Install
+
+1. Create/Update your a Cartfile that lists the frameworks with the following
+	
+	```
+#US2MapperKit
+git "https://github.com/ustwo/US2MapperKit.git"
+	```
+2. Run `carthage update`. This will fetch dependencies into a [Carthage/Checkouts][] folder, then build each one.
+3. In your application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop each framework you want to use from the Carthage/Build folder on disk.
+3. In your Project's Root Folder create a new folder that will contain all your mapping plist files
+4. Navigate to your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase”. Create a Run Script with the following contents:
+	
+	NOTE: The script below differs for installation via Cocoapods
+
+	```
+SCRIPT_LOCATION=$(find $SRCROOT -name modelgen-swift.py | head -n 1)
+python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+
+	Parameter Description:
+	-v defines the version (currently 0.1)
+	-i defines the location where your plist mappings are stored (`$PROJECT_DIR/$PROJECT_NAME/Mapping`)
+	-o defines the output directory for the model objects (`$PROJECT_DIR/$PROJECT_NAME/Model`)
+	```
+5. Move the newly created Run Script phaase to the second listing right below the "Target Dependencies" task
+
+
+####iOS Install
+
+1. Create/Update your a Cartfile that lists the frameworks with the following
+	
+	```
+#US2MapperKit
+git "https://github.com/ustwo/US2MapperKit.git"
+	
+	```
+2.  Run `carthage update`. This will fetch dependencies into a [Carthage/Checkouts][] folder, then build each one.
+3.   In your application targets’ “General” settings tab, in the “Linked Frameworks and Libraries” section, drag and drop each framework you want to use from the [Carthage/Build][] folder on disk.
+4.   If you have setup a carthage build task for iOS already skip to Step 5, navigate to your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase”. Create a Run Script with the following contents:
+
+  	```
+  	/usr/local/bin/carthage copy-frameworks
+  	```
+  	
+4. Add the paths to the frameworks you want to use under “Input Files” within your carthage build phase as follows e.g.:
+
+	```
+ 	$(SRCROOT)/Carthage/Build/iOS/US2MapperKit.framework
+  	
+  	```
+  	
+4. In your Project's Root Folder create a new folder that will contain all your mapping plist files
+5. Navigate to your targets’ “Build Phases” settings tab, add another task by clicking the “+” icon, and choose “New Run Script Phase”. Create a Run Script with the following contents:
+
+	NOTE: The script below differs for installation via Cocoapods
+		
+	```
+SCRIPT_LOCATION=$(find $SRCROOT -name modelgen-swift.py | head -n 1)
+python $SCRIPT_LOCATION -v 0.1 -i $PROJECT_DIR/$PROJECT_NAME/Mapping/ -o $PROJECT_DIR/$PROJECT_NAME/Model/
+
+	Parameter Description:
+	-v defines the version (currently 0.1)
+	-i defines the location where your plist mappings are stored (`$PROJECT_DIR/$PROJECT_NAME/Mappings`)
+	-o defines the output directory for the model objects (`$PROJECT_DIR/$PROJECT_NAME/Model`)
+
+	```
+6. Move the newly created Run Script phase to the second listing right below the "Target Dependencies" task
+
+
+##Debugging
+
+Add the following flag into the Other Swift Flags in your build settings for the correct configuration: TODO Update this Section
+
+-DUS2MAPPER_DEBUG
+
+
+##TroubleShooting
+
+####Module file was created by an older version of the compiler
+
+Error: module file was created by an older version of the compiler: ~/Carthage/Build/iOS/US2MapperKit.framework/Modules/US2MapperKit.swiftmodule/x86_64.swiftmodule
+
+If build with Xcode-beta
+
+sudo xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
+
+If building with Current Xcode release
+
+sudo xcode-select -s /Applications/Xcode-beta.app/Contents/Developer
+
 
 ##Future Features
 
-* Supports mapping inheritance
+* Support Mapping Inheritance
+* Support Sets
+* Suport Structs
+* Xcode Plug-in
 
-## Team
+## License
 
-* Development: [Anton Doudarev](mailto:anton@ustwo.com), [Matt Isaacs](mailto:matt@ustwo.com)
+     The MIT License (MIT)  
+      
+     Copyright (c) 2015 ustwo studio inc (www.ustwo.com)  
+      
+     Permission is hereby granted, free of charge, to any person obtaining a copy
+     of this software and associated documentation files (the "Software"), to deal
+     in the Software without restriction, including without limitation the rights
+     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+     copies of the Software, and to permit persons to whom the Software is
+     furnished to do so, subject to the following conditions:  
+     
+     The above copyright notice and this permission notice shall be included in all
+     copies or substantial portions of the Software.  
+      
+     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+     SOFTWARE.  
