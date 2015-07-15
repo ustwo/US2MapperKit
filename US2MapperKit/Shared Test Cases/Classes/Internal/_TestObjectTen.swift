@@ -57,7 +57,12 @@ class _TestObjectTen {
 				optionalDictionaryDoubleType = US2Mapper.typeCast(unwrapped_optionalDictionaryDoubleType)
 			}
  
-		} else {
+ 		} else {
+ 			self.init(_non_optionalDictionaryDoubleType : Dictionary<String,Double>(),
+				  _non_optionalDictionaryIntType : Dictionary<String,Int>(),
+				  _non_optionalDictionaryFloatType : Dictionary<String,Float>(),
+				  _non_optionalDictionaryStringType : Dictionary<String,String>())
+
 			return nil
 		}
 	}

@@ -215,6 +215,8 @@ def append_failable_initializer(classFile, mappingPlist):
 
 	append_failable_initializer_typecasting(classFile, mappingPlist)
 
+	print xcode_version() 
+
 	if xcode_version() == 7.0:
 		classFile.write(' \n\t\t} else {\n\t\t\treturn nil\n\t\t}\n\t}')
 	else:
@@ -391,3 +393,28 @@ def xcode_version():
 		return 7.0
 	else:
 		return 6.0
+
+
+def main(argv):
+
+   try:
+      opts, args = getopt.getopt(argv,"hv:i:o:",["version=", "mapdir=", "classdir="])
+   except getopt.GetoptError:
+      print 'test.py -v <version> -i <mapdir> -o <classdir>'
+      sys.exit(2)
+   for opt, arg in opts:
+      if opt == '-h':
+         print 'test.py -v <version> -i <mapdir> -o <classdir>'
+         sys.exit()
+      elif opt in ("-v", "--version"):
+         version = arg
+      elif opt in ("-i", "--mapdir"):
+         mapdir = arg
+      elif opt in ("-o", "--classdir"):
+         classdir = arg
+
+   mappinglist = glob.glob(mapdir + "*.plist") 
+   generate_model(mappinglist, classdir, version)
+
+if __name__ == "__main__":
+   main(sys.argv[1:])

@@ -27,7 +27,9 @@ class _TestObjectFive {
 				optionalSubType = US2Mapper.typeCast(unwrapped_optionalSubType)
 			}
  
-		} else {
+ 		} else {
+ 			self.init(_non_optionalSubType : TestObjectThree(Dictionary<String, AnyObject>())!)
+
 			return nil
 		}
 	}

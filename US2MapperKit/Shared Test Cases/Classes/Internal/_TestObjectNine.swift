@@ -57,7 +57,12 @@ class _TestObjectNine {
 				optionalArrayFloatType = US2Mapper.typeCast(unwrapped_optionalArrayFloatType)
 			}
  
-		} else {
+ 		} else {
+ 			self.init(_non_optionalArrayFloatType : [Float](),
+				  _non_optionalArrayDoubleType : [Double](),
+				  _non_optionalArrayIntType : [Int](),
+				  _non_optionalArrayStringType : [String]())
+
 			return nil
 		}
 	}

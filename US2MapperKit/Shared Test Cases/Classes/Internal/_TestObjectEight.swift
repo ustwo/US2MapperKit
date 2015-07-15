@@ -27,7 +27,9 @@ class _TestObjectEight {
 				optionalDictionaryType = US2Mapper.typeCast(unwrapped_optionalDictionaryType)
 			}
  
-		} else {
+ 		} else {
+ 			self.init(_non_optionalDictionaryType : Dictionary<String,TestObjectFour>())
+
 			return nil
 		}
 	}

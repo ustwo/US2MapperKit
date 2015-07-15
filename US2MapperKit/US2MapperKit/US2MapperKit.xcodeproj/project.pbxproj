@@ -597,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python $PROJECT_DIR/../../Source/ModelScript/modelgen-swift.py -v 0.1 -i $PROJECT_DIR/../Shared\\ Test\\ Cases/Mapping/ -o $PROJECT_DIR/../Shared\\ Test\\ Cases/Classes/";
+			shellScript = "python $PROJECT_DIR/../../Source/ModelScript/modelgen-swift.py -v 0.1 -i $PROJECT_DIR/../../Shared\\ Test\\ Cases/Mapping/ -o $PROJECT_DIR/../../Shared\\ Test\\ Cases/Classes/";
 		};
 /* End PBXShellScriptBuildPhase section */
 

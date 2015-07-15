@@ -27,7 +27,9 @@ class _TestObjectSeven {
 				optionalArrayType = US2Mapper.typeCast(unwrapped_optionalArrayType)
 			}
  
-		} else {
+ 		} else {
+ 			self.init(_non_optionalArrayType : [TestObjectFour]())
+
 			return nil
 		}
 	}

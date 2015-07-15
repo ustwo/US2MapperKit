@@ -27,7 +27,9 @@ class _TestObjectSix {
 				optionalCompoundString = US2Mapper.typeCast(unwrapped_optionalCompoundString)
 			}
  
-		} else {
+ 		} else {
+ 			self.init(_non_optionalCompoundString : String())
+
 			return nil
 		}
 	}

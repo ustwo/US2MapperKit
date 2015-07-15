@@ -67,7 +67,13 @@ class _TestObjectFour {
 				optionalFloat = US2Mapper.typeCast(unwrapped_optionalFloat)
 			}
  
-		} else {
+ 		} else {
+ 			self.init(_non_optionalDouble : Double(),
+				  _non_optionalFloat : Float(),
+				  _non_optionalInt : Int(),
+				  _non_optionalBool : Bool(),
+				  _non_optionalString : String())
+
 			return nil
 		}
 	}
