@@ -26,7 +26,7 @@ Unlike the past, where an object model is created manually by the developer and 
 * Single and multi-value transformations
 
 ##Core Concept
-![alt tag](///Users/anton/Developer/ustwo/US2Mapper/readme_assets/basic_concept_image.png?raw=true)
+![alt tag](/readme_assets/basic_concept_image.png?raw=true)
 
 The core idea behind US2MapperKit is to build against the response data right from the start, and relinquish responsibility for containment of your data within the model object pregenerated you.
 
@@ -75,7 +75,7 @@ After receiving the data dictionary, the next stage is to model the response int
 **Business.plist**
 <br/>
 
-![alt tag](file:///Users/anton/Developer/ustwo/US2Mapper/readme_assets/basic data_types_business.png?raw=true  =423x347)
+![alt tag](/readme_assets/basic data_types_business.png?raw=true  =423x347)
 <br/>
 For each property that US2MapperKit will generate in the final model object, first define a dictionary within the plist to represent the property. For each property at minimum we must define a **key** and a **type** entry. The **key** maps to the value of the response dictionary, and **type** defines the Swift datatype for the property.
 
@@ -128,7 +128,7 @@ If a property is non-optional, such as the **uuid** property for the Business mo
 **Business.plist**
 <br/>
 
-![alt tag](file:///Users/anton/Developer/ustwo/US2Mapper/readme_assets/non_optional_business.png?raw=true  =427x190)
+![alt tag](/readme_assets/non_optional_business.png?raw=true  =427x190)
 <br/>
 
 Once the model mapping has been updated, perform a build **(⌘-B)**, and the changes should be reflect accordingly in the internal `_Business.swift` class.
@@ -165,7 +165,7 @@ When there is need to fallback to a default value for optional or non-optional p
 **Business.plist**
 <br/>
 
-![alt tag](file:///Users/anton/Developer/ustwo/US2Mapper/readme_assets/location_plist.png?raw=true  =427x140)
+![alt tag](/readme_assets/location_plist.png?raw=true  =427x140)
 <br/>
 
 
@@ -196,7 +196,7 @@ First create a model mapping for the Location object
 **Location.plist**
 <br/>
 
-![alt tag](file:///Users/anton/Developer/ustwo/US2Mapper/readme_assets/location_plist.png?raw=true  =377x124)
+![alt tag](/readme_assets/location_plist.png?raw=true  =377x124)
 <br/>
 
 Once the model mapping for a location generated a `Location` object, and it has been added to the project, update the Business object mapping by defining a location property typed as **Location**
@@ -204,7 +204,7 @@ Once the model mapping for a location generated a `Location` object, and it has 
 **Business.plist**
 <br/>
 
-![alt tag](file:///Users/anton/Developer/ustwo/US2Mapper/readme_assets/business_location_example.png?raw=true  =416x152)
+![alt tag](/readme_assets/business_location_example.png?raw=true  =416x152)
 <br/>
 
 
@@ -233,7 +233,7 @@ First update a model mapping for the Business object, by defining setting the **
 **Business.plist**
 <br/>
 
-![alt tag](file:///Users/anton/Developer/ustwo/US2Mapper/readme_assets/ratings_array_example.png?raw=true  =426x172)
+![alt tag](/readme_assets/ratings_array_example.png?raw=true  =426x172)
 <br/>
 
 
