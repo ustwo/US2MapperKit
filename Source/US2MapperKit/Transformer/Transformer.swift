@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Transformer {
+final class Transformer : Parser {
     
     class func transformedValue(from data : Dictionary<String, AnyObject>, applying propertyMapping : Dictionary<String, AnyObject>, employing instantiator : US2GeneratorProtocol) -> AnyObject? {
         
@@ -27,7 +27,7 @@ final class Transformer {
         var valueArray : [AnyObject] = []
         
         for jsonKey in jsonKeys {
-            if let jsonValue: AnyObject = DictionaryParser.valueForKey(jsonKey, dictionary: data) {
+            if let jsonValue: AnyObject = dictionaryValueForKey(jsonKey, dictionary: data) {
                 valueArray.append(jsonValue)
             }
         }

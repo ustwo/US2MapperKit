@@ -8,13 +8,13 @@
 
 import Foundation
 
-final class NativeTypeMapper {
+final class NativeTypeParser {
     
     class func nativeRepresentation(fromValue data : AnyObject, asType objectType : String?) -> AnyObject? {
-        return convertDefaultValue(data, dataType : objectType!)
+        return convertValue(data, dataType : objectType!)
     }
     
-    class func convertDefaultValue(value : AnyObject, dataType : String) -> AnyObject?  {
+    class func convertValue(value : AnyObject, dataType : String) -> AnyObject?  {
         switch dataType {
         case US2DataTypeString:
             if value is NSNumber {

@@ -8,10 +8,11 @@
 
 import Foundation
 
-final class ComplexTypeMapper {
+final class ComplexTypeParser {
+    
+    // MARK Maps a dictionary to a complex type
     
     class func complexObject(fromValue data : Dictionary<String, AnyObject>, ofType objectType : String?, using instantiator : US2GeneratorProtocol) -> AnyObject? {
-        
         if let complexTypeValue: AnyObject = instantiator.newInstance(ofType: objectType!, withValue: data) {
             return complexTypeValue
         }

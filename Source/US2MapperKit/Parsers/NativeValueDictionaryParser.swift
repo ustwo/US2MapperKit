@@ -8,9 +8,10 @@
 
 import Foundation
 
-final class NativeValueDictionaryMapper {
+final class NativeValueDictionaryParser {
     
-    // Maps Dictionary representation of native values from an Array of objects
+    // MARK Maps Dictionary representation of native values from an Array of objects
+   
     class func dictionaryRepresentation(collectionSubType : String?, data : Dictionary<String, AnyObject>, instantiator : US2GeneratorProtocol) -> Dictionary<String, AnyObject> {
        
         var valueDictionary = Dictionary<String, AnyObject>()
@@ -24,7 +25,8 @@ final class NativeValueDictionaryMapper {
         return valueDictionary
     }
     
-    // Maps Dictionary representation of native values from an Array of objects
+    // MARK Maps Dictionary representation of native values from an Array of objects
+    
     class func dictionaryRepresentation(collectionSubType : String?, data : [AnyObject], instantiator : US2GeneratorProtocol) -> Dictionary<String, AnyObject> {
        
         var valueDictionary = Dictionary<String, AnyObject>()

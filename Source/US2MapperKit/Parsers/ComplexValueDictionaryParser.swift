@@ -8,9 +8,10 @@
 
 import Foundation
 
-final class ComplexValueDictionaryMapper {
+final class ComplexValueDictionaryParser {
     
-    // Maps dictionary representation of complex objects from a Dictionary of Dictionary objects
+    // MARK Maps dictionary representation of complex objects from a Dictionary of Dictionary objects
+   
     class func dictionaryRepresentation(collectionSubType : String?, data : Dictionary<String, Dictionary<String, AnyObject>>, instantiator : US2GeneratorProtocol) ->  Dictionary<String, AnyObject> {
        
         var valueDictionary : Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
@@ -23,7 +24,8 @@ final class ComplexValueDictionaryMapper {
         return valueDictionary
     }
     
-    // Maps dictionary representation of complex objects from an Array of Dictionary objects
+    // MARK Maps dictionary representation of complex objects from an Array of Dictionary objects
+    
     class func dictionaryRepresentation(collectionSubType : String?, data : [Dictionary<String, AnyObject>], instantiator : US2GeneratorProtocol) ->  Dictionary<String, AnyObject> {
        
         var valueDictionary : Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
@@ -37,7 +39,8 @@ final class ComplexValueDictionaryMapper {
         return valueDictionary
     }
     
-    // Maps dictionary representation of complex objects from a single dictionary instance returned
+    // MARK Maps dictionary representation of complex objects from a single dictionary instance returned
+   
     class func dictionaryRepresentation(collectionSubType : String?, data : Dictionary<String, AnyObject>, instantiator : US2GeneratorProtocol) ->  Dictionary<String, AnyObject> {
         
         var valueDictionary : Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()

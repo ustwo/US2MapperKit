@@ -10,6 +10,8 @@ import Foundation
 
 public class Validator {
     
+    // MARK Validates that all the non-optional values were received or defaulted
+    
     final class func validateResponse(forValues retrievedValues :  Dictionary<String, AnyObject>, mappedTo mappingConfiguration : Dictionary<String, Dictionary<String, AnyObject>>, forType className : String) -> Bool {
         
         #if US2MAPPER_DEBUG
@@ -17,6 +19,7 @@ public class Validator {
         #endif
         
         // Validate that all non-optional properties have a value assigned
+       
         for (propertyKey, propertyMapping) in mappingConfiguration {
             if let isPropertyNonOptional : AnyObject = propertyMapping[US2MapperNonOptionalKey] {
                 if isPropertyNonOptional.boolValue == true {

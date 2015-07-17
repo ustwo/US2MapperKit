@@ -8,9 +8,10 @@
 
 import Foundation
 
-final class ComplexValueArrayMapper {
+final class ComplexValueArrayParser {
     
-    // Maps array representation of complex objects from an Array of Dictionary objects
+    // MARK Maps array representation of complex objects from an Array of Dictionary objects
+   
     class func arrayRepresentation(collectionSubType : String?, data : [Dictionary<String, AnyObject>], instantiator : US2GeneratorProtocol) -> [AnyObject] {
        
         var valueArray : [AnyObject] = []
@@ -23,7 +24,8 @@ final class ComplexValueArrayMapper {
         return valueArray
     }
     
-    // Maps array representation of complex objects from a Dictionary of Dictionary objects
+    // MARK array representation of complex objects from a Dictionary of Dictionary objects
+    
     class func arrayRepresentation(collectionSubType : String?, data : Dictionary<String, Dictionary<String, AnyObject>>, instantiator : US2GeneratorProtocol) -> [AnyObject] {
        
         var valueArray : [AnyObject] = []

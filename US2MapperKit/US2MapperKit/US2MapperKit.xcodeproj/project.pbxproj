@@ -143,42 +143,8 @@
 		3AC7C4731B5055FF0087B0BA /* TestObjectTwelve.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7C42A1B5055FF0087B0BA /* TestObjectTwelve.plist */; };
 		3AC7C4741B5055FF0087B0BA /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7C42B1B5055FF0087B0BA /* TestObjectTwo.plist */; };
 		3AC7C4751B5055FF0087B0BA /* TestObjectTwo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7C42B1B5055FF0087B0BA /* TestObjectTwo.plist */; };
-		3AC7C4761B5055FF0087B0BA /* US2MapperCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C42C1B5055FF0087B0BA /* US2MapperCoreTests.swift */; };
-		3AC7C4771B5055FF0087B0BA /* US2MapperCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C42C1B5055FF0087B0BA /* US2MapperCoreTests.swift */; };
 		3AC7C4781B5055FF0087B0BA /* US2MapperScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C42D1B5055FF0087B0BA /* US2MapperScenarioTests.swift */; };
 		3AC7C4791B5055FF0087B0BA /* US2MapperScenarioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C42D1B5055FF0087B0BA /* US2MapperScenarioTests.swift */; };
-		3AF38A4C1B59445200A43857 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A4B1B59445200A43857 /* Mapper.swift */; };
-		3AF38A4D1B59445200A43857 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A4B1B59445200A43857 /* Mapper.swift */; };
-		3AF38A4E1B59445200A43857 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A4B1B59445200A43857 /* Mapper.swift */; };
-		3AF38A4F1B59445200A43857 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A4B1B59445200A43857 /* Mapper.swift */; };
-		3AF38A511B59447D00A43857 /* NativeTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A501B59447D00A43857 /* NativeTypeMapper.swift */; };
-		3AF38A521B59447D00A43857 /* NativeTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A501B59447D00A43857 /* NativeTypeMapper.swift */; };
-		3AF38A531B59447D00A43857 /* NativeTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A501B59447D00A43857 /* NativeTypeMapper.swift */; };
-		3AF38A541B59447D00A43857 /* NativeTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A501B59447D00A43857 /* NativeTypeMapper.swift */; };
-		3AF38A561B5944A600A43857 /* ComplexTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A551B5944A600A43857 /* ComplexTypeMapper.swift */; };
-		3AF38A571B5944A600A43857 /* ComplexTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A551B5944A600A43857 /* ComplexTypeMapper.swift */; };
-		3AF38A581B5944A600A43857 /* ComplexTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A551B5944A600A43857 /* ComplexTypeMapper.swift */; };
-		3AF38A591B5944A600A43857 /* ComplexTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A551B5944A600A43857 /* ComplexTypeMapper.swift */; };
-		3AF38A5B1B5944C200A43857 /* CollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5A1B5944C200A43857 /* CollectionMapper.swift */; };
-		3AF38A5C1B5944C200A43857 /* CollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5A1B5944C200A43857 /* CollectionMapper.swift */; };
-		3AF38A5D1B5944C200A43857 /* CollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5A1B5944C200A43857 /* CollectionMapper.swift */; };
-		3AF38A5E1B5944C200A43857 /* CollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5A1B5944C200A43857 /* CollectionMapper.swift */; };
-		3AF38A601B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5F1B5944E400A43857 /* NativeValueArrayMapper.swift */; };
-		3AF38A611B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5F1B5944E400A43857 /* NativeValueArrayMapper.swift */; };
-		3AF38A621B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5F1B5944E400A43857 /* NativeValueArrayMapper.swift */; };
-		3AF38A631B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A5F1B5944E400A43857 /* NativeValueArrayMapper.swift */; };
-		3AF38A651B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A641B59450000A43857 /* NativeValueDictionaryMapper.swift */; };
-		3AF38A661B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A641B59450000A43857 /* NativeValueDictionaryMapper.swift */; };
-		3AF38A671B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A641B59450000A43857 /* NativeValueDictionaryMapper.swift */; };
-		3AF38A681B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A641B59450000A43857 /* NativeValueDictionaryMapper.swift */; };
-		3AF38A6A1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A691B59451600A43857 /* ComplexValueArrayMapper.swift */; };
-		3AF38A6B1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A691B59451600A43857 /* ComplexValueArrayMapper.swift */; };
-		3AF38A6C1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A691B59451600A43857 /* ComplexValueArrayMapper.swift */; };
-		3AF38A6D1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A691B59451600A43857 /* ComplexValueArrayMapper.swift */; };
-		3AF38A6F1B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A6E1B59453000A43857 /* ComplexValueDictionaryMapper.swift */; };
-		3AF38A701B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A6E1B59453000A43857 /* ComplexValueDictionaryMapper.swift */; };
-		3AF38A711B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A6E1B59453000A43857 /* ComplexValueDictionaryMapper.swift */; };
-		3AF38A721B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A6E1B59453000A43857 /* ComplexValueDictionaryMapper.swift */; };
 		3AF38A751B5945B800A43857 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A741B5945B800A43857 /* Transformer.swift */; };
 		3AF38A761B5945B800A43857 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A741B5945B800A43857 /* Transformer.swift */; };
 		3AF38A771B5945B800A43857 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A741B5945B800A43857 /* Transformer.swift */; };
@@ -187,6 +153,38 @@
 		3AF38A7D1B597DCD00A43857 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A7B1B597DCD00A43857 /* Validator.swift */; };
 		3AF38A7E1B597DCD00A43857 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A7B1B597DCD00A43857 /* Validator.swift */; };
 		3AF38A7F1B597DCD00A43857 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A7B1B597DCD00A43857 /* Validator.swift */; };
+		3AF38A891B598BF500A43857 /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A811B598BF500A43857 /* CollectionParser.swift */; };
+		3AF38A8A1B598BF500A43857 /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A811B598BF500A43857 /* CollectionParser.swift */; };
+		3AF38A8B1B598BF500A43857 /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A811B598BF500A43857 /* CollectionParser.swift */; };
+		3AF38A8C1B598BF500A43857 /* CollectionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A811B598BF500A43857 /* CollectionParser.swift */; };
+		3AF38A8D1B598BF500A43857 /* ComplexTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A821B598BF500A43857 /* ComplexTypeParser.swift */; };
+		3AF38A8E1B598BF500A43857 /* ComplexTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A821B598BF500A43857 /* ComplexTypeParser.swift */; };
+		3AF38A8F1B598BF500A43857 /* ComplexTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A821B598BF500A43857 /* ComplexTypeParser.swift */; };
+		3AF38A901B598BF500A43857 /* ComplexTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A821B598BF500A43857 /* ComplexTypeParser.swift */; };
+		3AF38A911B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A831B598BF500A43857 /* ComplexValueArrayParser.swift */; };
+		3AF38A921B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A831B598BF500A43857 /* ComplexValueArrayParser.swift */; };
+		3AF38A931B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A831B598BF500A43857 /* ComplexValueArrayParser.swift */; };
+		3AF38A941B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A831B598BF500A43857 /* ComplexValueArrayParser.swift */; };
+		3AF38A951B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A841B598BF500A43857 /* ComplexValueDictionaryParser.swift */; };
+		3AF38A961B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A841B598BF500A43857 /* ComplexValueDictionaryParser.swift */; };
+		3AF38A971B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A841B598BF500A43857 /* ComplexValueDictionaryParser.swift */; };
+		3AF38A981B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A841B598BF500A43857 /* ComplexValueDictionaryParser.swift */; };
+		3AF38A991B598BF500A43857 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A851B598BF500A43857 /* Parser.swift */; };
+		3AF38A9A1B598BF500A43857 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A851B598BF500A43857 /* Parser.swift */; };
+		3AF38A9B1B598BF500A43857 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A851B598BF500A43857 /* Parser.swift */; };
+		3AF38A9C1B598BF500A43857 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A851B598BF500A43857 /* Parser.swift */; };
+		3AF38A9D1B598BF500A43857 /* NativeTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A861B598BF500A43857 /* NativeTypeParser.swift */; };
+		3AF38A9E1B598BF500A43857 /* NativeTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A861B598BF500A43857 /* NativeTypeParser.swift */; };
+		3AF38A9F1B598BF500A43857 /* NativeTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A861B598BF500A43857 /* NativeTypeParser.swift */; };
+		3AF38AA01B598BF500A43857 /* NativeTypeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A861B598BF500A43857 /* NativeTypeParser.swift */; };
+		3AF38AA11B598BF500A43857 /* NativeValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A871B598BF500A43857 /* NativeValueArrayParser.swift */; };
+		3AF38AA21B598BF500A43857 /* NativeValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A871B598BF500A43857 /* NativeValueArrayParser.swift */; };
+		3AF38AA31B598BF500A43857 /* NativeValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A871B598BF500A43857 /* NativeValueArrayParser.swift */; };
+		3AF38AA41B598BF500A43857 /* NativeValueArrayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A871B598BF500A43857 /* NativeValueArrayParser.swift */; };
+		3AF38AA51B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A881B598BF500A43857 /* NativeValueDictionaryParser.swift */; };
+		3AF38AA61B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A881B598BF500A43857 /* NativeValueDictionaryParser.swift */; };
+		3AF38AA71B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A881B598BF500A43857 /* NativeValueDictionaryParser.swift */; };
+		3AF38AA81B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF38A881B598BF500A43857 /* NativeValueDictionaryParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,18 +254,17 @@
 		3AC7C4291B5055FF0087B0BA /* TestObjectThree.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectThree.plist; sourceTree = "<group>"; };
 		3AC7C42A1B5055FF0087B0BA /* TestObjectTwelve.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwelve.plist; sourceTree = "<group>"; };
 		3AC7C42B1B5055FF0087B0BA /* TestObjectTwo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectTwo.plist; sourceTree = "<group>"; };
-		3AC7C42C1B5055FF0087B0BA /* US2MapperCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2MapperCoreTests.swift; sourceTree = "<group>"; };
 		3AC7C42D1B5055FF0087B0BA /* US2MapperScenarioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2MapperScenarioTests.swift; sourceTree = "<group>"; };
-		3AF38A4B1B59445200A43857 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Mappers/Mapper.swift; sourceTree = "<group>"; };
-		3AF38A501B59447D00A43857 /* NativeTypeMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NativeTypeMapper.swift; path = Mappers/NativeTypeMapper.swift; sourceTree = "<group>"; };
-		3AF38A551B5944A600A43857 /* ComplexTypeMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComplexTypeMapper.swift; path = Mappers/ComplexTypeMapper.swift; sourceTree = "<group>"; };
-		3AF38A5A1B5944C200A43857 /* CollectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionMapper.swift; path = Mappers/CollectionMapper.swift; sourceTree = "<group>"; };
-		3AF38A5F1B5944E400A43857 /* NativeValueArrayMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NativeValueArrayMapper.swift; path = Mappers/NativeValueArrayMapper.swift; sourceTree = "<group>"; };
-		3AF38A641B59450000A43857 /* NativeValueDictionaryMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NativeValueDictionaryMapper.swift; path = Mappers/NativeValueDictionaryMapper.swift; sourceTree = "<group>"; };
-		3AF38A691B59451600A43857 /* ComplexValueArrayMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComplexValueArrayMapper.swift; path = Mappers/ComplexValueArrayMapper.swift; sourceTree = "<group>"; };
-		3AF38A6E1B59453000A43857 /* ComplexValueDictionaryMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComplexValueDictionaryMapper.swift; path = Mappers/ComplexValueDictionaryMapper.swift; sourceTree = "<group>"; };
 		3AF38A741B5945B800A43857 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transformer.swift; path = Transformer/Transformer.swift; sourceTree = "<group>"; };
 		3AF38A7B1B597DCD00A43857 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = Validator/Validator.swift; sourceTree = "<group>"; };
+		3AF38A811B598BF500A43857 /* CollectionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionParser.swift; sourceTree = "<group>"; };
+		3AF38A821B598BF500A43857 /* ComplexTypeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexTypeParser.swift; sourceTree = "<group>"; };
+		3AF38A831B598BF500A43857 /* ComplexValueArrayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexValueArrayParser.swift; sourceTree = "<group>"; };
+		3AF38A841B598BF500A43857 /* ComplexValueDictionaryParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexValueDictionaryParser.swift; sourceTree = "<group>"; };
+		3AF38A851B598BF500A43857 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		3AF38A861B598BF500A43857 /* NativeTypeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeTypeParser.swift; sourceTree = "<group>"; };
+		3AF38A871B598BF500A43857 /* NativeValueArrayParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeValueArrayParser.swift; sourceTree = "<group>"; };
+		3AF38A881B598BF500A43857 /* NativeValueDictionaryParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeValueDictionaryParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,7 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				3AC7C3A91B5054DD0087B0BA /* US2Mapper.swift */,
-				3AF38A4A1B593F8700A43857 /* Mappers */,
+				3AF38A801B598BF500A43857 /* Parsers */,
 				3AF38A791B597D9300A43857 /* Validator */,
 				3AF38A731B59458C00A43857 /* Transformers */,
 				3AC7C3A51B5054B10087B0BA /* ModelScript */,
@@ -412,7 +409,6 @@
 			children = (
 				3AC7C4051B5055FF0087B0BA /* Classes */,
 				3AC7C4201B5055FF0087B0BA /* Mapping */,
-				3AC7C42C1B5055FF0087B0BA /* US2MapperCoreTests.swift */,
 				3AC7C42D1B5055FF0087B0BA /* US2MapperScenarioTests.swift */,
 			);
 			name = "Test Cases";
@@ -477,15 +473,6 @@
 			path = Mapping;
 			sourceTree = "<group>";
 		};
-		3AF38A4A1B593F8700A43857 /* Mappers */ = {
-			isa = PBXGroup;
-			children = (
-				3AF38A4B1B59445200A43857 /* Mapper.swift */,
-				3AF38A7A1B597DA500A43857 /* Type Mappers */,
-			);
-			name = Mappers;
-			sourceTree = "<group>";
-		};
 		3AF38A731B59458C00A43857 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,18 +490,27 @@
 			name = Validator;
 			sourceTree = "<group>";
 		};
-		3AF38A7A1B597DA500A43857 /* Type Mappers */ = {
+		3AF38A801B598BF500A43857 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				3AF38A501B59447D00A43857 /* NativeTypeMapper.swift */,
-				3AF38A551B5944A600A43857 /* ComplexTypeMapper.swift */,
-				3AF38A5A1B5944C200A43857 /* CollectionMapper.swift */,
-				3AF38A5F1B5944E400A43857 /* NativeValueArrayMapper.swift */,
-				3AF38A641B59450000A43857 /* NativeValueDictionaryMapper.swift */,
-				3AF38A691B59451600A43857 /* ComplexValueArrayMapper.swift */,
-				3AF38A6E1B59453000A43857 /* ComplexValueDictionaryMapper.swift */,
+				3AF38A851B598BF500A43857 /* Parser.swift */,
+				3AF38AA91B598C0100A43857 /* Typed Parsers */,
 			);
-			name = "Type Mappers";
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		3AF38AA91B598C0100A43857 /* Typed Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				3AF38A811B598BF500A43857 /* CollectionParser.swift */,
+				3AF38A821B598BF500A43857 /* ComplexTypeParser.swift */,
+				3AF38A831B598BF500A43857 /* ComplexValueArrayParser.swift */,
+				3AF38A841B598BF500A43857 /* ComplexValueDictionaryParser.swift */,
+				3AF38A861B598BF500A43857 /* NativeTypeParser.swift */,
+				3AF38A871B598BF500A43857 /* NativeValueArrayParser.swift */,
+				3AF38A881B598BF500A43857 /* NativeValueDictionaryParser.swift */,
+			);
+			name = "Typed Parsers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -749,27 +745,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5302891B575E6C00A19496 /* _TestObjectEight.swift in Sources */,
-				3AF38A651B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */,
 				3A53028A1B575E6C00A19496 /* _TestObjectEleven.swift in Sources */,
+				3AF38A891B598BF500A43857 /* CollectionParser.swift in Sources */,
+				3AF38AA11B598BF500A43857 /* NativeValueArrayParser.swift in Sources */,
 				3A53028B1B575E6C00A19496 /* _TestObjectFive.swift in Sources */,
-				3AF38A511B59447D00A43857 /* NativeTypeMapper.swift in Sources */,
-				3AF38A6F1B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */,
 				3A53028C1B575E6C00A19496 /* _TestObjectFour.swift in Sources */,
-				3AF38A561B5944A600A43857 /* ComplexTypeMapper.swift in Sources */,
 				3A53028D1B575E6C00A19496 /* _TestObjectNine.swift in Sources */,
 				3A53028E1B575E6C00A19496 /* _TestObjectOne.swift in Sources */,
 				3A53028F1B575E6C00A19496 /* _TestObjectSeven.swift in Sources */,
+				3AF38AA51B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */,
 				3A5302901B575E6C00A19496 /* _TestObjectSix.swift in Sources */,
+				3AF38A8D1B598BF500A43857 /* ComplexTypeParser.swift in Sources */,
+				3AF38A991B598BF500A43857 /* Parser.swift in Sources */,
 				3A5302911B575E6C00A19496 /* _TestObjectTen.swift in Sources */,
+				3AF38A9D1B598BF500A43857 /* NativeTypeParser.swift in Sources */,
 				3A5302921B575E6C00A19496 /* _TestObjectThree.swift in Sources */,
 				3A5302931B575E6C00A19496 /* _TestObjectTwelve.swift in Sources */,
 				3AF38A7C1B597DCD00A43857 /* Validator.swift in Sources */,
 				3A5302941B575E6C00A19496 /* _TestObjectTwo.swift in Sources */,
 				3A5302951B575E6C00A19496 /* US2Transformer.swift in Sources */,
 				3A5302961B575E6C00A19496 /* TestObjectEight.swift in Sources */,
+				3AF38A911B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */,
+				3AF38A951B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */,
 				3A5302971B575E6C00A19496 /* TestObjectEleven.swift in Sources */,
 				3A5302981B575E6C00A19496 /* TestObjectFive.swift in Sources */,
-				3AF38A4C1B59445200A43857 /* Mapper.swift in Sources */,
 				3A5302991B575E6C00A19496 /* TestObjectFour.swift in Sources */,
 				3A53029A1B575E6C00A19496 /* TestObjectNine.swift in Sources */,
 				3A53029B1B575E6C00A19496 /* TestObjectOne.swift in Sources */,
@@ -778,13 +777,10 @@
 				3A53029D1B575E6C00A19496 /* TestObjectSix.swift in Sources */,
 				3A53029E1B575E6C00A19496 /* TestObjectTen.swift in Sources */,
 				3A53029F1B575E6C00A19496 /* TestObjectThree.swift in Sources */,
-				3AF38A6A1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */,
 				3A5302A01B575E6C00A19496 /* TestObjectTwelve.swift in Sources */,
 				3A5302A11B575E6C00A19496 /* TestObjectTwo.swift in Sources */,
-				3AF38A5B1B5944C200A43857 /* CollectionMapper.swift in Sources */,
 				3AC7C3AF1B5054DD0087B0BA /* US2CompoundValueTransformer.swift in Sources */,
 				3AC7C3AB1B5054DD0087B0BA /* US2Mapper.swift in Sources */,
-				3AF38A601B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,18 +789,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC7C3B01B5054DD0087B0BA /* US2CompoundValueTransformer.swift in Sources */,
-				3AF38A611B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */,
 				3AC7C4521B5055FF0087B0BA /* TestObjectOne.swift in Sources */,
+				3AF38A8A1B598BF500A43857 /* CollectionParser.swift in Sources */,
 				3AC7C3AC1B5054DD0087B0BA /* US2Mapper.swift in Sources */,
+				3AF38AA61B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */,
+				3AF38A9A1B598BF500A43857 /* Parser.swift in Sources */,
 				3AF38A7D1B597DCD00A43857 /* Validator.swift in Sources */,
+				3AF38A961B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */,
+				3AF38A8E1B598BF500A43857 /* ComplexTypeParser.swift in Sources */,
+				3AF38A9E1B598BF500A43857 /* NativeTypeParser.swift in Sources */,
 				3AC7C44C1B5055FF0087B0BA /* TestObjectFive.swift in Sources */,
-				3AF38A4D1B59445200A43857 /* Mapper.swift in Sources */,
 				3AC7C4361B5055FF0087B0BA /* _TestObjectNine.swift in Sources */,
 				3AC7C4341B5055FF0087B0BA /* _TestObjectFour.swift in Sources */,
 				3AC7C4321B5055FF0087B0BA /* _TestObjectFive.swift in Sources */,
-				3AF38A5C1B5944C200A43857 /* CollectionMapper.swift in Sources */,
 				3AC7C43C1B5055FF0087B0BA /* _TestObjectSix.swift in Sources */,
-				3AF38A701B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */,
 				3AC7C43E1B5055FF0087B0BA /* _TestObjectTen.swift in Sources */,
 				3AC7C4421B5055FF0087B0BA /* _TestObjectTwelve.swift in Sources */,
 				3AC7C4481B5055FF0087B0BA /* TestObjectEight.swift in Sources */,
@@ -812,9 +810,8 @@
 				3AC7C4581B5055FF0087B0BA /* TestObjectTen.swift in Sources */,
 				3AF38A761B5945B800A43857 /* Transformer.swift in Sources */,
 				3AC7C44E1B5055FF0087B0BA /* TestObjectFour.swift in Sources */,
-				3AC7C4761B5055FF0087B0BA /* US2MapperCoreTests.swift in Sources */,
 				3AC7C4561B5055FF0087B0BA /* TestObjectSix.swift in Sources */,
-				3AF38A571B5944A600A43857 /* ComplexTypeMapper.swift in Sources */,
+				3AF38AA21B598BF500A43857 /* NativeValueArrayParser.swift in Sources */,
 				3AC7C4301B5055FF0087B0BA /* _TestObjectEleven.swift in Sources */,
 				3AC7C4461B5055FF0087B0BA /* US2Transformer.swift in Sources */,
 				3AC7C43A1B5055FF0087B0BA /* _TestObjectSeven.swift in Sources */,
@@ -822,14 +819,12 @@
 				3AC7C4441B5055FF0087B0BA /* _TestObjectTwo.swift in Sources */,
 				3AC7C4501B5055FF0087B0BA /* TestObjectNine.swift in Sources */,
 				3AC7C4381B5055FF0087B0BA /* _TestObjectOne.swift in Sources */,
+				3AF38A921B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */,
 				3AC7C4401B5055FF0087B0BA /* _TestObjectThree.swift in Sources */,
-				3AF38A661B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */,
 				3AC7C45C1B5055FF0087B0BA /* TestObjectTwelve.swift in Sources */,
 				3AC7C44A1B5055FF0087B0BA /* TestObjectEleven.swift in Sources */,
 				3AC7C45A1B5055FF0087B0BA /* TestObjectThree.swift in Sources */,
 				3AC7C4781B5055FF0087B0BA /* US2MapperScenarioTests.swift in Sources */,
-				3AF38A6B1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */,
-				3AF38A521B59447D00A43857 /* NativeTypeMapper.swift in Sources */,
 				3AC7C45E1B5055FF0087B0BA /* TestObjectTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -839,27 +834,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A5302701B575E6100A19496 /* _TestObjectEight.swift in Sources */,
-				3AF38A671B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */,
 				3A5302711B575E6100A19496 /* _TestObjectEleven.swift in Sources */,
+				3AF38A8B1B598BF500A43857 /* CollectionParser.swift in Sources */,
+				3AF38AA31B598BF500A43857 /* NativeValueArrayParser.swift in Sources */,
 				3A5302721B575E6100A19496 /* _TestObjectFive.swift in Sources */,
-				3AF38A531B59447D00A43857 /* NativeTypeMapper.swift in Sources */,
-				3AF38A711B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */,
 				3A5302731B575E6100A19496 /* _TestObjectFour.swift in Sources */,
-				3AF38A581B5944A600A43857 /* ComplexTypeMapper.swift in Sources */,
 				3A5302741B575E6100A19496 /* _TestObjectNine.swift in Sources */,
 				3A5302751B575E6100A19496 /* _TestObjectOne.swift in Sources */,
 				3A5302761B575E6100A19496 /* _TestObjectSeven.swift in Sources */,
+				3AF38AA71B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */,
 				3A5302771B575E6100A19496 /* _TestObjectSix.swift in Sources */,
+				3AF38A8F1B598BF500A43857 /* ComplexTypeParser.swift in Sources */,
+				3AF38A9B1B598BF500A43857 /* Parser.swift in Sources */,
 				3A5302781B575E6100A19496 /* _TestObjectTen.swift in Sources */,
+				3AF38A9F1B598BF500A43857 /* NativeTypeParser.swift in Sources */,
 				3A5302791B575E6100A19496 /* _TestObjectThree.swift in Sources */,
 				3A53027A1B575E6100A19496 /* _TestObjectTwelve.swift in Sources */,
 				3AF38A7E1B597DCD00A43857 /* Validator.swift in Sources */,
 				3A53027B1B575E6100A19496 /* _TestObjectTwo.swift in Sources */,
 				3A53027C1B575E6100A19496 /* US2Transformer.swift in Sources */,
 				3A53027D1B575E6100A19496 /* TestObjectEight.swift in Sources */,
+				3AF38A931B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */,
+				3AF38A971B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */,
 				3A53027E1B575E6100A19496 /* TestObjectEleven.swift in Sources */,
 				3A53027F1B575E6100A19496 /* TestObjectFive.swift in Sources */,
-				3AF38A4E1B59445200A43857 /* Mapper.swift in Sources */,
 				3A5302801B575E6100A19496 /* TestObjectFour.swift in Sources */,
 				3A5302811B575E6100A19496 /* TestObjectNine.swift in Sources */,
 				3A5302821B575E6100A19496 /* TestObjectOne.swift in Sources */,
@@ -868,13 +866,10 @@
 				3A5302841B575E6100A19496 /* TestObjectSix.swift in Sources */,
 				3A5302851B575E6100A19496 /* TestObjectTen.swift in Sources */,
 				3A5302861B575E6100A19496 /* TestObjectThree.swift in Sources */,
-				3AF38A6C1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */,
 				3A5302871B575E6100A19496 /* TestObjectTwelve.swift in Sources */,
 				3A5302881B575E6100A19496 /* TestObjectTwo.swift in Sources */,
-				3AF38A5D1B5944C200A43857 /* CollectionMapper.swift in Sources */,
 				3AC7C3B11B5054DD0087B0BA /* US2CompoundValueTransformer.swift in Sources */,
 				3AC7C3AD1B5054DD0087B0BA /* US2Mapper.swift in Sources */,
-				3AF38A621B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,18 +878,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC7C3B21B5054DD0087B0BA /* US2CompoundValueTransformer.swift in Sources */,
-				3AF38A631B5944E400A43857 /* NativeValueArrayMapper.swift in Sources */,
 				3AC7C4531B5055FF0087B0BA /* TestObjectOne.swift in Sources */,
+				3AF38A8C1B598BF500A43857 /* CollectionParser.swift in Sources */,
 				3AC7C3AE1B5054DD0087B0BA /* US2Mapper.swift in Sources */,
+				3AF38AA81B598BF500A43857 /* NativeValueDictionaryParser.swift in Sources */,
+				3AF38A9C1B598BF500A43857 /* Parser.swift in Sources */,
 				3AF38A7F1B597DCD00A43857 /* Validator.swift in Sources */,
+				3AF38A981B598BF500A43857 /* ComplexValueDictionaryParser.swift in Sources */,
+				3AF38A901B598BF500A43857 /* ComplexTypeParser.swift in Sources */,
+				3AF38AA01B598BF500A43857 /* NativeTypeParser.swift in Sources */,
 				3AC7C44D1B5055FF0087B0BA /* TestObjectFive.swift in Sources */,
-				3AF38A4F1B59445200A43857 /* Mapper.swift in Sources */,
 				3AC7C4371B5055FF0087B0BA /* _TestObjectNine.swift in Sources */,
 				3AC7C4351B5055FF0087B0BA /* _TestObjectFour.swift in Sources */,
 				3AC7C4331B5055FF0087B0BA /* _TestObjectFive.swift in Sources */,
-				3AF38A5E1B5944C200A43857 /* CollectionMapper.swift in Sources */,
 				3AC7C43D1B5055FF0087B0BA /* _TestObjectSix.swift in Sources */,
-				3AF38A721B59453000A43857 /* ComplexValueDictionaryMapper.swift in Sources */,
 				3AC7C43F1B5055FF0087B0BA /* _TestObjectTen.swift in Sources */,
 				3AC7C4431B5055FF0087B0BA /* _TestObjectTwelve.swift in Sources */,
 				3AC7C4491B5055FF0087B0BA /* TestObjectEight.swift in Sources */,
@@ -902,9 +899,8 @@
 				3AC7C4591B5055FF0087B0BA /* TestObjectTen.swift in Sources */,
 				3AF38A781B5945B800A43857 /* Transformer.swift in Sources */,
 				3AC7C44F1B5055FF0087B0BA /* TestObjectFour.swift in Sources */,
-				3AC7C4771B5055FF0087B0BA /* US2MapperCoreTests.swift in Sources */,
 				3AC7C4571B5055FF0087B0BA /* TestObjectSix.swift in Sources */,
-				3AF38A591B5944A600A43857 /* ComplexTypeMapper.swift in Sources */,
+				3AF38AA41B598BF500A43857 /* NativeValueArrayParser.swift in Sources */,
 				3AC7C4311B5055FF0087B0BA /* _TestObjectEleven.swift in Sources */,
 				3AC7C4471B5055FF0087B0BA /* US2Transformer.swift in Sources */,
 				3AC7C43B1B5055FF0087B0BA /* _TestObjectSeven.swift in Sources */,
@@ -912,14 +908,12 @@
 				3AC7C4451B5055FF0087B0BA /* _TestObjectTwo.swift in Sources */,
 				3AC7C4511B5055FF0087B0BA /* TestObjectNine.swift in Sources */,
 				3AC7C4391B5055FF0087B0BA /* _TestObjectOne.swift in Sources */,
+				3AF38A941B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */,
 				3AC7C4411B5055FF0087B0BA /* _TestObjectThree.swift in Sources */,
-				3AF38A681B59450000A43857 /* NativeValueDictionaryMapper.swift in Sources */,
 				3AC7C45D1B5055FF0087B0BA /* TestObjectTwelve.swift in Sources */,
 				3AC7C44B1B5055FF0087B0BA /* TestObjectEleven.swift in Sources */,
 				3AC7C45B1B5055FF0087B0BA /* TestObjectThree.swift in Sources */,
 				3AC7C4791B5055FF0087B0BA /* US2MapperScenarioTests.swift in Sources */,
-				3AF38A6D1B59451600A43857 /* ComplexValueArrayMapper.swift in Sources */,
-				3AF38A541B59447D00A43857 /* NativeTypeMapper.swift in Sources */,
 				3AC7C45F1B5055FF0087B0BA /* TestObjectTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
