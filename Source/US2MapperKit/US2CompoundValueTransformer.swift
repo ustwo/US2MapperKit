@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class US2CompoundValueMapper : US2MapperProtocol {
+public class US2CompoundValueTransformer : US2TransformerProtocol {
    
     public static func transformValues(inputValues : [AnyObject]?) -> AnyObject? {
         var outputString : String = ""

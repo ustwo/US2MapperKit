@@ -1,5 +1,5 @@
 import Foundation
-import US2MapperKit
+
 
 class _TestObjectEleven {
 
@@ -33,13 +33,13 @@ class _TestObjectEleven {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {
+        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Transformer.sharedInstance) {
 
-			let temp_non_optionalDouble : Double = US2Mapper.typeCast(valuesDict["non_optionalDouble"])!
-			let temp_non_optionalFloat : Float = US2Mapper.typeCast(valuesDict["non_optionalFloat"])!
-			let temp_non_optionalInt : Int = US2Mapper.typeCast(valuesDict["non_optionalInt"])!
-			let temp_non_optionalBool : Bool = US2Mapper.typeCast(valuesDict["non_optionalBool"])!
-			let temp_non_optionalString : String = US2Mapper.typeCast(valuesDict["non_optionalString"])!
+			let temp_non_optionalDouble : Double = typeCast(valuesDict["non_optionalDouble"])!
+			let temp_non_optionalFloat : Float = typeCast(valuesDict["non_optionalFloat"])!
+			let temp_non_optionalInt : Int = typeCast(valuesDict["non_optionalInt"])!
+			let temp_non_optionalBool : Bool = typeCast(valuesDict["non_optionalBool"])!
+			let temp_non_optionalString : String = typeCast(valuesDict["non_optionalString"])!
 	
 			self.init(_non_optionalDouble : temp_non_optionalDouble,
 					 _non_optionalFloat : temp_non_optionalFloat,
@@ -48,23 +48,23 @@ class _TestObjectEleven {
 					 _non_optionalString : temp_non_optionalString) 
 		
 			if let unwrapped_optionalInt : AnyObject = valuesDict["optionalInt"] as AnyObject? {
-				optionalInt = US2Mapper.typeCast(unwrapped_optionalInt)
+				optionalInt = typeCast(unwrapped_optionalInt)
 			}
 
 			if let unwrapped_optionalBool : AnyObject = valuesDict["optionalBool"] as AnyObject? {
-				optionalBool = US2Mapper.typeCast(unwrapped_optionalBool)
+				optionalBool = typeCast(unwrapped_optionalBool)
 			}
 
 			if let unwrapped_optionalString : AnyObject = valuesDict["optionalString"] as AnyObject? {
-				optionalString = US2Mapper.typeCast(unwrapped_optionalString)
+				optionalString = typeCast(unwrapped_optionalString)
 			}
 
 			if let unwrapped_optionalDouble : AnyObject = valuesDict["optionalDouble"] as AnyObject? {
-				optionalDouble = US2Mapper.typeCast(unwrapped_optionalDouble)
+				optionalDouble = typeCast(unwrapped_optionalDouble)
 			}
 
 			if let unwrapped_optionalFloat : AnyObject = valuesDict["optionalFloat"] as AnyObject? {
-				optionalFloat = US2Mapper.typeCast(unwrapped_optionalFloat)
+				optionalFloat = typeCast(unwrapped_optionalFloat)
 			}
  
  		} else {

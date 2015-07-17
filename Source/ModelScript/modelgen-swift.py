@@ -36,7 +36,7 @@ STRING_PROPERTY_VAR = "	var"
 
 STRING_CLASS_FROM_STRING_METHOD 	= "	override class func classFromString(classname : String, data : Dictionary<String, AnyObject>) -> AnyObject? {\n\t\tswitch classname {\n"
 
-STRING_USMAPPER_IMPORT 			= "import US2MapperKit\n"
+STRING_USMAPPER_IMPORT 			= "\n"
 STRING_USMAPPER_INHERITENCE 	= "\nclass US2Mapper : _US2Mapper {\n\n"
 
 def generate_model(mappinglist, output_directory, version):
@@ -277,12 +277,12 @@ def append_failable_initializer_optional_temp_properties(classFile, mappingPlist
 def append_failable_initializer_non_optional_property_typecast(classFile, mappingPlist, propertyName, propertyType):
 	if propertyType == PROPERTY_TYPE_ARRAY:
 		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('\n\t\t\tlet temp_' + propertyName  + ' : [' + collectionSubtype + ']' + '  = US2Mapper.typeCast(valuesDict["' + propertyName + '"])!')
+		classFile.write('\n\t\t\tlet temp_' + propertyName  + ' : [' + collectionSubtype + ']' + '  = typeCast(valuesDict["' + propertyName + '"])!')
 	elif propertyType == PROPERTY_TYPE_DICTIONARY:
 		collectionSubtype = mappingPlist[propertyName][MAPPING_KEY_COLLECTION_SUBTYPE]
-		classFile.write('\n\t\t\tlet temp_' + propertyName  + ' : Dictionary<String, ' + collectionSubtype + '>' + ' = US2Mapper.typeCast(valuesDict["' + propertyName + '"])!')
+		classFile.write('\n\t\t\tlet temp_' + propertyName  + ' : Dictionary<String, ' + collectionSubtype + '>' + ' = typeCast(valuesDict["' + propertyName + '"])!')
 	else:
-		classFile.write('\n\t\t\tlet temp_' + propertyName  + ' : ' + propertyType  + ' = US2Mapper.typeCast(valuesDict["' + propertyName + '"])!')
+		classFile.write('\n\t\t\tlet temp_' + propertyName  + ' : ' + propertyType  + ' = typeCast(valuesDict["' + propertyName + '"])!')
 
 
 def append_failable_initializer_typecasting(classFile, mappingPlist):
@@ -295,7 +295,7 @@ def append_failable_initializer_typecasting(classFile, mappingPlist):
 
 
 def append_failable_typecast_unwrap_statement(classFile, propertyName):
-	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n\t\t\t\t' + propertyName + ' = US2Mapper.typeCast(unwrapped_' + propertyName + ')\n\t\t\t}\n')
+	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')\n\t\t\t}\n')
 
 def append_failed_initialiser_property(classfile, propertyname, datatype, optional, isFirstLine):
 	if datatype not in NATIVE_PROPERTY_TYPES:

@@ -1,5 +1,5 @@
 import Foundation
-import US2MapperKit
+
 
 class _TestObjectSeven {
 
@@ -17,14 +17,14 @@ class _TestObjectSeven {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {
+        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Transformer.sharedInstance) {
 
-			let temp_non_optionalArrayType : [TestObjectFour]  = US2Mapper.typeCast(valuesDict["non_optionalArrayType"])!
+			let temp_non_optionalArrayType : [TestObjectFour]  = typeCast(valuesDict["non_optionalArrayType"])!
 	
 			self.init(_non_optionalArrayType : temp_non_optionalArrayType) 
 		
 			if let unwrapped_optionalArrayType : AnyObject = valuesDict["optionalArrayType"] as AnyObject? {
-				optionalArrayType = US2Mapper.typeCast(unwrapped_optionalArrayType)
+				optionalArrayType = typeCast(unwrapped_optionalArrayType)
 			}
  
  		} else {

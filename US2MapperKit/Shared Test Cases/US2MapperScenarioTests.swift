@@ -13,7 +13,7 @@ import XCTest
     // OSX code
 #endif
 class US2MapperScenarioTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
@@ -187,7 +187,7 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.optionalCompoundString!, "Left-String-Right-String", "Compount Value Mapper returned incorrect Value")
         XCTAssertEqual(testObjectInstance!.non_optionalCompoundString, "NONOP-Left-String-NONOP-Right-String", "Compount Value Mapper returned incorrect Value")
     }
-    
+  
     func testCompoundValueMapperFailableInitializer() {
         // TestObjectSix should fail since the non_optionalCompoundString will return nil
         let dataDictionary = ["left_hand_string" : "Left-String-", "right_hand_string" : "Right-String"]
@@ -195,7 +195,7 @@ class US2MapperScenarioTests: XCTestCase {
         let testObjectInstance = TestObjectSix(dataDictionary)
         XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, non-optinal values are missing")
     }
-    
+
     func testArrayComplexSubtypeMapping() {
         // TestObjectSEven has an array of TestObjectFour(s)
         let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
@@ -225,7 +225,7 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalArrayType[0].non_optionalString, "TestString3", "Non-Optional String value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalArrayType[0].non_optionalBool, true, "Non-Optional Bool value was parsed incorrectly")
     }
-    
+ 
     func testArrayComplexSubtypeReturnedAsDictionaryMapping() {
         // TestObjectSEven has an array of TestObjectFour(s)
         let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
@@ -257,7 +257,7 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalArrayType[0].non_optionalString, "TestString3", "Non-Optional String value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalArrayType[0].non_optionalBool, true, "Non-Optional Bool value was parsed incorrectly")
     }
-    /*
+
     func testArrayComplexSubtypeMappingFailableInitializer() {
         // TestObjectSEven has an array of TestObjectFour(s)
         let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
@@ -269,8 +269,7 @@ class US2MapperScenarioTests: XCTestCase {
         let testObjectInstance = TestObjectSeven(dataDictionary)
         XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, non-optinal values are missing")
     }
-*/
-    
+
     func testDictionaryComplexSubtypeSingleMapping() {
         // TestObjectEight has an array of TestObjectEight(s)
         let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
@@ -291,7 +290,7 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryType["0"]!.non_optionalString, "TestString3", "Non-Optional String value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryType["0"]!.non_optionalBool, true, "Non-Optional Bool value was parsed incorrectly")
     }
-    
+
     func testDictionaryComplexSubtypeToArraysOfDictionaries() {
         // TestObjectSEven has an array of TestObjectFour(s)
         let object1Dictionary = ["non_optional_int" : 50, "non_optional_string"  : "TestString1", "non_optional_double" : 60.0, "non_optional_float" : 70.0, "non_optional_bool" : true]
@@ -329,6 +328,7 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryType["1"]!.non_optionalString, "TestString4", "Non-Optional String value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryType["1"]!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
     }
+
     
     func testDictionaryComplexSubtypeFailableInitializer() {
         // TestObjectSEven has an array of TestObjectFour(s)
@@ -339,7 +339,7 @@ class US2MapperScenarioTests: XCTestCase {
         let testObjectInstance = TestObjectEight(dataDictionary)
         XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, non-optinal values are missing")
     }
-    
+
     func testArraySimpleSubtypeMapping() {
         let stringArray = ["String1", "String2", "String3"]
         let intArray = [1, 2, 3]
@@ -437,7 +437,7 @@ class US2MapperScenarioTests: XCTestCase {
         let testObjectInstance = TestObjectNine(dataDictionary)
         XCTAssertNil(testObjectInstance, "Failable initializer should have returned nil, non optional array values are nill")
     }
-    
+
     func testDictionarySimpleSubtypeMapping() {
         let stringDictionary = ["1" : "String1", "2" : "String2", "3" : "String3"]
         let intDictionary = ["1" : 1, "2" : 2, "3" : 3]
@@ -480,7 +480,6 @@ class US2MapperScenarioTests: XCTestCase {
             XCTAssertEqual(testObjectInstance!.non_optionalDictionaryDoubleType[key]!, doubleValue, "Non-Optional Double value was parsed incorrectly from dictionary")
         }
     }
-    
     func testDictionarySimpleSubtypeFromArrayMapping() {
         let stringArray = ["String1", "String2", "String3"]
         let intArray = [1, 2, 3]
@@ -523,7 +522,8 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryFloatType["1"]!, Float(8.0), "Optional Float value was parsed incorrectly from Array")
         XCTAssertEqual(testObjectInstance!.non_optionalDictionaryFloatType["2"]!, Float(9.0), "Optional Float value was parsed incorrectly from Array")
     }
-    
+
+   
     func testNestedMapping() {
         // TestObjectTwelve is mapped with nested key values
         let final_value_dictionary = ["non_optional_int" : 50, "non_optional_string" : "TestString", "non_optional_double" : 70.0, "non_optional_float" : 80.0, "non_optional_bool" : false]
@@ -563,4 +563,5 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
     }
+
 }

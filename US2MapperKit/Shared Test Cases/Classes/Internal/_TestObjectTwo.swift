@@ -1,5 +1,5 @@
 import Foundation
-import US2MapperKit
+
 
 class _TestObjectTwo {
 
@@ -14,7 +14,7 @@ class _TestObjectTwo {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-		if let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {
+        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Transformer.sharedInstance) {
 
 	
 			self.init() 
