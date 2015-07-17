@@ -1,9 +1,9 @@
 //
-//  NativeValueArrayMapper.swift
+//  NativeValueArrayParser.swift
 //  US2MapperKit
 //
-//  Created by Anton on 7/17/15.
-//  Copyright (c) 2015 ustwo. All rights reserved.
+//  Created by Anton Doudarev on 7/17/15.
+//  Copyright © 2015 Ustwo. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ final class NativeValueArrayParser {
    
     // MARK Maps Array representation of native values from a Dictionary of objects
    
-    class func arrayRepresentation(collectionSubType : String?, data : Dictionary<String, AnyObject>, instantiator : US2GeneratorProtocol) -> [AnyObject] {
+    class func arrayRepresentation(collectionSubType : String?, data : Dictionary<String, AnyObject>, instantiator : US2InstantiatorProtocol) -> [AnyObject] {
       
         var valueArray : [AnyObject] = []
        
@@ -25,7 +25,7 @@ final class NativeValueArrayParser {
     
     // MARK Maps Array representation of native values from an Array of objects
    
-    class func arrayRepresentation(collectionSubType : String?, data :[AnyObject], instantiator : US2GeneratorProtocol) -> [AnyObject] {
+    class func arrayRepresentation(collectionSubType : String?, data :[AnyObject], instantiator : US2InstantiatorProtocol) -> [AnyObject] {
        
         var valueArray : [AnyObject] = []
         

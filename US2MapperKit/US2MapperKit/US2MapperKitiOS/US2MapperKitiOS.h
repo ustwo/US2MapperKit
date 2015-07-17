@@ -2,7 +2,7 @@
 //  US2MapperKitiOS.h
 //  US2MapperKitiOS
 //
-//  Created by Anton on 7/10/15.
+//  Created by Anton Doudarev on 7/10/15.
 //  Copyright (c) 2015 ustwo. All rights reserved.
 //
 

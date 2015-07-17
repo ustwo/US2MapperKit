@@ -29,15 +29,15 @@ MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 
 STRING_IMPORT_FOUNDATION 	= "import Foundation\n"
 STRING_REQUIRED_INIT_START 	= "\n\trequired init("
-STRING_FAILABLE_INIT_START = '\tconvenience init?(_ dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.parseJSONResponse(className!, data : dictionary) {'
+STRING_FAILABLE_INIT_START = '\tconvenience init?(_ dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {'
 STRING_FAILABLE_INIT_SUPER_START = '\t\n\t\t\tself.init('
-STRING_FILE_INTRO = '// US2Mapper Generated Model\n// UPDATE LISCENSE HERE\n\n'
+STRING_FILE_INTRO = '// US2MapperKit Generated Model\n// UPDATE LISCENSE HERE\n\n'
 STRING_PROPERTY_VAR = "	var"
 
-STRING_CLASS_FROM_STRING_METHOD 	= "	override class func classFromString(classname : String, data : Dictionary<String, AnyObject>) -> AnyObject? {\n\t\tswitch classname {\n"
+STRING_CLASS_FROM_STRING_METHOD 	= "\n\nstatic let sharedInstance : US2Instantiator = US2Instantiator()\n\nfunc newInstance(ofType classname : String, withValue data : Dictionary<String, AnyObject>) -> AnyObject? {\n\t\tswitch classname {\n"
 
 STRING_USMAPPER_IMPORT 			= "\n"
-STRING_USMAPPER_INHERITENCE 	= "\nclass US2Mapper : _US2Mapper {\n\n"
+STRING_USMAPPER_INHERITENCE 	= "\nclass US2Instantiator : US2InstantiatorProtocol {\n\n"
 
 def generate_model(mappinglist, output_directory, version):
 	
@@ -313,15 +313,16 @@ def append_dictionary_failed_initialiser_property(classfile, propertyname, datat
 '''
 Create External US2Mapper Inherited File
 '''
+
 def generate_internal_instantiator_file(mappingPlist, output_directory):
-	filename = output_directory + 'Internal/US2Mapper.swift'
+	filename = output_directory + 'Internal/US2Instantiator.swift'
 	
 	if not os.path.exists(os.path.dirname(filename)):
 		os.makedirs(os.path.dirname(filename))
 	
 	outputfile = open(filename, "wba")
 
-	outputfile.write(STRING_FILE_INTRO + STRING_IMPORT_FOUNDATION + STRING_USMAPPER_IMPORT + STRING_USMAPPER_INHERITENCE + STRING_CLASS_FROM_STRING_METHOD)
+	outputfile.write(STRING_FILE_INTRO + STRING_IMPORT_FOUNDATION + STRING_USMAPPER_IMPORT)
 
 	classnames = []
 
@@ -329,18 +330,29 @@ def generate_internal_instantiator_file(mappingPlist, output_directory):
 		filename = mapping[mapping.rindex('/',0,-1)+1:-1] if mapping.endswith('/') else mapping[mapping.rindex('/')+1:]
 		classname = filename.split('.', 1 )[0]
 		classnames.append(classname)
+
+	outputfile.write('enum US2MapperClassEnum: String {')
 	
 	for classname in classnames:
-		outputfile.write('\t\tcase \"' + classname + '\":\n\t\t\treturn US2Mapper.create' + classname + 'Instance(data)\n' )
+		outputfile.write('\n\tcase _' + classname + ' \t= "'+ classname + '"' )
 
-	outputfile.write('\t\tdefault:\n\t\t\treturn nil\n\t\t}\n\t}\n\n' )
+	outputfile.write('\n\tcase _None\t\t\t\t= "None"')
+	outputfile.write('\n\n\tfunc createObject(data : Dictionary<String, AnyObject>) -> AnyObject? {\n\t\tswitch self {')
 
 	for classname in classnames:
-		outputfile.write('	class func create' + classname + 'Instance(data : Dictionary<String, AnyObject>) -> AnyObject? {\n\t\treturn ' + classname + '(data) \n\t}\n\n ')
+		outputfile.write('\n\t\tcase ._' + classname + ':\n\t\t\treturn '+ classname + '(data)' )
 
-	append_mapper_method_definitions (outputfile, mappingPlist)
-	outputfile.write('\n} ')
+	outputfile.write('\n\t\tcase ._None:\n\t\t\treturn nil' )
+	
+	outputfile.write('\n\t\t}\n\t}\n}\n\n')
+
+	append_mapper_method_definitions(outputfile, mappingPlist)
+
+	outputfile.write('\n\nclass US2Instantiator : US2InstantiatorProtocol {\n\n\tstatic let sharedInstance : US2Instantiator = US2Instantiator()\n\n\tfunc newInstance(ofType classname : String, withValue data : Dictionary<String, AnyObject>) -> AnyObject? {\n\t\treturn US2MapperClassEnum(rawValue: classname)?.createObject(data)\n\t}\n\n' )
+
+	outputfile.write('\tfunc mapperFromString(classString: String) -> US2TransformerProtocol? {\n\t\treturn US2TransformerEnum(rawValue: classString)!.mapper()\n\t}\n}')
 	outputfile.close();
+
 
 def append_mapper_method_definitions(classfile, mappinglist):
 	distinctMapperClassDefinitions = []
@@ -355,11 +367,20 @@ def append_mapper_method_definitions(classfile, mappinglist):
 				if mapperClass not in distinctMapperClassDefinitions:
 					distinctMapperClassDefinitions.append(mapperClass)
 
+	classfile.write('enum US2TransformerEnum: String {')
 	for mapperClass in distinctMapperClassDefinitions:
-		classfile.write('\toverride class func transformValues(transformer : String, values : [AnyObject]) -> AnyObject? {\n\t\tswitch transformer {\n')
-		classfile.write('\t\t\tcase \"' + mapperClass + '\":\n\t\t\t\treturn ' + mapperClass +'.transformValues(values)')
-		classfile.write('\n\t\t\tdefault:\n\t\t\t\treturn nil\n')
-		classfile.write('\t\t}\n\t}')
+		classfile.write('\n\tcase _' + mapperClass + ' = "'+ mapperClass + '"' )
+	
+	classfile.write('\n\tcase _None = "None"')
+	classfile.write('\n\n\tfunc mapper() -> US2TransformerProtocol? {\n\t\tswitch self {')
+
+	for mapperClass in distinctMapperClassDefinitions:
+		classfile.write('\n\t\tcase ._' + mapperClass + ':\n\t\t\treturn ' + mapperClass + '()\n' )
+
+	classfile.write('\n\t\tcase ._None:\n\t\t\treturn nil' )
+
+	classfile.write('\t\t}\n\t} \n}')
+
 
 '''
 Validation and System Checks

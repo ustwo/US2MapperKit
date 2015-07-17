@@ -1,5 +1,6 @@
 import Foundation
 
+
 class _TestObjectFive {
 
 	var optionalSubType : TestObjectThree?
@@ -16,7 +17,7 @@ class _TestObjectFive {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Transformer.sharedInstance) {
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
 
 			let temp_non_optionalSubType : TestObjectThree = typeCast(valuesDict["non_optionalSubType"])!
 	

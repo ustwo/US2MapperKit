@@ -33,7 +33,7 @@ class _TestObjectThree {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Transformer.sharedInstance) {
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
 
 			let temp_non_optionalDouble : Double = typeCast(valuesDict["non_optionalDouble"])!
 			let temp_non_optionalInt : Int = typeCast(valuesDict["non_optionalInt"])!

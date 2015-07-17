@@ -17,7 +17,7 @@ class _TestObjectSeven {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Transformer.sharedInstance) {
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
 
 			let temp_non_optionalArrayType : [TestObjectFour]  = typeCast(valuesDict["non_optionalArrayType"])!
 	

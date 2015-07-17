@@ -2,19 +2,19 @@
 //  US2Mapper.swift
 //  US2Mapper
 //
-//  Created by Anton on 6/22/15.
-//  Copyright © 2015 US2Mapper. All rights reserved.
+//  Created by Anton Doudarev on 6/22/15.
+//  Copyright © 2015 Ustwo. All rights reserved.
 //
 
 import Foundation
 
-public protocol US2GeneratorProtocol {
-    func newInstance(ofType classname : String, withValue data : AnyObject) -> AnyObject?
-    func transformValues(transformer : String, values : [AnyObject]) -> AnyObject?
+public protocol US2InstantiatorProtocol {
+    func newInstance(ofType classname : String, withValue data : Dictionary<String, AnyObject>) -> AnyObject?
+    func mapperFromString(classString: String) -> US2TransformerProtocol?
 }
 
 public protocol US2TransformerProtocol {
-    static func transformValues(inputValues : [AnyObject]?) -> AnyObject?
+    func transformValues(inputValues : [AnyObject]?) -> AnyObject?
 }
 
 public func typeCast<U>(object: AnyObject?) -> U? {
@@ -52,7 +52,7 @@ let collectionTypes      = [US2DataTypeArray, US2DataTypeDictionary]
 
 final public class US2Mapper {
     
-    public class func mapValues(from dictionary : Dictionary<String, AnyObject>, forType classType : String , employing instantiator : US2GeneratorProtocol) -> Dictionary<String, AnyObject>? {
+    public class func mapValues(from dictionary : Dictionary<String, AnyObject>, forType classType : String , employing instantiator : US2InstantiatorProtocol) -> Dictionary<String, AnyObject>? {
 
         if let mappingConfiguration = retrieveMappingConfiguration(classType) {
        

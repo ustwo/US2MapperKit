@@ -2,7 +2,7 @@
 //  TestObjectOne.swift
 //  US2Mapper
 //
-//  Created by Anton on 6/25/15.
+//  Created by Anton Doudarev on 6/25/15.
 //  Copyright © 2015 US2Mapper. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class _TestObjectOne {
         let dynamicTypeString = "\(self.dynamicType)"
         let className = dynamicTypeString.componentsSeparatedByString(".").last
         
-        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Transformer.sharedInstance) {
+        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
             self.init(_optionalString: valuesDict["optionalString"]!)
         } else {
             self.init(_optionalString : nil)

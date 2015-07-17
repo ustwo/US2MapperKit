@@ -1,16 +1,16 @@
 //
-//  Mapper.swift
+//  Parser.swift
 //  US2MapperKit
 //
-//  Created by Anton on 7/17/15.
-//  Copyright (c) 2015 ustwo. All rights reserved.
+//  Created by Anton Doudarev on 7/17/15.
+//  Copyright © 2015 Ustwo. All rights reserved.
 //
 
 import Foundation
 
 class Parser {
     
-    final class func retrieveValue(from dictionary : Dictionary<String, AnyObject>, applying propertyMapping : Dictionary<String, AnyObject>, employing instantiator : US2GeneratorProtocol) -> AnyObject? {
+    final class func retrieveValue(from dictionary : Dictionary<String, AnyObject>, applying propertyMapping : Dictionary<String, AnyObject>, employing instantiator : US2InstantiatorProtocol) -> AnyObject? {
         
         if propertyMapping[US2MapperTransformerKey] != nil {
             return Transformer.transformedValue(from: dictionary, applying : propertyMapping, employing : instantiator)
@@ -31,7 +31,7 @@ class Parser {
         return nil
     }
     
-    final class func parsedValue(forValue value : AnyObject, _ dataType : String, _ subType: String?, instantiator : US2GeneratorProtocol) -> AnyObject? {
+    final class func parsedValue(forValue value : AnyObject, _ dataType : String, _ subType: String?, instantiator : US2InstantiatorProtocol) -> AnyObject? {
         
         if nativeDataTypes.containsValue(dataType) {
             

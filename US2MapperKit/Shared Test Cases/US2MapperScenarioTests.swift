@@ -2,7 +2,7 @@
 //  US2Mapper2iOSScenarioTests.swift
 //  US2Mapper2
 //
-//  Created by Anton on 7/8/15.
+//  Created by Anton Doudarev on 7/8/15.
 //  Copyright © 2015 ustwo. All rights reserved.
 //
 

@@ -1,9 +1,9 @@
 //
-//  NativeTypeMapper.swift
+//  NativeTypeParser.swift
 //  US2MapperKit
 //
-//  Created by Anton on 7/17/15.
-//  Copyright (c) 2015 ustwo. All rights reserved.
+//  Created by Anton Doudarev on 7/17/15.
+//  Copyright © 2015 Ustwo. All rights reserved.
 //
 
 import Foundation

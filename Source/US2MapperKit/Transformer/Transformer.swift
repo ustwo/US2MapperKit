@@ -1,16 +1,19 @@
 //
-//  File.swift
+//  Transformer.swift
 //  US2MapperKit
 //
-//  Created by Anton on 7/17/15.
-//  Copyright (c) 2015 ustwo. All rights reserved.
+//  Created by Anton Doudarev on 7/17/15.
+//  Copyright © 2015 Ustwo. All rights reserved.
 //
 
 import Foundation
 
+
+var transformerInstances : Dictionary<String, US2TransformerProtocol> = Dictionary<String, US2TransformerProtocol> ()
+
 final class Transformer : Parser {
     
-    class func transformedValue(from data : Dictionary<String, AnyObject>, applying propertyMapping : Dictionary<String, AnyObject>, employing instantiator : US2GeneratorProtocol) -> AnyObject? {
+    class func transformedValue(from data : Dictionary<String, AnyObject>, applying propertyMapping : Dictionary<String, AnyObject>, employing instantiator : US2InstantiatorProtocol) -> AnyObject? {
         
         if let transformClass = propertyMapping[US2MapperTransformerKey] as? String {
             if let jsonKeys = propertyMapping[US2MapperJSONKey] as? [String] {
@@ -19,11 +22,10 @@ final class Transformer : Parser {
                 }
             }
         }
-        
         return nil
     }
     
-    class func transformedValueRepresentation(mapperClass : String, jsonKeys : [String], data : Dictionary<String, AnyObject>, instantiator : US2GeneratorProtocol) -> AnyObject? {
+    class func transformedValueRepresentation(mapperClass : String, jsonKeys : [String], data : Dictionary<String, AnyObject>, instantiator : US2InstantiatorProtocol) -> AnyObject? {
         var valueArray : [AnyObject] = []
         
         for jsonKey in jsonKeys {
@@ -32,10 +34,25 @@ final class Transformer : Parser {
             }
         }
         
-        if let transformedValue: AnyObject = instantiator.transformValues(mapperClass, values : valueArray) {
-            return transformedValue;
+        if let customTransformer = customTransformer(mapperClass, instantiator: instantiator) {
+            if let transformedValue: AnyObject = customTransformer.transformValues(valueArray) {
+                return transformedValue;
+            }
         }
         
         return nil
+    }
+    
+    class func customTransformer(className : String, instantiator : US2InstantiatorProtocol) -> US2TransformerProtocol? {
+        if let transformer = transformerInstances[className] {
+            return transformer
+        } else {
+            if let transformer = instantiator.mapperFromString(className) {
+                transformerInstances[className] = transformer
+                return transformer
+            } else {
+                return nil
+            }
+        }
     }
 }
