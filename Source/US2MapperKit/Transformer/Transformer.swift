@@ -47,7 +47,7 @@ final class Transformer : Parser {
         if let transformer = transformerInstances[className] {
             return transformer
         } else {
-            if let transformer = instantiator.mapperFromString(className) {
+            if let transformer = instantiator.transformerFromString(className) {
                 transformerInstances[className] = transformer
                 return transformer
             } else {

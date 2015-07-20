@@ -10,7 +10,7 @@ import Foundation
 
 public protocol US2InstantiatorProtocol {
     func newInstance(ofType classname : String, withValue data : Dictionary<String, AnyObject>) -> AnyObject?
-    func mapperFromString(classString: String) -> US2TransformerProtocol?
+    func transformerFromString(classString: String) -> US2TransformerProtocol?
 }
 
 public protocol US2TransformerProtocol {
@@ -36,7 +36,7 @@ let US2MapperJSONKey                 = "key"
 let US2MapperTypeKey                 = "type"
 let US2MapperNonOptionalKey          = "nonoptional"
 let US2MapperDefaultKey              = "default"
-let US2MapperTransformerKey          = "mapper"
+let US2MapperTransformerKey          = "transformer"
 let US2MapperCollectionSubTypeKey    = "collection_subtype"
 
 let US2DataTypeString        = "String"

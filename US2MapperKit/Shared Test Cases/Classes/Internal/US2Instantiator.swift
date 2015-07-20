@@ -51,7 +51,7 @@ enum US2TransformerEnum: String {
 	case _US2CompoundValueTransformer = "US2CompoundValueTransformer"
 	case _None = "None"
 
-	func mapper() -> US2TransformerProtocol? {
+	func transformer() -> US2TransformerProtocol? {
 		switch self {
 		case ._US2CompoundValueTransformer:
 			return US2CompoundValueTransformer()
@@ -69,7 +69,7 @@ class US2Instantiator : US2InstantiatorProtocol {
 		return US2MapperClassEnum(rawValue: classname)?.createObject(data)
 	}
 
-	func mapperFromString(classString: String) -> US2TransformerProtocol? {
-		return US2TransformerEnum(rawValue: classString)!.mapper()
+	func transformerFromString(classString: String) -> US2TransformerProtocol? {
+		return US2TransformerEnum(rawValue: classString)!.transformer()
 	}
 }

@@ -24,7 +24,7 @@ MAPPING_KEY_TYPE 				= "type"
 MAPPING_KEY_DEFAULT 			= "default"
 MAPPING_KEY_KEY 				= "key"
 MAPPING_KEY_NONOPTIONAL 		= "nonoptional"
-MAPPING_KEY_MAPPER				= "mapper"
+MAPPING_KEY_TRANSFORMER				= "transformer"
 MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 
 STRING_IMPORT_FOUNDATION 	= "import Foundation\n"
@@ -350,7 +350,7 @@ def generate_internal_instantiator_file(mappingPlist, output_directory):
 
 	outputfile.write('\n\nclass US2Instantiator : US2InstantiatorProtocol {\n\n\tstatic let sharedInstance : US2Instantiator = US2Instantiator()\n\n\tfunc newInstance(ofType classname : String, withValue data : Dictionary<String, AnyObject>) -> AnyObject? {\n\t\treturn US2MapperClassEnum(rawValue: classname)?.createObject(data)\n\t}\n\n' )
 
-	outputfile.write('\tfunc mapperFromString(classString: String) -> US2TransformerProtocol? {\n\t\treturn US2TransformerEnum(rawValue: classString)!.mapper()\n\t}\n}')
+	outputfile.write('\tfunc transformerFromString(classString: String) -> US2TransformerProtocol? {\n\t\treturn US2TransformerEnum(rawValue: classString)!.transformer()\n\t}\n}')
 	outputfile.close();
 
 
@@ -362,8 +362,8 @@ def append_mapper_method_definitions(classfile, mappinglist):
 		mappingKeys = mappingPlist.keys()
 	
 		for propertyName in mappingKeys:
-			if MAPPING_KEY_MAPPER in mappingPlist[propertyName].keys():
-				mapperClass = mappingPlist[propertyName][MAPPING_KEY_MAPPER]
+			if MAPPING_KEY_TRANSFORMER in mappingPlist[propertyName].keys():
+				mapperClass = mappingPlist[propertyName][MAPPING_KEY_TRANSFORMER]
 				if mapperClass not in distinctMapperClassDefinitions:
 					distinctMapperClassDefinitions.append(mapperClass)
 
@@ -372,7 +372,7 @@ def append_mapper_method_definitions(classfile, mappinglist):
 		classfile.write('\n\tcase _' + mapperClass + ' = "'+ mapperClass + '"' )
 	
 	classfile.write('\n\tcase _None = "None"')
-	classfile.write('\n\n\tfunc mapper() -> US2TransformerProtocol? {\n\t\tswitch self {')
+	classfile.write('\n\n\tfunc transformer() -> US2TransformerProtocol? {\n\t\tswitch self {')
 
 	for mapperClass in distinctMapperClassDefinitions:
 		classfile.write('\n\t\tcase ._' + mapperClass + ':\n\t\t\treturn ' + mapperClass + '()\n' )
