@@ -164,7 +164,7 @@ When there is need to fallback to a default value for optional or non-optional p
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/default_value_example.png?raw=true  =427x210)
+![alt tag](/readme_assets/default_value_example.png?raw=true  =214x105)
 <br/>
 
 
@@ -266,7 +266,7 @@ Although the location in the dictionary is formatted to be handled as custom Loc
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/nested_mapping_example.png?raw=true  =476x204)
+![alt tag](/readme_assets/nested_mapping_example.png?raw=true  =238x102)
 <br/>
 
 Using the **dot** notation per example above we can easily map the values as needed with ease. 
