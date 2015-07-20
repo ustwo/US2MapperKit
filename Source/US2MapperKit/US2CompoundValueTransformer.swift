@@ -6,22 +6,19 @@
 //  Copyright © 2015 Ustwo. All rights reserved.
 //
 
-import Foundation
-
 public class US2CompoundValueTransformer : US2TransformerProtocol {
    
     public func transformValues(inputValues : [AnyObject]?) -> AnyObject? {
+        
         var outputString : String = ""
         
-        let inputArray = inputValues as! [String]
-        
-        for string in inputArray {
-            outputString += string
+        if let inputArray = inputValues as? [String] {
+            for string in inputArray {
+                outputString += string
+            }
         }
-        
-        if outputString.isEmpty {
-            return nil
-        }
+    
+        if outputString.isEmpty { return nil }
         
         return outputString
     }
