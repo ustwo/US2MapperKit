@@ -74,7 +74,7 @@ After receiving the data dictionary, the next stage is to model the response int
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/basic data_types_business.png?raw=true  =423x347)
+![alt tag](/readme_assets/basic data_types_business.png?raw=true)
 <br/>
 For each property that US2MapperKit will generate in the final model object, first define a dictionary within the plist to represent the property. For each property at minimum we must define a **key** and a **type** entry. The **key** maps to the value of the response dictionary, and **type** defines the Swift datatype for the property.
 
@@ -127,7 +127,7 @@ If a property is non-optional, such as the **uuid** property for the Business mo
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/non_optional_business.png?raw=true  =427x190)
+![alt tag](/readme_assets/non_optional_business.png?raw=true)
 <br/>
 
 Once the model mapping has been updated, perform a build **(⌘-B)**, and the changes should be reflect accordingly in the internal `_Business.swift` class.
@@ -164,7 +164,7 @@ When there is need to fallback to a default value for optional or non-optional p
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/default_value_example.png?raw=true  =214x105)
+![alt tag](/readme_assets/default_value_example.png?raw=true)
 <br/>
 
 
@@ -195,7 +195,7 @@ First create a model mapping for the Location object
 **Location.plist**
 <br/>
 
-![alt tag](/readme_assets/location_plist.png?raw=true  =397x134)
+![alt tag](/readme_assets/location_plist.png?raw=true)
 <br/>
 
 Once the model mapping for a location generated a `Location` object, and it has been added to the project, update the Business object mapping by defining a location property typed as **Location**
@@ -203,7 +203,7 @@ Once the model mapping for a location generated a `Location` object, and it has 
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/business_location_example.png?raw=true  =446x172)
+![alt tag](/readme_assets/business_location_example.png?raw=true)
 <br/>
 
 
@@ -232,7 +232,7 @@ First update a model mapping for the Business object, by defining setting the **
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/ratings_array_example.png?raw=true  =426x192)
+![alt tag](/readme_assets/ratings_array_example.png?raw=true)
 <br/>
 
 When parsing the data for a `Business` object, US2MapperKit will create a parsed ratings `Array<Int>`, and will assign the resulting value to the ratings property of the `Business` instance before returning it.
@@ -266,7 +266,7 @@ Although the location in the dictionary is formatted to be handled as custom Loc
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/nested_mapping_example.png?raw=true  =238x102)
+![alt tag](/readme_assets/nested_mapping_example.png?raw=true)
 <br/>
 
 Using the **dot** notation per example above we can easily map the values as needed with ease. 
@@ -322,7 +322,7 @@ To implement the transformer as part of the model mapping, observe how the **key
 **User.plist**
 <br/>
 
-![alt tag](/readme_assets/transformer_fullname_example.png?raw=true  =456x182)
+![alt tag](/readme_assets/transformer_fullname_example.png?raw=true)
 <br/>
 
 Note: The order of the keys in the model mapping determines the order of the input values in the `func transformValues(inputValues : [AnyObject]?) -> AnyObject?`. 
@@ -421,7 +421,7 @@ It is not always feasible to know why a a failable initializer may have failed t
 To enable the Debug mode, add the  **-DUS2MAPPER_DEBUG** flag to the **Other Swift Flags** in your build settings as follows.
 
 <br>
-![alt tag](/readme_assets/debug_flag.png?raw=true  =446x60)
+![alt tag](/readme_assets/debug_flag.png?raw=true)
 <br/>
 
 The resulting output in the console will resemble the following:
