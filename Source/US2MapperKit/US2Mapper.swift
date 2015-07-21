@@ -14,7 +14,7 @@ public protocol US2InstantiatorProtocol {
 }
 
 public protocol US2TransformerProtocol {
-    func transformValues(inputValues : [AnyObject]?) -> AnyObject?
+    func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject?
 }
 
 public func typeCast<U>(object: AnyObject?) -> U? {

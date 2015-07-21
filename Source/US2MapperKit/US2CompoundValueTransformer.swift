@@ -8,18 +8,16 @@
 
 public class US2CompoundValueTransformer : US2TransformerProtocol {
    
-    public func transformValues(inputValues : [AnyObject]?) -> AnyObject? {
-        
+    public func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject? {
         var outputString : String = ""
         
-        if let inputArray = inputValues as? [String] {
-            for string in inputArray {
-                outputString += string
+        if let stringDictionary = inputValues as? Dictionary<String, String> {
+            for (key, value) in stringDictionary {
+                outputString += value
             }
         }
-    
-        if outputString.isEmpty { return nil }
         
+        if outputString.isEmpty { return nil }
         return outputString
     }
 }

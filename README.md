@@ -39,7 +39,7 @@ The second class generated is the `Person.swift` which inherits from the interna
 
 ##Basic Use
 
-Once configured per [Installation]() instructions:
+Once configured per [Installation](#Installation) instructions:
 
 1. Create a plist model mapping and place it into, the mapping folder defined during installation.
 2. Build the target, navigate to the output directory defined during the installation process, and add the files generated to the project.
@@ -277,11 +277,11 @@ To perform transformations of a single or multiple values, US2MapperKit provides
 
 ```
 public protocol US2TransformerProtocol {
-    func transformValues(inputValues : [AnyObject]?) -> AnyObject?
+    func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject?
 }
 ```
 
-Transformations are great approach, especially for Date transforms by reusing the NSDateFormatter, and possibly creating attributed string and reusing NSMutableParagraphStyles. Let's observe a response with a simple user object below/
+Transformations are great approach, especially for Date transforms by reusing the NSDateFormatter, and possibly creating attributed strings by reusing NSMutableParagraphStyles. Let's observe a response with a simple user object below.
 
 **Response Dictionary**
 
@@ -293,31 +293,41 @@ Transformations are great approach, especially for Date transforms by reusing th
 }
 ```
 
-Let's assuming we want to store the user's full name as a single property. The transformer implementation below take in a user's first name, and last name, as an array, and transform them in a single full name property value before being returned, and assigned.
+Assuming the need to store the user's full name as a single property, the transformer implementation below take in a user's first name, and last name, as a parsed dictionary of strings keyed accordingly to the property mapping defined. and transform them in a single full name property value before being returned, and assigned.
 
 
 **US2TransformerProtocol Implementation**
 
 ```
+let firstNameKey    = "first_name"
+let lastNameKey     = "last_name"
+
 public class US2FullNameValueTransformer : US2TransformerProtocol {
-    public func transformValues(inputValues : [AnyObject]?) -> AnyObject? {
-        var outputString : String = ""
+    
+    public func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject? {
+        var fullNameString : String = ""
         
-        if let inputArray = inputValues as? [String] {
-            for string in inputArray {
-                outputString += string
-                outputString += " "
+        if let componentDictionary = inputValues as? Dictionary<String, String> {
+           
+            if let firstName = componentDictionary[firstNameKey] {
+                fullNameString += firstName
+            }
+            
+            if fullNameString.isEmpty == false { fullNameString += " " }
+            
+            if let lastName = componentDictionary[lastNameKey] {
+                fullNameString += lastName
             }
         }
-    
-        if outputString.isEmpty { return nil }
-        return outputString
+        
+        if fullNameString.isEmpty { return nil }
+       
+        return fullNameString
     }
 }
-
 ```
 
-To implement the transformer as part of the model mapping, observe how the **key** property has become an array, and takes in multiple values to transform in to a fullName property.
+To implement the transformer as part of the model mapping, observe how the **key** property in the mapping has become an array, and takes in multiple values to transform in to a fullName property. To use the custom transformer created aboce, add the **transformer** key to the property mapping defining the trasnformer class to use.  
 
 **User.plist**
 <br/>
@@ -325,9 +335,17 @@ To implement the transformer as part of the model mapping, observe how the **key
 ![alt tag](/readme_assets/transformer_fullname_example.png?raw=true)
 <br/>
 
-Note: The order of the keys in the model mapping determines the order of the input values in the `func transformValues(inputValues : [AnyObject]?) -> AnyObject?`. 
+Note: The the keys defined in the property mapping correspond to the keys in the dictionary of values passed to the ` public func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject?` method defined by the protocol. 
 
-##Installation
+
+####Compound Value Transformer
+
+Currently the only packaged trasnformer shipped with the framework is  the `US2CompoundValueTransformer` which takes in a dictionary of values per `US2TransformerProtocol`, and creates a compound output value form the values passed in.
+
+Currently there is potential for more transformers to be added in the future release.
+
+
+## <a name="Installation"></a>Installation
 
 ####Manual Install
 

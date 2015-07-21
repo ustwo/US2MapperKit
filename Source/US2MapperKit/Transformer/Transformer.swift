@@ -24,8 +24,9 @@ final class Transformer : Parser {
         }
         return nil
     }
-    
+    /*
     class func transformedValueRepresentation(mapperClass : String, jsonKeys : [String], data : Dictionary<String, AnyObject>, instantiator : US2InstantiatorProtocol) -> AnyObject? {
+       
         var valueArray : [AnyObject] = []
         
         for jsonKey in jsonKeys {
@@ -42,6 +43,26 @@ final class Transformer : Parser {
         
         return nil
     }
+    */
+    class func transformedValueRepresentation(mapperClass : String, jsonKeys : [String], data : Dictionary<String, AnyObject>, instantiator : US2InstantiatorProtocol) -> AnyObject? {
+        
+        var valueDictionary : Dictionary<String, AnyObject> = Dictionary<String, AnyObject>()
+        
+        for jsonKey in jsonKeys {
+            if let jsonValue: AnyObject = dictionaryValueForKey(jsonKey, dictionary: data) {
+                valueDictionary[jsonKey] = jsonValue
+            }
+        }
+        
+        if let customTransformer = customTransformer(mapperClass, instantiator: instantiator) {
+            if let transformedValue: AnyObject = customTransformer.transformValues(valueDictionary) {
+                return transformedValue;
+            }
+        }
+        
+        return nil
+    }
+
     
     class func customTransformer(className : String, instantiator : US2InstantiatorProtocol) -> US2TransformerProtocol? {
         if let transformer = transformerInstances[className] {
