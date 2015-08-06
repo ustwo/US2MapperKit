@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/ustwo/US2MapperKit.git', :tag => s.version }
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.9'
-  s.source_files = "Source/US2MapperKit/*.*", "Source/ModelScript/*.*"
+  s.source_files = 'Source/US2MapperKit/*'
   s.requires_arc = true
 end
