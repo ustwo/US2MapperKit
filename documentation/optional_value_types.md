@@ -21,7 +21,7 @@ After receiving the data dictionary, the next step is to model the response into
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/basic data_types_business.png?raw=true)
+![alt tag](/documentation/readme_assets/basic data_types_business.png?raw=true)
 <br/>
 For each property that US2MapperKit will generate in the final model object, define a dictionary within the plist to represent that property. For each property, at minimum, we must define a **key** and a **type** entry. The **key** maps to the value of the response dictionary, and **type** defines the Swift datatype for that property.
 

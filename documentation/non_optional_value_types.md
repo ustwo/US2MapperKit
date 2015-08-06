@@ -4,7 +4,7 @@ If a property is non-optional, such as the **uuid** property for the Business mo
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/non_optional_business.png?raw=true)
+![alt tag](/documentation/readme_assets/non_optional_business.png?raw=true)
 <br/>
 
 Once the model mapping has been updated, perform a build **(⌘-B)**, and the changes should be reflected accordingly in the internal `_Business.swift` class.

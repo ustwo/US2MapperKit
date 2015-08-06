@@ -20,7 +20,7 @@ First, update a model mapping for the Business object by defining setting the **
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/ratings_array_example.png?raw=true)
+![alt tag](/documentation/readme_assets/ratings_array_example.png?raw=true)
 <br/>
 
 When parsing the data for a `Business` object, US2MapperKit will create a parsed ratings `Array<Int>`, and will assign the resulting value to the ratings property of the `Business` instance before returning it.

@@ -4,5 +4,5 @@ When there is need to fallback to a default value for optional or non-optional p
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/default_value_example.png?raw=true)
+![alt tag](/documentation/readme_assets/default_value_example.png?raw=true)
 <br/>

@@ -59,7 +59,7 @@ To implement the transformer as part of the model mapping, observe how the **key
 **User.plist**
 <br/>
 
-![alt tag](/readme_assets/transformer_fullname_example.png?raw=true)
+![alt tag](/documentation/readme_assets/transformer_fullname_example.png?raw=true)
 <br/>
 
 Note: The the keys defined in the property mapping correspond to the keys in the dictionary of values passed to the ` public func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject?` method defined by the protocol. 
