@@ -22,7 +22,7 @@ Although the location in the dictionary is formatted to be handled as custom Loc
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/nested_mapping_example.png?raw=true)
+![alt tag](/documentation/readme_assets/nested_mapping_example.png?raw=true)
 <br/>
 
 Using the **dot** notation per the example above one can map values as needed with ease. 

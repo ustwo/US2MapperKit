@@ -5,7 +5,7 @@ It is not always feasible to know why a a fail-able initializer may have failed 
 To enable Debug mode, add the  **-DUS2MAPPER_DEBUG** flag to the **Other Swift Flags** in your build settings.
 
 <br>
-![alt tag](/readme_assets/debug_flag.png?raw=true)
+![alt tag](/documentation/readme_assets/debug_flag.png?raw=true)
 <br/>
 
 The resulting output in the console will resemble the following:

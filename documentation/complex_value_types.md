@@ -23,7 +23,7 @@ First, create a model mapping for the Location object.
 **Location.plist**
 <br/>
 
-![alt tag](/readme_assets/location_plist.png?raw=true)
+![alt tag](/documentation/readme_assets/location_plist.png?raw=true)
 <br/>
 
 Once the model mapping for a location has generated a `Location` object, and it has been added to the project, update the Business object mapping by defining a location property typed as **Location**
@@ -31,7 +31,7 @@ Once the model mapping for a location has generated a `Location` object, and it 
 **Business.plist**
 <br/>
 
-![alt tag](/readme_assets/business_location_example.png?raw=true)
+![alt tag](/documentation/readme_assets/business_location_example.png?raw=true)
 <br/>
 
 

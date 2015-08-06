@@ -3,7 +3,7 @@
 [![Platform](https://img.shields.io/badge/platform-ios%20%7C%20osx-lightgrey.svg)](https://github.com/ustwo/US2MapperKit)
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)](https://github.com/ustwo/US2MapperKit)
 #US2MapperKit
-![alt tag](/readme_assets/mapperkit_header.png?raw=true)
+![alt tag](/documentation/readme_assets/mapperkit_header.png?raw=true)
 
 Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), US2MapperKit is an an extremely lightweight mapping framework designed specifically for Swift 1.2, and Swift 2.0.
 
@@ -11,7 +11,7 @@ Unlike previous frameworks, where an object model is manually created by the dev
 
 ##Core Concept
 
-![alt tag](/readme_assets/basic_concept_image.png?raw=true)
+![alt tag](/documentation/readme_assets/basic_concept_image.png?raw=true)
 
 The simple example above demonstrates the inner workings of the US2MapperKit. In this example we will attemp to map a Person object returned in the form a dictionary. The first step is to manually generate a plist representing the data that is being returned. This plist defines properties, data types, the mapping keys associated with the response dictionary, and any transformation that needs to be applied. Once defined, a build-time script will generate two model object files representing the model mapping.
 
