@@ -30,7 +30,7 @@ MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 STRING_IMPORT_FOUNDATION 	= "import Foundation\n"
 STRING_REQUIRED_INIT_START 	= "\n\trequired init("
 STRING_MAP_VALUES_DICT_START 	= "\n\n\tprivate func setValues("
-STRING_MAP_DICT_START = '\n\n\tfunc updateUsingDictionary(dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {'
+STRING_MAP_DICT_START = '\n\n\tfunc updateWithDictionary(dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {'
 
 STRING_FAILABLE_INIT_START = '\tconvenience init?(_ dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : true) {'
 STRING_FAILABLE_INIT_SUPER_START = '\t\n\t\t\tself.init('

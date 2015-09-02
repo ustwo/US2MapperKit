@@ -67,7 +67,7 @@ class _TestObjectTen {
 		}
 	}
 
-	func updateUsingDictionary(dictionary: Dictionary<String, AnyObject>) {
+	func updateWithDictionary(dictionary: Dictionary<String, AnyObject>) {
 
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last

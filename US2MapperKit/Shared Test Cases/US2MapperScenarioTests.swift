@@ -598,7 +598,7 @@ class US2MapperScenarioTests: XCTestCase {
                                            "optional_float" : 160.0,
                                            "optional_bool" : true]
         
-        testObjectInstance?.updateUsingDictionary(newOptionalValuesDictionary)
+        testObjectInstance?.updateWithDictionary(newOptionalValuesDictionary)
 
         // Ensure only the optional values got updated
         XCTAssertEqual(testObjectInstance!.optionalInt!, Int(100), "Optional Int value was parsed incorrectly")
@@ -620,7 +620,7 @@ class US2MapperScenarioTests: XCTestCase {
                                               "non_optional_float" : 160.0,
                                               "non_optional_bool" : true]
         
-        testObjectInstance?.updateUsingDictionary(newNonOptionalValuesDictionary)
+        testObjectInstance?.updateWithDictionary(newNonOptionalValuesDictionary)
 
         // Ensure only the optional values stay the same
         XCTAssertEqual(testObjectInstance!.optionalInt!, Int(100), "Optional Int value was parsed incorrectly")
@@ -640,7 +640,7 @@ class US2MapperScenarioTests: XCTestCase {
                                                   "optional_string" : "NewPartialValuesTestString",
                                                   "optional_bool" : false]
     
-        testObjectInstance?.updateUsingDictionary(newPartialOptionalValuesDictionary)
+        testObjectInstance?.updateWithDictionary(newPartialOptionalValuesDictionary)
 
         // Ensure only the values specified in the dictionary are updated
         XCTAssertEqual(testObjectInstance!.optionalInt!, Int(200), "Optional Int value was parsed incorrectly")
@@ -661,7 +661,7 @@ class US2MapperScenarioTests: XCTestCase {
                                                      "non_optional_double" : 280.0,
                                                      "non_optional_bool" : false]
         
-        testObjectInstance?.updateUsingDictionary(newPartialNonOptionalValuesDictionary)
+        testObjectInstance?.updateWithDictionary(newPartialNonOptionalValuesDictionary)
         
         // Ensure only optional values stay the same
         XCTAssertEqual(testObjectInstance!.optionalInt!, Int(200), "Optional Int value was parsed incorrectly")
