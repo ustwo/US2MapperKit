@@ -19,7 +19,7 @@ class _TestObjectOne {
         let dynamicTypeString = "\(self.dynamicType)"
         let className = dynamicTypeString.componentsSeparatedByString(".").last
         
-        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
+        if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled: true) {
             self.init(_optionalString: valuesDict["optionalString"]!)
         } else {
             self.init(_optionalString : nil)

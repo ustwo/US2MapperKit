@@ -52,7 +52,7 @@ class US2MapperScenarioTests: XCTestCase {
     }
     
     func testBasicMappingForDictionaryWithoutOptionalValues() {
-        // TestObjectFive has defaults only for non-optional values the optional values should all be nil
+        // TestObjectFour has defaults only for non-optional values the optional values should all be nil
         let testObjectInstance = TestObjectFour(Dictionary<String, AnyObject>())
         
         XCTAssertNil(testObjectInstance!.optionalInt,              "Optional Int Value should be nil")
@@ -563,5 +563,118 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
     }
+    
+    func testUpdatedValues() {
+        // TestObjectFive has defaults only for non-optional values the optional values should all be nil
+        // All while the non optional values will be overriden to a value not set to a default
+        let dictionary = ["optional_int" : 50,
+                          "optional_string" : "TestString",
+                          "optional_double" : 70.0,
+                          "optional_float" : 80.0,
+                          "optional_bool" : false,
+                          "non_optional_int" : 50,
+                          "non_optional_string" : "TestString",
+                          "non_optional_double" : 70.0,
+                          "non_optional_float" : 80.0,
+                          "non_optional_bool" : false]
+        
+        let testObjectInstance = TestObjectFour(dictionary)
+        
+        XCTAssertEqual(testObjectInstance!.optionalInt!, Int(50), "Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalString!, "TestString", "Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalDouble!, Double(70.0), "Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalFloat!, Float(80.0), "Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalBool!, false, "Optional Bool value was parsed incorrectly")
+        
+        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(50), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalString, "TestString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(70.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
+        
+        let newOptionalValuesDictionary = ["optional_int" : 100,
+                                           "optional_string" : "NewTestString",
+                                           "optional_double" : 140.0,
+                                           "optional_float" : 160.0,
+                                           "optional_bool" : true]
+        
+        testObjectInstance?.updateUsingDictionary(newOptionalValuesDictionary)
 
+        // Ensure only the optional values got updated
+        XCTAssertEqual(testObjectInstance!.optionalInt!, Int(100), "Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalString!, "NewTestString", "Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalDouble!, Double(140.0), "Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalFloat!, Float(160.0), "Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalBool!, true, "Optional Bool value was parsed incorrectly")
+        
+        // Non Optional Values should stay the same
+        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(50), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalString, "TestString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(70.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(80.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
+        
+        let newNonOptionalValuesDictionary = ["non_optional_int" : 100,
+                                              "non_optional_string" : "NewNonOptionalString",
+                                              "non_optional_double" : 140.0,
+                                              "non_optional_float" : 160.0,
+                                              "non_optional_bool" : true]
+        
+        testObjectInstance?.updateUsingDictionary(newNonOptionalValuesDictionary)
+
+        // Ensure only the optional values stay the same
+        XCTAssertEqual(testObjectInstance!.optionalInt!, Int(100), "Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalString!, "NewTestString", "Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalDouble!, Double(140.0), "Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalFloat!, Float(160.0), "Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalBool!, true, "Optional Bool value was parsed incorrectly")
+        
+        // Ensure only Non Optional Values have been updated
+        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(100), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalString, "NewNonOptionalString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(140.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(160.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalBool, true, "Non-Optional Bool value was parsed incorrectly")
+        
+        let newPartialOptionalValuesDictionary = ["optional_int" : 200,
+                                                  "optional_string" : "NewPartialValuesTestString",
+                                                  "optional_bool" : false]
+    
+        testObjectInstance?.updateUsingDictionary(newPartialOptionalValuesDictionary)
+
+        // Ensure only the values specified in the dictionary are updated
+        XCTAssertEqual(testObjectInstance!.optionalInt!, Int(200), "Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalString!, "NewPartialValuesTestString", "Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalDouble!, Double(140.0), "Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalFloat!, Float(160.0), "Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalBool!, false, "Optional Bool value was parsed incorrectly")
+        
+        // Ensure only Non Optional Values stay the same
+        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(100), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalString, "NewNonOptionalString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(140.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(160.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalBool, true, "Non-Optional Bool value was parsed incorrectly")
+
+        
+        let newPartialNonOptionalValuesDictionary = ["non_optional_string" : "NewPartialNonOptionalString",
+                                                     "non_optional_double" : 280.0,
+                                                     "non_optional_bool" : false]
+        
+        testObjectInstance?.updateUsingDictionary(newPartialNonOptionalValuesDictionary)
+        
+        // Ensure only optional values stay the same
+        XCTAssertEqual(testObjectInstance!.optionalInt!, Int(200), "Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalString!, "NewPartialValuesTestString", "Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalDouble!, Double(140.0), "Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalFloat!, Float(160.0), "Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalBool!, false, "Optional Bool value was parsed incorrectly")
+        
+        // Ensure only the values specified in the dictionary are updated for non optionals
+        XCTAssertEqual(testObjectInstance!.non_optionalInt, Int(100), "Non-Optional Int value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalString, "NewPartialNonOptionalString", "Non-Optional String value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalDouble, Double(280.0), "Non-Optional Double value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(160.0), "Non-Optional Float value was parsed incorrectly")
+        XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
+    }
 }

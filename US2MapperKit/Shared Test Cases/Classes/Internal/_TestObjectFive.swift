@@ -17,7 +17,7 @@ class _TestObjectFive {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : true) {
 
 			let temp_non_optionalSubType : TestObjectThree = typeCast(valuesDict["non_optionalSubType"])!
 	
@@ -32,5 +32,21 @@ class _TestObjectFive {
 
 			return nil
 		}
+	}
+
+	func updateUsingDictionary(dictionary: Dictionary<String, AnyObject>) {
+
+		let dynamicTypeString = "\(self.dynamicType)"
+		let className = dynamicTypeString.componentsSeparatedByString(".").last
+
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {
+			if let unwrapped_optionalSubType : AnyObject = valuesDict["optionalSubType"] as AnyObject? {
+				optionalSubType = typeCast(unwrapped_optionalSubType)
+			}
+
+			if let unwrapped_non_optionalSubType : AnyObject = valuesDict["non_optionalSubType"] as AnyObject? {
+				non_optionalSubType = typeCast(unwrapped_non_optionalSubType)!
+			}
+ 		} 
 	}
 } 

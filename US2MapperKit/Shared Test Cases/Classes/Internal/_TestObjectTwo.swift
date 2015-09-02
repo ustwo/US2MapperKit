@@ -14,7 +14,7 @@ class _TestObjectTwo {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : true) {
 
 	
 			self.init() 
@@ -24,5 +24,13 @@ class _TestObjectTwo {
 
 			return nil
 		}
+	}
+
+	func updateUsingDictionary(dictionary: Dictionary<String, AnyObject>) {
+
+		let dynamicTypeString = "\(self.dynamicType)"
+		let className = dynamicTypeString.componentsSeparatedByString(".").last
+
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) { 		} 
 	}
 } 

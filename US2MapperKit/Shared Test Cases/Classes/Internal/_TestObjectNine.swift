@@ -29,7 +29,7 @@ class _TestObjectNine {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : true) {
 
 			let temp_non_optionalArrayFloatType : [Float]  = typeCast(valuesDict["non_optionalArrayFloatType"])!
 			let temp_non_optionalArrayDoubleType : [Double]  = typeCast(valuesDict["non_optionalArrayDoubleType"])!
@@ -65,5 +65,45 @@ class _TestObjectNine {
 
 			return nil
 		}
+	}
+
+	func updateUsingDictionary(dictionary: Dictionary<String, AnyObject>) {
+
+		let dynamicTypeString = "\(self.dynamicType)"
+		let className = dynamicTypeString.componentsSeparatedByString(".").last
+
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {
+			if let unwrapped_optionalArrayIntType : AnyObject = valuesDict["optionalArrayIntType"] as AnyObject? {
+				optionalArrayIntType = typeCast(unwrapped_optionalArrayIntType)
+			}
+
+			if let unwrapped_optionalArrayStringType : AnyObject = valuesDict["optionalArrayStringType"] as AnyObject? {
+				optionalArrayStringType = typeCast(unwrapped_optionalArrayStringType)
+			}
+
+			if let unwrapped_non_optionalArrayFloatType : AnyObject = valuesDict["non_optionalArrayFloatType"] as AnyObject? {
+				non_optionalArrayFloatType = typeCast(unwrapped_non_optionalArrayFloatType)!
+			}
+
+			if let unwrapped_non_optionalArrayDoubleType : AnyObject = valuesDict["non_optionalArrayDoubleType"] as AnyObject? {
+				non_optionalArrayDoubleType = typeCast(unwrapped_non_optionalArrayDoubleType)!
+			}
+
+			if let unwrapped_non_optionalArrayIntType : AnyObject = valuesDict["non_optionalArrayIntType"] as AnyObject? {
+				non_optionalArrayIntType = typeCast(unwrapped_non_optionalArrayIntType)!
+			}
+
+			if let unwrapped_non_optionalArrayStringType : AnyObject = valuesDict["non_optionalArrayStringType"] as AnyObject? {
+				non_optionalArrayStringType = typeCast(unwrapped_non_optionalArrayStringType)!
+			}
+
+			if let unwrapped_optionalArrayDoubleType : AnyObject = valuesDict["optionalArrayDoubleType"] as AnyObject? {
+				optionalArrayDoubleType = typeCast(unwrapped_optionalArrayDoubleType)
+			}
+
+			if let unwrapped_optionalArrayFloatType : AnyObject = valuesDict["optionalArrayFloatType"] as AnyObject? {
+				optionalArrayFloatType = typeCast(unwrapped_optionalArrayFloatType)
+			}
+ 		} 
 	}
 } 
