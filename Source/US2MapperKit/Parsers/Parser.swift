@@ -10,7 +10,7 @@ import Foundation
 
 class Parser {
     
-    final class func retrieveValue(from dictionary : Dictionary<String, AnyObject>, applying propertyMapping : Dictionary<String, AnyObject>, employing instantiator : US2InstantiatorProtocol) -> AnyObject? {
+    final class func retrieveValue(from dictionary : Dictionary<String, AnyObject>, applying propertyMapping : Dictionary<String, AnyObject>, employing instantiator : US2InstantiatorProtocol, defaultsEnabled : Bool) -> AnyObject? {
         
         if propertyMapping[US2MapperTransformerKey] != nil {
             return Transformer.transformedValue(from: dictionary, applying : propertyMapping, employing : instantiator)
@@ -24,7 +24,12 @@ class Parser {
                 if let retrievedValue: AnyObject = dictionaryValueForKey(jsonKey, dictionary: dictionary) {
                     return parsedValue(forValue : retrievedValue, dataType, subType, instantiator : instantiator)
                 } else if let retrievedDefaultValue: AnyObject = propertyMapping[US2MapperDefaultKey] {
-                    return parsedValue(forValue : retrievedDefaultValue, dataType, subType, instantiator : instantiator)
+                    
+                    if defaultsEnabled {
+                        return parsedValue(forValue : retrievedDefaultValue, dataType, subType, instantiator : instantiator)
+                    } else {
+                        return nil
+                    }
                 }
             }
         }

@@ -52,7 +52,7 @@ let collectionTypes      = [US2DataTypeArray, US2DataTypeDictionary]
 
 final public class US2Mapper {
     
-    public class func mapValues(from dictionary : Dictionary<String, AnyObject>, forType classType : String , employing instantiator : US2InstantiatorProtocol) -> Dictionary<String, AnyObject>? {
+    public class func mapValues(from dictionary : Dictionary<String, AnyObject>, forType classType : String , employing instantiator : US2InstantiatorProtocol, defaultsEnabled : Bool) -> Dictionary<String, AnyObject>? {
 
         if let mappingConfiguration = retrieveMappingConfiguration(classType) {
        
@@ -60,7 +60,11 @@ final public class US2Mapper {
             var retrievedValueDictionary = Dictionary<String, AnyObject>()
             
             for (propertyKey, propertyMapping) in mappingConfiguration {
-                retrievedValueDictionary[propertyKey] = Parser.retrieveValue(from : dictionary, applying : propertyMapping, employing : instantiator)
+                retrievedValueDictionary[propertyKey] = Parser.retrieveValue(from : dictionary, applying : propertyMapping, employing : instantiator, defaultsEnabled : defaultsEnabled)
+            }
+            
+            if defaultsEnabled == false {
+                return retrievedValueDictionary
             }
             
             if Validator.validateResponse(forValues: retrievedValueDictionary, mappedTo : mappingConfiguration, forType : classType, withData : dictionary) {

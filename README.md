@@ -38,6 +38,8 @@ The second class generated is the `Person.swift` which inherits from the interna
 
 ##Basic Use
 
+####Initialization with Dictionary
+
 Once configured per [Installation](/documentation/installation.md) instructions:
 
 1. Create a plist model mapping and place it in the mapping folder defined during installation.
@@ -47,6 +49,22 @@ Once configured per [Installation](/documentation/installation.md) instructions:
 	```
 let newInstance = TestModelObject(dataDictionary)
 	```
+
+####Update with Dictionary
+
+Once an instance has been initialized, we can pass a new dictionary with values to update for the current instance by calling `updateWithDictionary(dictionary : Dictionary<String, AnyObject>?)`. Note that only the values which are being passed within will be updated, defaults values are ignored unline the initialization
+
+```
+// Initializes an instance with a dictionary
+let newInstance = TestModelObject(dataDictionary)
+
+// New value dictionary received
+let newValuesDictionary = [... : ...]
+
+// Updates the current values only with the new values received, defaults in mapping are ignored
+newInstance.updateWithDictionary(newValuesDictionary)
+
+```
 
 ####Examples 
 

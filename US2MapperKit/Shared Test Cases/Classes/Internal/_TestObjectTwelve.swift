@@ -33,7 +33,7 @@ class _TestObjectTwelve {
 		let dynamicTypeString = "\(self.dynamicType)"
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
-		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : true) {
 
 			let temp_non_optionalDouble : Double = typeCast(valuesDict["non_optionalDouble"])!
 			let temp_non_optionalFloat : Float = typeCast(valuesDict["non_optionalFloat"])!
@@ -76,5 +76,53 @@ class _TestObjectTwelve {
 
 			return nil
 		}
+	}
+
+	func updateWithDictionary(dictionary: Dictionary<String, AnyObject>) {
+
+		let dynamicTypeString = "\(self.dynamicType)"
+		let className = dynamicTypeString.componentsSeparatedByString(".").last
+
+		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {
+			if let unwrapped_non_optionalDouble : AnyObject = valuesDict["non_optionalDouble"] as AnyObject? {
+				non_optionalDouble = typeCast(unwrapped_non_optionalDouble)!
+			}
+
+			if let unwrapped_optionalInt : AnyObject = valuesDict["optionalInt"] as AnyObject? {
+				optionalInt = typeCast(unwrapped_optionalInt)
+			}
+
+			if let unwrapped_non_optionalFloat : AnyObject = valuesDict["non_optionalFloat"] as AnyObject? {
+				non_optionalFloat = typeCast(unwrapped_non_optionalFloat)!
+			}
+
+			if let unwrapped_non_optionalInt : AnyObject = valuesDict["non_optionalInt"] as AnyObject? {
+				non_optionalInt = typeCast(unwrapped_non_optionalInt)!
+			}
+
+			if let unwrapped_optionalBool : AnyObject = valuesDict["optionalBool"] as AnyObject? {
+				optionalBool = typeCast(unwrapped_optionalBool)
+			}
+
+			if let unwrapped_optionalString : AnyObject = valuesDict["optionalString"] as AnyObject? {
+				optionalString = typeCast(unwrapped_optionalString)
+			}
+
+			if let unwrapped_optionalDouble : AnyObject = valuesDict["optionalDouble"] as AnyObject? {
+				optionalDouble = typeCast(unwrapped_optionalDouble)
+			}
+
+			if let unwrapped_optionalFloat : AnyObject = valuesDict["optionalFloat"] as AnyObject? {
+				optionalFloat = typeCast(unwrapped_optionalFloat)
+			}
+
+			if let unwrapped_non_optionalBool : AnyObject = valuesDict["non_optionalBool"] as AnyObject? {
+				non_optionalBool = typeCast(unwrapped_non_optionalBool)!
+			}
+
+			if let unwrapped_non_optionalString : AnyObject = valuesDict["non_optionalString"] as AnyObject? {
+				non_optionalString = typeCast(unwrapped_non_optionalString)!
+			}
+ 		} 
 	}
 } 
