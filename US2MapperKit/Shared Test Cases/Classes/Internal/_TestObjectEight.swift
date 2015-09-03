@@ -23,7 +23,7 @@ class _TestObjectEight {
 	
 			self.init(_non_optionalDictionaryType : temp_non_optionalDictionaryType) 
 		
-			if let unwrapped_optionalDictionaryType : AnyObject = valuesDict["optionalDictionaryType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryType : Any = valuesDict["optionalDictionaryType"]  {
 				optionalDictionaryType = typeCast(unwrapped_optionalDictionaryType)
 			}
  
@@ -40,11 +40,11 @@ class _TestObjectEight {
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
 		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {
-			if let unwrapped_non_optionalDictionaryType : AnyObject = valuesDict["non_optionalDictionaryType"] as AnyObject? {
+			if let unwrapped_non_optionalDictionaryType : Any = valuesDict["non_optionalDictionaryType"] {
 				non_optionalDictionaryType = typeCast(unwrapped_non_optionalDictionaryType)!
 			}
 
-			if let unwrapped_optionalDictionaryType : AnyObject = valuesDict["optionalDictionaryType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryType : Any = valuesDict["optionalDictionaryType"]  {
 				optionalDictionaryType = typeCast(unwrapped_optionalDictionaryType)
 			}
  		} 

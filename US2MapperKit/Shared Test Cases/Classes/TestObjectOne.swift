@@ -11,7 +11,7 @@ import Foundation
 class _TestObjectOne {
     var optionalString : String?
     
-    required init(_optionalString: AnyObject?) {
+    required init(_optionalString: Any?) {
         optionalString  = typeCast(_optionalString)
     }
     

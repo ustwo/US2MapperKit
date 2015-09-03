@@ -41,19 +41,19 @@ class _TestObjectNine {
 					 _non_optionalArrayIntType : temp_non_optionalArrayIntType,
 					 _non_optionalArrayStringType : temp_non_optionalArrayStringType) 
 		
-			if let unwrapped_optionalArrayIntType : AnyObject = valuesDict["optionalArrayIntType"] as AnyObject? {
+			if let unwrapped_optionalArrayIntType : Any = valuesDict["optionalArrayIntType"]  {
 				optionalArrayIntType = typeCast(unwrapped_optionalArrayIntType)
 			}
 
-			if let unwrapped_optionalArrayStringType : AnyObject = valuesDict["optionalArrayStringType"] as AnyObject? {
+			if let unwrapped_optionalArrayStringType : Any = valuesDict["optionalArrayStringType"]  {
 				optionalArrayStringType = typeCast(unwrapped_optionalArrayStringType)
 			}
 
-			if let unwrapped_optionalArrayDoubleType : AnyObject = valuesDict["optionalArrayDoubleType"] as AnyObject? {
+			if let unwrapped_optionalArrayDoubleType : Any = valuesDict["optionalArrayDoubleType"]  {
 				optionalArrayDoubleType = typeCast(unwrapped_optionalArrayDoubleType)
 			}
 
-			if let unwrapped_optionalArrayFloatType : AnyObject = valuesDict["optionalArrayFloatType"] as AnyObject? {
+			if let unwrapped_optionalArrayFloatType : Any = valuesDict["optionalArrayFloatType"]  {
 				optionalArrayFloatType = typeCast(unwrapped_optionalArrayFloatType)
 			}
  
@@ -73,35 +73,35 @@ class _TestObjectNine {
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
 		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {
-			if let unwrapped_optionalArrayIntType : AnyObject = valuesDict["optionalArrayIntType"] as AnyObject? {
+			if let unwrapped_optionalArrayIntType : Any = valuesDict["optionalArrayIntType"]  {
 				optionalArrayIntType = typeCast(unwrapped_optionalArrayIntType)
 			}
 
-			if let unwrapped_optionalArrayStringType : AnyObject = valuesDict["optionalArrayStringType"] as AnyObject? {
+			if let unwrapped_optionalArrayStringType : Any = valuesDict["optionalArrayStringType"]  {
 				optionalArrayStringType = typeCast(unwrapped_optionalArrayStringType)
 			}
 
-			if let unwrapped_non_optionalArrayFloatType : AnyObject = valuesDict["non_optionalArrayFloatType"] as AnyObject? {
+			if let unwrapped_non_optionalArrayFloatType : Any = valuesDict["non_optionalArrayFloatType"] {
 				non_optionalArrayFloatType = typeCast(unwrapped_non_optionalArrayFloatType)!
 			}
 
-			if let unwrapped_non_optionalArrayDoubleType : AnyObject = valuesDict["non_optionalArrayDoubleType"] as AnyObject? {
+			if let unwrapped_non_optionalArrayDoubleType : Any = valuesDict["non_optionalArrayDoubleType"] {
 				non_optionalArrayDoubleType = typeCast(unwrapped_non_optionalArrayDoubleType)!
 			}
 
-			if let unwrapped_non_optionalArrayIntType : AnyObject = valuesDict["non_optionalArrayIntType"] as AnyObject? {
+			if let unwrapped_non_optionalArrayIntType : Any = valuesDict["non_optionalArrayIntType"] {
 				non_optionalArrayIntType = typeCast(unwrapped_non_optionalArrayIntType)!
 			}
 
-			if let unwrapped_non_optionalArrayStringType : AnyObject = valuesDict["non_optionalArrayStringType"] as AnyObject? {
+			if let unwrapped_non_optionalArrayStringType : Any = valuesDict["non_optionalArrayStringType"] {
 				non_optionalArrayStringType = typeCast(unwrapped_non_optionalArrayStringType)!
 			}
 
-			if let unwrapped_optionalArrayDoubleType : AnyObject = valuesDict["optionalArrayDoubleType"] as AnyObject? {
+			if let unwrapped_optionalArrayDoubleType : Any = valuesDict["optionalArrayDoubleType"]  {
 				optionalArrayDoubleType = typeCast(unwrapped_optionalArrayDoubleType)
 			}
 
-			if let unwrapped_optionalArrayFloatType : AnyObject = valuesDict["optionalArrayFloatType"] as AnyObject? {
+			if let unwrapped_optionalArrayFloatType : Any = valuesDict["optionalArrayFloatType"]  {
 				optionalArrayFloatType = typeCast(unwrapped_optionalArrayFloatType)
 			}
  		} 

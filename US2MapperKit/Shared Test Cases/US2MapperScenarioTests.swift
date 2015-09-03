@@ -677,4 +677,29 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.non_optionalFloat, Float(160.0), "Non-Optional Float value was parsed incorrectly")
         XCTAssertEqual(testObjectInstance!.non_optionalBool, false, "Non-Optional Bool value was parsed incorrectly")
     }
+    
+    func testValueTypeMapping() {
+        // TestObjectThirteen tests values types
+        let dataDictionary = ["string1" : "string1",
+                              "string2" : "string2",
+                              "enumValue" : 2,
+                              "value_one" : 20.0,
+                              "value_two" : 40.0,
+                              "handler_type" : "uppercase"]
+        
+        let testObjectInstance = TestObjectThirteen(dataDictionary)
+        
+        XCTAssertEqual(testObjectInstance!.optionalStruct!.string1, "string1", "Struct mapped incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalStruct!.string2, "string2", "Struct mapped incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalEnum!.rawValue, 2, "Enum mapped incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalTuple!.0, 20.0, "Tuple mapped incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalTuple!.1, 40.0, "Tuple mapped incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalUppercaseCompletionHandler!(value : "hello"), "HELLO", "Completion handler mapped incorrectly")
+    
+        let updateCompletionHandlerDictionary = ["handler_type" : "lowercase"]
+        testObjectInstance?.updateWithDictionary(updateCompletionHandlerDictionary)
+        
+        XCTAssertEqual(testObjectInstance!.optionalUppercaseCompletionHandler!(value : "HELLO"), "hello", "Completion handler mapped incorrectly")
+    }
+    
 }

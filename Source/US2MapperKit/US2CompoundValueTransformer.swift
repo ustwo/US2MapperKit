@@ -8,7 +8,7 @@
 
 public class US2CompoundValueTransformer : US2TransformerProtocol {
    
-    public func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject? {
+    public func transformValues(inputValues : Dictionary<String, Any>?) -> Any? {
         var outputString : String = ""
         
         if let stringDictionary = inputValues as? Dictionary<String, String> {

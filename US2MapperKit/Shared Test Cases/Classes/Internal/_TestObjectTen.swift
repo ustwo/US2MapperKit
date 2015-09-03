@@ -41,19 +41,19 @@ class _TestObjectTen {
 					 _non_optionalDictionaryFloatType : temp_non_optionalDictionaryFloatType,
 					 _non_optionalDictionaryStringType : temp_non_optionalDictionaryStringType) 
 		
-			if let unwrapped_optionalDictionaryFloatType : AnyObject = valuesDict["optionalDictionaryFloatType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryFloatType : Any = valuesDict["optionalDictionaryFloatType"]  {
 				optionalDictionaryFloatType = typeCast(unwrapped_optionalDictionaryFloatType)
 			}
 
-			if let unwrapped_optionalDictionaryStringType : AnyObject = valuesDict["optionalDictionaryStringType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryStringType : Any = valuesDict["optionalDictionaryStringType"]  {
 				optionalDictionaryStringType = typeCast(unwrapped_optionalDictionaryStringType)
 			}
 
-			if let unwrapped_optionalDictionaryIntType : AnyObject = valuesDict["optionalDictionaryIntType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryIntType : Any = valuesDict["optionalDictionaryIntType"]  {
 				optionalDictionaryIntType = typeCast(unwrapped_optionalDictionaryIntType)
 			}
 
-			if let unwrapped_optionalDictionaryDoubleType : AnyObject = valuesDict["optionalDictionaryDoubleType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryDoubleType : Any = valuesDict["optionalDictionaryDoubleType"]  {
 				optionalDictionaryDoubleType = typeCast(unwrapped_optionalDictionaryDoubleType)
 			}
  
@@ -73,35 +73,35 @@ class _TestObjectTen {
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
 		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {
-			if let unwrapped_non_optionalDictionaryDoubleType : AnyObject = valuesDict["non_optionalDictionaryDoubleType"] as AnyObject? {
+			if let unwrapped_non_optionalDictionaryDoubleType : Any = valuesDict["non_optionalDictionaryDoubleType"] {
 				non_optionalDictionaryDoubleType = typeCast(unwrapped_non_optionalDictionaryDoubleType)!
 			}
 
-			if let unwrapped_optionalDictionaryFloatType : AnyObject = valuesDict["optionalDictionaryFloatType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryFloatType : Any = valuesDict["optionalDictionaryFloatType"]  {
 				optionalDictionaryFloatType = typeCast(unwrapped_optionalDictionaryFloatType)
 			}
 
-			if let unwrapped_optionalDictionaryStringType : AnyObject = valuesDict["optionalDictionaryStringType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryStringType : Any = valuesDict["optionalDictionaryStringType"]  {
 				optionalDictionaryStringType = typeCast(unwrapped_optionalDictionaryStringType)
 			}
 
-			if let unwrapped_optionalDictionaryIntType : AnyObject = valuesDict["optionalDictionaryIntType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryIntType : Any = valuesDict["optionalDictionaryIntType"]  {
 				optionalDictionaryIntType = typeCast(unwrapped_optionalDictionaryIntType)
 			}
 
-			if let unwrapped_non_optionalDictionaryIntType : AnyObject = valuesDict["non_optionalDictionaryIntType"] as AnyObject? {
+			if let unwrapped_non_optionalDictionaryIntType : Any = valuesDict["non_optionalDictionaryIntType"] {
 				non_optionalDictionaryIntType = typeCast(unwrapped_non_optionalDictionaryIntType)!
 			}
 
-			if let unwrapped_non_optionalDictionaryFloatType : AnyObject = valuesDict["non_optionalDictionaryFloatType"] as AnyObject? {
+			if let unwrapped_non_optionalDictionaryFloatType : Any = valuesDict["non_optionalDictionaryFloatType"] {
 				non_optionalDictionaryFloatType = typeCast(unwrapped_non_optionalDictionaryFloatType)!
 			}
 
-			if let unwrapped_non_optionalDictionaryStringType : AnyObject = valuesDict["non_optionalDictionaryStringType"] as AnyObject? {
+			if let unwrapped_non_optionalDictionaryStringType : Any = valuesDict["non_optionalDictionaryStringType"] {
 				non_optionalDictionaryStringType = typeCast(unwrapped_non_optionalDictionaryStringType)!
 			}
 
-			if let unwrapped_optionalDictionaryDoubleType : AnyObject = valuesDict["optionalDictionaryDoubleType"] as AnyObject? {
+			if let unwrapped_optionalDictionaryDoubleType : Any = valuesDict["optionalDictionaryDoubleType"]  {
 				optionalDictionaryDoubleType = typeCast(unwrapped_optionalDictionaryDoubleType)
 			}
  		} 

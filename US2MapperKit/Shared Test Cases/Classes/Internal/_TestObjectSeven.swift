@@ -23,7 +23,7 @@ class _TestObjectSeven {
 	
 			self.init(_non_optionalArrayType : temp_non_optionalArrayType) 
 		
-			if let unwrapped_optionalArrayType : AnyObject = valuesDict["optionalArrayType"] as AnyObject? {
+			if let unwrapped_optionalArrayType : Any = valuesDict["optionalArrayType"]  {
 				optionalArrayType = typeCast(unwrapped_optionalArrayType)
 			}
  
@@ -40,11 +40,11 @@ class _TestObjectSeven {
 		let className = dynamicTypeString.componentsSeparatedByString(".").last
 
 		if let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {
-			if let unwrapped_optionalArrayType : AnyObject = valuesDict["optionalArrayType"] as AnyObject? {
+			if let unwrapped_optionalArrayType : Any = valuesDict["optionalArrayType"]  {
 				optionalArrayType = typeCast(unwrapped_optionalArrayType)
 			}
 
-			if let unwrapped_non_optionalArrayType : AnyObject = valuesDict["non_optionalArrayType"] as AnyObject? {
+			if let unwrapped_non_optionalArrayType : Any = valuesDict["non_optionalArrayType"] {
 				non_optionalArrayType = typeCast(unwrapped_non_optionalArrayType)!
 			}
  		} 

@@ -299,7 +299,7 @@ def append_failable_initializer_typecasting(classFile, mappingPlist):
 
 
 def append_failable_typecast_unwrap_statement(classFile, propertyName):
-	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')\n\t\t\t}\n')
+	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : Any = valuesDict["' + propertyName + '"]  {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')\n\t\t\t}\n')
 
 def append_failed_initialiser_property(classfile, propertyname, datatype, optional, isFirstLine):
 	if datatype not in NATIVE_PROPERTY_TYPES:
@@ -409,7 +409,7 @@ def append_map_dictionary_non_optional_typecasting(classFile, mappingPlist):
 				append_optional_typecast_unwrap_statement(classFile, propertyName)
 
 def append_optional_typecast_unwrap_statement(classFile, propertyName):
-	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')!\n\t\t\t}\n')
+	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : Any = valuesDict["' + propertyName + '"] {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')!\n\t\t\t}\n')
 
 
 '''
@@ -418,10 +418,21 @@ Validation and System Checks
 def validate_class_mapping_configuration(classname, mappingPlist):
 	for propertyName in mappingPlist.keys():
 		if MAPPING_KEY_TYPE not in mappingPlist[propertyName].keys():
-			throw_missing_type_error(classname, MAPPING_KEY_TYPE, mappingPlist[propertyName])
+			if MAPPING_KEY_TRANSFORMER not in mappingPlist[propertyName].keys():
+				throw_missing_type_error(classname, MAPPING_KEY_TYPE, mappingPlist[propertyName])
 
 		if MAPPING_KEY_KEY not in mappingPlist[propertyName].keys():
-			throw_missing_json_key_error(classname, MAPPING_KEY_KEY, mappingPlist[propertyName])
+			if MAPPING_KEY_TRANSFORMER not in mappingPlist[propertyName].keys():
+				throw_missing_json_key_error(classname, MAPPING_KEY_KEY, mappingPlist[propertyName])
+
+		if MAPPING_KEY_KEY in mappingPlist[propertyName].keys():
+			if MAPPING_KEY_TRANSFORMER in mappingPlist[propertyName].keys():
+				propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
+				if xcode_version() == 6.0 and propertyType not in NATIVE_PROPERTY_TYPES:
+					if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+						if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+							throw_missing_nonoptional_error(classname, MAPPING_KEY_KEY, mappingPlist[propertyName])
+	
 	
 def print_default_error_header(classname, mapping):
 	print "\n\nUS2Mapper Error: Invalid Configuration (" + classname + ".plist)\n\n"
@@ -433,10 +444,16 @@ def throw_missing_type_error(classname, propertykey, mapping):
 	print "The mapping configuration for the " + propertykey + " property is missing the type configuration.\nAll properties must specify a 'type' value.\n\n\n\n"
 	raise Exception('Invalid Configuration')
 
+def throw_missing_nonoptional_error(classname, propertykey, mapping):
+	print_default_error_header(classname, mapping)
+	print "The mapping configuration for the " + propertykey + " cannot be performed. Transformed properties have to be optional when not defined as a native datatype (String, Int, Float, Double, Bool, Array, Dictionary).\n\n\n"
+	raise Exception('Invalid Configuration')
+
 def throw_missing_json_key_error(classname, propertykey, mapping):
 	print_default_error_header(classname, mapping)
 	print "The mapping configuration for the " + propertykey + " property is missing the key configuration.\nAll properties must specify a 'key' value to map against value in a dictionary.\n\n"
 	raise Exception('Invalid Configuration')
+
 
 def xcode_version():
 	status, xcodeVersionString = commands.getstatusoutput("xcodebuild -version")
