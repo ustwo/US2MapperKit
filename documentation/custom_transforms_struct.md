@@ -22,7 +22,6 @@ struct Coordinate {
   	var longitude: Double
    	var latitude: Double
 }
-
 ```
 
 Once we have defined a Coordinate struct, let's create a mapper that parse out the values from the response and return the value of Coordinate type. 
@@ -55,7 +54,7 @@ Now that we have created a transformeer let's create mapping for our business Ob
 **Business.plist**
 <br/>
 
-![alt tag](/documentation/readme_assets/struct_example_plist?raw=true)
+![alt tag](/documentation/readme_assets/struct_example_plist.png?raw=true)
 <br/>
 
 After the creation of the mapping, perform a build **(⌘-B)**, and the changes should be reflected accordingly in the internal `_Business.swift` class.
@@ -74,7 +73,6 @@ class _Business {
 
  	convenience init?(_ dictionary: Dictionary<String, Any>) {...}
 } 
-
 ```
 
 After calling the failable initializer, or udpateWithDictionary method with a dictioanry representation, US2MapperKit will use the custom transformer to map the struct accordingly.

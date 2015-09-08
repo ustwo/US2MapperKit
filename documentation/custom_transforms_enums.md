@@ -20,7 +20,6 @@ Unlike the model objects, US2MapperKit does not autogenerate enums, due to the f
 enum BusinessType : Int {
     case Unknown = 0, Lounge, Dinner, CoffeeShop
 }
-
 ```
 
 Once we have defined a BusinessType enum, create a mapper that parse out the values from the response and return the BusinessType type enum value. 

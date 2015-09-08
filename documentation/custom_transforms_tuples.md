@@ -61,7 +61,6 @@ class _Business {
 
  	convenience init?(_ dictionary: Dictionary<String, Any>) {...}
 } 
-
 ```
 
 After calling the failable initializer, or udpateWithDictionary method with a dictioanry representation, US2MapperKit will use the custom transformer to map the tuple accordingly.
