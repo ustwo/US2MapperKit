@@ -26,9 +26,7 @@ public class US2ExampleClosureTransformer : US2TransformerProtocol {
                 return returnLowercaseString
             }
         }
-        
-        // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/247377102029332"]];
-        
+
         return nil
     }
 }
