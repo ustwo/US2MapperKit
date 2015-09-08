@@ -1,10 +1,10 @@
 ##Example - Custom Transformations
 
-To perform transformations of a single or multiple values, US2MapperKit provides the ability to map multiple values from a dictionary response, and process them using the `US2TransformerProtocol`.
+To perform transformations of a single or multiple values, US2MapperKit provides the ability to map multiple values from a dictionary response, and process them using the `US2TransformerProtocol`. Currently all transformed output properties must be optional, and the script will error out with a description in the build log.
 
 ```
 public protocol US2TransformerProtocol {
-    func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject?
+    func transformValues(inputValues : Dictionary<String, Any>?) -> Any?
 }
 ```
 
@@ -31,7 +31,7 @@ let lastNameKey     = "last_name"
 
 public class US2FullNameValueTransformer : US2TransformerProtocol {
     
-    public func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject? {
+    public func transformValues(inputValues : Dictionary<String, Any>?) -> Any? {
         var fullNameString : String = ""
         
         if let componentDictionary = inputValues as? Dictionary<String, String> {
@@ -62,7 +62,7 @@ To implement the transformer as part of the model mapping, observe how the **key
 ![alt tag](/documentation/readme_assets/transformer_fullname_example.png?raw=true)
 <br/>
 
-Note: The the keys defined in the property mapping correspond to the keys in the dictionary of values passed to the ` public func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject?` method defined by the protocol. 
+Note: The the keys defined in the property mapping correspond to the keys in the dictionary of values passed to the ` public func transformValues(inputValues : Dictionary<String, Any>?) -> Any?` method defined by the protocol. 
 
 
 ###Compound Value Transformer

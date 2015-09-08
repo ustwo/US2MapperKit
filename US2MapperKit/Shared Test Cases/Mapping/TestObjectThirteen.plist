@@ -28,7 +28,7 @@
 	<key>optionalTuple</key>
 	<dict>
 		<key>type</key>
-		<string>(Double, Double)</string>
+		<string>(val1 : Double, val2 : Double)</string>
 		<key>transformer</key>
 		<string>US2ExampleTupleTransformer</string>
 		<key>key</key>

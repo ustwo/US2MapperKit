@@ -18,3 +18,5 @@ public class US2ExampleEnumTransformer : US2TransformerProtocol {
         return nil
     }
 }
+
+

@@ -692,8 +692,8 @@ class US2MapperScenarioTests: XCTestCase {
         XCTAssertEqual(testObjectInstance!.optionalStruct!.string1, "string1", "Struct mapped incorrectly")
         XCTAssertEqual(testObjectInstance!.optionalStruct!.string2, "string2", "Struct mapped incorrectly")
         XCTAssertEqual(testObjectInstance!.optionalEnum!.rawValue, 2, "Enum mapped incorrectly")
-        XCTAssertEqual(testObjectInstance!.optionalTuple!.0, 20.0, "Tuple mapped incorrectly")
-        XCTAssertEqual(testObjectInstance!.optionalTuple!.1, 40.0, "Tuple mapped incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalTuple!.val1, 20.0, "Tuple mapped incorrectly")
+        XCTAssertEqual(testObjectInstance!.optionalTuple!.val2, 40.0, "Tuple mapped incorrectly")
         XCTAssertEqual(testObjectInstance!.optionalUppercaseCompletionHandler!(value : "hello"), "HELLO", "Completion handler mapped incorrectly")
     
         let updateCompletionHandlerDictionary = ["handler_type" : "lowercase"]

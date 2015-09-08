@@ -4,7 +4,7 @@ import Foundation
 class _TestObjectThirteen {
 
 	var optionalStruct : StructExample?
-	var optionalTuple : (Double, Double)?
+	var optionalTuple : (val1 : Double, val2 : Double)?
 	var optionalUppercaseCompletionHandler : ((value : String) -> String)?
 	var optionalLowercaseCompletionHandler : ((value : String) -> String)?
 	var optionalEnum : EnumExample?

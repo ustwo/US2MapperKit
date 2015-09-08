@@ -13,7 +13,7 @@ public class US2ExampleTupleTransformer : US2TransformerProtocol {
         
         if let valueOne = inputValues!["value_one"] as? Double {
             if let valueTwo = inputValues!["value_two"] as? Double {
-                return (valueOne, valueTwo)
+                return (val1 : valueOne, val2 : valueTwo)
             }
         }
         
