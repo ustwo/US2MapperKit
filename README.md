@@ -87,7 +87,7 @@ Below is a list of examples for the supported features by US2MapperKit. Each pro
 
 ##Updates
 
-- [Change Log](/documentation/enable_debug_mode.md)
+- [Change Log](/documentation/changelog.md)
 
 ##Future Enahancements
 
