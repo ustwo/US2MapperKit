@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 var transformerInstances : Dictionary<String, US2TransformerProtocol> = Dictionary<String, US2TransformerProtocol> ()
 
 final class Transformer : Parser {

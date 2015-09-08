@@ -85,6 +85,10 @@ Below is a list of examples for the supported features by US2MapperKit. Each pro
 - [Enabling Debug Mode](/documentation/enable_debug_mode.md)
 - [Swift 1.2 / 2.0 Compatibility](/documentation/compatibility_issues.md)
 
+##Updates
+
+- [Change Log](/documentation/enable_debug_mode.md)
+
 ##Future Enahancements
 
 * Mapping Inheritance (Configuration to Inherit from NSManagedObject / Realm Object)
