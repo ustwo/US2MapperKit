@@ -27,7 +27,7 @@ Once we have defined a BusinessType enum, create a mapper that parse out the val
 **US2ExampleCoordinateTransformer Implementation**
 
 ```
-let businessTypeKey    = "type"
+let businessTypeKey    = "business_type"
 
 public class US2ExampleBusinessTypeTransformer : US2TransformerProtocol {
     public func transformValues(inputValues : Dictionary<String, Any>?) -> Any? {

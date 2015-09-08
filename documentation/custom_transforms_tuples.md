@@ -19,8 +19,8 @@ For the purposes of the example lets create a mapper that returns a tuple. First
 **US2TupleCoordinateExampleTransformer Implementation**
 
 ```
-let longitudeKey    = "longitude"
-let latitudeKey     = "latitude"
+let longitudeKey    = "business_longitude"
+let latitudeKey     = "business_latitude"
 
 public class US2TupleCoordinateExampleTransformer : US2TransformerProtocol {
 
@@ -42,7 +42,7 @@ Now that we have created a transformeer let's create mapping for our business Ob
 **Business.plist**
 <br/>
 
-![alt tag](/documentation/readme_assets/tuple_example.png?raw=true)
+![alt tag](/documentation/readme_assets/tuple_mapping_example.png?raw=true)
 <br/>
 
 After the creation of the mapping, perform a build **(⌘-B)**, and the changes should be reflected accordingly in the internal `_Business.swift` class.
