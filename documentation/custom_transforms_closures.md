@@ -1,6 +1,6 @@
 ##Example - Closure Transformations
 
-As of version 0.2.0 of U2MapperKit, the ability to map closures via the `US2TransformerProtocol` as support was added by ensuring we can return an a value of `Any` type. Let's observe a dictionary for a business object, and see how we can map a function / closure. 
+As of version 0.2.0 of U2MapperKit, the ability to map closures via the `US2TransformerProtocol` as support was added. This ensures that we can return an a value of `Any` type. Let's look at a dictionary for a business object, and see how we can map a function/closure. 
 
 **Response Dictionary**
 
@@ -12,7 +12,7 @@ As of version 0.2.0 of U2MapperKit, the ability to map closures via the `US2Tran
 	'business_yelp_id'  		: '409283409238409',
 }
 ```
-Let's create a mapper that parses out the values from the response, and based on the identifier, returns the clousure based on  
+Let's create a mapper that parses out the values from the response which, based on the identifier, returns the clousure:
 
 **US2ExampleSocialClosureTransformer Implementation**
 
@@ -59,7 +59,7 @@ public class US2ExampleSocialClosureTransformer : US2TransformerProtocol {
 
 ```
 
-Now that we have created a transformeer let's create mapping to map our closures to an isntance variable.
+Now that we have created a transformer, let's create some mapping to map our closures to an isntance variable.
 
 **Business.plist**
 <br/>
@@ -67,7 +67,7 @@ Now that we have created a transformeer let's create mapping to map our closures
 ![alt tag](/documentation/readme_assets/closure_example.png?raw=true)
 <br/>
 
-After the creation of the mapping, perform a build **(⌘-B)**, and the changes should be reflected accordingly in the internal `_Business.swift` class.
+After the creation of the mapping, perform a build **(⌘-B)**. The changes should be reflected accordingly in the internal `_Business.swift` class.
 
 
 ```
@@ -86,6 +86,6 @@ class _Business {
 } 
 ```
 
-After calling the failable initializer, or udpateWithDictionary method with a dictioanry representation, US2MapperKit will use the custom transformer to map the custom closure accordingly. Although this is a simple and abstract scenerio, the portential for this funtionality is has many outcomes to be explored.
+After calling the fail-able initializer - or udpateWithDictionary method with a dictioanry representation - US2MapperKit will use the custom transformer to map the custom closure accordingly. Although this is a simple and abstract scenerio, the potential for this funtionality has many outcomes to be explored.
 
 Note: The the keys defined in the property mapping correspond to the keys in the dictionary of values passed to the ` public func transformValues(inputValues : Dictionary<String, Any>?) -> Any?` method defined by the protocol. 
