@@ -1,6 +1,6 @@
 ##Example - Struct Transformations
 
-As of version 0.2.0 of U2MapperKit, the ability to map structs via the `US2TransformerProtocol` as support was added by ensuring we can return an a value of `Any` type. Let's observe a dictionary for a business object, and see how we can map a struct for the coordinates
+As of version 0.2.0 of U2MapperKit, the ability to map structs via the `US2TransformerProtocol` as support was added by ensuring we can return a value of `Any` type. Let's look at a dictionary for a business object and see how we can map a struct for the coordinates:
 
 **Response Dictionary**
 
@@ -13,7 +13,7 @@ As of version 0.2.0 of U2MapperKit, the ability to map structs via the `US2Trans
 }
 ```
 
-Unlike the model objects, US2MapperKit does not autogenerate structs, due to the lack of inheritance, structs would be uncustomizable if it did, and would prevent the developer to use the many features swift offers with structs. For the purposes of this example, let assume we create a struct to represent the coordinates for our custom Business Object.
+Unlike the model objects, US2MapperKit does not autogenerate structs, due to the lack of inheritance. Structs would be uncustomizable if it did, and would prevent the developer from using the many features Swift offers with structs. For the purposes of this example, let assume that we created a struct to represent the coordinates for our custom Business Object.
 
 **Struct Definition**
 
@@ -24,7 +24,7 @@ struct Coordinate {
 }
 ```
 
-Once we have defined a Coordinate struct, let's create a mapper that parse out the values from the response and return the value of Coordinate type. 
+Once we have defined a Coordinate struct, let's create a mapper that parses out the values from the response and return the value of Coordinate type. 
 
 **US2ExampleCoordinateTransformer Implementation**
 
@@ -49,7 +49,7 @@ public class US2ExampleCoordinateTransformer : US2TransformerProtocol {
 }
 ```
 
-Now that we have created a transformeer let's create mapping for our business Object
+Now that we have created a transformeer, let's create some mapping for our business Object:
 
 **Business.plist**
 <br/>
@@ -57,7 +57,7 @@ Now that we have created a transformeer let's create mapping for our business Ob
 ![alt tag](/documentation/readme_assets/struct_example_plist.png?raw=true)
 <br/>
 
-After the creation of the mapping, perform a build **(⌘-B)**, and the changes should be reflected accordingly in the internal `_Business.swift` class.
+After the creation of the mapping, perform a build **(⌘-B)**. The changes should be reflected accordingly in the internal `_Business.swift` class.
 
 
 ```
@@ -75,6 +75,6 @@ class _Business {
 } 
 ```
 
-After calling the failable initializer, or udpateWithDictionary method with a dictioanry representation, US2MapperKit will use the custom transformer to map the struct accordingly.
+After calling the fail-able initializer - or udpateWithDictionary method with a dictioanry representation - US2MapperKit will use the custom transformer to map the struct accordingly.
 
 Note: The the keys defined in the property mapping correspond to the keys in the dictionary of values passed to the ` public func transformValues(inputValues : Dictionary<String, Any>?) -> Any?` method defined by the protocol. 
