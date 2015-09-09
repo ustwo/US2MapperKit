@@ -41,7 +41,7 @@ The second class generated is the `Person.swift` which inherits from the interna
 
 ####Initialization with Dictionary
 
-Once configured per [Installation](/documentation/installation.md) instructions:
+Once configured per the [Installation](/documentation/installation.md) instructions:
 
 1. Create a plist model mapping and place it in the mapping folder defined during installation.
 2. Build the target, navigate to the output directory defined during the installation process, and add the generated files to the project.
