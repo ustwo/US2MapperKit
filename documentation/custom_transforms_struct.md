@@ -1,6 +1,6 @@
 ##Example - Struct Transformations
 
-As of version 0.2.0 of U2MapperKit, the ability to map structs via the `US2TransformerProtocol` as support was added by ensuring we can return a value of `Any` type. Let's look at a dictionary for a business object and see how we can map a struct for the coordinates:
+As of version 0.2.0 of U2MapperKit, the ability to map structs via the `US2TransformerProtocol` as support was added. This ensures that we can return a value of `Any` type. Let's look at a dictionary for a business object and see how we can map a struct for the coordinates:
 
 **Response Dictionary**
 
