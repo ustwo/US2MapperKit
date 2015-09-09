@@ -1,6 +1,6 @@
 ##Example - Tuple Transformations
 
-As of version 0.2.0 of U2MapperKit, the ability to map tuples via the `US2TransformerProtocol` as support was added by ensuring we can return an a value of `Any` type. Let's observe a dictionary for a business object, and see how we can map a the coordinates as a tuple
+As of version 0.2.0 of U2MapperKit, the ability to map tuples via the `US2TransformerProtocol` as support was added. This ensures that we can return an a value of `Any` type. Let's look at a dictionary for a business object, and see how we can map a the coordinates as a tuple.
 
 **Response Dictionary**
 
@@ -13,7 +13,7 @@ As of version 0.2.0 of U2MapperKit, the ability to map tuples via the `US2Transf
 }
 ```
 
-For the purposes of the example lets create a mapper that returns a tuple. First create an enum to represent the business type for our custom Business Object.
+For the purposes of the example, let's create a mapper that returns a tuple. First, create an enum to represent the business type for our custom Business Object:
 
 
 **US2TupleCoordinateExampleTransformer Implementation**
@@ -37,7 +37,7 @@ public class US2TupleCoordinateExampleTransformer : US2TransformerProtocol {
 }
 ```
 
-Now that we have created a transformeer let's create mapping for our business Object
+Now that we have created a transformer, let's create mapping for our business Object:
 
 **Business.plist**
 <br/>
@@ -45,7 +45,7 @@ Now that we have created a transformeer let's create mapping for our business Ob
 ![alt tag](/documentation/readme_assets/tuple_mapping_example.png?raw=true)
 <br/>
 
-After the creation of the mapping, perform a build **(⌘-B)**, and the changes should be reflected accordingly in the internal `_Business.swift` class.
+After the creation of the mapping, perform a build **(⌘-B)**. The changes should be reflected accordingly in the internal `_Business.swift` class.
 
 
 ```
@@ -63,6 +63,6 @@ class _Business {
 } 
 ```
 
-After calling the failable initializer, or udpateWithDictionary method with a dictioanry representation, US2MapperKit will use the custom transformer to map the tuple accordingly.
+After calling the fail-able initializer - or udpateWithDictionary method with a dictioanry representation - US2MapperKit will use the custom transformer to map the tuple accordingly.
 
 Note: The the keys defined in the property mapping correspond to the keys in the dictionary of values passed to the ` public func transformValues(inputValues : Dictionary<String, Any>?) -> Any?` method defined by the protocol. 
