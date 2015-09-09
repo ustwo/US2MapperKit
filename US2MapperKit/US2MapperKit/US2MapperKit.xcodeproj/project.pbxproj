@@ -7,10 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4F78731B988A26006063F0 /* US2ExampleStructTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F78721B988A26006063F0 /* US2ExampleStructTransformer.swift */; };
+		3A4F78741B988A26006063F0 /* US2ExampleStructTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F78721B988A26006063F0 /* US2ExampleStructTransformer.swift */; };
+		3A4F78761B988A4E006063F0 /* ValueTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F78751B988A4E006063F0 /* ValueTypeDefinitions.swift */; };
+		3A4F78771B988A4E006063F0 /* ValueTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F78751B988A4E006063F0 /* ValueTypeDefinitions.swift */; };
+		3A4F78791B988AC9006063F0 /* TestObjectThirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F78781B988AC9006063F0 /* TestObjectThirteen.swift */; };
+		3A4F787A1B988AC9006063F0 /* TestObjectThirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F78781B988AC9006063F0 /* TestObjectThirteen.swift */; };
+		3A4F787C1B988ADB006063F0 /* _TestObjectThirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F787B1B988ADB006063F0 /* _TestObjectThirteen.swift */; };
+		3A4F787D1B988ADB006063F0 /* _TestObjectThirteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4F787B1B988ADB006063F0 /* _TestObjectThirteen.swift */; };
+		3A4F787F1B988B09006063F0 /* TestObjectThirteen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A4F787E1B988B09006063F0 /* TestObjectThirteen.plist */; };
+		3A4F78801B988B09006063F0 /* TestObjectThirteen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A4F787E1B988B09006063F0 /* TestObjectThirteen.plist */; };
 		3A584A151B50102F00860FAB /* US2MapperKitOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A584A141B50102F00860FAB /* US2MapperKitOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A584E381B502AFC00860FAB /* US2MapperKitiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A584E371B502AFC00860FAB /* US2MapperKitiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A584E3E1B502AFD00860FAB /* US2MapperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A584E331B502AFC00860FAB /* US2MapperKit.framework */; };
 		3A584EC71B502C5600860FAB /* US2MapperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A584A101B50102F00860FAB /* US2MapperKit.framework */; };
+		3A8DA7831B98C2A400B8E02D /* US2ExampleEnumTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA7821B98C2A400B8E02D /* US2ExampleEnumTransformer.swift */; };
+		3A8DA7841B98C2A400B8E02D /* US2ExampleEnumTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA7821B98C2A400B8E02D /* US2ExampleEnumTransformer.swift */; };
+		3A8DA7861B98C6E800B8E02D /* US2ExampleTupleTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA7851B98C6E800B8E02D /* US2ExampleTupleTransformer.swift */; };
+		3A8DA7871B98C6E800B8E02D /* US2ExampleTupleTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA7851B98C6E800B8E02D /* US2ExampleTupleTransformer.swift */; };
+		3A8DA7891B98C94C00B8E02D /* US2ExampleClosureTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA7881B98C94C00B8E02D /* US2ExampleClosureTransformer.swift */; };
+		3A8DA78A1B98C94C00B8E02D /* US2ExampleClosureTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8DA7881B98C94C00B8E02D /* US2ExampleClosureTransformer.swift */; };
 		3AC7C3A61B5054B10087B0BA /* ModelScript in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7C3A51B5054B10087B0BA /* ModelScript */; };
 		3AC7C3A71B5054B10087B0BA /* ModelScript in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7C3A51B5054B10087B0BA /* ModelScript */; };
 		3AC7C3AB1B5054DD0087B0BA /* US2Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C3A91B5054DD0087B0BA /* US2Mapper.swift */; };
@@ -155,6 +171,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A4F78721B988A26006063F0 /* US2ExampleStructTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2ExampleStructTransformer.swift; path = "Test Case Objects/US2ExampleStructTransformer.swift"; sourceTree = "<group>"; };
+		3A4F78751B988A4E006063F0 /* ValueTypeDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueTypeDefinitions.swift; path = "Test Case Objects/ValueTypeDefinitions.swift"; sourceTree = "<group>"; };
+		3A4F78781B988AC9006063F0 /* TestObjectThirteen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestObjectThirteen.swift; sourceTree = "<group>"; };
+		3A4F787B1B988ADB006063F0 /* _TestObjectThirteen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _TestObjectThirteen.swift; sourceTree = "<group>"; };
+		3A4F787E1B988B09006063F0 /* TestObjectThirteen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestObjectThirteen.plist; sourceTree = "<group>"; };
 		3A584A101B50102F00860FAB /* US2MapperKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = US2MapperKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A584A131B50102F00860FAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A584A141B50102F00860FAB /* US2MapperKitOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = US2MapperKitOSX.h; sourceTree = "<group>"; };
@@ -165,6 +186,9 @@
 		3A584E371B502AFC00860FAB /* US2MapperKitiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = US2MapperKitiOS.h; sourceTree = "<group>"; };
 		3A584E3D1B502AFD00860FAB /* US2MapperKitiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = US2MapperKitiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A584E431B502AFD00860FAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A8DA7821B98C2A400B8E02D /* US2ExampleEnumTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2ExampleEnumTransformer.swift; path = "Test Case Objects/US2ExampleEnumTransformer.swift"; sourceTree = "<group>"; };
+		3A8DA7851B98C6E800B8E02D /* US2ExampleTupleTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2ExampleTupleTransformer.swift; path = "Test Case Objects/US2ExampleTupleTransformer.swift"; sourceTree = "<group>"; };
+		3A8DA7881B98C94C00B8E02D /* US2ExampleClosureTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = US2ExampleClosureTransformer.swift; path = "Test Case Objects/US2ExampleClosureTransformer.swift"; sourceTree = "<group>"; };
 		3AC7C3A51B5054B10087B0BA /* ModelScript */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ModelScript; path = ../ModelScript; sourceTree = "<group>"; };
 		3AC7C3A91B5054DD0087B0BA /* US2Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2Mapper.swift; sourceTree = "<group>"; };
 		3AC7C3AA1B5054DD0087B0BA /* US2CompoundValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = US2CompoundValueTransformer.swift; sourceTree = "<group>"; };
@@ -251,6 +275,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A4F78711B988995006063F0 /* Test Case Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3A4F78751B988A4E006063F0 /* ValueTypeDefinitions.swift */,
+				3A4F78721B988A26006063F0 /* US2ExampleStructTransformer.swift */,
+				3A8DA7821B98C2A400B8E02D /* US2ExampleEnumTransformer.swift */,
+				3A8DA7851B98C6E800B8E02D /* US2ExampleTupleTransformer.swift */,
+				3A8DA7881B98C94C00B8E02D /* US2ExampleClosureTransformer.swift */,
+			);
+			name = "Test Case Objects";
+			sourceTree = "<group>";
+		};
 		3A5849701B500E7500860FAB = {
 			isa = PBXGroup;
 			children = (
@@ -357,9 +393,10 @@
 		3AC7C4041B5055FF0087B0BA /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
+				3AC7C42D1B5055FF0087B0BA /* US2MapperScenarioTests.swift */,
+				3A4F78711B988995006063F0 /* Test Case Objects */,
 				3AC7C4051B5055FF0087B0BA /* Classes */,
 				3AC7C4201B5055FF0087B0BA /* Mapping */,
-				3AC7C42D1B5055FF0087B0BA /* US2MapperScenarioTests.swift */,
 			);
 			name = "Test Cases";
 			path = "../Shared Test Cases";
@@ -380,6 +417,7 @@
 				3AC7C41C1B5055FF0087B0BA /* TestObjectTen.swift */,
 				3AC7C41D1B5055FF0087B0BA /* TestObjectThree.swift */,
 				3AC7C41E1B5055FF0087B0BA /* TestObjectTwelve.swift */,
+				3A4F78781B988AC9006063F0 /* TestObjectThirteen.swift */,
 				3AC7C41F1B5055FF0087B0BA /* TestObjectTwo.swift */,
 			);
 			path = Classes;
@@ -400,6 +438,7 @@
 				3AC7C4101B5055FF0087B0BA /* _TestObjectThree.swift */,
 				3AC7C4111B5055FF0087B0BA /* _TestObjectTwelve.swift */,
 				3AC7C4121B5055FF0087B0BA /* _TestObjectTwo.swift */,
+				3A4F787B1B988ADB006063F0 /* _TestObjectThirteen.swift */,
 				3AF38AAB1B59A7D800A43857 /* US2Instantiator.swift */,
 			);
 			path = Internal;
@@ -408,6 +447,7 @@
 		3AC7C4201B5055FF0087B0BA /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
+				3A4F787E1B988B09006063F0 /* TestObjectThirteen.plist */,
 				3AC7C4211B5055FF0087B0BA /* TestObjectEight.plist */,
 				3AC7C4221B5055FF0087B0BA /* TestObjectEleven.plist */,
 				3AC7C4231B5055FF0087B0BA /* TestObjectFive.plist */,
@@ -624,6 +664,7 @@
 				3AC7C4681B5055FF0087B0BA /* TestObjectNine.plist in Resources */,
 				3AC7C4701B5055FF0087B0BA /* TestObjectThree.plist in Resources */,
 				3AC7C4641B5055FF0087B0BA /* TestObjectFive.plist in Resources */,
+				3A4F787F1B988B09006063F0 /* TestObjectThirteen.plist in Resources */,
 				3AC7C46C1B5055FF0087B0BA /* TestObjectSix.plist in Resources */,
 				3AC7C4721B5055FF0087B0BA /* TestObjectTwelve.plist in Resources */,
 				3AC7C4601B5055FF0087B0BA /* TestObjectEight.plist in Resources */,
@@ -650,6 +691,7 @@
 				3AC7C4691B5055FF0087B0BA /* TestObjectNine.plist in Resources */,
 				3AC7C4711B5055FF0087B0BA /* TestObjectThree.plist in Resources */,
 				3AC7C4651B5055FF0087B0BA /* TestObjectFive.plist in Resources */,
+				3A4F78801B988B09006063F0 /* TestObjectThirteen.plist in Resources */,
 				3AC7C46D1B5055FF0087B0BA /* TestObjectSix.plist in Resources */,
 				3AC7C4731B5055FF0087B0BA /* TestObjectTwelve.plist in Resources */,
 				3AC7C4611B5055FF0087B0BA /* TestObjectEight.plist in Resources */,
@@ -733,18 +775,25 @@
 				3AC7C4421B5055FF0087B0BA /* _TestObjectTwelve.swift in Sources */,
 				3AC7C4481B5055FF0087B0BA /* TestObjectEight.swift in Sources */,
 				3AC7C42E1B5055FF0087B0BA /* _TestObjectEight.swift in Sources */,
+				3A8DA7831B98C2A400B8E02D /* US2ExampleEnumTransformer.swift in Sources */,
 				3AC7C4581B5055FF0087B0BA /* TestObjectTen.swift in Sources */,
 				3AF38A761B5945B800A43857 /* Transformer.swift in Sources */,
 				3AC7C44E1B5055FF0087B0BA /* TestObjectFour.swift in Sources */,
+				3A8DA7861B98C6E800B8E02D /* US2ExampleTupleTransformer.swift in Sources */,
 				3AC7C4561B5055FF0087B0BA /* TestObjectSix.swift in Sources */,
 				3AF38AA21B598BF500A43857 /* NativeValueArrayParser.swift in Sources */,
 				3AC7C4301B5055FF0087B0BA /* _TestObjectEleven.swift in Sources */,
 				3AC7C43A1B5055FF0087B0BA /* _TestObjectSeven.swift in Sources */,
+				3A8DA7891B98C94C00B8E02D /* US2ExampleClosureTransformer.swift in Sources */,
 				3AC7C4541B5055FF0087B0BA /* TestObjectSeven.swift in Sources */,
 				3AC7C4441B5055FF0087B0BA /* _TestObjectTwo.swift in Sources */,
 				3AC7C4501B5055FF0087B0BA /* TestObjectNine.swift in Sources */,
+				3A4F78731B988A26006063F0 /* US2ExampleStructTransformer.swift in Sources */,
 				3AC7C4381B5055FF0087B0BA /* _TestObjectOne.swift in Sources */,
+				3A4F78791B988AC9006063F0 /* TestObjectThirteen.swift in Sources */,
+				3A4F78761B988A4E006063F0 /* ValueTypeDefinitions.swift in Sources */,
 				3AF38A921B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */,
+				3A4F787C1B988ADB006063F0 /* _TestObjectThirteen.swift in Sources */,
 				3AC7C4401B5055FF0087B0BA /* _TestObjectThree.swift in Sources */,
 				3AC7C45C1B5055FF0087B0BA /* TestObjectTwelve.swift in Sources */,
 				3AC7C44A1B5055FF0087B0BA /* TestObjectEleven.swift in Sources */,
@@ -797,18 +846,25 @@
 				3AC7C4431B5055FF0087B0BA /* _TestObjectTwelve.swift in Sources */,
 				3AC7C4491B5055FF0087B0BA /* TestObjectEight.swift in Sources */,
 				3AC7C42F1B5055FF0087B0BA /* _TestObjectEight.swift in Sources */,
+				3A8DA7841B98C2A400B8E02D /* US2ExampleEnumTransformer.swift in Sources */,
 				3AC7C4591B5055FF0087B0BA /* TestObjectTen.swift in Sources */,
 				3AF38A781B5945B800A43857 /* Transformer.swift in Sources */,
 				3AC7C44F1B5055FF0087B0BA /* TestObjectFour.swift in Sources */,
+				3A8DA7871B98C6E800B8E02D /* US2ExampleTupleTransformer.swift in Sources */,
 				3AC7C4571B5055FF0087B0BA /* TestObjectSix.swift in Sources */,
 				3AF38AA41B598BF500A43857 /* NativeValueArrayParser.swift in Sources */,
 				3AC7C4311B5055FF0087B0BA /* _TestObjectEleven.swift in Sources */,
 				3AC7C43B1B5055FF0087B0BA /* _TestObjectSeven.swift in Sources */,
+				3A8DA78A1B98C94C00B8E02D /* US2ExampleClosureTransformer.swift in Sources */,
 				3AC7C4551B5055FF0087B0BA /* TestObjectSeven.swift in Sources */,
 				3AC7C4451B5055FF0087B0BA /* _TestObjectTwo.swift in Sources */,
 				3AC7C4511B5055FF0087B0BA /* TestObjectNine.swift in Sources */,
+				3A4F78741B988A26006063F0 /* US2ExampleStructTransformer.swift in Sources */,
 				3AC7C4391B5055FF0087B0BA /* _TestObjectOne.swift in Sources */,
+				3A4F787A1B988AC9006063F0 /* TestObjectThirteen.swift in Sources */,
+				3A4F78771B988A4E006063F0 /* ValueTypeDefinitions.swift in Sources */,
 				3AF38A941B598BF500A43857 /* ComplexValueArrayParser.swift in Sources */,
+				3A4F787D1B988ADB006063F0 /* _TestObjectThirteen.swift in Sources */,
 				3AC7C4411B5055FF0087B0BA /* _TestObjectThree.swift in Sources */,
 				3AC7C45D1B5055FF0087B0BA /* TestObjectTwelve.swift in Sources */,
 				3AC7C44B1B5055FF0087B0BA /* TestObjectEleven.swift in Sources */,

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>optionalStruct</key>
+	<dict>
+		<key>type</key>
+		<string>StructExample</string>
+		<key>transformer</key>
+		<string>US2ExampleStructTransformer</string>
+		<key>key</key>
+		<array>
+			<string>string1</string>
+			<string>string2</string>
+		</array>
+	</dict>
+	<key>optionalEnum</key>
+	<dict>
+		<key>type</key>
+		<string>EnumExample</string>
+		<key>transformer</key>
+		<string>US2ExampleEnumTransformer</string>
+		<key>key</key>
+		<array>
+			<string>enumValue</string>
+		</array>
+	</dict>
+	<key>optionalTuple</key>
+	<dict>
+		<key>type</key>
+		<string>(val1 : Double, val2 : Double)</string>
+		<key>transformer</key>
+		<string>US2ExampleTupleTransformer</string>
+		<key>key</key>
+		<array>
+			<string>value_one</string>
+			<string>value_two</string>
+		</array>
+	</dict>
+	<key>optionalUppercaseCompletionHandler</key>
+	<dict>
+		<key>type</key>
+		<string>((value : String) -&gt; String)</string>
+		<key>transformer</key>
+		<string>US2ExampleClosureTransformer</string>
+		<key>key</key>
+		<array>
+			<string>handler_type</string>
+		</array>
+	</dict>
+	<key>optionalLowercaseCompletionHandler</key>
+	<dict>
+		<key>type</key>
+		<string>((value : String) -&gt; String)</string>
+		<key>transformer</key>
+		<string>US2ExampleClosureTransformer</string>
+		<key>key</key>
+		<array>
+			<string>handler_type</string>
+		</array>
+	</dict>
+</dict>
+</plist>
