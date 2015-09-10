@@ -29,7 +29,10 @@ MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 
 STRING_IMPORT_FOUNDATION 	= "import Foundation\n"
 STRING_REQUIRED_INIT_START 	= "\n\trequired init("
-STRING_FAILABLE_INIT_START = '\tconvenience init?(_ dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance) {'
+STRING_MAP_VALUES_DICT_START 	= "\n\n\tprivate func setValues("
+STRING_MAP_DICT_START = '\n\n\tfunc updateWithDictionary(dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {'
+
+STRING_FAILABLE_INIT_START = '\tconvenience init?(_ dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : true) {'
 STRING_FAILABLE_INIT_SUPER_START = '\t\n\t\t\tself.init('
 STRING_FILE_INTRO = '// US2MapperKit Generated Model\n// UPDATE LISCENSE HERE\n\n'
 STRING_PROPERTY_VAR = "	var"
@@ -92,7 +95,8 @@ def generate_internal_file(mappingPlist, classname, class_directory):
 	append_non_optional_property_definitions(outputfile, mappingPlist)
 	append_required_initializer(outputfile, mappingPlist)
 	append_failable_initializer(outputfile, mappingPlist)
-	
+	#append_map_values(outputfile, mappingPlist)
+	append_map_dictionary_setter(outputfile, mappingPlist)
 	outputfile.write('\n} ')
 	outputfile.close();
 
@@ -295,7 +299,7 @@ def append_failable_initializer_typecasting(classFile, mappingPlist):
 
 
 def append_failable_typecast_unwrap_statement(classFile, propertyName):
-	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : AnyObject = valuesDict["' + propertyName + '"] as AnyObject? {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')\n\t\t\t}\n')
+	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : Any = valuesDict["' + propertyName + '"]  {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')\n\t\t\t}\n')
 
 def append_failed_initialiser_property(classfile, propertyname, datatype, optional, isFirstLine):
 	if datatype not in NATIVE_PROPERTY_TYPES:
@@ -313,7 +317,6 @@ def append_dictionary_failed_initialiser_property(classfile, propertyname, datat
 '''
 Create External US2Mapper Inherited File
 '''
-
 def generate_internal_instantiator_file(mappingPlist, output_directory):
 	filename = output_directory + 'Internal/US2Instantiator.swift'
 	
@@ -383,15 +386,53 @@ def append_mapper_method_definitions(classfile, mappinglist):
 
 
 '''
+Create Mapping for Instantiated Class
+'''
+
+'''
+Append MapDictionary Setter
+'''
+def append_map_dictionary_setter(classFile, mappingPlist):
+	classFile.write(STRING_MAP_DICT_START)
+	append_map_dictionary_non_optional_typecasting(classFile, mappingPlist)
+
+	classFile.write(' \t\t} \n\t}')
+
+def append_map_dictionary_non_optional_typecasting(classFile, mappingPlist):
+	for propertyName in mappingPlist.keys():
+		if MAPPING_KEY_NONOPTIONAL not in mappingPlist[propertyName].keys():
+			append_failable_typecast_unwrap_statement(classFile, propertyName)
+		else:
+			if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] != 'true':
+				append_failable_typecast_unwrap_statement(classFile, propertyName)
+			else:
+				append_optional_typecast_unwrap_statement(classFile, propertyName)
+
+def append_optional_typecast_unwrap_statement(classFile, propertyName):
+	classFile.write('\n\t\t\tif let unwrapped_' + propertyName + ' : Any = valuesDict["' + propertyName + '"] {\n\t\t\t\t' + propertyName + ' = typeCast(unwrapped_' + propertyName + ')!\n\t\t\t}\n')
+
+
+'''
 Validation and System Checks
 '''
 def validate_class_mapping_configuration(classname, mappingPlist):
 	for propertyName in mappingPlist.keys():
 		if MAPPING_KEY_TYPE not in mappingPlist[propertyName].keys():
-			throw_missing_type_error(classname, MAPPING_KEY_TYPE, mappingPlist[propertyName])
+			if MAPPING_KEY_TRANSFORMER not in mappingPlist[propertyName].keys():
+				throw_missing_type_error(classname, MAPPING_KEY_TYPE, mappingPlist[propertyName])
 
 		if MAPPING_KEY_KEY not in mappingPlist[propertyName].keys():
-			throw_missing_json_key_error(classname, MAPPING_KEY_KEY, mappingPlist[propertyName])
+			if MAPPING_KEY_TRANSFORMER not in mappingPlist[propertyName].keys():
+				throw_missing_json_key_error(classname, MAPPING_KEY_KEY, mappingPlist[propertyName])
+
+		if MAPPING_KEY_KEY in mappingPlist[propertyName].keys():
+			if MAPPING_KEY_TRANSFORMER in mappingPlist[propertyName].keys():
+				propertyType = mappingPlist[propertyName][MAPPING_KEY_TYPE]
+				if xcode_version() == 6.0 and propertyType not in NATIVE_PROPERTY_TYPES:
+					if MAPPING_KEY_NONOPTIONAL in mappingPlist[propertyName].keys():
+						if mappingPlist[propertyName][MAPPING_KEY_NONOPTIONAL] == 'true':
+							throw_missing_nonoptional_error(classname, MAPPING_KEY_KEY, mappingPlist[propertyName])
+	
 	
 def print_default_error_header(classname, mapping):
 	print "\n\nUS2Mapper Error: Invalid Configuration (" + classname + ".plist)\n\n"
@@ -403,10 +444,16 @@ def throw_missing_type_error(classname, propertykey, mapping):
 	print "The mapping configuration for the " + propertykey + " property is missing the type configuration.\nAll properties must specify a 'type' value.\n\n\n\n"
 	raise Exception('Invalid Configuration')
 
+def throw_missing_nonoptional_error(classname, propertykey, mapping):
+	print_default_error_header(classname, mapping)
+	print "The mapping configuration for the " + propertykey + " cannot be performed. Transformed properties have to be optional when not defined as a native datatype (String, Int, Float, Double, Bool, Array, Dictionary).\n\n\n"
+	raise Exception('Invalid Configuration')
+
 def throw_missing_json_key_error(classname, propertykey, mapping):
 	print_default_error_header(classname, mapping)
 	print "The mapping configuration for the " + propertykey + " property is missing the key configuration.\nAll properties must specify a 'key' value to map against value in a dictionary.\n\n"
 	raise Exception('Invalid Configuration')
+
 
 def xcode_version():
 	status, xcodeVersionString = commands.getstatusoutput("xcodebuild -version")

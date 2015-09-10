@@ -1,4 +1,4 @@
-[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.1.0-blue.svg)](https://github.com/ustwo/US2MapperKit)
+[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.2.0-blue.svg)](https://github.com/ustwo/US2MapperKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/platform-ios%20%7C%20osx-lightgrey.svg)](https://github.com/ustwo/US2MapperKit)
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)](https://github.com/ustwo/US2MapperKit)
@@ -34,11 +34,14 @@ The second class generated is the `Person.swift` which inherits from the interna
 * Complex Type Support (stand alone, and in collections)
 * Default Value Definitions
 * Mapping Nested Values
-* Custom Transformations
+* Complex Transformations
+* Structs, Enums, Closures, Tuples via Transformations
 
 ##Basic Use
 
-Once configured per [Installation](/documentation/installation.md) instructions:
+####Initialization with Dictionary
+
+Once configured per the [Installation](/documentation/installation.md) instructions:
 
 1. Create a plist model mapping and place it in the mapping folder defined during installation.
 2. Build the target, navigate to the output directory defined during the installation process, and add the generated files to the project.
@@ -47,6 +50,19 @@ Once configured per [Installation](/documentation/installation.md) instructions:
 	```
 let newInstance = TestModelObject(dataDictionary)
 	```
+
+####Update with Dictionary
+
+Once an instance has been initialized, we can pass a new dictionary with values to update for the current instance by calling `updateWithDictionary(dictionary : Dictionary<String, AnyObject>?)`. Note that only the values which are being passed within will be updated, defaults values are ignored unline the initialization
+
+```
+let instance = TestModelObject(dataDictionary)
+let newValuesDictionary = [... : ...]
+
+// Updates the current values only with the new values received, defaults in mapping are ignored
+instance.updateWithDictionary(newValuesDictionary)
+
+```
 
 ####Examples 
 
@@ -59,11 +75,19 @@ Below is a list of examples for the supported features by US2MapperKit. Each pro
 * [Default Value Definitions](/documentation/default_values.md)
 * [Mapping Against Nested Values](/documentation/nested_mapping.md)
 * [Custom Transformations](/documentation/custom_transforms.md)
+* [Structs Mapping](/documentation/custom_transforms_struct.md)
+* [Enum Mapping](/documentation/custom_transforms_enums.md)
+* [Closures Mapping](/documentation/custom_transforms_closures.md)
+* [Tuples Mapping](/documentation/custom_transforms_tuples.md)
 
 ##Troubleshooting
 
 - [Enabling Debug Mode](/documentation/enable_debug_mode.md)
 - [Swift 1.2 / 2.0 Compatibility](/documentation/compatibility_issues.md)
+
+##Updates
+
+- [Change Log](/documentation/changelog.md)
 
 ##Future Enahancements
 

@@ -12,7 +12,7 @@ public class Validator {
     
     // MARK Validates that all the non-optional values were received or defaulted
     
-    final class func validateResponse(forValues retrievedValues :  Dictionary<String, AnyObject>,
+    final class func validateResponse(forValues retrievedValues :  Dictionary<String, Any>,
                                       mappedTo mappingConfiguration : Dictionary<String, Dictionary<String, AnyObject>>,
                                       forType className : String,
                                       withData data : Dictionary<String, AnyObject>) -> Bool {

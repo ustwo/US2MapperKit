@@ -14,10 +14,10 @@ public protocol US2InstantiatorProtocol {
 }
 
 public protocol US2TransformerProtocol {
-    func transformValues(inputValues : Dictionary<String, AnyObject>?) -> AnyObject?
+    func transformValues(inputValues : Dictionary<String, Any>?) -> Any?
 }
 
-public func typeCast<U>(object: AnyObject?) -> U? {
+public func typeCast<U>(object: Any?) -> U? {
     if let typed = object as? U {
         return typed
     }
@@ -52,15 +52,19 @@ let collectionTypes      = [US2DataTypeArray, US2DataTypeDictionary]
 
 final public class US2Mapper {
     
-    public class func mapValues(from dictionary : Dictionary<String, AnyObject>, forType classType : String , employing instantiator : US2InstantiatorProtocol) -> Dictionary<String, AnyObject>? {
+    public class func mapValues(from dictionary : Dictionary<String, AnyObject>, forType classType : String , employing instantiator : US2InstantiatorProtocol, defaultsEnabled : Bool) -> Dictionary<String, Any>? {
 
         if let mappingConfiguration = retrieveMappingConfiguration(classType) {
        
             // Dictionary to store parsed values to be returned
-            var retrievedValueDictionary = Dictionary<String, AnyObject>()
+            var retrievedValueDictionary = Dictionary<String, Any>()
             
             for (propertyKey, propertyMapping) in mappingConfiguration {
-                retrievedValueDictionary[propertyKey] = Parser.retrieveValue(from : dictionary, applying : propertyMapping, employing : instantiator)
+                retrievedValueDictionary[propertyKey] = Parser.retrieveValue(from : dictionary, applying : propertyMapping, employing : instantiator, defaultsEnabled : defaultsEnabled)
+            }
+            
+            if defaultsEnabled == false {
+                return retrievedValueDictionary
             }
             
             if Validator.validateResponse(forValues: retrievedValueDictionary, mappedTo : mappingConfiguration, forType : classType, withData : dictionary) {

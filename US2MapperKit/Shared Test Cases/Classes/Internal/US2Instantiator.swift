@@ -12,6 +12,7 @@ enum US2MapperClassEnum: String {
 	case _TestObjectSeven 	= "TestObjectSeven"
 	case _TestObjectSix 	= "TestObjectSix"
 	case _TestObjectTen 	= "TestObjectTen"
+	case _TestObjectThirteen 	= "TestObjectThirteen"
 	case _TestObjectThree 	= "TestObjectThree"
 	case _TestObjectTwelve 	= "TestObjectTwelve"
 	case _TestObjectTwo 	= "TestObjectTwo"
@@ -35,6 +36,8 @@ enum US2MapperClassEnum: String {
 			return TestObjectSix(data)
 		case ._TestObjectTen:
 			return TestObjectTen(data)
+		case ._TestObjectThirteen:
+			return TestObjectThirteen(data)
 		case ._TestObjectThree:
 			return TestObjectThree(data)
 		case ._TestObjectTwelve:
@@ -49,12 +52,28 @@ enum US2MapperClassEnum: String {
 
 enum US2TransformerEnum: String {
 	case _US2CompoundValueTransformer = "US2CompoundValueTransformer"
+	case _US2ExampleStructTransformer = "US2ExampleStructTransformer"
+	case _US2ExampleTupleTransformer = "US2ExampleTupleTransformer"
+	case _US2ExampleClosureTransformer = "US2ExampleClosureTransformer"
+	case _US2ExampleEnumTransformer = "US2ExampleEnumTransformer"
 	case _None = "None"
 
 	func transformer() -> US2TransformerProtocol? {
 		switch self {
 		case ._US2CompoundValueTransformer:
 			return US2CompoundValueTransformer()
+
+		case ._US2ExampleStructTransformer:
+			return US2ExampleStructTransformer()
+
+		case ._US2ExampleTupleTransformer:
+			return US2ExampleTupleTransformer()
+
+		case ._US2ExampleClosureTransformer:
+			return US2ExampleClosureTransformer()
+
+		case ._US2ExampleEnumTransformer:
+			return US2ExampleEnumTransformer()
 
 		case ._None:
 			return nil		}
