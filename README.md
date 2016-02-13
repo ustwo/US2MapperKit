@@ -1,4 +1,4 @@
-[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.2.0-blue.svg)](https://github.com/ustwo/US2MapperKit)
+[![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.2.0-blue.svg)](https://github.com/ustwo/US2MapperKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/badge/platform-ios%20%7C%20osx-lightgrey.svg)](https://github.com/ustwo/US2MapperKit)
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)](https://github.com/ustwo/US2MapperKit)
