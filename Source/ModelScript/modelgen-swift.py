@@ -27,7 +27,7 @@ MAPPING_KEY_NONOPTIONAL 		= "nonoptional"
 MAPPING_KEY_TRANSFORMER				= "transformer"
 MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 
-STRING_IMPORT_FOUNDATION 	= "import Foundation\n"
+STRING_IMPORT_FOUNDATION 	= "import Foundation\nimport US2MapperKit\n"
 STRING_REQUIRED_INIT_START 	= "\n\trequired init("
 STRING_MAP_VALUES_DICT_START 	= "\n\n\tprivate func setValues("
 STRING_MAP_DICT_START = '\n\n\tfunc updateWithDictionary(dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {'
