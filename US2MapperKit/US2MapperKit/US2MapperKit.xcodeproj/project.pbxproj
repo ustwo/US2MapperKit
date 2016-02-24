@@ -713,7 +713,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python $PROJECT_DIR/../../Source/ModelScript/modelgen-swift.py -v 0.1 -i $PROJECT_DIR/../Shared\\ Test\\ Cases/Mapping/ -o $PROJECT_DIR/../Shared\\ Test\\ Cases/Classes/";
+			shellScript = "python $PROJECT_DIR/../../Source/ModelScript/modelgen-swift.py -v 0.1 -i $PROJECT_DIR/../Shared\\ Test\\ Cases/Mapping/ -o $PROJECT_DIR/../Shared\\ Test\\ Cases/Classes/ -t 1";
 		};
 		3AC7C3B31B5055650087B0BA /* Rebuild Model */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -727,7 +727,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python $PROJECT_DIR/../../Source/ModelScript/modelgen-swift.py -v 0.1 -i $PROJECT_DIR/../Shared\\ Test\\ Cases/Mapping/ -o $PROJECT_DIR/../Shared\\ Test\\ Cases/Classes/";
+			shellScript = "python $PROJECT_DIR/../../Source/ModelScript/modelgen-swift.py -v 0.1 -i $PROJECT_DIR/../Shared\\ Test\\ Cases/Mapping/ -o $PROJECT_DIR/../Shared\\ Test\\ Cases/Classes/ -t 1";
 		};
 /* End PBXShellScriptBuildPhase section */
 

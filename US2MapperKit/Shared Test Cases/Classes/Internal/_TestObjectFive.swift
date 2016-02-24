@@ -27,9 +27,7 @@ class _TestObjectFive {
 				optionalSubType = typeCast(unwrapped_optionalSubType)
 			}
  
- 		} else {
- 			self.init(_non_optionalSubType : TestObjectThree(Dictionary<String, AnyObject>())!)
-
+		} else {
 			return nil
 		}
 	}

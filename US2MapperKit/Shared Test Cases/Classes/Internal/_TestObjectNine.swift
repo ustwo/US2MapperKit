@@ -57,12 +57,7 @@ class _TestObjectNine {
 				optionalArrayFloatType = typeCast(unwrapped_optionalArrayFloatType)
 			}
  
- 		} else {
- 			self.init(_non_optionalArrayFloatType : [Float](),
-				  _non_optionalArrayDoubleType : [Double](),
-				  _non_optionalArrayIntType : [Int](),
-				  _non_optionalArrayStringType : [String]())
-
+		} else {
 			return nil
 		}
 	}

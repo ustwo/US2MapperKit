@@ -19,9 +19,7 @@ class _TestObjectTwo {
 	
 			self.init() 
 		 
- 		} else {
- 			self.init()
-
+		} else {
 			return nil
 		}
 	}

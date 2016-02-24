@@ -27,7 +27,9 @@ MAPPING_KEY_NONOPTIONAL 		= "nonoptional"
 MAPPING_KEY_TRANSFORMER				= "transformer"
 MAPPING_KEY_COLLECTION_SUBTYPE	= "collection_subtype"
 
-STRING_IMPORT_FOUNDATION 	= "import Foundation\nimport US2MapperKit\n"
+STRING_IMPORT_FOUNDATION 		= "import Foundation\nimport US2MapperKit\n"
+STRING_IMPORT_FOUNDATION_TEST 	= "import Foundation\n"
+
 STRING_REQUIRED_INIT_START 	= "\n\trequired init("
 STRING_MAP_VALUES_DICT_START 	= "\n\n\tprivate func setValues("
 STRING_MAP_DICT_START = '\n\n\tfunc updateWithDictionary(dictionary: Dictionary<String, AnyObject>) {\n\n\t\tlet dynamicTypeString = "\(self.dynamicType)"\n\t\tlet className = dynamicTypeString.componentsSeparatedByString(".").last\n\n\t\tif let valuesDict = US2Mapper.mapValues(from: dictionary, forType: className!, employing: US2Instantiator.sharedInstance, defaultsEnabled : false) {'
@@ -42,8 +44,8 @@ STRING_CLASS_FROM_STRING_METHOD 	= "\n\nstatic let sharedInstance : US2Instantia
 STRING_USMAPPER_IMPORT 			= "\n"
 STRING_USMAPPER_INHERITENCE 	= "\nclass US2Instantiator : US2InstantiatorProtocol {\n\n"
 
-def generate_model(mappinglist, output_directory, version):
-	
+def generate_model(mappinglist, output_directory, version, testEnabled):
+
 	for mapping in mappinglist:
 		filename = mapping[mapping.rindex('/',0,-1)+1:-1] if mapping.endswith('/') else mapping[mapping.rindex('/')+1:]
 		classname = filename.split('.', 1 )[0]
@@ -52,16 +54,16 @@ def generate_model(mappinglist, output_directory, version):
 		
 		validate_class_mapping_configuration(classname, mappingPlist)
 		
-		generate_internal_file(mappingPlist, classname, output_directory)
-		generate_external_file_if_needed(classname, output_directory)
+		generate_internal_file(mappingPlist, classname, output_directory, testEnabled)
+		generate_external_file_if_needed(classname, output_directory, testEnabled)
 
-	generate_internal_instantiator_file(mappinglist, output_directory)
+	generate_internal_instantiator_file(mappinglist, output_directory, testEnabled)
 
 
 '''
 External Model File Generation
 '''
-def generate_external_file_if_needed(classname, class_directory):
+def generate_external_file_if_needed(classname, class_directory, testEnabled):
 	
 	filename = class_directory + classname + '.swift'
 	
@@ -72,15 +74,21 @@ def generate_external_file_if_needed(classname, class_directory):
 		os.makedirs(os.path.dirname(filename))
 	
 	outputfile = open(filename, "wba")
-
-	outputfile.write(STRING_IMPORT_FOUNDATION + '\nclass ' + classname + ' : _' + classname + ' {\n\n}')
+	
+	if testEnabled == 1:
+		print 'TEST ENABLED'
+		outputfile.write(STRING_IMPORT_FOUNDATION_TEST + '\nclass ' + classname + ' : _' + classname + ' {\n\n}')
+	else:
+		print 'TEST DISABLED'
+		outputfile.write(STRING_IMPORT_FOUNDATION + '\nclass ' + classname + ' : _' + classname + ' {\n\n}')
+	
 	outputfile.close();
 
 
 '''
 Internal Model File Generation
 '''
-def generate_internal_file(mappingPlist, classname, class_directory):
+def generate_internal_file(mappingPlist, classname, class_directory, testEnabled):
 	
 	filename = class_directory + 'Internal/_'+ classname + '.swift'
 	
@@ -89,7 +97,13 @@ def generate_internal_file(mappingPlist, classname, class_directory):
 	
 	outputfile = open(filename, "wba")
 
-	outputfile.write(STRING_IMPORT_FOUNDATION + STRING_USMAPPER_IMPORT + '\nclass _' + classname + ' {\n')
+	if testEnabled is '1':
+		print 'TEST ENABLED'
+		outputfile.write(STRING_IMPORT_FOUNDATION_TEST + STRING_USMAPPER_IMPORT + '\nclass _' + classname + ' {\n')
+	else:
+		print 'TEST DISABLED'
+		outputfile.write(STRING_IMPORT_FOUNDATION + STRING_USMAPPER_IMPORT + '\nclass _' + classname + ' {\n')
+
 
 	append_optional_property_definitions(outputfile, mappingPlist)
 	append_non_optional_property_definitions(outputfile, mappingPlist)
@@ -317,7 +331,7 @@ def append_dictionary_failed_initialiser_property(classfile, propertyname, datat
 '''
 Create External US2Mapper Inherited File
 '''
-def generate_internal_instantiator_file(mappingPlist, output_directory):
+def generate_internal_instantiator_file(mappingPlist, output_directory, testEnabled):
 	filename = output_directory + 'Internal/US2Instantiator.swift'
 	
 	if not os.path.exists(os.path.dirname(filename)):
@@ -325,7 +339,12 @@ def generate_internal_instantiator_file(mappingPlist, output_directory):
 	
 	outputfile = open(filename, "wba")
 
-	outputfile.write(STRING_FILE_INTRO + STRING_IMPORT_FOUNDATION + STRING_USMAPPER_IMPORT)
+	if testEnabled == 1:
+		outputfile.write(STRING_FILE_INTRO + STRING_IMPORT_FOUNDATION_TEST + STRING_USMAPPER_IMPORT)
+	else:
+		outputfile.write(STRING_FILE_INTRO + STRING_IMPORT_FOUNDATION + STRING_USMAPPER_IMPORT)
+	
+
 
 	classnames = []
 
@@ -461,28 +480,59 @@ def xcode_version():
 		return 7.0
 	else:
 		return 6.0
-
-
 def main(argv):
+   inputfile = ''
+   outputfile = ''
+   testEnabled = 0
 
    try:
-      opts, args = getopt.getopt(argv,"hv:i:o:",["version=", "mapdir=", "classdir="])
+      opts, args = getopt.getopt(argv,"hv:i:o:t:",["version=","mapdir=","classname=","testing="])
    except getopt.GetoptError:
-      print 'test.py -v <version> -i <mapdir> -o <classdir>'
+      print 'test.py -i <inputfile> -o <outputfile>'
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'test.py -v <version> -i <mapdir> -o <classdir>'
+         print 'test.py -i <inputfile> -o <outputfile>'
          sys.exit()
-      elif opt in ("-v", "--version"):
-         version = arg
-      elif opt in ("-i", "--mapdir"):
+      elif opt in ("-v", "--ifile"):
+         currentVersion = arg
+      elif opt in ("-i", "--ofile"):
          mapdir = arg
-      elif opt in ("-o", "--classdir"):
+      elif opt in ("-o", "--ifile"):
          classdir = arg
-
+      elif opt in ("-t", "--ofile"):
+         testEnabled = arg
    mappinglist = glob.glob(mapdir + "*.plist") 
-   generate_model(mappinglist, classdir, version)
+
+   generate_model(mappinglist, classdir, currentVersion, testEnabled)
+   
+   print 'Input file is "', inputfile
+   print 'Output file is "', outputfile
 
 if __name__ == "__main__":
    main(sys.argv[1:])
+
+#def main(argv):
+#	try:
+#	  opts, args = getopt.getopt(argv,"hv:i:o:t:", ["version=", "testing=", "mapdir=", "classdir="])
+#	except getopt.GetoptError:
+#      print 'modelgen-swift.py -v <version> -i <mapdir> -o <classdir> -t <testing>'
+#      sys.exit(2)
+#   	for opt, arg in opts:
+#   	   if opt == '-h':
+#   		  print 'modelgen-swift.py -v <version> -i <mapdir> -o <classdir> -t <testing>'
+#   		  sys.exit(2)
+#   	   elif opt in ("-v", "--version"):
+#   		  version = arg
+#   	   elif opt in ("-i", "--mapdir"):
+#   		  mapdir = arg
+#   	   elif opt in ("-o", "--classdir"):
+#   		  classdir = arg
+#   	   elif opt in ("-t", "--testing"):
+#   		  testing = arg
+#   	
+#   	mappinglist = glob.glob(mapdir + "*.plist") 
+#   	generate_model(mappinglist, classdir, version, testing)
+#
+#if __name__ == "__main__":
+#   main(sys.argv[1:])#

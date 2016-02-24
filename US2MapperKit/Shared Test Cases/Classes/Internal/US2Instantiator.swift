@@ -2,6 +2,7 @@
 // UPDATE LISCENSE HERE
 
 import Foundation
+import US2MapperKit
 
 enum US2MapperClassEnum: String {
 	case _TestObjectEight 	= "TestObjectEight"
