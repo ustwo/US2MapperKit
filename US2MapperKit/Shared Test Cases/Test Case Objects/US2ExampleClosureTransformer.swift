@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+
 
 public class US2ExampleClosureTransformer : US2TransformerProtocol {
     public func transformValues(inputValues : Dictionary<String, Any>?) -> Any? {

@@ -27,9 +27,7 @@ class _TestObjectSix {
 				optionalCompoundString = typeCast(unwrapped_optionalCompoundString)
 			}
  
- 		} else {
- 			self.init(_non_optionalCompoundString : String())
-
+		} else {
 			return nil
 		}
 	}

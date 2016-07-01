@@ -67,13 +67,7 @@ class _TestObjectThree {
 				optionalFloat = typeCast(unwrapped_optionalFloat)
 			}
  
- 		} else {
- 			self.init(_non_optionalDouble : Double(),
-				  _non_optionalInt : Int(),
-				  _non_optionalFloat : Float(),
-				  _non_optionalBool : Bool(),
-				  _non_optionalString : String())
-
+		} else {
 			return nil
 		}
 	}

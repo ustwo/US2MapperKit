@@ -44,9 +44,7 @@ class _TestObjectThirteen {
 				optionalEnum = typeCast(unwrapped_optionalEnum)
 			}
  
- 		} else {
- 			self.init()
-
+		} else {
 			return nil
 		}
 	}

@@ -42,7 +42,7 @@ Now that we have created a transformer, let's create mapping for our business Ob
 **Business.plist**
 <br/>
 
-![alt tag](/documentation/readme_assets/tuple_mapping_example.png?raw=true)
+![alt tag](/documentation/readme_assets/tuple_mapping_example.png?raw=true width="172" height="61")
 <br/>
 
 After the creation of the mapping, perform a build **(⌘-B)**. The changes should be reflected accordingly in the internal `_Business.swift` class.

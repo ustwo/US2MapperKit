@@ -27,9 +27,7 @@ class _TestObjectSeven {
 				optionalArrayType = typeCast(unwrapped_optionalArrayType)
 			}
  
- 		} else {
- 			self.init(_non_optionalArrayType : [TestObjectFour]())
-
+		} else {
 			return nil
 		}
 	}
