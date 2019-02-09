@@ -5,7 +5,7 @@
 #US2MapperKit
 ![alt tag](/documentation/readme_assets/mapperkit_header.png?raw=true)
 
-Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), US2MapperKit is an an extremely lightweight mapping framework designed specifically for Swift 1.2, and Swift 2.0.
+Inspired by [CSMapper](https://github.com/marcammann/CSMapper) and [Mogenerator](https://github.com/rentzsch/mogenerator), US2MapperKit is an extremely lightweight mapping framework designed specifically for Swift 1.2, and Swift 2.0.
 
 Unlike previous frameworks, where an object model is manually created by the developer then retrofitted with a mapping framework at a later point, US2MapperKit takes a mapping-first approach. By mapping against dictionary data up front, US2MapperKit generates the model objects based on the mapping, and allows for the extensibility inspired by the [Protocol-Oriented Programming](https://developer.apple.com/videos/wwdc/2015/?id=408) talk at WWDC.
 
